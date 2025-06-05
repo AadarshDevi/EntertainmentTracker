@@ -1,0 +1,59 @@
+.module {
+  /* . . . . . . . . t. r. .b. .l. */
+  -fx-border-width: 3px 0px 3px 3px;
+  -fx-border-radius: 10px 0px 0px 10px;
+  -fx-background-radius: 10px 10px 10px 10px;
+}
+
+.module_completed {
+  -fx-border-color: linear-gradient(to right, #97ff82, #97ff8275) transparent
+    linear-gradient(to right, #97ff82, #97ff8275) #78ff5d;
+}
+.module_released_ongoing {
+  -fx-border-color: linear-gradient(to right, #ffab5d, #ffab5d75) transparent
+    linear-gradient(to right, #ffab5d, #ffab5d75) #ffab5d;
+}
+.module_upcoming {
+  -fx-border-color: linear-gradient(to right, #ff5d5d, #ff5d5d75) transparent
+    linear-gradient(to right, #ff5d5d, #ff5d5d75) #ff5d5d;
+}
+.status_indicator {
+  -fx-border-width: 3px;
+  -fx-border-radius: 6px 0px 0px 6px;
+  -fx-background-radius: 10px 0px 0px 10px;
+}
+
+.status_indicator_completed {
+  -fx-background-color: #86ff6e;
+  -fx-border-color: #86ff6e;
+}
+
+.status_indicator_released_ongoing {
+  -fx-border-color: #ffab5d;
+  -fx-background-color: #ffab5d;
+}
+
+.status_indicator_upcoming {
+  -fx-border-color: #ff5d5d;
+  -fx-background-color: #ff5d5d;
+}
+
+/* Indicator for Show Modules with no Episodes */
+.no_episode_pane {
+  -fx-background-color: #ececec;
+}
+.no_episode_pane:active:hover {
+  -fx-background-color: #d4d4d4;
+}
+.no_episode_pane:hover {
+  -fx-background-color: #d4d4d4;
+}
+.no_episode_label {
+  -fx-font-weight: bold;
+  -fx-text-fill: black;
+}
+.no_episode_label:active {
+  -fx-font-weight: bold;
+  -fx-text-fill: black;
+}
+/* Indicator for Show Modules with no Episodes */
