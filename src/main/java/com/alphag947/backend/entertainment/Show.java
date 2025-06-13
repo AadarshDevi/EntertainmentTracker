@@ -98,14 +98,14 @@ public class Show extends Entertainment {
             isUpcomingEpisodes = true;
         }
 
-        // TODO: check if the episode exists in list
+        // TO-DO: check if the episode exists in list
 
         episodes.add(episode);
     }
 
     public Episode getEpisode(int episodeNum) throws Exception {
-        // if (episodeNum <= 0 && episodeNum > episodes.size())
-        // return null;
+        if (episodeNum <= 0 && episodeNum > episodes.size())
+            return null;
 
         for (Episode episode : episodes)
             if (episode.getEpisodeNum() == episodeNum)

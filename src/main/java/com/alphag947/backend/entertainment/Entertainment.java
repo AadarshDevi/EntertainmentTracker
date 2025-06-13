@@ -59,6 +59,10 @@ public class Entertainment {
         this.tags = tags;
         this.date = date;
 
+        this.isFavorite = false;
+        this.isSpecial = false;
+        this.isPilot = false;
+
         visualDate = setVisualDate();
         setStatus();
         stageName = createStageName();

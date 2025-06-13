@@ -1,0 +1,556 @@
+1<##>Movie<##>Abominable<##><##>1<##>Abominable<##>97<##>2019-09-27<##>DreamWorks Animation<<>>Pearl Studio
+2<##>Movie<##>A Goofy Movie<##><##>1<##>goofy movie<##>76<##>1995-04-07<##>Disney
+3<##>Movie<##>Alpha and Omega<##><##>1<##>Alpha and Omega<##>88<##>2010-09-17<##>Crest Animation Productions
+4<##>Movie<##>Alpha and Omega 2<##>A Howl-iday Adventure<##>1<##>Alpha and Omega 2: A Howl-iday Adventure<##>47<##>2013-10-08<##>Crest Animation Productions
+5<##>Movie<##>Alpha and Omega 3<##>The Great Wolf Games<##>1<##>Alpha and Omega 3: The Great Wolf Games<##>45<##>2014-03-25<##>Crest Animation Productions
+6<##>Movie<##>Alvin and the Chipmunks<##><##>1<##>Alvin and the Chipmunks<##>92<##>2007-12-14<##>20th Century Fox
+7<##>Movie<##>Alvin and the Chipmunks 2<##>The Squeakqual<##>1<##>Alvin and the Chipmunks 2: The Squeakqual<##>88<##>2009-12-23<##>20th Century Fox
+8<##>Movie<##>Alvin and the Chipmunks 3<##>Chipwreaked<##>1<##>Alvin and the Chipmunks 3: Chipwreaked<##>87<##>2011-12-16<##>20th Century Fox
+9<##>Movie<##>Alvin and the Chipmunks 4<##>The Road Chip<##>1<##>Alvin and the Chipmunks 4: The Road Chip<##>92<##>2015-12-18<##>20th Century Fox
+10<##>Movie<##>Angry Birds Movie<##><##>1<##>Angry Birds Movie<##>97<##>2016-05-20<##>Columbia<<>>Rovio
+11<##>Movie<##>Angry Birds Movie 2<##><##>1<##>Angry Birds Movie 2<##>97<##>2019-08-14<##>Columbia<<>>Rovio<<>>Sony
+12<##>Movie<##>Avatar<##><##>1<##>Avatar<##>162<##>2009-12-18<##>20th Century Fox<<>>Dune Entertainment<<>>Lightstorm Entertainment
+13<##>Movie<##>Avatar 2<##>Way of the Water<##>1<##>Avatar 2: Way of the Water<##>192<##>2022-12-16<##>TSG Entertainment<<>>Lightstorm Entertainment
+14<##>Movie<##>Belle<##><##>1<##>Belle<##>121<##>2021-07-16<##>Studio Chizu
+15<##>Movie<##>Big Hero 6<##><##>1<##>Big Hero 6<##>102<##>2014-11-07<##>Disney
+16<##>Movie<##>Bolt<##><##>1<##>Bolt<##>96<##>2008-11-21<##>Disney
+17<##>Movie<##>Boss Baby<##><##>1<##>Boss Baby<##>97<##>2017-03-31<##>DreamWorks Animation
+18<##>Movie<##>Boss Baby 2<##>The Family Buisness<##>1<##>Boss Baby 2: The Family Buisness<##>107<##>2021-07-02<##>DreamWorks Animation
+19<##>Movie<##>Brave<##><##>1<##>Brave<##>93<##>2012-06-22<##>Pixar
+20<##>Movie<##>Canterville Ghost<##><##>1<##>Canterville Ghost<##>89<##>2023-09-22<##>Space Age Films<<>>Sprout Pictures<<>>Toonz Media Group
+21<##>Movie<##>Captain Underpants<##>The First Epic Movie<##>1<##>Captain Underpants: The First Epic Movie<##>89<##>2017-05-21<##>DreamWorks Animation
+22<##>Movie<##>Capture the flag<##><##>1<##>Capture the flag<##>94<##>2015-08-28<##>Lightbox Entertainment<<>>4 CATS Pictures
+23<##>Movie<##>Cars<##><##>1<##>Cars<##>117<##>2006-06-09<##>Pixar Animation Studios
+24<##>Movie<##>Cars 2<##><##>1<##>Cars 2<##>106<##>2011-06-24<##>Pixar Animation Studios
+25<##>Movie<##>Cars 3<##><##>1<##>Cars 3<##>102<##>2017-06-16<##>Pixar Animation Studios
+26<##>Movie<##>Charming<##><##>1<##>Charming<##>85<##>2021-01-08<##>Vanguard Animation<<>>Cinesite
+27<##>Movie<##>Checkered Ninja<##><##>1<##>Checkered Ninja<##>81<##>2018-12-25<##>A. Film<<>>Pop Up Production<<>>Sudoku ApS
+28<##>Movie<##>Checkered Ninja 2<##><##>1<##>Checkered Ninja 2<##>86<##>2021-08-19<##>A. Film<<>>Pop Up Production<<>>Sudoku ApS
+29<##>Movie<##>Chicken Run<##><##>1<##>Chicken Run<##>84<##>2000-06-23<##>DreamWorks Animation<<>>Aardman Animations
+30<##>Movie<##>Chicken Run 2<##>The Dawn of the Nugget<##>1<##>Chicken Run 2: The Dawn of the Nugget<##>101<##>2023-12-15<##>Netflix Animation<<>>Aardman Animations
+31<##>Movie<##>Cinderella and the Secret Prince<##><##>2<##>cinderella 3d<##>90<##>2018-08-16<##>Gold Valley Films
+32<##>Movie<##>Cinderella 2<##>Little Sorcerer<##>1<##>cinderella 3d<<>>little sorcerrer<##>91<##>2022-05-06<##>Gold Valley Films
+33<##>Movie<##>Cinderella<##><##>1<##>Cinderella<##>76<##>1950-03-04<##>Walt Disney Productions
+34<##>Movie<##>Cinderella II<##>Dreams Come True<##>1<##>Cinderella II: Dreams Come True<##>73<##>2002-02-26<##>Walt Disney Television Animation
+35<##>Movie<##>Cinderella III<##>A Twist in Time<##>1<##>Cinderella III: A Twist in Time<##>70<##>2007-02-06<##>DisneyToon Studios<<>>Walt Disney Pictures
+36<##>Movie<##>Clifford the Big Red Dog<##><##>1<##>Clifford the Big Red Dog<##>96<##>2021-11-10<##>Paramount Pictures<<>>Entertainment One
+37<##>Movie<##>Cloudy for a Chance of Meatballs<##><##>1<##>Cloudy for a Chance of Meatballs<##>90<##>2009-09-18<##>Columbia Pictures<<>>Sony Pictures Animation
+38<##>Movie<##>Cloudy for a Chance of Meatballs 2<##><##>1<##>Cloudy for a Chance of Meatballs 2<##>95<##>2013-09-27<##>Columbia Pictures<<>>Sony Pictures Animation
+39<##>Movie<##>Coco<##><##>1<##>Coco<##>105<##>2017-11-22<##>Pixar Animation Studios
+40<##>Movie<##>DC League of Super Pets<##><##>1<##>DC League of SuperPets<##>105<##>2022-07-29<##>Warner Animation Group<<>>DC Entertainment<<>>Seven Bucks Productions
+41<##>Movie<##>Despicable Me<##><##>1<##>Despicable Me<##>95<##>2010-07-09<##>Universal Pictures<<>>Illumination Entertainment<<>>The SPA Studios
+42<##>Movie<##>Despicable Me 2<##><##>1<##>Despicable Me 2<##>98<##>2013-07-03<##>Universal Pictures<<>>Illumination Entertainment
+43<##>Movie<##>Despicable Me 3<##><##>1<##>Despicable Me 3<##>90<##>2017-06-30<##>Universal Pictures<<>>Illumination Entertainment
+44<##>Movie<##>Despicable Me 4<##><##>1<##>minions<##>95<##>2024-07-03<##>Universal Pictures<<>>Illumination
+45<##>Movie<##>Elementals<##><##>1<##>Elementals<##>101<##>2023-06-16<##>Pixar Animation Studios
+46<##>Movie<##>Encanto<##><##>1<##>Encanto<##>102<##>2021-12-24<##>Walt Disney Animation Studios
+47<##>Movie<##>Epic tails<##><##>1<##>Epic tails<##>96<##>2023-01-25<##>TAT Productions<<>>Apollo Films<<>>France 3 Cinéma
+48<##>Movie<##>Extinct<##><##>1<##>Extinct<##>84<##>2021-11-19<##>Cinesite
+49<##>Movie<##>Fantastic Beasts and Where to Find Them<##><##>1<##>Fantastic Beasts and Where to Find Them<##>133<##>2016-11-18<##>Warner Bros. Pictures<<>>Heyday Films
+50<##>Movie<##>Fantastic Beasts 2<##>The Crimes of Grindewald<##>1<##>Fantastic Beasts 2: The Crimes of Grindewald<##>134<##>2018-11-16<##>Warner Bros. Pictures<<>>Heyday Films
+51<##>Movie<##>Fantastic Beasts 3<##>The Secrets of Dumbledore<##>1<##>Fantastic Beasts 3: The Secrets of Dumbledore<##>142<##>2022-04-15<##>Warner Bros. Pictures<<>>Heyday Films
+52<##>Movie<##>Finding Dory<##><##>1<##>finding nemo<##>97<##>2016-06-17<##>Pixar Animation Studios
+53<##>Movie<##>Finding Nemo<##><##>1<##>finding dory<##>100<##>2003-05-30<##>Pixar Animation Studios
+54<##>Movie<##>Fireheart<##><##>1<##>Fireheart<##>92<##>2022-07-13<##>L'Atelier Animation<<>>Anton<<>>Caramel Films
+55<##>Movie<##>Frozen<##><##>1<##>frozen<##>102<##>2013-11-27<##>Walt Disney Animation Studios
+56<##>Movie<##>Frozen II<##><##>1<##>frozen<##>103<##>2019-11-22<##>Walt Disney Animation Studios
+57<##>Movie<##>Harry Potter<##>All Movies<##>1<##>j.k. rowling<##>150<##>2011-07-15<##>Warner Bros. Pictures4<<>>Heyday Films
+58<##>Movie<##>HeadSpace<##><##>1<##>HeadSpace<##>85<##>2023-05-26<##>Animationville<<>>Luma Animation<<>>The Ergo Company
+59<##>Movie<##>Hotel Transylvania<##><##>1<##>hotel transylvania<##>91<##>2012-09-28<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Sony Pictures Imageworks
+60<##>Movie<##>Hotel Transylvania 2<##><##>1<##>hotel transylvania<##>89<##>2015-09-25<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Sony Pictures Imageworks
+61<##>Movie<##>Hotel Transylvania 3<##>Summer Vacation<##>1<##>hotel transylvania<##>97<##>2018-07-13<##>Sony Pictures Animation<<>>Columbia Pictures
+62<##>Movie<##>Hotel Transylvania 4<##>Transformania<##>1<##>hotel transylvania<<>>Hotel Transylvania 4<<>>Hotel Transylvania 4: Transformania<<>>Transformania<##>87<##>2022-01-14<##>Columbia Pictures<<>>Sony Pictures Animation
+63<##>Movie<##>How to Train Your Dragon<##><##>1<##>httyd<##>98<##>2010-03-26<##>DreamWorks Animation
+64<##>Movie<##>How to Train Your Dragon 2<##><##>1<##>httyd<##>102<##>2014-06-13<##>DreamWorks Animation
+65<##>Movie<##>How to Train Your Dragon 3<##>The Hidden World<##>1<##>httyd<<>>How to Train Your Dragon: The Hidden World<##>104<##>2019-02-22<##>DreamWorks Animation
+66<##>Movie<##>Ice Age<##><##>1<##>Ice Age<##>81<##>2002-03-15<##>Blue Sky Studios<<>>20th Century Fox Animation
+67<##>Movie<##>Ice Age 2<##>The Meltdown<##>1<##>Ice Age 2: The Meltdown<##>91<##>2006-03-31<##>Blue Sky Studios<<>>20th Century Fox Animation
+68<##>Movie<##>Ice Age 3<##>The Dawn of the Dinosaurs<##>1<##>Ice Age 3: The Dawn of the Dinosaurs<##>94<##>2009-07-01<##>Blue Sky Studios<<>>20th Century Fox Animation
+69<##>Movie<##>Ice Age 4<##>Continental Drift<##>1<##>Ice Age 4: Continental Drift<##>88<##>2012-07-13<##>Blue Sky Studios<<>>20th Century Fox Animation
+70<##>Movie<##>Ice Age 5<##>Collision Course<##>1<##>Ice Age 5: Collision Course<##>94<##>2016-07-22<##>Blue Sky Studios
+71<##>Movie<##>Ice Age (Spinoff)<##>The Adventures of Buck Wild<##>1<##>Ice Age: The Adventures of Buck Wild (Spinoff)<##>82<##>2022-01-28<##>20th Century Fox Animation<<>>Bardel Entertainment
+72<##>Movie<##>Inside Out<##><##>1<##>Inside Out<##>95<##>2015-06-19<##>Pixar Animation Studios
+73<##>Movie<##>Inside Out 2<##><##>1<##>Inside Out 2<##>96<##>2024-06-14<##>Pixar Animation Studios
+74<##>Movie<##>Kung Fu Panda<##><##>1<##>Kung Fu Panda<##>92<##>2008-06-06<##>DreamWorks Animation
+75<##>Movie<##>Kung Fu Panda 2<##><##>1<##>kfp<##>90<##>2011-05-26<##>DreamWorks Animation
+76<##>Movie<##>Kung Fu Panda 3<##><##>1<##>kfp<##>95<##>2016-01-29<##>DreamWorks Animation
+77<##>Movie<##>Kung Fu Panda 4<##><##>1<##>kfp<<>>kfp4<##>93<##>2024-03-08<##>DreamWorks Animation
+78<##>Movie<##>LEGO Disney Princess<##>The Castle Quest<##>1<<>>4<##>LEGO<##>47<##>2023-08-18<##>The LEGO Group
+79<##>Movie<##>The LEGO Ninjago Movie<##><##>1<##>LEGO movie<<>>LEGO ninjago movie<<>>ninjago movie<##>101<##>2017-10-22<##>Warner Bros<<>>LEGO Systems A/S
+80<##>Movie<##>Lightyear<##><##>1<##>toy story<##>105<##>2022-06-17<##>Walt Disney Studios Motion Pictures
+81<##>Movie<##>Luca<##><##>1<##>Luca<##>95<##>2021-06-18<##>Pixar Animation Studios
+82<##>Movie<##>Madagascar<##><##>1<##>Madagascar<##>86<##>2005-05-27<##>DreamWorks Animation
+83<##>Movie<##>Madagascar 2<##>Escape 2 Africa<##>1<##>Madagascar 2: Escape 2 Africa<##>89<##>2008-11-07<##>DreamWorks Animation
+84<##>Movie<##>Madagascar 3<##>Europe's Most Wanted<##>1<##>Madagascar 3: Europe's Most Wanted<##>93<##>2012-06-08<##>DreamWorks Animation
+85<##>Movie<##>Mavka<##>The Forest Song<##>1<##>Mavka: The Forest Song<##>99<##>2023-03-02<##>Animagrad Animation Studio<<>>Film.UA Group
+86<##>Movie<##>Megamind<##><##>1<##>Megamind<##>96<##>2010-11-05<##>DreamWorks ANimation
+87<##>Movie<##>Megamind 2<##>vs the Doom Syndicate<##>2<##>Megamind 2<<>>Megamind sequel<##>85<##>2024-03-01<##>DreamWorks Animation
+88<##>Movie<##>Mickey, Donald, Goofy: The Three Musketeers<##><##>1<##>Mickey Mouse the Three Musketeers<##>68<##>2004-08-17<##>Disney
+89<##>Movie<##>Migration<##><##>1<##>Migration<##>83<##>2023-12-22<##>Universal Pictures<<>>Illumination
+90<##>Movie<##>Minions<##><##>1<##>Minions<##>91<##>2015-07-10<##>Illumination<<>>Universal Pictures
+91<##>Movie<##>Minions 2<##>The Rise of Gru<##>1<##>despicable me<##>87<##>2022-07-01<##>Universal Pictures<<>>Illumination
+92<##>Movie<##>Miraculous<##>Ladybug and Cat Noir, The Movie<##>1<##>miraculous movie<<>>miraculous ladybug movie<##>105<##>2023-07-28<##>Zagtoon<<>>Fantawild Animation
+93<##>Movie<##>Moana<##><##>1<##>Moana<##>107<##>2016-11-23<##>Disney
+94<##>Movie<##>The Monkey King<##><##>1<##>Monkey King<##>96<##>2023-08-18<##>Netflix Animation<<>>Pearl Studio<<>>Star Overseas
+95<##>Movie<##>Monster House<##><##>1<##>Monster House<##>91<##>2006-07-21<##>Columbia Pictures<<>>Relativity Media<<>>ImageMovers<<>>Amblin Entertainment
+96<##>Movie<##>Monster Inc<##><##>1<##>Monster Inc<##>92<##>2001-11-02<##>Pixar
+97<##>Movie<##>Moonbound<##><##>1<##>Moonbound<##>84<##>2021-06-24<##>Brave New Work<<>>Coop99 Filmproduktion<<>>Little Dream Entertainment
+98<##>Movie<##>My Little Pony<##>A New Generation<##>1<##>mlp ng<<>>mlp new generation<##>91<##>2021-09-24<##>Hasbro<<>>Entertainment One<<>>Boulder Media
+99<##>Movie<##>My Little Pony Equestria Girls<##><##>1<##>mlp<<>>mlp Equestria Girls<<>>Equestria Girls<<>>mlp fim<<>>fim<##>73<##>2013-06-16<##>DHX Media<<>>Hasbro Studios
+100<##>Movie<##>My Little Pony Equestria Girls<##>Ranibow Rocks<##>1<##>mlp<<>>mlp Equestria Girls<<>>Equestria Girls<<>>mlp fim<<>>fim<##>70<##>2014-09-27<##>DHX Media<<>>Hasbro Studios
+101<##>Movie<##>My Little Pony Equestria Girls<##>Friendship Games<##>1<##>mlp<<>>mlp Equestria Girls<<>>Equestria Girls<<>>mlp fim<<>>fim<##>72<##>2015-09-26<##>DHX Media<<>>Hasbro Studios
+102<##>Movie<##>My Little Pony Equestria Girls<##>Legend of Everfree<##>1<##>mlp<<>>mlp equestria girls<<>>equestria girls<<>>mlp fim<##>73<##>2016-10-01<##>DHX Media<<>>Hasbro Studios
+103<##>Movie<##>My Little Pony**<##>The Movie<##>1<##>mlp<<>>mlp fim<<>>mlpfim<<>>mlp movie<##>99<##>2017-10-06<##>Allspark Pictures<<>>DHX Media
+104<##>Movie<##>My Little Pony Equestria Girls<##>Magical Movie Night<##>1<<>>4<##>mlp<<>>mlp fim<<>>mlp equestria girls<<>>equestria girls<##>66<##>2017-07-08<##>DHX Media<<>>Hasbro Studios
+105<##>Movie<##>My Little Pony Equestria Girls<##>Forgotten Friendship<##>1<##>mlp<<>>mlp fim<<>>mlp equestria girls<<>>equestria girls<##>44<##>2018-02-17<##>DHX Media<<>>Hasbro Studios
+106<##>Movie<##>My Little Pony Equestria Girls<##>Rollercoaster of Friendship<##>1<##>mlp<<>>mlp fim<<>>mlp equestria girls<<>>equestria girls<##>44<##>2018-07-06<##>DHX Media<<>>Hasbro Studios
+107<##>Movie<##>Next-Gen<##><##>1<##>Next-Gen<##>105<##>2018-09-07<##>Baozou Manhua<<>>Alibaba Pictures<<>>Tangent Animation
+108<##>Movie<##>Nimona<##><##>1<##>Nimona<##>99<##>2023-06-30<##>Annapurna Pictures[1]<<>>Annapurna Animation<<>>Vertigo Entertainment
+109<##>Movie<##>Norm of the North<##><##>1<##>Norm of the North<##>90<##>2016-01-15<##>Lionsgate<<>>Splash Entertainment<<>>Assemblage Entertainment<<>>Telegael
+110<##>Movie<##>Onward<##><##>1<##>Onward<##>102<##>2020-03-06<##>Pixar Animation Studios
+111<##>Movie<##>Orion and the Dark<##><##>1<##>Orion and the Dark<##>93<##>2024-02-02<##>DreamWorks Animation<<>>Mikros Animation
+112<##>Movie<##>Over the Moon<##><##>1<##>Over the Moon<##>100<##>2020-10-23<##>Netflix Animation<<>>Pearl Studio<<>>Sony Pictures Imageworks<<>>Glen Keane Productions
+113<##>Movie<##>Paw Patrol**<##>The Movie<##>1<##>paw patrol<##>86<##>2021-08-20<##>Spin Master Entertainment
+114<##>Movie<##>Paw Patrol**<##>The Mighty Movie<##>1<##>paw patrol movie<##>87<##>2023-09-29<##>Spin Master Entertainment
+115<##>Movie<##>Paws of fury<##>The Legend of Hank<##>1<##>Paws of fury<##>98<##>2022-07-15<##>Flying Tigers Entertainment<<>>Align<<>>GFM Animation<<>>HB Wink Animation<<>>Aniventure<<>>Cinesite
+116<##>Movie<##>Peter Rabbit<##><##>1<##>Peter Rabbit<##>95<##>2018-02-09<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Olive Bridge Entertainment<<>>Animal Logic<<>>2.0 Entertainment<<>>Screen Australia
+117<##>Movie<##>Peter Rabbit 2<##>The Runaway<##>1<##>Peter Rabbit 2: The runaway<##>93<##>2021-06-11<##>Columbia Pictures<<>>Animal Logic<<>>MRC<<>>2.0 Entertainment<<>>Olive Bridge Entertainment
+118<##>Movie<##>Phineas and Ferb The Movie<##>Across the Second Dimension<##>1<##>phineas and ferb<##>78<##>2011-08-05<##>Walt Disney Television Animation[a]
+119<##>Movie<##>Phineas and Ferb The Movie<##>Candace Against the Universe<##>1<##>Phineas and Ferb The Movie: Candace Against the Universe<##>85<##>2020-08-28<##>isney Television Animation
+120<##>Movie<##>Planes<##><##>1<##>cars<##>92<##>2013-08-09<##>Walt Disney Pictures<<>>Disneytoon Studios
+121<##>Movie<##>Planes<##>Fire and Rescue<##>1<##>cars<##>84<##>2014-07-18<##>Walt Disney Pictures<<>>Disneytoon Studios
+122<##>Movie<##>Pokemon The First Movie<##>Mewtwo Strikes Back<##>1<##>pokemon<##>75<##>1998-07-18<##>OLM, Inc.
+123<##>Movie<##>Pokemon The Movie 2000<##>The Power of One<##>1<##>Pokemon The Movie 2000: The Power of One<##>82<##>1999-07-17<##>	<<>>OLM, Inc.
+124<##>Movie<##>Pokemon 3 The Movie<##>Spell of the Unknown<##>1<##>Pokemon 3 The Movie: Spell of the Unknown<##>74<##>2000-07-08<##>OLM, Inc.
+125<##>Movie<##>Pokemon 4Ever<##>Celebi - The Voice of the Forest<##>1<##>Pokemon 4Ever: Celebi - The Voice of the Forest<##>75<##>2001-07-07<##>OLM, Inc.
+126<##>Movie<##>Pokemon Heros<##>Latias and Latios<##>1<##>Pokemon Heros: Latias and Latios<##>72<##>2002-07-13<##>OLM, Inc.
+127<##>Movie<##>Pokemon<##>Jiratchi, Wish Maker<##>1<##>Pokemon: Jiratchi, Wish Maker<##>081<##>2003-07-19<##>OLM, Inc.
+128<##>Movie<##>Pokemon<##>Destiny Deoxys<##>1<##>Pokemon: Destiny Deoxys<##>100<##>2004-07-17<##>OLM, Inc.
+129<##>Movie<##>Pokemon<##>Lucario and the Mystery of Mew<##>1<##>Pokemon: Lucario and the Mystery of Mew<##>101<##>2005-07-16<##>OLM, Inc.
+130<##>Movie<##>Pokemon<##>Pokemon Ranger and the Temple of the Sea<##>1<##>Pokemon: Pokemon Ranger and the Temple of the Sea<##>107<##>2006-07-15<##>OLM, Inc.<<>>OLM Digital
+131<##>Movie<##>Pokemon<##>The Rise of Darkrai<##>1<##>Pokemon: The Rise of Darkrai<##>90<##>2007-07-14<##>OLM, Inc.<<>>OLM Digital
+132<##>Movie<##>Pokemon<##>Giratina and the Sky Warrior<##>1<##>Pokemon: Giratina and the Sky Warrior<##>96<##>2008-07-19<##>OLM, Inc.<<>>OLM Digital
+133<##>Movie<##>Pokemon<##>Arceus and the Jewel of Life<##>1<##>Pokemon: Arceus and the Jewel of Life<##>94<##>2009-07-18<##>OLM, Inc.<<>>OLM Digital
+134<##>Movie<##>Pokemon<##>Zoroark—Master of Illusions<##>1<##>Pokemon: Zoroark—Master of Illusions<##>95<##>2010-07-10<##>OLM, Inc.<<>>OLM Digital
+135<##>Movie<##>Pokemon Black<##>Victini and Reshiram<##>1<##>Pokemon Black: Victini and Reshiram<##>95<##>2011-07-16<##>OLM, Inc.<<>>OLM Digital<<>>Production I.G<<>>Xebec
+136<##>Movie<##>Pokemon White<##>Victini and Zekrom<##>1<##>Pokemon White: Victini and Zekrom<##>98<##>2011-07-16<##>OLM
+137<##>Movie<##>Pokemon<##>Kyurem vs. the Sword of Justice<##>1<##>Pokemon: Kyurem vs. the Sword of Justice<##>71<##>2012-07-14<##>OLM, Inc.<<>>OLM Digital
+138<##>Movie<##>Pokemon<##>Genesect and the Legend Awakened<##>1<##>Pokemon: Genesect and the Legend Awakened<##>72<##>2013-07-13<##>OLM, Inc.<<>>OLM Digital
+139<##>Movie<##>Pokemon<##>Diancie and the Cocoon of Destruction<##>1<##>Pokemon: Diancie and the Cocoon of Destruction<##>77<##>2014-07-19<##>OLM, Inc.<<>>OLM Digital
+140<##>Movie<##>Pokemon<##>Hoopa and the Clash of Ages<##>1<##>Pokemon: Hoopa and the Clash of Ages<##>78<##>2015-07-18<##>OLM, Inc.<<>>OLM Digital
+141<##>Movie<##>Pokemon<##>Volcanion and the Mechanical Marvel<##>1<##>Pokemon: Volcanion and the Mechanical Marvel<##>95<##>2016-07-16<##>OLM, Inc.<<>>OLM Digital
+142<##>Movie<##>Pokemon<##>I Choose You!<##>1<##>Pokemon: I Choose You!<##>97<##>2017-07-15<##>OLM<<>>OLM Digital
+143<##>Movie<##>Pokemon<##>The Power of Us<##>1<##>Pokemon: The Power of Us<##>100<##>2018-07-13<##>OLM<<>>OLM Digital<<>>Wit Studio
+144<##>Movie<##>Pokemon<##>Secrets of the Jungle<##>1<##>Pokemon: Secrets of the Jungle<##>100<##>2020-12-25<##>OLM, Inc.<<>>OLM Digital
+145<##>Movie<##>Detective Pikachu<##><##>1<##>Detective Pikachu<##>104<##>2019-05-03<##>Legendary Pictures<<>>The Pokémon Company<<>>Toho Co., Ltd
+146<##>Movie<##>Puss in Boots<##><##>1<##>Puss in Boots<##>90<##>2011-10-28<##>DreamWorks Animation
+147<##>Movie<##>Puss in Boots 2<##>The Last Wish<##>1<##>Puss in Boots 2: The Last Wish<##>102<##>2022-12-21<##>DreamWorks Animation
+148<##>Movie<##>Racetime<##><##>1<##>Racetime<##>89<##>2018-12-07<##>CarpeDiem Film & TV<<>>Singing Frog Studio
+149<##>Movie<##>Rally Road Racers<##><##>1<##>Rally Road Racers<##>93<##>2023-05-12<##>REP Productions 6 Ltd.<<>>Kintop Pictures<<>>Riverstone Pictures<<>>Vanguard Animation<<>>Virtuso Productions<<>>Lipsync Post
+150<##>Movie<##>Ratatouille<##><##>1<##>Ratatouille<##>111<##>2007-06-29<##>Pixar Animation Studios
+151<##>Movie<##>Raya and the last Dragon<##><##>1<##>disney princess<##>107<##>2021-03-05<##>Walt Disney Animation Studios
+152<##>Movie<##>Red Shoes and the Seven Dwarfs<##><##>1<##>Red Shoes and the Seven Dwarfs<##>93<##>2019-07-25<##>Locus Corporation
+153<##>Movie<##>Rio<##><##>1<##>Rio<##>96<##>2011-04-15<##>Blue Sky Studios<<>>20th Century Fox Animation
+154<##>Movie<##>Rio 2<##><##>1<##>Rio 2<##>101<##>2014-04-11<##>Blue Sky Studios<<>>20th Century Fox Animation
+155<##>Movie<##>Rise of the Guardians<##><##>1<##>Rise of the Guardians<##>97<##>2012-11-21<##>DreamWorks Animation
+156<##>Movie<##>Rock Dog<##><##>1<##>Rock Dog<##>89<##>2017-02-24<##>Summit Premiere<<>>H. Brothers<<>>Mandoo Pictures<<>>Eracme Entertainment<<>>Dream Factory Group<<>>Reel FX Animation Studios<<>>Timeless Films
+157<##>Movie<##>Rock Dog 2<##>Rock Around the Park<##>1<##>Rock Dog 2: Rock Around the Park<##>90<##>2021-06-11<##>Huayi Brothers Media<<>>HB Wink Animation<<>>Splash Entertainment<<>>Timeless Films
+158<##>Movie<##>Rock Dog 3<##>Battle the Beat<##>1<##>Rock Dog 3: Battle the Beat<##>90<##>2023-01-24<##>HB Wink Animation<<>>Huayi Brothers Media<<>>Splash Entertainment<<>>Timeless Films<<>>Lionsgate
+159<##>Movie<##>Rone’s Gone Wrong<##><##>1<##>Rone’s gone wrong<##>107<##>2021-10-22<##>Locksmith Animation
+160<##>Movie<##>Ruby Gillman Teenage Kraken<##><##>1<##>Ruby Gillman Teenage Kraken<##>91<##>2023-06-30<##>DreamWorks Animation
+161<##>Movie<##>Rumble<##><##>1<##>Rumble<##>95<##>2021-12-15<##>Paramount Animation<<>>WWE Studios<<>>Walden Media<<>>Reel FX Animation Studios
+162<##>Movie<##>Scooby doo! and Krypto, too!<##><##>1<##>Scooby doo! and Krypto, too!<##>76<##>2023-09-26<##>Warner Bros. Animation<<>>DC Entertainment
+163<##>Movie<##>Seal Team<##><##>1<##>Seal Team<##>100<##>2021-12-31<##>Triggerfish Animation Studios
+164<##>Movie<##>Secret Magic Control Agency<##><##>1<##>Secret Magic Control Agency<##>104<##>2021-03-25<##>Wizart Animation<<>>CTB Film Company<<>>QED International
+// Movie<##>Shaun the Sheep movies<##><##>1<##>Shaun the Sheep movies<##>0<##>Unable to parse date: 0<##>nullvoidreturn
+165<##>Movie<##>Shrek<##><##>1<##>Shrek<##>90<##>2001-05-18<##>DreamWorks Animation
+166<##>Movie<##>Sing<##><##>1<##>Sing<##>108<##>2016-12-21<##>Universal Pictures<<>>Illumination Entertainment
+167<##>Movie<##>Sing 2<##><##>1<##>Sing 2<##>110<##>2021-12-22<##>Universal Pictures<<>>Illumination
+// Movie<##>Slugterra movies<##><##>1<##>Slugterra movies<##>0<##>Unable to parse date: 0<##>nullvoidreturn
+168<##>Movie<##>Smallfoot<##><##>1<##>Small foot<##>96<##>2018-09-28<##>Warner Animation Group<<>>Zaftig Films
+169<##>Movie<##>Snow Queen<##><##>1<##>Snow Queen<##>74<##>2012-12-31<##>Wizart Animation<<>>InlayFilm<<>>Bazelevs Company
+170<##>Movie<##>Snow Queen 2<##>Magic of the Ice Mirror<##>1<##>Snow Queen 2: Magic of the Ice Mirror<##>76<##>2014-12-12<##>Wizart Animation<<>>Bazelevs Company
+171<##>Movie<##>Snow Queen 3<##>Fire and Ice<##>1<##>Snow Queen 3: Fire and Ice<##>89<##>2016-12-29<##>Wizart Animation<<>>3Beep
+172<##>Movie<##>Snow Queen 4<##>Mirrorland<##>1<##>Snow Queen 4: Mirrorland<##>84<##>2019-01-01<##>Wizart Animation
+173<##>Movie<##>Snow Queen 5<##>The Snow Queen and The Princess<##>1<##>Snow Queen 5: The Snow Queen and The Princess<##>75<##>2023-02-16<##>Wizart Animation
+174<##>Movie<##>Snow White and the seven dwarfs<##><##>1<##>Snow White and the seven dwarfs<##>83<##>1938-02-04<##>Walt Disney Productions
+175<##>Movie<##>Sonic the Hedgehog<##><##>1<##>Sonic the Hedgehog<##>99<##>2020-02-14<##>Paramount Pictures<<>>Sega Sammy Group<<>>Original Film<<>>Marza Animation Planet<<>>Blur Studio<<>>Hedgehog Films, Inc.
+176<##>Movie<##>Sonic the Hedgehog 2<##><##>1<##>Sonic the Hedgehog 2<##>122<##>2022-04-08<##>Original Film<<>>Marza Animation Planet<<>>Blur Studio
+177<##>Movie<##>Soul<##><##>1<##>Soul<##>101<##>2024-01-12<##>Pixar Animation Studios
+178<##>Movie<##>Stardog and Turbocat<##><##>1<##>Spacedog and Turbocat<##>90<##>2019-12-06<##>Head Gear Films<<>>Screen Yorkshire<<>>Particular Crowd<<>>Red Star 3D
+179<##>Movie<##>Space Dogs<##><##>1<##>Space Dogs<##>85<##>2010-04-02<##>Centre of National Film
+180<##>Movie<##>Space Dogs 2<##><##>1<##>Space Dogs 2<##>90<##>2016-01-15<##>KinoAtis
+181<##>Movie<##>Space Dogs 3<##>Return to Earth<##>1<##>Space Dogs 3<##>80<##>2020-09-24<##>KinoAtis<<>>Gorky Film Studio
+182<##>Movie<##>Spiderman across the Spider-verse<##><##>1<##>Spiderman across the Spider-verse<##>140<##>2023-06-02<##>Columbia Pictures<<>>Marvel Entertainment<<>>Sony Pictures Animation<<>>Pascal Pictures<<>>Lord Miller Productions<<>>Arad Productions
+183<##>Movie<##>Spiderman into the Spider-verse<##><##>1<##>Spiderman into the Spider-verse<##>117<##>2018-12-14<##>Columbia Pictures<<>>Marvel Entertainment<<>>Sony Pictures Animation<<>>Pascal Pictures<<>>Arad Productions<<>>Lord Miller Productions
+184<##>Movie<##>Spies in Disguise<##><##>1<##>Spies in Disguise<##>102<##>2019-12-25<##>Blue Sky Studios<<>>20th Century Fox Animation<<>>Chernin Entertainment
+185<##>Movie<##>Spirit Untamed<##><##>1<##>Spirit untamed<##>85<##>2021-06-04<##>DreamWorks Animation
+// Movie<##>Sponge bob movies<##><##>1<##>Sponge bob movies<##>0<##>Unable to parse date: 0<##>nullvoidreturn
+186<##>Movie<##>SpongeBob the Movie<##>Sponge on the Run<##>1<##>SpongeBob the Movie: Sponge on the Run<##>91<##>2021-03-04<##>Paramount Animation<<>>Nickelodeon Movies<<>>United Plankton Pictures<<>>MRC
+187<##>Movie<##>Star Wars Movies<##><##>1<##>Star Wars Movies<##>132<##>2017-12-15<##>Lucasfilm Ltd.
+188<##>Movie<##>Strange World<##><##>1<##>Strange world<##>102<##>2022-11-23<##>Walt Disney Animation Studios
+189<##>Movie<##>The Swan Princess<##><##>1<##>Swan Princess<##>90<##>1994-11-18<##>Nest Entertainment<<>>Rich Animation Studios
+190<##>Movie<##>Tangled<##><##>1<##>Tangled<##>100<##>2010-11-24<##>Disney
+191<##>Movie<##>Teenage Mutant Ninja Turtles<##>Mutant Mayhem<##>1<##>Teenage Mutant Ninja Turtles: Mutant Mayhem<##>99<##>2023-08-02<##>Nickelodeon Movies<<>>Point Grey Pictures
+192<##>Movie<##>TMNT (Teenage Mutant Ninja Turtles)<##><##>1<##>Teenage Mutant Ninja Turtles<##>87<##>2007-03-23<##>Imagi Animation Studios
+193<##>Movie<##>The Academy of Magic<##><##>1<##>The Academy of Magic<##>86<##>2020-01-05<##>Gold Valley Films
+194<##>Movie<##>The Amazing Maurice<##><##>2<##>The Amazing Maurice<##>93<##>2023-02-03<##>Ulysses Filmproduktion<<>>Studio Rakete<<>>Cantilever Media<<>>Narrativia<<>>Sky<<>>Moonshot Films<<>>Red Star 3D<<>>Squeeze Animation Studio
+195<##>Movie<##>The Bad Guys<##><##>1<##>The Bad Guys<##>100<##>2022-04-22<##>DreamWorks Animation Studios
+196<##>Movie<##>The Beauty and the Beast<##><##>1<##>The Beauty and the Beast<##>84<##>1991-11-22<##>Walt Disney Feature Animation
+197<##>Movie<##>The Diary of the Wimpy Kid<##><##>1<##>The Diary of the Wimpy Kid<##>58<##>2021-12-03<##>Walt Disney Pictures<<>>Bardel Entertainment
+198<##>Movie<##>The Diary of the Wimpy Kid<##>Rodrick’s Rules<##>1<##>The Diary of the Wimpy Kid: Rodrick’s Rules<##>75<##>2022-12-02<##>Walt Disney Pictures<<>>Bardel Entertainment
+199<##>Movie<##>The Emoji Movie<##><##>1<##>The Emoji Movie<##>86<##>2017-07-28<##>Columbia Pictures<<>>Sony Pictures Animation
+200<##>Movie<##>The Great Mouse Detective<##><##>1<##>The Great Mouse Detective<##>74<##>1986-07-02<##>Walt Disney Feature Animation
+201<##>Movie<##>The Grinch that Stole Christmas<##><##>1<##>The Grinch that Stole Christmas<##>105<##>2000-11-17<##>Universal Pictures<<>>Imagine Entertainment
+202<##>Movie<##>The Illusionauts (The Freedom Force)<##><##>1<##>The Illusionauts/The Freedom Force<##>82<##>2012-01-26<##>Aronnax Animation Studios<<>>Televix Entertainment
+203<##>Movie<##>The Incredibles<##><##>1<##>The Incredibles<##>115<##>2004-11-05<##>Pixar Animation Studios
+204<##>Movie<##>The Incredibles 2<##><##>1<##>The Incredibles 2<##>118<##>2018-06-15<##>Pixar Animation Studios
+205<##>Movie<##>The LEGO Movie<##><##>1<##>The LEGO Movie<##>101<##>2014-04-03<##>Warner Animation Group<<>>Village Roadshow Pictures<<>>RatPac-Dune Entertainment<<>>LEGO System A/S<<>>Vertigo Entertainment<<>>Lin Pictures<<>>Animal Logic
+206<##>Movie<##>The LEGO Movie 2<##>The Second Part<##>1<##>The LEGO Movie 2<##>107<##>2019-02-08<##>Warner Animation Group<<>>LEGO System A/S<<>>Rideback<<>>Lord Miller Productions<<>>Vertigo Entertainment<<>>Animal Logic
+207<##>Movie<##>The Lion King<##><##>1<##>The Lion King<##>88<##>1994-06-15<##>Disney
+208<##>Movie<##>The Lion King II<##>Simba's Pride<##>1<##>The Lion King 2<##>82<##>1998-10-27<##>Disney
+209<##>Movie<##>The Lorax<##><##>1<##>Dr. Seuss' The Lorax<<>>dr seuss<##>86<##>2012-03-02<##>Universal Pictures<<>>Illumination Entertainment
+210<##>Movie<##>The Mitchells vs the Machine<##><##>1<##>The Mitchells vs the Machine<##>109<##>2021-04-23<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Lord Miller Productions<<>>One Cool Films
+211<##>Movie<##>The Nutcracker and the Magic Flute<##><##>1<##>The Nutcracker and the Magic Flute<##>90<##>2022-12-08<##>CTB Film Company
+212<##>Movie<##>The Peanuts Movie<##><##>1<##>Snoopy and Charlie Brown: A Peanuts Movie<##>88<##>2015-11-06<##>20th Century Fox Animation<<>>Blue Sky Studios
+213<##>Movie<##>The Penguins of Madagascar<##><##>1<##>Madagascar<##>92<##>2014-11-26<##>DreamWorks Animation
+214<##>Movie<##>The Secret Life of Pets<##><##>1<##>tslop<##>86<##>2016-07-08<##>Universal Pictures<<>>Illumination Entertainment
+215<##>Movie<##>The Secret Life of Pets 2<##><##>1<##>tslop 2<<>>tslop<##>86<##>2019-06-07<##>Universal Pictures<<>>Illumination
+216<##>Movie<##>The Smurfs and the Lost Village<##><##>1<##>The Smurfs and the Lost Village<##>90<##>2017-04-07<##>Columbia Pictures<<>>Kerner Entertainment Company<<>>LStar Capital<<>>Sony Pictures Animation<<>>Wanda Pictures
+217<##>Movie<##>The Soccer Football Movie<##><##>1<##>The Soccer Football Movie<##>73<##>2022-11-09<##>Netflix
+218<##>Movie<##>The Spongebob Movie<##>The Search for SquarePants<##>3<##>The Spongebob Movie: The Search for SquarePants<##>0<##>3000-01-01<##>Nickelodeon Movies<<>>United Plankton Pictures
+219<##>Movie<##>The Stolen Princess<##><##>1<##>The Stolen Princess<##>90<##>2018-03-07<##>Animagrad Animation Studio<<>>FILM.UA Group
+220<##>Movie<##>The Super Mario Bros. Movie<##><##>1<##>mario<##>92<##>2023-04-05<##>Universal Pictures<<>>Illumination<<>>Nintendo
+221<##>Movie<##>Thunder and the House of Magic<##><##>1<##>The House of Magic<##>85<##>2013-12-25<##>nWave Pictures<<>>Anton Capital Entertainment<<>>uMedia
+222<##>Movie<##>Tiger’s Apprentice<##><##>1<##>animals<##>84<##>2024-02-02<##>Paramount Animation<<>>Jane Startz Productions
+223<##>Movie<##>Tom & Jerry: The Movie<##><##>1<##>Tom & Jerry<##>101<##>2021-02-26<##>Warner Animation Group<<>>The Story Company<<>>Turner Entertainment Co.<<>>Distributed by	Warner Bros. Pictures
+224<##>Movie<##>Toy Story<##><##>1<##>Toy Story<##>81<##>1995-11-22<##>Pixar	
+225<##>Movie<##>Toy Story 2<##><##>1<##>Toy Story 2<##>92<##>1999-11-24<##>Pixar
+226<##>Movie<##>Toy Story 3<##><##>1<##>Toy Story 3<##>103<##>2010-06-18<##>Pixar
+227<##>Movie<##>Toy Story 4<##><##>1<##>Toy Story 4<##>100<##>2019-06-21<##>Pixar
+228<##>Movie<##>Troll Hunters<##>Rise of the Titans<##>1<##>Troll Hunters: Rise of the Titans<##>106<##>2021-07-21<##>DreamWorks Animation Television<<>>Double Dare You Productions
+229<##>Movie<##>Trolls<##><##>1<##>Trolls<##>93<##>2016-11-04<##>DreamWorks
+230<##>Movie<##>Trolls 2<##>World Tour<##>1<##>Trolls 2: World Tour<##>91<##>2020-04-10<##>DreamWorks
+231<##>Movie<##>Trolls 3<##>Trolls Band Together<##>1<##>Trolls 3: Trolls band together<##>91<##>2023-11-17<##>DreamWorks Animation
+232<##>Movie<##>Turbo<##><##>1<##>Turbo<##>96<##>2013-07-17<##>DreamWorks
+233<##>Movie<##>Turning Red<##><##>1<##>Turning red<##>100<##>2024-02-09<##>Pixar
+234<##>Movie<##>Up<##><##>1<##>Up<##>96<##>2009-05-29<##>Pixar
+235<##>Movie<##>Vivo<##><##>1<##>Vivo<##>95<##>2021-08-06<##>Columbia Pictures<<>>Sony Pictures Animation<<>>One Cool Films<<>>Laurence Mark Productions
+236<##>Movie<##>Wall-E<##><##>1<##>Wall-E<##>97<##>2008-06-27<##>Pixar
+237<##>Movie<##>Wish Dragon<##><##>1<##>Wish dragon<##>98<##>2021-06-11<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Beijing Sparkle Roll Media Corporation<<>>Tencent Pictures<<>>Base Media<<>>Flagship Entertainment Group<<>>Boss Collaboration<<>>Cultural Investment Holdings
+238<##>Movie<##>Wreck it Ralph<##><##>1<##>Wreck it Ralph<##>101<##>2012-11-02<##>Disney
+239<##>Movie<##>Ralph breaks the internet<##><##>1<##>Wreck it Ralph 2<<>>Wreck it Ralph<##>112<##>2018-11-21<##>Disney
+240<##>Movie<##>Zootopia<##><##>1<##>Zootopia<##>108<##>2016-03-04<##>Disney
+241<##>Movie<##>The Garfield Movie<##><##>1<##>The Garfield Movie (2024)<##>101<##>2024-05-24<##>Alcon Entertainment<<>>DNEG Animation<<>>Prime Focus<<>>Wayfarer Studios<<>>One Cool Films<<>>Stage 6 Films<<>>John Cohen Productions<<>>Andrews McMeel Entertainment
+242<##>Movie<##>Craig Before the Creek<##><##>1<##>Craig before the Creek<##>88<##>2024-01-13<##>Cartoon Network Studios
+243<##>Movie<##>Ultraman<##>Rising<##>1<##>Ultraman: Rising<##>117<##>2024-06-14<##>Netflix Animation<<>>Tsuburaya Productions<<>>Industrial Light & Magic
+244<##>Movie<##>Suzume<##><##>1<##>Suzume<##>122<##>2022-11-11<##>CoMix Wave Films<<>>Story Inc
+245<##>Movie<##>Harold and the Purple Crayon<##><##>1<##>Harold and the Purple Crayon<##>90<##>2024-08-02<##>Columbia Pictures<<>>Davis Entertainment<<>>TSG Entertainment
+246<##>Movie<##>Miraculous World**<##>New York: United HeroeZ<##>1<<>>4<##>miraculous ladybuy<##>60<##>2020-09-25<##>SAMG Entertainment
+247<##>Movie<##>Miraculous World**<##>Shanghai: The Legend of the Ladydragon<##>1<<>>4<##>miraculous ladybug<##>54<##>2021-04-04<##>SAMG Animation
+248<##>Movie<##>Miraculous World**<##>Paris: Tales of Shadybug and Claw Noir<##>1<<>>4<##>miraculous paris special<<>>miraculous special<##>44<##>2023-10-15<##>SAMG Animation<<>>Zagtoon
+249<##>Movie<##>Miraculous World**<##>London: The Edge of Time<##>1<<>>4<##>miraculous london special<<>>miraculous special<##>50<##>2024-10-05<##>SAMG Animation<<>>Zagtoon
+250<##>Movie<##>Checkered Ninja 3<##><##>3<##>ternet ninja<##>0<##>3000-01-01<##>unknown
+251<##>Movie<##>Sonic the Hedgehog 3<##><##>1<##>sonic 3<##>110<##>2024-12-20<##>Original Film<<>>Marza Animation Planet<<>>Blur Studio
+252<##>Movie<##>Incredibles 3<##><##>3<##>Incredibles 3<##>0<##>3000-01-01<##>Pixar
+253<##>Movie<##>The Wild Robot<##><##>1<##>The Wild Robot<##>102<##>2024-09-27<##>DreamWorks
+254<##>Movie<##>Avatar 3<##>Fire and Ash<##>3<##>Avatar 3: Fire and Ash<##>0<##>3000-01-01<##>Unknown
+255<##>Movie<##>Avatar 4<##><##>3<##>Avatar 4<##>0<##>3000-01-01<##>unknown
+256<##>Movie<##>Avatar 5<##><##>3<##>Avatar 5<##>0<##>3000-01-01<##>unknown
+257<##>Movie<##>Frozen 3<##><##>3<##>Frozen 3<##>0<##>3000-01-01<##>unknown
+258<##>Movie<##>Frozen 4<##><##>3<##>Frozen 4<##>0<##>3000-01-01<##>unknown
+259<##>Movie<##>Miraculous<##>Ladybug and Cat Noir, The Movie 2<##>3<##>miraculous movie<<>>miraculous ladybug movie<##>0<##>3000-01-01<##>Zagtoon
+260<##>Movie<##>Ghostforce<##>Grump King<##>1<<>>4<##>Ghostforce: Grump King<##>22<##>2022-10-28<##>Zagtoon<<>>Method Animation<<>>SAMG Animation<<>>The Walt Disney Company<<>>TF1<<>>KidsMe S.R.L.
+261<##>Movie<##>Ghostforce<##>Panikokado<##>1<<>>4<##>Ghostforce: Panikokado<##>22<##>2023-12-02<##>Zagtoon<<>>Method Animation<<>>SAMG Animation<<>>Disney Channel/The Walt Disney Company<<>>TF1<<>>KidsMe S.R.L.
+262<##>Movie<##>Ghostforce<##>Origins<##>3<<>>4<##>Ghostforce: Origins<##>44<##>3000-01-01<##>Zagtoon<<>>Method Animation<<>>SAMG Animation<<>>Disney Channel/The Walt Disney Company<<>>TF1<<>>KidsMe S.R.L.
+263<##>Movie<##>Zootopia 2<##><##>3<##>Zootopia 2<##>0<##>3000-01-01<##>unknown
+264<##>Movie<##>Moana 2<##><##>2<##>Moana 2<##>100<##>2024-11-27<##>Walt Disney Animation Studios
+265<##>Movie<##>Elio<##><##>3<##>Elio<##>0<##>3000-01-01<##>Pixar
+266<##>Movie<##>Hoppers<##><##>3<##>Hoppers<##>0<##>3000-01-01<##>Pixar
+267<##>Movie<##>Toy Story 5<##><##>3<##>Toy Story 5<##>0<##>3000-01-01<##>Pixar
+268<##>Movie<##>Mufasa: The Lion King<##><##>2<##>Mufasa The Lion King<##>118<##>2024-12-20<##>Disney
+269<##>Movie<##>The Mitchells vs the Machines<##><##>1<##>tmvtm<##>109<##>2021-04-30<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Lord Miller Productions<<>>One Cool Films
+270<##>Movie<##>Barbie (Live Action)<##><##>1<##>Barbie (Live Action)<##>114<##>2023-07-21<##>Warner Bros.<<>>Mattel<<>>Heyday Films
+271<##>Movie<##>No Time To Spy<##>A Loud House Movie<##>1<##>No Time To Spy: A Loud House Movie<##>86<##>2024-06-21<##>Nickolodeon Movies
+272<##>Movie<##>Miraculous World**<##>Tokyo Stellar Force<##>3<<>>4<<>>5<##>Miraculous ladybug<##>0<##>3000-01-01<##>unknown
+273<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>1<##>26<##>2010-10-10<##>1
+274<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>2<##>26<##>2011-09-17<##>2
+275<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>3<##>13<##>2012-11-10<##>3
+276<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>4<##>26<##>2013-11-23<##>4
+277<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>5<##>26<##>2015-04-04<##>5
+278<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>6<##>26<##>2016-03-26<##>6
+279<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>7<##>26<##>2017-04-15<##>7
+280<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>8<##>26<##>2018-03-24<##>8
+281<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>9<##>26<##>2019-04-06<##>9
+282<##>TV Show<##>My Little Pony<##>Tell Your Tale<##>1<##>mlp<<>>mlptyt<<>>mlp tyt<##>1<##>70<##>2022-04-07<##>10
+283<##>TV Show<##>My Little Pony<##>Tell Your Tale<##>1<##>mlp<<>>mlptyt<<>>mlp tyt<##>2<##>23<##>2024-01-11<##>11
+284<##>TV Show<##>My Little Pony<##>Make Your Mark<##>1<##>mlp<<>>mlpmym<<>>mlp mym<##>1<##>1<##>2022-03-26<##>12
+285<##>TV Show<##>My Little Pony<##>Make Your Mark<##>1<##>mlp<<>>mlpmym<<>>mlp mym<##>2<##>8<##>2023-09-26<##>13
+286<##>TV Show<##>My Little Pony<##>Make Your Mark<##>1<##>mlp<<>>mlpmym<<>>mlp mym<##>3<##>1<##>2022-11-21<##>14
+287<##>TV Show<##>My Little Pony<##>Make Your Mark<##>1<##>mlp<<>>mlpmym<<>>mlp mym<##>4<##>7<##>2023-06-06<##>15
+288<##>TV Show<##>My Little Pony<##>Make Your Mark<##>1<##>mlp<<>>mlpmym<<>>mlp mym<##>5<##>6<##>2023-09-18<##>16
+289<##>TV Show<##>My Little Pony<##>Make Your Mark<##>1<##>mlp<<>>mlpmym<<>>mlp mym<##>6<##>4<##>2023-11-23<##>17
+290<##>Anime<##>Inazuma Eleven<##><##>1<##>Inazuma Eleven<##>1<##>26<##>2008-10-05<##>18
+291<##>Anime<##>Inazuma Eleven<##><##>1<##>Inazuma Eleven<##>2<##>41<##>2009-04-08<##>19
+292<##>Anime<##>Inazuma Eleven<##><##>1<##>Inazuma Eleven<##>3<##>59<##>2010-03-03<##>20
+293<##>Anime<##>Inazuma Eleven Go<##><##>1<##>Inazuma Eleven Go<##>1<##>47<##>2011-05-04<##>21
+294<##>Anime<##>Inazuma Eleven Go<##>Chronos Stone<##>1<##>Inazuma Eleven Go<##>2<##>51<##>2012-04-18<##>22
+295<##>Anime<##>Inazuma Eleven Go<##>Galaxy<##>1<##>Inazuma Eleven Go<##>3<##>43<##>2013-05-08<##>23
+296<##>Anime<##>Inazuma Eleven<##>Scales of Ares<##>1<##>Inazuma Eleven<##>1<##>26<##>2018-04-06<##>24
+297<##>Anime<##>Inazuma Eleven<##>Seals of Orion<##>1<##>Inazuma Eleven<##>2<##>49<##>2018-10-05<##>25
+298<##>Anime<##>Pokemon<##>Indigo League<##>1<##>Pokemon<##>1<##>0<##>3000-01-02<##>26
+299<##>Anime<##>Pokemon<##>The Adventures in Orange Islands<##>1<##>Pokemon<##>2<##>0<##>3000-01-02<##>27
+300<##>Anime<##>Pokemon<##>The Johto Journeys<##>1<##>Pokemon<##>3<##>0<##>3000-01-02<##>28
+301<##>Anime<##>Pokemon<##>Johto League Champions<##>1<##>Pokemon<##>4<##>0<##>3000-01-02<##>29
+302<##>Anime<##>Pokemon<##>Master Quest<##>1<##>Pokemon<##>5<##>0<##>3000-01-02<##>30
+303<##>Anime<##>Pokemon Advanced<##><##>1<##>Pokemon Advanced<##>6<##>0<##>3000-01-02<##>31
+304<##>Anime<##>Pokemon Advanced<##>Challenge<##>1<##>Pokemon Advanced<##>7<##>0<##>3000-01-02<##>32
+305<##>Anime<##>Pokemon Advanced<##>Battles<##>1<##>Pokemon Advanced<##>8<##>0<##>3000-01-02<##>33
+306<##>Anime<##>Pokemon<##>Battle Frontier<##>1<##>Pokemon<##>9<##>0<##>3000-01-02<##>34
+307<##>Anime<##>Pokemon Diamond and Pearl<##><##>1<##>Pokemon Diamond and Pearl<##>10<##>0<##>3000-01-02<##>35
+308<##>Anime<##>Pokemon Diamond and Pearl<##>Battle Dimension<##>1<##>Pokemon Diamond and Pearl<##>11<##>0<##>3000-01-02<##>36
+309<##>Anime<##>Pokemon Diamond and Pearl<##>Galactic Battles<##>1<##>Pokemon Diamond and Pearl<##>12<##>0<##>3000-01-02<##>37
+310<##>Anime<##>Pokemon Diamond and Pearl<##>Sinnoh League Victors<##>1<##>Pokemon Diamond and Pearl<##>13<##>0<##>3000-01-02<##>38
+311<##>Anime<##>Pokemon Black and White<##><##>1<##>Pokemon Black and White<##>14<##>0<##>3000-01-02<##>39
+312<##>Anime<##>Pokemon Black and White<##>Rival Destinies<##>1<##>Pokemon Black and White<##>15<##>0<##>3000-01-02<##>40
+313<##>Anime<##>Pokemon Black and White<##>Adventures in Unova and Beyond<##>1<##>Pokemon Black and White<##>16<##>0<##>3000-01-02<##>41
+314<##>Anime<##>Pokemon XY<##><##>1<##>Pokemon XY<##>17<##>0<##>3000-01-02<##>42
+315<##>Anime<##>Pokemon XY<##>Kalos Quest<##>1<##>Pokemon XY<##>18<##>0<##>3000-01-02<##>43
+316<##>Anime<##>Pokemon XYZ<##><##>1<##>Pokemon XYZ<##>19<##>0<##>3000-01-02<##>44
+317<##>Anime<##>Pokemon Sun and Moon<##><##>1<##>Pokemon Sun and Moon<##>20<##>0<##>3000-01-02<##>45
+318<##>Anime<##>Pokemon Sun and Moon<##>Ultra Adventures<##>1<##>Pokemon Sun and Moon<##>21<##>0<##>3000-01-02<##>46
+319<##>Anime<##>Pokemon Sun and Moon<##>Ultra Legends<##>1<##>Pokemon Sun and Moon<##>22<##>0<##>3000-01-02<##>47
+320<##>Anime<##>Pokemon Journeys<##><##>1<##>Pokemon Journeys<##>23<##>0<##>3000-01-02<##>48
+321<##>Anime<##>Pokemon Master Journeys<##><##>1<##>Pokemon Journeys<##>24<##>0<##>3000-01-02<##>49
+322<##>Anime<##>Pokemon Ultimate Journeys<##><##>1<##>Pokemon Journeys<##>25<##>0<##>3000-01-02<##>50
+323<##>Anime<##>Pokemon Horizons The Series<##><##>1<##>Pokemon Horizons The Series<##>1<##>80<##>2025-01-17<##>51
+324<##>Anime<##>Pokemon Horizons The Series<##>The Search for Laqua<##>1<##>Pokemon Horizons The Series<##>2<##>80<##>2025-01-17<##>52
+325<##>Anime<##>Pokemon Horizons The Series<##><##>9<##>Pokemon Horizons The Series<##>3<##>80<##>2025-01-17<##>53
+326<##>TV Show<##>Slugterra<##>The 99 Caverns<##>1<##>Slugterra<##>1<##>39<##>3000-01-02<##>54
+// season 2: ghoul from beyond, return of elements, slug fu showdown (all are specials and season episodes)
+327<##>TV Show<##>Slugterra<##>The Eastern Caverns<##>1<##>Slugterra<##>3<##>3<##>3000-01-02<##>55
+328<##>TV Show<##>Slugterra<##>Into The Shadows<##>1<##>Slugterra<##>4<##>4<##>3000-01-02<##>56
+329<##>TV Show<##>Slugterra<##>Ascension<##>1<##>Slugterra<##>1<##>0<##>3000-01-02<##>57
+330<##>TV Show<##>The Owl House<##><##>1<##>The Owl House<##>1<##>3<##>3000-01-02<##>58
+331<##>TV Show<##>The Owl House<##><##>1<##>The Owl House<##>2<##>3<##>3000-01-02<##>59
+332<##>TV Show<##>The Owl House<##><##>1<##>The Owl House<##>3<##>3<##>3000-01-02<##>60
+333<##>TV Show<##>Duck Tales<##><##>1<##>Duck Tales<##>1<##>22<##>2021-03-15<##>61
+334<##>TV Show<##>Duck Tales<##><##>1<##>Duck Tales<##>2<##>22<##>2021-03-15<##>62
+335<##>TV Show<##>Duck Tales<##><##>1<##>Duck Tales<##>3<##>22<##>2021-03-15<##>63
+336<##>TV Show<##>Talking Tom and Friends<##><##>1<##>Talking Tom and Friends<##>1<##>26<##>2021-03-15<##>64
+337<##>TV Show<##>Talking Tom and Friends<##><##>1<##>Talking Tom and Friends<##>2<##>26<##>2021-03-15<##>65
+338<##>TV Show<##>Talking Tom and Friends<##><##>1<##>Talking Tom and Friends<##>3<##>26<##>2021-03-15<##>66
+339<##>TV Show<##>Talking Tom and Friends<##><##>1<##>Talking Tom and Friends<##>4<##>26<##>2021-03-15<##>67
+340<##>TV Show<##>Talking Tom and Friends<##><##>1<##>Talking Tom and Friends<##>5<##>26<##>2021-03-15<##>68
+341<##>TV Show<##>Space Cadets<##><##>1<##>Space Cadets<##>1<##>0<##>3000-01-02<##>69
+342<##>TV Show<##>Fast and Furious Spy Racers<##>Los Angeles<##>1<##>Fast and Furious Spy Racers<##>1<##>8<##>3000-01-02<##>70
+343<##>TV Show<##>Fast and Furious Spy Racers<##>Rio<##>1<##>Fast and Furious Spy Racers<##>2<##>8<##>3000-01-02<##>71
+344<##>TV Show<##>Fast and Furious Spy Racers<##>Sahara<##>1<##>Fast and Furious Spy Racers<##>3<##>8<##>3000-01-02<##>72
+345<##>TV Show<##>Fast and Furious Spy Racers<##>Mexico<##>1<##>Fast and Furious Spy Racers<##>4<##>8<##>3000-01-02<##>73
+346<##>TV Show<##>Fast and Furious Spy Racers<##>South Pacific<##>1<##>Fast and Furious Spy Racers<##>5<##>8<##>3000-01-02<##>74
+347<##>TV Show<##>Fast and Furious Spy Racers<##>Homecoming<##>1<##>Fast and Furious Spy Racers<##>6<##>12<##>3000-01-02<##>75
+348<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##><##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>0<##>4<##>3000-01-02<##>76
+349<##>Episode<##>1<##>Way of the Ninja<##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>22<##>3000-01-02<##>76
+350<##>Episode<##>2<##>The Golden Weapon<##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>22<##>3000-01-02<##>76
+351<##>Episode<##>3<##>King of Shadows<##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>22<##>3000-01-02<##>76
+352<##>Episode<##>4<##>Weapons of Destiny<##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>22<##>3000-01-02<##>76
+353<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Rise of the Snakes<##>1<##>LEGO Ninjago Master of Spinjitsu<##>1<##>0<##>3000-01-02<##>77
+354<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Legacy of the Green Ninja<##>1<##>LEGO Ninjago Master of Spinjitsu<##>2<##>0<##>3000-01-02<##>78
+355<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Rebooted<##>1<##>LEGO Ninjago Master of Spinjitsu<##>3<##>0<##>3000-01-02<##>79
+356<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Tournament of Elements<##>1<##>LEGO Ninjago Master of Spinjitsu<##>4<##>0<##>3000-01-02<##>80
+357<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Possession<##>1<##>LEGO Ninjago Master of Spinjitsu<##>5<##>0<##>3000-01-02<##>81
+358<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Skybound<##>1<##>LEGO Ninjago Master of Spinjitsu<##>6<##>0<##>3000-01-02<##>82
+359<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Hands of Time<##>1<##>LEGO Ninjago Master of Spinjitsu<##>7<##>0<##>3000-01-02<##>83
+360<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Sons of Garmadon<##>1<##>LEGO Ninjago Master of Spinjitsu<##>8<##>0<##>3000-01-02<##>84
+361<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Hunted<##>1<##>LEGO Ninjago Master of Spinjitsu<##>9<##>0<##>3000-01-02<##>85
+362<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>March of the Oni<##>1<##>LEGO Ninjago Master of Spinjitsu<##>10<##>0<##>3000-01-02<##>86
+363<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Secrets of the Forbidden Spinjitzu<##>1<##>forbidden spinjitsu<<>>LEGO ninjago season 11<##>11<##>30<##>2019-10-28<##>87
+364<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Prime Empire<##>1<##>LEGO Ninjago Master of Spinjitsu<##>12<##>0<##>3000-01-02<##>88
+365<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Master of the Mountain<##>1<##>LEGO Ninjago Master of Spinjitsu<##>13<##>0<##>3000-01-02<##>89
+366<##>Movie<##>LEGO Ninjago Master of Spinjitsu<##>The Island<##>1<<>>4<##>LEGO special<<>>LEGO ninjago special<##>42<##>2017-06-17<##>WildBrain
+367<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Seabound<##>1<##>LEGO Ninjago Master of Spinjitsu<##>15<##>0<##>3000-01-02<##>90
+368<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Crystalized<##>1<##>ninjago Crystalized<##>16<##>30<##>3000-01-02<##>91
+369<##>TV Show<##>LEGO Ninjago Dragons Rising<##><##>1<##>LEGO Ninjago Dragons Rising<##>1<##>20<##>3000-01-02<##>92
+370<##>TV Show<##>LEGO Ninjago Dragons Rising<##><##>1<##>LEGO Ninjago Dragons Rising<##>2<##>20<##>3000-01-02<##>93
+371<##>TV Show<##>LEGO Ninjago Dragons Rising<##><##>9<##>LEGO Ninjago Dragons Rising<##>3<##>20<##>3000-01-02<##>94
+372<##>TV Show<##>LEGO Dreamz<##><##>1<##>LEGO Dreamz<##>1<##>20<##>3000-01-02<##>95
+373<##>TV Show<##>LEGO Dreamz<##><##>1<##>LEGO Dreamz<##>2<##>20<##>3000-01-02<##>96
+374<##>TV Show<##>LEGO Friends<##>Girls on a Mission<##>1<##>LEGO Friends<##>1<##>0<##>3000-01-02<##>97
+375<##>TV Show<##>LEGO Friends<##>Girls on a Mission<##>1<##>LEGO Friends<##>2<##>0<##>3000-01-02<##>98
+376<##>TV Show<##>LEGO Friends<##>Girls on a Mission<##>1<##>LEGO Friends<##>3<##>0<##>3000-01-02<##>99
+377<##>TV Show<##>LEGO Friends<##>Girls on a Mission<##>1<##>LEGO Friends<##>4<##>0<##>3000-01-02<##>100
+378<##>TV Show<##>LEGO Friends<##>The Next Chapter<##>1<##>LEGO Friends<##>1<##>0<##>3000-01-02<##>101
+379<##>TV Show<##>LEGO Friends<##>The Next Chapter<##>1<##>LEGO Friends<##>2<##>0<##>3000-01-02<##>102
+380<##>TV Show<##>LEGO City Adventures<##><##>1<##>LEGO City Adventures<##>1<##>0<##>3000-01-02<##>103
+381<##>TV Show<##>LEGO City Adventures<##><##>1<##>LEGO City Adventures<##>2<##>0<##>3000-01-02<##>104
+382<##>TV Show<##>LEGO City Adventures<##><##>1<##>LEGO City Adventures<##>3<##>0<##>3000-01-02<##>105
+383<##>TV Show<##>LEGO City Adventures<##><##>1<##>LEGO City Adventures<##>4<##>0<##>3000-01-02<##>106
+384<##>TV Show<##>Miraculous<##>Tales of Ladybug and Cat Noir<##>1<##>miraculous<<>>miraculous ladybug<##>1<##>26<##>2015-09-01<##>107
+385<##>TV Show<##>Miraculous<##>Tales of Ladybug and Cat Noir<##>1<##>miraculous<<>>miraculous ladybug<##>2<##>26<##>2016-12-11<##>108
+386<##>TV Show<##>Miraculous<##>Tales of Ladybug and Cat Noir<##>1<##>miraculous<<>>miraculous ladybug<##>3<##>26<##>2018-12-01<##>109
+387<##>TV Show<##>Miraculous<##>Tales of Ladybug and Cat Noir<##>1<##>miraculous<<>>miraculous ladybug<##>4<##>26<##>2021-03-23<##>110
+388<##>TV Show<##>Miraculous<##>Tales of Ladybug and Cat Noir<##>1<##>miraculous<<>>miraculous ladybug<##>5<##>26<##>2022-06-13<##>111
+389<##>TV Show<##>Miraculous<##>Tales of Ladybug and Cat Noir<##>9<##>miraculous<<>>miraculous ladybug<<>>miraculous ladybug s6<<>>s6 miraculous ladybug<##>6<##>26<##>2025-01-24<##>112
+390<##>TV Show<##>Ghostforce<##><##>3<##>Ghostforce<##>2<##>1<##>3000-01-01<##>113
+391<##>TV Show<##>The Ghost and Molly McGee<##><##>1<##>The Ghost and Molly McGee<##>1<##>0<##>3000-01-02<##>114
+392<##>TV Show<##>The Ghost and Molly McGee<##><##>1<##>The Ghost and Molly McGee<##>2<##>0<##>3000-01-02<##>115
+393<##>TV Show<##>Phineas and Ferb<##><##>1<##>Phineas and Ferb<##>1<##>0<##>3000-01-02<##>116
+394<##>TV Show<##>Phineas and Ferb<##><##>1<##>Phineas and Ferb<##>2<##>0<##>3000-01-02<##>117
+395<##>TV Show<##>Phineas and Ferb<##><##>1<##>Phineas and Ferb<##>3<##>0<##>3000-01-02<##>118
+396<##>TV Show<##>Phineas and Ferb<##><##>1<##>Phineas and Ferb<##>4<##>0<##>3000-01-02<##>119
+397<##>TV Show<##>Milo Murphy's Law<##><##>1<##>Milo Murphy's Law<##>1<##>0<##>3000-01-02<##>120
+398<##>TV Show<##>Milo Murphy's Law<##><##>1<##>Milo Murphy's Law<##>2<##>0<##>3000-01-02<##>121
+399<##>TV Show<##>Hamster and Gretal<##><##>1<##>Hamster and Gretal<##>1<##>0<##>3000-01-02<##>122
+400<##>TV Show<##>Hamster and Gretal<##><##>2<##>Hamster and Gretal<##>2<##>0<##>3000-01-02<##>123
+401<##>TV Show<##>Hailey's On It<##><##>1<##>Hailey's On It<##>1<##>50<##>3000-01-02<##>124
+// TV Show<##>Hailey's On It<##><##>1<##>Hailey's On It<##>2<##>0<##>3000-01-02<##>125
+402<##>TV Show<##>Marvel's Moon Girl and Devil Dinosaur<##><##>1<##>Marvel's Moon Girl and Devil Dinosaur<##>1<##>30<##>3000-01-02<##>126
+403<##>TV Show<##>Marvel's Moon Girl and Devil Dinosaur<##><##>1<##>Marvel's Moon Girl and Devil Dinosaur<##>2<##>15<##>3000-01-02<##>127
+404<##>Anime<##>BeyBlade Metal<##>Fusion<##>1<##>BeyBlade Metal<##>1<##>0<##>3000-01-02<##>128
+405<##>Anime<##>BeyBlade Metal<##>Masters<##>1<##>BeyBlade Metal<##>2<##>0<##>3000-01-02<##>129
+406<##>Anime<##>BeyBlade Metal<##>Fury<##>1<##>BeyBlade Metal<##>3<##>0<##>3000-01-02<##>130
+407<##>Anime<##>BeyBlade Shogun Steel<##><##>1<##>BeyBlade Shogun Steel<##>4<##>0<##>3000-01-02<##>131
+408<##>Anime<##>BeyBlade Burst<##><##>1<##>BeyBlade Burst<##>1<##>0<##>3000-01-02<##>132
+409<##>Anime<##>BeyBlade Burst<##>Evolution<##>1<##>BeyBlade Burst<##>2<##>0<##>3000-01-02<##>133
+410<##>Anime<##>BeyBlade Burst<##>Turbo<##>1<##>BeyBlade Burst<##>3<##>0<##>3000-01-02<##>134
+411<##>Anime<##>BeyBlade Burst<##>Rise<##>1<##>BeyBlade Burst<##>4<##>0<##>3000-01-02<##>135
+412<##>Anime<##>BeyBlade Burst<##>Surge<##>1<##>BeyBlade Burst<##>5<##>0<##>3000-01-02<##>136
+413<##>Anime<##>BeyBlade Burst<##>Quad Drive<##>1<##>BeyBlade Burst<##>6<##>0<##>3000-01-02<##>137
+414<##>Anime<##>BeyBlade Burst<##>Quad Strike<##>1<##>BeyBlade Burst<##>7<##>0<##>3000-01-02<##>138
+415<##>Anime<##>BeyBlade X<##><##>1<##>BeyBlade X<##>1<##>51<##>3000-01-02<##>139
+416<##>Anime<##>BeyBlade X<##><##>1<##>BeyBlade X<##>9<##>27<##>3000-01-02<##>140
+417<##>TV Show<##>Gravity Falls<##><##>2<##>Gravity Falls<##>1<##>0<##>3000-01-02<##>141
+418<##>TV Show<##>Gravity Falls<##><##>2<##>Gravity Falls<##>2<##>0<##>3000-01-02<##>142
+419<##>TV Show<##>Kim Possible<##><##>1<##>Kim Possible<##>1<##>0<##>3000-01-02<##>143
+420<##>TV Show<##>Kim Possible<##><##>1<##>Kim Possible<##>2<##>0<##>3000-01-02<##>144
+421<##>TV Show<##>Kim Possible<##><##>1<##>Kim Possible<##>3<##>0<##>3000-01-02<##>145
+422<##>TV Show<##>Kim Possible<##><##>1<##>Kim Possible<##>4<##>0<##>3000-01-02<##>146
+423<##>TV Show<##>The Deep<##><##>1<##>The Deep<##>1<##>26<##>3000-01-02<##>147
+424<##>TV Show<##>The Deep<##><##>1<##>The Deep<##>2<##>13<##>3000-01-02<##>148
+425<##>TV Show<##>The Deep<##><##>1<##>The Deep<##>3<##>13<##>3000-01-02<##>149
+426<##>TV Show<##>The Deep<##><##>1<##>The Deep<##>4<##>13<##>3000-01-02<##>150
+427<##>TV Show<##>Unicorn Academy<##><##>1<##>Unicorn Academy<##>1<##>9<##>3000-01-02<##>151
+428<##>TV Show<##>Unicorn Academy<##><##>1<##>Unicorn Academy<##>2<##>10<##>3000-01-02<##>152
+429<##>TV Show<##>Supernatural Academy<##><##>1<##>Supernatural Academy<##>1<##>16<##>3000-01-02<##>153
+430<##>TV Show<##>Miles from Tommorrowland<##><##>1<##>Miles from Tommorrowland<##>1<##>16<##>3000-01-02<##>154
+431<##>TV Show<##>Miles from Tommorrowland<##><##>1<##>Miles from Tommorrowland<##>2<##>16<##>3000-01-02<##>155
+432<##>TV Show<##>Miles from Tommorrowland<##><##>1<##>Miles from Tommorrowland<##>3<##>16<##>3000-01-02<##>156
+433<##>TV Show<##>Shaun the Sheep<##><##>1<##>Shaun the Sheep<##>1<##>0<##>3000-01-02<##>157
+434<##>TV Show<##>Shaun the Sheep<##><##>1<##>Shaun the Sheep<##>2<##>0<##>3000-01-02<##>158
+435<##>TV Show<##>Shaun the Sheep<##><##>1<##>Shaun the Sheep<##>3<##>0<##>3000-01-02<##>159
+436<##>TV Show<##>Shaun the Sheep<##><##>1<##>Shaun the Sheep<##>4<##>0<##>3000-01-02<##>160
+437<##>TV Show<##>Shaun the Sheep<##><##>1<##>Shaun the Sheep<##>5<##>0<##>3000-01-02<##>161
+438<##>Anime<##>Classroom of the Elite<##><##>1<##>Classroom of the Elite<##>1<##>0<##>3000-01-02<##>162
+439<##>Anime<##>Classroom of the Elite<##><##>1<##>Classroom of the Elite<##>2<##>0<##>3000-01-02<##>163
+440<##>Anime<##>Classroom of the Elite<##><##>1<##>Classroom of the Elite<##>3<##>0<##>3000-01-02<##>164
+441<##>Anime<##>Windbreaker<##><##>1<##>Windbreaker<##>1<##>0<##>3000-01-02<##>165
+442<##>Anime<##>Oshi No Ko<##><##>2<##>Oshi No Ko<##>1<##>0<##>3000-01-02<##>166
+443<##>Anime<##>Oshi No Ko<##><##>2<##>Oshi No Ko<##>2<##>0<##>3000-01-02<##>167
+444<##>Anime<##>Apothecary Diaries<##><##>1<##>Apothecary Diaries<##>1<##>0<##>3000-01-02<##>168
+445<##>TV Show<##>Octonauts<##><##>1<##>Octonauts<##>1<##>0<##>3000-01-02<##>169
+446<##>TV Show<##>Octonauts<##><##>1<##>Octonauts<##>2<##>0<##>3000-01-02<##>170
+447<##>TV Show<##>Octonauts<##><##>1<##>Octonauts<##>3<##>0<##>3000-01-02<##>171
+448<##>TV Show<##>Octonauts<##><##>1<##>Octonauts<##>4<##>0<##>3000-01-02<##>172
+449<##>TV Show<##>Octonauts<##><##>1<##>Octonauts<##>5<##>0<##>3000-01-02<##>173
+450<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>1<##>0<##>3000-01-02<##>174
+451<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>2<##>0<##>3000-01-02<##>175
+452<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>3<##>0<##>3000-01-02<##>176
+453<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>4<##>0<##>3000-01-02<##>177
+454<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>5<##>0<##>3000-01-02<##>178
+455<##>Movie<##>Zombies<##><##>1<##>Zombies<##>94<##>2018-02-16<##>Princessa Productions, LTD
+456<##>Movie<##>Zombies 2<##><##>1<##>Zombies 2<##>84<##>2020-02-14<##>Bloor Street Productions, Inc
+457<##>Movie<##>Zombies 3<##><##>1<##>Zombies 3<##>90<##>2022-07-15<##>Bloor Street Productions<<>>Resonate Entertainment
+458<##>Movie<##>Zombies 4<##><##>3<##>Zombies 4<##>0<##>3000-01-01<##>unknown
+459<##>TV Show<##>Agent 203<##><##>2<##>Agent 203<##>1<##>15<##>3000-01-01<##>179
+460<##>TV Show<##>Zak Storm<##><##>1<##>Zak Storm<##>1<##>9<##>2017-12-02<##>180
+461<##>TV Show<##>MechWest<##><##>2<##>MechWest<##>1<##>2<##>2025-01-24<##>181
+462<##>Movie<##>Sonic The Hedgehog 4<##><##>3<##>Sonic The Hedgehog 4<##>0<##>3000-01-01<##>unknown
+463<##>Movie<##>Descendants<##><##>1<##>Descendants 1<##>112<##>2015-07-31<##>Bad Angels Productions<<>>5678 Productions<<>>Disney Channel Original Productions
+464<##>Movie<##>Descendants 2<##><##>1<##>Descendants 2<##>111<##>2017-07-21<##>Bad Angels Productions<<>>5678 Productions<<>>Disney Channel Original Productions
+465<##>Movie<##>Descendants 3<##><##>1<##>Descendants 3<##>108<##>2019-08-02<##>Bad Angels Productions<<>>5678 Productions<<>>Disney Channel Original Productions
+466<##>Movie<##>Descendants 4<##>The Rise of Red<##>1<##>Descendants 4: The Rise of Red<##>94<##>2024-07-12<##>Suzanne Todd Productions<<>>Potato Monkey Productions<<>>GWave Productions, LLC.<<>>Disney Channel
+467<##>Movie<##>Descendants 5<##><##>3<##>Descendants 5 (Upcoming)<##>0<##>3000-01-01<##>unknown
+468<##>Movie<##>Bad Guys 2<##><##>3<##>Bad Guys 2<##>0<##>2025-08-01<##>DreamWorks Animation
+469<##>Movie<##>Moana 3<##><##>3<##>Moana 3<##>0<##>3000-01-01<##>unknown
+470<##>Movie<##>That Christmas<##><##>1<##>That Christmas<##>100<##>2024-10-19<##>Locksmith Animation
+471<##>Movie<##>Klaus<##><##>1<##>Klaus<##>97<##>2019-11-08<##>Netflix Animation<<>>The SPA Studios<<>>Atresmedia Cine
+472<##>Movie<##>Dairy of the Wimpy Kid**<##>Christmas: Cabin Fever<##>2<##>Dairy of the Wimpy Kid<##>62<##>2023-12-08<##>Bardel Entertainment<<>>Walt Disney Pictures
+473<##>Movie<##>The LEGO Batman Movie<##><##>2<##>LEGO batman movie<<>>batman movie<<>>LEGO movie<##>104<##>2017-02-10<##>Warner Bros<<>>DC<<>>LEGO Systems A/S
+474<##>Episode<##>2<##>Illustrhater<##>1<##>miraculous season 6<<>>episode 2<<>>miraculous s6 e2<##>22<##>2025-01-25<##>112
+476<##>Episode<##>1<##>Climatiqueen<##>1<##>miraculous season 6<<>>episode 1<<>>miraculous s6 e1<##>22<##>2025-04-16<##>112
+477<##>TV Show<##>Dragon Booster<##><##>2<##>dragons<<>>animation<##>1<##>0<##>3000-01-02<##>182
+478<##>TV Show<##>Dragon Booster<##><##>2<##>dragons<<>>animation<##>2<##>0<##>3000-01-02<##>183
+479<##>TV Show<##>Dragon Booster<##><##>2<##>dragons<<>>animation<##>3<##>0<##>3000-01-02<##>184
+480<##>Episode<##>3<##>Sublimation<##>1<##>sublime intro<<>>sublime<##>22<##>2025-03-23<##>112
+481<##>Episode<##>4<##>Daddycop<##>1<##>hiss hound<<>>sabrina<##>22<##>2025-04-02<##>112
+482<##>Episode<##>5<##>Werepapas<##>1<##>agreste<<>>adrian family<##>22<##>2025-03-26<##>112
+483<##>Episode<##>6<##>Sleeping Siren<##>3<##><##>22<##>3000-01-01<##>112
+484<##>Episode<##>7<##>El Toro De Piedra<##>1<##>ivan family<<>>ivan<##>22<##>2025-04-23<##>112
+485<##>Episode<##>8<##>Vampigami<##>3<##>kagami<##>22<##>3000-01-01<##>112
+486<##>Episode<##>9<##>Mister Agreste<##>3<##>adrian<##>22<##>3000-01-01<##>112
+487<##>Episode<##>10<##>The Dark Castle<##>3<##><##>22<##>3000-01-01<##>112
+488<##>Episode<##>11<##>Revelator<##>1<##>monarch identity<<>>aliya finds truth<##>22<##>2025-04-09<##>112
+489<##>Episode<##>12<##>Wrechless Driver<##>3<##><##>22<##>3000-01-01<##>112
+490<##>Episode<##>13<##>Yaksi Gozen<##>3<##><##>22<##>3000-01-01<##>112
+491<##>Episode<##>14<##>Grendiaper<##>3<##><##>22<##>3000-01-01<##>112
+492<##>Episode<##>15<##>The Ruler<##>1<##>mark<<>>nathanial<<>>family<##>22<##>2025-04-30<##>112
+493<##>Episode<##>16<##>Noe<##>3<##><##>22<##>3000-01-01<##>112
+494<##>Episode<##>17<##>A Fairy Good Night<##>3<##><##>22<##>3000-01-01<##>112
+495<##>Episode<##>18<##>The Dirtifiers<##>3<##><##>22<##>3000-01-01<##>112
+496<##>Episode<##>19<##>Riginarazione<##>3<##><##>22<##>3000-01-01<##>112
+497<##>Episode<##>20<##>Heartfixer<##>3<##><##>22<##>3000-01-01<##>112
+498<##>Episode<##>21<##>The Chained Titans<##>3<##><##>22<##>3000-01-01<##>112
+499<##>Episode<##>22<##>Lady Chaos<##>3<##><##>22<##>3000-01-01<##>112
+500<##>Episode<##>23<##>Sadnasi<##>3<##><##>22<##>3000-01-01<##>112
+501<##>Episode<##>24<##>Queen of the Dreadzone<##>3<##><##>22<##>3000-01-01<##>112
+502<##>Episode<##>25<##>Secret Protocol<##>3<##><##>22<##>3000-01-01<##>112
+503<##>Episode<##>26<##>Nemesis<##>3<##><##>22<##>3000-01-01<##>112
+504<##>Episode<##>1<##>Where the West Begins, Part 1<##>1<##>indie animation<<>>indie studio<<>>western style<##>24<##>2024-02-14<##>181
+505<##>Episode<##>2<##>Where the West Begins, Part 2<##>1<##>indie<<>>indie animation<<>>indie studio<<>>western<<>>cowboy and robots<##>24<##>2025-01-24<##>181
+506<##>Episode<##>3<##><##>3<##>indie<<>>indie animation<<>>indie studio<<>>western<<>>cowboy and robots<##>24<##>3000-01-01<##>181
+507<##>Episode<##>1<##>Thanks to Them<##>1<<>>4<##><##>44<##>2022-10-15<##>60
+508<##>Episode<##>2<##>For the Future<##>1<<>>4<##><##>44<##>2023-01-21<##>60
+509<##>Episode<##>3<##>Watching and Dreaming<##>1<<>>4<##><##>55<##>2023-04-08<##>60
+510<##>Anime<##>Pokemon: To Be a Pokemon Master<##>Ultimate Journeys: The Series<##>1<##>Pokemon Journeys<##>26<##>0<##>3000-01-02<##>185
+511<##>TV Show<##>LEGO Dreamz<##><##>9<##>LEGO Dreamz<##>3<##>26<##>3000-01-02<##>186
+512<##>TV Show<##>Hamster and Gretal<##><##>3<##>Hamster and Gretal<##>3<##>0<##>3000-01-02<##>187
+513<##>Anime<##>Apothecary Diaries<##><##>1<##>Apothecary Diaries<##>2<##>0<##>3000-01-02<##>188
+514<##>Anime<##>Windbreaker<##><##>1<##>Windbreaker<##>2<##>0<##>3000-01-02<##>189
+515<##>TV Show<##>Phineas and Ferb<##><##>9<##>Phineas and Ferb<##>5<##>0<##>3000-01-02<##>190
+516<##>Movie<##>Miraculous World**<##>Rio<##>3<<>>4<##>Miraculous ladybug<##>0<##>3000-01-01<##>191
+// Secret Life of Pets 3
+// Inside Out 3
+// Wild Robot 2
+// The Loud House Movie (2021) completed
+// Planet 51
+// Thelma the Unicorn
+// Superklaus
+// Aurthor's Christmas
+// flow tag: blender
+// Spellbound
+// 10 Lives
+// Dragonkeeper
+// Jungle B__?: Operation Meltdown
+// Asteriz: The Secret of the Magic Potion
+// the inseperables
+// smelliville
+// buffalo kids
+// ferdinand
+// Mummies
+// Bigfoot family
+// Mission to the Moon
+// Wallice and Gromit: Vengance Most Fowl (seen)
+// 200% wolf
+// mlp fav episodes
+// winx club -> s1 - s8 completed
+// winx club reboot s1 upcoming
+// carmen sandiego s1 - s3-4?
+// LEGO friends next chapter s3 ep 8 completed
+// Phineas and ferb s5
+// totaly spies
+// totaly spies reboot
+// penn zero: part time hero
+// shrek 2, 3,4 5
+// iyanu currently s1 completed
+// iwaiju currently s1 completed
+// Tokyo Stellar Force > 60 min special

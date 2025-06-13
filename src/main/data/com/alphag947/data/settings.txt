@@ -1,1 +1,0 @@
-READ_FILEPATH_DATA<:>D:/Projects/Entertainment_Tracker/data/data.txt

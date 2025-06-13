@@ -2,8 +2,6 @@ package com.alphag947.SceneFactory;
 
 import java.util.ArrayList;
 
-import com.alphag947.backend.logging.LoggerFactory;
-
 import javafx.scene.Scene;
 
 public class SceneHistory {
@@ -19,9 +17,7 @@ public class SceneHistory {
     }
 
     public void add(Scene scene) {
-        if (!sceneHistory.getLast().equals(scene))
-            sceneHistory.add(scene);
-        LoggerFactory.getConsoleLogger().log("Scene exists.");
+        sceneHistory.add(scene);
     }
 
     public void clear() {

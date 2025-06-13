@@ -17,7 +17,7 @@
    <center>
       <SplitPane dividerPositions="0.24" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
-            <AnchorPane fx:id="info_viewer_placeholder" maxWidth="500.0" minWidth="425.0" prefHeight="935.0" prefWidth="500.0" />
+            <AnchorPane fx:id="info_viewer_placeholder" maxWidth="500.0" minWidth="500.0" prefHeight="935.0" prefWidth="500.0" />
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="1235.0" spacing="5.0">
@@ -59,6 +59,13 @@
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />
                   <MenuItem fx:id="mi_test" mnemonicParsing="false" onAction="#testAction" text="Test" />
+                  <Menu mnemonicParsing="false" text="Sort Main Data">
+                    <items>
+                      <MenuItem fx:id="sortByName" mnemonicParsing="false" onAction="#sortModulesByName" text="byName" />
+                        <MenuItem fx:id="sortById" mnemonicParsing="false" onAction="#sortModulesById" text="byId" />
+                        <MenuItem fx:id="sortByTypeTheName" mnemonicParsing="false" onAction="#sortModulesByTypeTheName" text="byTypeThenName" />
+                    </items>
+                  </Menu>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

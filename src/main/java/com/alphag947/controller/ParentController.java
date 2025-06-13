@@ -33,7 +33,7 @@ public class ParentController implements ParentControllerInterface {
         return entertainment;
     }
 
-    @SuppressWarnings("unused") private AppApi api;
+    private AppApi api;
     protected ConsoleLogger cl;
 
     public AppApi getAppApi() {

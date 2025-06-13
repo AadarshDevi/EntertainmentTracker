@@ -1,10 +1,10 @@
 package com.alphag947.backend;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -40,15 +40,53 @@ public class Backend {
 
     public void start() {
         setEntertainments(readData());
-        entertainmentList
-                .sort(Comparator.comparing(Entertainment::getFranchise).thenComparing(Entertainment::getTitle));
+        sortData(settings.getValue("SORT_TYPE"));
+        // entertainmentList
+        // .sort(Comparator.comparing(Entertainment::getFranchise).thenComparing(Entertainment::getTitle));
+    }
+
+    public void sortData(String sortype) {
+        switch (sortype) {
+            case "byName":
+                entertainmentList
+                        .sort(Comparator.comparing(
+                                Entertainment::getStageName));
+                break;
+            case "byId":
+                entertainmentList
+                        .sort(Comparator.comparing(
+                                Entertainment::getId));
+                break;
+            case "byType":
+                entertainmentList
+                        .sort(Comparator.comparing(
+                                Entertainment::getType).thenComparing(Entertainment::getStageName));
+                break;
+
+            default:
+                cl.err(new Exception("Sort Type \"" + sortype + "\"does not exist"));
+        }
     }
 
     public ArrayList<String[]> readData() {
 
+        InputStream dataStream = Settings.class.getResourceAsStream(settings.getValue("READ_ACTUAL_FILEPATH_DATA"));
+        if (dataStream == null)
+            LoggerFactory.getLogger().err(new Exception("\"is\" is null"));
+
         ArrayList<String[]> parsedData = new ArrayList<>();
-        try (BufferedReader fileReader = new BufferedReader(
-                new FileReader(new File(settings.getDataPath())))) {
+
+        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(dataStream, "UTF-8"))) {
+
+            // String line;
+
+            // while ((line = fileReader.readLine()) != null) {
+
+            // if (!(line.startsWith("//"))) {
+            // settings.put(line.split("<:>")[0], line.split("<:>")[1]);
+            // LoggerFactory.getLogger().dbg(line);
+            // }
+            // }
 
             String line;
 
@@ -58,21 +96,44 @@ public class Backend {
                     parsedData.add(line.split("<##>")); // level 1 parsed data
                 }
             }
-        } catch (
+            // LoggerFactory.getLogger().log("\"settings.txt\" successfully read.");
 
-        FileNotFoundException e) {
+            fileReader.close();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        cl.hlt("Parse data length: " + parsedData.size());
+        //
 
+        //
+
+        //
+
+        // try (BufferedReader fileReader = new BufferedReader(
+        // new FileReader(new File(settings.getDataPath())))) {
+
+        // String line;
+
+        // while ((line = fileReader.readLine()) != null) {
+
+        // }
+        // } catch (
+
+        // FileNotFoundException e) {
+        // e.printStackTrace();
+        // } catch (IOException e) {
+        // e.printStackTrace();
+        // }
+
+        cl.hlt("Parse data length: " + parsedData.size());
         return parsedData;
     }
 
     public Entertainment createEntertainment(String[] list) {
 
+        // cl.dbg(this, list[0]);
         switch (list[1]) {
             case "Movie":
                 return new Movie(

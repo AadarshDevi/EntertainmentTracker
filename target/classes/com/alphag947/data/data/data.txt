@@ -75,8 +75,8 @@
 75<##>Movie<##>Kung Fu Panda 2<##><##>1<##>kfp<##>90<##>2011-05-26<##>DreamWorks Animation
 76<##>Movie<##>Kung Fu Panda 3<##><##>1<##>kfp<##>95<##>2016-01-29<##>DreamWorks Animation
 77<##>Movie<##>Kung Fu Panda 4<##><##>1<##>kfp<<>>kfp4<##>93<##>2024-03-08<##>DreamWorks Animation
-78<##>Movie<##>LEGO Disney Princess<##>The Castle Quest<##>1<<>>4<##>lego<##>47<##>2023-08-18<##>The LEGO Group
-79<##>Movie<##>The Lego Ninjago Movie<##><##>1<##>lego movie<<>>lego ninjago movie<<>>ninjago movie<##>101<##>2017-10-22<##>Warner Bros<<>>Lego Systems A/S
+78<##>Movie<##>LEGO Disney Princess<##>The Castle Quest<##>1<<>>4<##>LEGO<##>47<##>2023-08-18<##>The LEGO Group
+79<##>Movie<##>The LEGO Ninjago Movie<##><##>1<##>LEGO movie<<>>LEGO ninjago movie<<>>ninjago movie<##>101<##>2017-10-22<##>Warner Bros<<>>LEGO Systems A/S
 80<##>Movie<##>Lightyear<##><##>1<##>toy story<##>105<##>2022-06-17<##>Walt Disney Studios Motion Pictures
 81<##>Movie<##>Luca<##><##>1<##>Luca<##>95<##>2021-06-18<##>Pixar Animation Studios
 82<##>Movie<##>Madagascar<##><##>1<##>Madagascar<##>86<##>2005-05-27<##>DreamWorks Animation
@@ -89,7 +89,7 @@
 89<##>Movie<##>Migration<##><##>1<##>Migration<##>83<##>2023-12-22<##>Universal Pictures<<>>Illumination
 90<##>Movie<##>Minions<##><##>1<##>Minions<##>91<##>2015-07-10<##>Illumination<<>>Universal Pictures
 91<##>Movie<##>Minions 2<##>The Rise of Gru<##>1<##>despicable me<##>87<##>2022-07-01<##>Universal Pictures<<>>Illumination
-92<##>Movie<##>-Miraculous<##>Ladybug and Cat Noir, The Movie<##>1<##>miraculous movie<<>>miraculous ladybug movie<##>105<##>2023-07-28<##>Zagtoon<<>>Fantawild Animation
+92<##>Movie<##>Miraculous<##>Ladybug and Cat Noir, The Movie<##>1<##>miraculous movie<<>>miraculous ladybug movie<##>105<##>2023-07-28<##>Zagtoon<<>>Fantawild Animation
 93<##>Movie<##>Moana<##><##>1<##>Moana<##>107<##>2016-11-23<##>Disney
 94<##>Movie<##>The Monkey King<##><##>1<##>Monkey King<##>96<##>2023-08-18<##>Netflix Animation<<>>Pearl Studio<<>>Star Overseas
 95<##>Movie<##>Monster House<##><##>1<##>Monster House<##>91<##>2006-07-21<##>Columbia Pictures<<>>Relativity Media<<>>ImageMovers<<>>Amblin Entertainment
@@ -205,8 +205,8 @@
 202<##>Movie<##>The Illusionauts (The Freedom Force)<##><##>1<##>The Illusionauts/The Freedom Force<##>82<##>2012-01-26<##>Aronnax Animation Studios<<>>Televix Entertainment
 203<##>Movie<##>The Incredibles<##><##>1<##>The Incredibles<##>115<##>2004-11-05<##>Pixar Animation Studios
 204<##>Movie<##>The Incredibles 2<##><##>1<##>The Incredibles 2<##>118<##>2018-06-15<##>Pixar Animation Studios
-205<##>Movie<##>The Lego Movie<##><##>1<##>The Lego Movie<##>101<##>2014-04-03<##>Warner Animation Group<<>>Village Roadshow Pictures<<>>RatPac-Dune Entertainment<<>>Lego System A/S<<>>Vertigo Entertainment<<>>Lin Pictures<<>>Animal Logic
-206<##>Movie<##>The Lego Movie 2<##>The Second Part<##>1<##>The Lego Movie 2<##>107<##>2019-02-08<##>Warner Animation Group<<>>Lego System A/S<<>>Rideback<<>>Lord Miller Productions<<>>Vertigo Entertainment<<>>Animal Logic
+205<##>Movie<##>The LEGO Movie<##><##>1<##>The LEGO Movie<##>101<##>2014-04-03<##>Warner Animation Group<<>>Village Roadshow Pictures<<>>RatPac-Dune Entertainment<<>>LEGO System A/S<<>>Vertigo Entertainment<<>>Lin Pictures<<>>Animal Logic
+206<##>Movie<##>The LEGO Movie 2<##>The Second Part<##>1<##>The LEGO Movie 2<##>107<##>2019-02-08<##>Warner Animation Group<<>>LEGO System A/S<<>>Rideback<<>>Lord Miller Productions<<>>Vertigo Entertainment<<>>Animal Logic
 207<##>Movie<##>The Lion King<##><##>1<##>The Lion King<##>88<##>1994-06-15<##>Disney
 208<##>Movie<##>The Lion King II<##>Simba's Pride<##>1<##>The Lion King 2<##>82<##>1998-10-27<##>Disney
 209<##>Movie<##>The Lorax<##><##>1<##>Dr. Seuss' The Lorax<<>>dr seuss<##>86<##>2012-03-02<##>Universal Pictures<<>>Illumination Entertainment
@@ -272,7 +272,7 @@
 269<##>Movie<##>The Mitchells vs the Machines<##><##>1<##>tmvtm<##>109<##>2021-04-30<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Lord Miller Productions<<>>One Cool Films
 270<##>Movie<##>Barbie (Live Action)<##><##>1<##>Barbie (Live Action)<##>114<##>2023-07-21<##>Warner Bros.<<>>Mattel<<>>Heyday Films
 271<##>Movie<##>No Time To Spy<##>A Loud House Movie<##>1<##>No Time To Spy: A Loud House Movie<##>86<##>2024-06-21<##>Nickolodeon Movies
-272<##>Movie<##>Miraculous World**<##>Tokyo<##>3<<>>4<##>Miraculous ladybug<##>0<##>3000-01-01<##>unknown
+272<##>Movie<##>Miraculous World**<##>Tokyo Stellar Force<##>3<<>>4<<>>5<##>Miraculous ladybug<##>0<##>3000-01-01<##>unknown
 273<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>1<##>26<##>2010-10-10<##>1
 274<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>2<##>26<##>2011-09-17<##>2
 275<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>3<##>13<##>2012-11-10<##>3
@@ -321,11 +321,11 @@
 318<##>Anime<##>Pokemon Sun and Moon<##>Ultra Adventures<##>1<##>Pokemon Sun and Moon<##>21<##>0<##>3000-01-02<##>46
 319<##>Anime<##>Pokemon Sun and Moon<##>Ultra Legends<##>1<##>Pokemon Sun and Moon<##>22<##>0<##>3000-01-02<##>47
 320<##>Anime<##>Pokemon Journeys<##><##>1<##>Pokemon Journeys<##>23<##>0<##>3000-01-02<##>48
-321<##>Anime<##>Pokemon Journeys<##>Master<##>1<##>Pokemon Journeys<##>24<##>0<##>3000-01-02<##>49
-322<##>Anime<##>Pokemon Journeys<##>Ultimate<##>1<##>Pokemon Journeys<##>25<##>0<##>3000-01-02<##>50
-323<##>Anime<##>Pokemon Horizons The Series<##><##>2<##>Pokemon Horizons The Series<##>26<##>80<##>2025-01-17<##>51
-324<##>Anime<##>Pokemon Horizons The Series<##><##>2<##>Pokemon Horizons The Series<##>27<##>80<##>2025-01-17<##>52
-325<##>Anime<##>Pokemon Horizons The Series<##><##>2<##>Pokemon Horizons The Series<##>28<##>80<##>2025-01-17<##>53
+321<##>Anime<##>Pokemon Master Journeys<##><##>1<##>Pokemon Journeys<##>24<##>0<##>3000-01-02<##>49
+322<##>Anime<##>Pokemon Ultimate Journeys<##><##>1<##>Pokemon Journeys<##>25<##>0<##>3000-01-02<##>50
+323<##>Anime<##>Pokemon Horizons The Series<##><##>1<##>Pokemon Horizons The Series<##>1<##>80<##>2025-01-17<##>51
+324<##>Anime<##>Pokemon Horizons The Series<##>The Search for Laqua<##>1<##>Pokemon Horizons The Series<##>2<##>80<##>2025-01-17<##>52
+325<##>Anime<##>Pokemon Horizons The Series<##><##>9<##>Pokemon Horizons The Series<##>3<##>80<##>2025-01-17<##>53
 326<##>TV Show<##>Slugterra<##>The 99 Caverns<##>1<##>Slugterra<##>1<##>39<##>3000-01-02<##>54
 // season 2: ghoul from beyond, return of elements, slug fu showdown (all are specials and season episodes)
 327<##>TV Show<##>Slugterra<##>The Eastern Caverns<##>1<##>Slugterra<##>3<##>3<##>3000-01-02<##>55
@@ -350,10 +350,10 @@
 346<##>TV Show<##>Fast and Furious Spy Racers<##>South Pacific<##>1<##>Fast and Furious Spy Racers<##>5<##>8<##>3000-01-02<##>74
 347<##>TV Show<##>Fast and Furious Spy Racers<##>Homecoming<##>1<##>Fast and Furious Spy Racers<##>6<##>12<##>3000-01-02<##>75
 348<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##><##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>0<##>4<##>3000-01-02<##>76
-349<##>Episode<##>1<##>Way of the Ninja<##>22<##>3000-01-02<##>76<##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu
-350<##>Episode<##>2<##>The Golden Weapon<##>22<##>3000-01-02<##>76<##>2<<>>5<##>LEGO Ninjago Master of Spinjitsu
-351<##>Episode<##>3<##>King of Shadows<##>22<##>3000-01-02<##>76<##>3<<>>5<##>LEGO Ninjago Master of Spinjitsu
-352<##>Episode<##>4<##>Weapons of Destiny<##>22<##>3000-01-02<##>76<##>4<<>>5<##>LEGO Ninjago Master of Spinjitsu
+349<##>Episode<##>1<##>Way of the Ninja<##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>22<##>3000-01-02<##>76
+350<##>Episode<##>2<##>The Golden Weapon<##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>22<##>3000-01-02<##>76
+351<##>Episode<##>3<##>King of Shadows<##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>22<##>3000-01-02<##>76
+352<##>Episode<##>4<##>Weapons of Destiny<##>1<<>>5<##>LEGO Ninjago Master of Spinjitsu<##>22<##>3000-01-02<##>76
 353<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Rise of the Snakes<##>1<##>LEGO Ninjago Master of Spinjitsu<##>1<##>0<##>3000-01-02<##>77
 354<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Legacy of the Green Ninja<##>1<##>LEGO Ninjago Master of Spinjitsu<##>2<##>0<##>3000-01-02<##>78
 355<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Rebooted<##>1<##>LEGO Ninjago Master of Spinjitsu<##>3<##>0<##>3000-01-02<##>79
@@ -364,15 +364,15 @@
 360<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Sons of Garmadon<##>1<##>LEGO Ninjago Master of Spinjitsu<##>8<##>0<##>3000-01-02<##>84
 361<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Hunted<##>1<##>LEGO Ninjago Master of Spinjitsu<##>9<##>0<##>3000-01-02<##>85
 362<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>March of the Oni<##>1<##>LEGO Ninjago Master of Spinjitsu<##>10<##>0<##>3000-01-02<##>86
-363<##>TV Show<##>Lego Ninjago Master of Spinjitsu<##>Secrets of the Forbidden Spinjitzu<##>1<##>forbidden spinjitsu<<>>lego ninjago season 11<##>11<##>30<##>2019-10-28<##>87
+363<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Secrets of the Forbidden Spinjitzu<##>1<##>forbidden spinjitsu<<>>LEGO ninjago season 11<##>11<##>30<##>2019-10-28<##>87
 364<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Prime Empire<##>1<##>LEGO Ninjago Master of Spinjitsu<##>12<##>0<##>3000-01-02<##>88
 365<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Master of the Mountain<##>1<##>LEGO Ninjago Master of Spinjitsu<##>13<##>0<##>3000-01-02<##>89
-366<##>Movie<##>Lego Ninjago Master of Spinjitsu<##>The Island<##>1<<>>4<##>lego special<<>>lego ninjago special<##>42<##>2017-06-17<##>WildBrain
+366<##>Movie<##>LEGO Ninjago Master of Spinjitsu<##>The Island<##>1<<>>4<##>LEGO special<<>>LEGO ninjago special<##>42<##>2017-06-17<##>WildBrain
 367<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Seabound<##>1<##>LEGO Ninjago Master of Spinjitsu<##>15<##>0<##>3000-01-02<##>90
 368<##>TV Show<##>LEGO Ninjago Master of Spinjitsu<##>Crystalized<##>1<##>ninjago Crystalized<##>16<##>30<##>3000-01-02<##>91
 369<##>TV Show<##>LEGO Ninjago Dragons Rising<##><##>1<##>LEGO Ninjago Dragons Rising<##>1<##>20<##>3000-01-02<##>92
 370<##>TV Show<##>LEGO Ninjago Dragons Rising<##><##>1<##>LEGO Ninjago Dragons Rising<##>2<##>20<##>3000-01-02<##>93
-371<##>TV Show<##>LEGO Ninjago Dragons Rising<##><##>3<##>LEGO Ninjago Dragons Rising<##>3<##>20<##>3000-01-02<##>94
+371<##>TV Show<##>LEGO Ninjago Dragons Rising<##><##>9<##>LEGO Ninjago Dragons Rising<##>3<##>20<##>3000-01-02<##>94
 372<##>TV Show<##>LEGO Dreamz<##><##>1<##>LEGO Dreamz<##>1<##>20<##>3000-01-02<##>95
 373<##>TV Show<##>LEGO Dreamz<##><##>1<##>LEGO Dreamz<##>2<##>20<##>3000-01-02<##>96
 374<##>TV Show<##>LEGO Friends<##>Girls on a Mission<##>1<##>LEGO Friends<##>1<##>0<##>3000-01-02<##>97
@@ -400,7 +400,7 @@
 396<##>TV Show<##>Phineas and Ferb<##><##>1<##>Phineas and Ferb<##>4<##>0<##>3000-01-02<##>119
 397<##>TV Show<##>Milo Murphy's Law<##><##>1<##>Milo Murphy's Law<##>1<##>0<##>3000-01-02<##>120
 398<##>TV Show<##>Milo Murphy's Law<##><##>1<##>Milo Murphy's Law<##>2<##>0<##>3000-01-02<##>121
-399<##>TV Show<##>Hamster and Gretal<##><##>2<##>Hamster and Gretal<##>1<##>0<##>3000-01-02<##>122
+399<##>TV Show<##>Hamster and Gretal<##><##>1<##>Hamster and Gretal<##>1<##>0<##>3000-01-02<##>122
 400<##>TV Show<##>Hamster and Gretal<##><##>2<##>Hamster and Gretal<##>2<##>0<##>3000-01-02<##>123
 401<##>TV Show<##>Hailey's On It<##><##>1<##>Hailey's On It<##>1<##>50<##>3000-01-02<##>124
 // TV Show<##>Hailey's On It<##><##>1<##>Hailey's On It<##>2<##>0<##>3000-01-02<##>125
@@ -418,7 +418,7 @@
 413<##>Anime<##>BeyBlade Burst<##>Quad Drive<##>1<##>BeyBlade Burst<##>6<##>0<##>3000-01-02<##>137
 414<##>Anime<##>BeyBlade Burst<##>Quad Strike<##>1<##>BeyBlade Burst<##>7<##>0<##>3000-01-02<##>138
 415<##>Anime<##>BeyBlade X<##><##>1<##>BeyBlade X<##>1<##>51<##>3000-01-02<##>139
-416<##>Anime<##>BeyBlade X<##><##>1<##>BeyBlade X<##>2<##>27<##>3000-01-02<##>140
+416<##>Anime<##>BeyBlade X<##><##>1<##>BeyBlade X<##>9<##>27<##>3000-01-02<##>140
 417<##>TV Show<##>Gravity Falls<##><##>2<##>Gravity Falls<##>1<##>0<##>3000-01-02<##>141
 418<##>TV Show<##>Gravity Falls<##><##>2<##>Gravity Falls<##>2<##>0<##>3000-01-02<##>142
 419<##>TV Show<##>Kim Possible<##><##>1<##>Kim Possible<##>1<##>0<##>3000-01-02<##>143
@@ -452,16 +452,16 @@
 447<##>TV Show<##>Octonauts<##><##>1<##>Octonauts<##>3<##>0<##>3000-01-02<##>171
 448<##>TV Show<##>Octonauts<##><##>1<##>Octonauts<##>4<##>0<##>3000-01-02<##>172
 449<##>TV Show<##>Octonauts<##><##>1<##>Octonauts<##>5<##>0<##>3000-01-02<##>173
-450<##>TV Show<##>Octonauts<##>Above and Beyond<##>1<##>Octonauts<##>1<##>0<##>3000-01-02<##>174
-451<##>TV Show<##>Octonauts<##>Above and Beyond<##>1<##>Octonauts<##>2<##>0<##>3000-01-02<##>175
-452<##>TV Show<##>Octonauts<##>Above and Beyond<##>1<##>Octonauts<##>3<##>0<##>3000-01-02<##>176
-453<##>TV Show<##>Octonauts<##>Above and Beyond<##>1<##>Octonauts<##>4<##>0<##>3000-01-02<##>177
-454<##>TV Show<##>Octonauts<##>Above and Beyond<##>1<##>Octonauts<##>5<##>0<##>3000-01-02<##>178
+450<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>1<##>0<##>3000-01-02<##>174
+451<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>2<##>0<##>3000-01-02<##>175
+452<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>3<##>0<##>3000-01-02<##>176
+453<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>4<##>0<##>3000-01-02<##>177
+454<##>TV Show<##>Octonauts**<##>Above and Beyond<##>1<##>Octonauts<##>5<##>0<##>3000-01-02<##>178
 455<##>Movie<##>Zombies<##><##>1<##>Zombies<##>94<##>2018-02-16<##>Princessa Productions, LTD
 456<##>Movie<##>Zombies 2<##><##>1<##>Zombies 2<##>84<##>2020-02-14<##>Bloor Street Productions, Inc
 457<##>Movie<##>Zombies 3<##><##>1<##>Zombies 3<##>90<##>2022-07-15<##>Bloor Street Productions<<>>Resonate Entertainment
 458<##>Movie<##>Zombies 4<##><##>3<##>Zombies 4<##>0<##>3000-01-01<##>unknown
-459<##>TV Show<##>Agent 203<##><##>3<##>Agent 203<##>1<##>15<##>3000-01-01<##>179
+459<##>TV Show<##>Agent 203<##><##>2<##>Agent 203<##>1<##>15<##>3000-01-01<##>179
 460<##>TV Show<##>Zak Storm<##><##>1<##>Zak Storm<##>1<##>9<##>2017-12-02<##>180
 461<##>TV Show<##>MechWest<##><##>2<##>MechWest<##>1<##>2<##>2025-01-24<##>181
 462<##>Movie<##>Sonic The Hedgehog 4<##><##>3<##>Sonic The Hedgehog 4<##>0<##>3000-01-01<##>unknown
@@ -475,11 +475,53 @@
 470<##>Movie<##>That Christmas<##><##>1<##>That Christmas<##>100<##>2024-10-19<##>Locksmith Animation
 471<##>Movie<##>Klaus<##><##>1<##>Klaus<##>97<##>2019-11-08<##>Netflix Animation<<>>The SPA Studios<<>>Atresmedia Cine
 472<##>Movie<##>Dairy of the Wimpy Kid**<##>Christmas: Cabin Fever<##>2<##>Dairy of the Wimpy Kid<##>62<##>2023-12-08<##>Bardel Entertainment<<>>Walt Disney Pictures
+473<##>Movie<##>The LEGO Batman Movie<##><##>2<##>LEGO batman movie<<>>batman movie<<>>LEGO movie<##>104<##>2017-02-10<##>Warner Bros<<>>DC<<>>LEGO Systems A/S
+474<##>Episode<##>2<##>Illustrhater<##>1<##>miraculous season 6<<>>episode 2<<>>miraculous s6 e2<##>22<##>2025-01-25<##>112
+476<##>Episode<##>1<##>Climatiqueen<##>1<##>miraculous season 6<<>>episode 1<<>>miraculous s6 e1<##>22<##>2025-04-16<##>112
+477<##>TV Show<##>Dragon Booster<##><##>2<##>dragons<<>>animation<##>1<##>0<##>3000-01-02<##>182
+478<##>TV Show<##>Dragon Booster<##><##>2<##>dragons<<>>animation<##>2<##>0<##>3000-01-02<##>183
+479<##>TV Show<##>Dragon Booster<##><##>2<##>dragons<<>>animation<##>3<##>0<##>3000-01-02<##>184
+480<##>Episode<##>3<##>Sublimation<##>1<##>sublime intro<<>>sublime<##>22<##>2025-03-23<##>112
+481<##>Episode<##>4<##>Daddycop<##>1<##>hiss hound<<>>sabrina<##>22<##>2025-04-02<##>112
+482<##>Episode<##>5<##>Werepapas<##>1<##>agreste<<>>adrian family<##>22<##>2025-03-26<##>112
+483<##>Episode<##>6<##>Sleeping Siren<##>3<##><##>22<##>3000-01-01<##>112
+484<##>Episode<##>7<##>El Toro De Piedra<##>1<##>ivan family<<>>ivan<##>22<##>2025-04-23<##>112
+485<##>Episode<##>8<##>Vampigami<##>3<##>kagami<##>22<##>3000-01-01<##>112
+486<##>Episode<##>9<##>Mister Agreste<##>3<##>adrian<##>22<##>3000-01-01<##>112
+487<##>Episode<##>10<##>The Dark Castle<##>3<##><##>22<##>3000-01-01<##>112
+488<##>Episode<##>11<##>Revelator<##>1<##>monarch identity<<>>aliya finds truth<##>22<##>2025-04-09<##>112
+489<##>Episode<##>12<##>Wrechless Driver<##>3<##><##>22<##>3000-01-01<##>112
+490<##>Episode<##>13<##>Yaksi Gozen<##>3<##><##>22<##>3000-01-01<##>112
+491<##>Episode<##>14<##>Grendiaper<##>3<##><##>22<##>3000-01-01<##>112
+492<##>Episode<##>15<##>The Ruler<##>1<##>mark<<>>nathanial<<>>family<##>22<##>2025-04-30<##>112
+493<##>Episode<##>16<##>Noe<##>3<##><##>22<##>3000-01-01<##>112
+494<##>Episode<##>17<##>A Fairy Good Night<##>3<##><##>22<##>3000-01-01<##>112
+495<##>Episode<##>18<##>The Dirtifiers<##>3<##><##>22<##>3000-01-01<##>112
+496<##>Episode<##>19<##>Riginarazione<##>3<##><##>22<##>3000-01-01<##>112
+497<##>Episode<##>20<##>Heartfixer<##>3<##><##>22<##>3000-01-01<##>112
+498<##>Episode<##>21<##>The Chained Titans<##>3<##><##>22<##>3000-01-01<##>112
+499<##>Episode<##>22<##>Lady Chaos<##>3<##><##>22<##>3000-01-01<##>112
+500<##>Episode<##>23<##>Sadnasi<##>3<##><##>22<##>3000-01-01<##>112
+501<##>Episode<##>24<##>Queen of the Dreadzone<##>3<##><##>22<##>3000-01-01<##>112
+502<##>Episode<##>25<##>Secret Protocol<##>3<##><##>22<##>3000-01-01<##>112
+503<##>Episode<##>26<##>Nemesis<##>3<##><##>22<##>3000-01-01<##>112
+504<##>Episode<##>1<##>Where the West Begins, Part 1<##>1<##>indie animation<<>>indie studio<<>>western style<##>24<##>2024-02-14<##>181
+505<##>Episode<##>2<##>Where the West Begins, Part 2<##>1<##>indie<<>>indie animation<<>>indie studio<<>>western<<>>cowboy and robots<##>24<##>2025-01-24<##>181
+506<##>Episode<##>3<##><##>3<##>indie<<>>indie animation<<>>indie studio<<>>western<<>>cowboy and robots<##>24<##>3000-01-01<##>181
+507<##>Episode<##>1<##>Thanks to Them<##>1<<>>4<##><##>44<##>2022-10-15<##>60
+508<##>Episode<##>2<##>For the Future<##>1<<>>4<##><##>44<##>2023-01-21<##>60
+509<##>Episode<##>3<##>Watching and Dreaming<##>1<<>>4<##><##>55<##>2023-04-08<##>60
+510<##>Anime<##>Pokemon: To Be a Pokemon Master<##>Ultimate Journeys: The Series<##>1<##>Pokemon Journeys<##>26<##>0<##>3000-01-02<##>185
+511<##>TV Show<##>LEGO Dreamz<##><##>9<##>LEGO Dreamz<##>3<##>26<##>3000-01-02<##>186
+512<##>TV Show<##>Hamster and Gretal<##><##>3<##>Hamster and Gretal<##>3<##>0<##>3000-01-02<##>187
+513<##>Anime<##>Apothecary Diaries<##><##>1<##>Apothecary Diaries<##>2<##>0<##>3000-01-02<##>188
+514<##>Anime<##>Windbreaker<##><##>1<##>Windbreaker<##>2<##>0<##>3000-01-02<##>189
+515<##>TV Show<##>Phineas and Ferb<##><##>9<##>Phineas and Ferb<##>5<##>0<##>3000-01-02<##>190
+516<##>Movie<##>Miraculous World**<##>Rio<##>3<<>>4<##>Miraculous ladybug<##>0<##>3000-01-01<##>191
 // Secret Life of Pets 3
 // Inside Out 3
 // Wild Robot 2
-// C- The Loud House Movie (2021)
-473<##>Movie<##>The Lego Batman Movie<##><##>2<##>lego batman movie<<>>batman movie<<>>lego movie<##>104<##>2017-02-10<##>Warner Bros<<>>DC<<>>Lego Systems A/S
+// The Loud House Movie (2021) completed
 // Planet 51
 // Thelma the Unicorn
 // Superklaus
@@ -499,22 +541,16 @@
 // Mission to the Moon
 // Wallice and Gromit: Vengance Most Fowl (seen)
 // 200% wolf
-// Episode<##> miraculous illutrhater, sublimation, werepapas, daddycop, revelator, climartiqueen
 // mlp fav episodes
-474<##>Episode<##>2<##>Illustrhater<##>22<##>2025-01-25<##>112<##>1<##>miraculous season 6<<>>episode 2<<>>miraculous s6 e2
-475<##>Episode<##>11<##>Revelator<##>22<##>2025-04-26<##>112<##>1<<>>9<##>miraculous season 6<<>>episode 11<<>>miraculous s6 e11
-476<##>Episode<##>1<##>Climatiqueen<##>22<##>2025-04-16<##>112<##>2<##>miraculous season 6<<>>episode 1<<>>miraculous s6 e1
-477<##>TV Show<##>Dragon Booster<##><##>2<##>dragons<<>>animation<##>1<##>0<##>3000-01-02<##>182
-478<##>TV Show<##>Dragon Booster<##><##>2<##>dragons<<>>animation<##>2<##>0<##>3000-01-02<##>183
-479<##>TV Show<##>Dragon Booster<##><##>2<##>dragons<<>>animation<##>3<##>0<##>3000-01-02<##>184
-// winx club -> s1 - s8 //// currently s5 e2 completed
-// winx club reboot s1 //// upcoming
+// winx club -> s1 - s8 completed
+// winx club reboot s1 upcoming
 // carmen sandiego s1 - s3-4?
-// lego friends next chapter s3
+// LEGO friends next chapter s3 ep 8 completed
 // Phineas and ferb s5
 // totaly spies
 // totaly spies reboot
 // penn zero: part time hero
 // shrek 2, 3,4 5
 // iyanu currently s1 completed
-// iyanu currently s1 completed
+// iwaiju currently s1 completed
+// Tokyo Stellar Force > 60 min special

@@ -1,0 +1,3 @@
+READ_FILEPATH_DATA<:>D:/Projects/Entertainment_Tracker/data/data.txt
+READ_ACTUAL_FILEPATH_DATA<:>/com/alphag947/data/data/data.txt
+SORT_TYPE<:>byId

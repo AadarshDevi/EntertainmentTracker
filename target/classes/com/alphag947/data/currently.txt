@@ -1,0 +1,12 @@
+Stage 1: Show Entertainment Modules
+> read data
+
+> show entertainment modules
+> entertainment in correct modules
+> shows can colapse when no data
+> show no entertainment when mainlist or show episodelist is empty
+
+> sort data based on stage name, id and, type
+
+
+Stage 2: View Entertainment

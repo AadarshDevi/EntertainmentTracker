@@ -4,28 +4,38 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import com.alphag947.api.AppApi;
+import com.alphag947.api.AppApiFactory;
 import com.alphag947.backend.entertainment.*;
 import com.alphag947.backend.fxmlLoading.*;
 import com.alphag947.backend.logging.ConsoleLogger;
 import com.alphag947.backend.logging.LoggerFactory;
+import com.alphag947.controller.ModuleController;
 import com.alphag947.controller.ParentController;
 import com.alphag947.controller.entertainmentViewer.moduleViewer.*;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class MainframeController extends ParentController {
 
+    AppApi api;
     @FXML private MenuBar menubar;
     @FXML private MenuItem mi_app_close;
     @FXML private MenuItem mi_test;
+
+    @FXML private MenuItem sortByName;
+    @FXML private MenuItem sortById;
+    @FXML private MenuItem sortByTypeTheName;
 
     @FXML private TextField search_bar_textfield;
     @FXML private Button search_bar_search_button;
@@ -33,10 +43,14 @@ public class MainframeController extends ParentController {
     @FXML private ListView<BorderPane> list_view;
     @FXML private AnchorPane info_viewer_placeholder;
 
+    private BorderPane noEpisodesPane = new BorderPane();
+    private Label noEpisodesLabel = new Label("No Entertainment. Create Movie or Shows to view here");
+
     private int listId = 0;
 
     @FXML
     public void initialize() {
+        api = AppApiFactory.getApi();
     }
 
     @FXML
@@ -50,16 +64,25 @@ public class MainframeController extends ParentController {
         cl.log(this, "Closing App");
 
         System.exit(0);
-        // TODO: get window top do save and then exit
+        // TO-DO: get window todo save and then exit
     }
 
     public boolean setEntertainments(ArrayList<Entertainment> entertainments) {
 
         if (entertainments.size() <= 0) {
             cl.err(new Exception("Data List is <= 0"));
+
+            noEpisodesPane.setPrefHeight(41);
+            noEpisodesPane.setCenter(noEpisodesLabel);
+            noEpisodesPane.getStyleClass().addAll("module", "no_episode_pane");
+            noEpisodesLabel.getStyleClass().addAll("no_episode_label");
+            noEpisodesLabel.setTextAlignment(TextAlignment.CENTER);
+
+            list_view.getItems().add(noEpisodesPane);
             return false;
         }
 
+        listId = 0;
         for (Entertainment entertainment : entertainments) {
             if (entertainment instanceof Movie) {
                 list_view.getItems().add(createModule((Movie) entertainment));
@@ -119,6 +142,30 @@ public class MainframeController extends ParentController {
     public void minimizeApp() {
         Stage stage = (Stage) menubar.getScene().getWindow();
         stage.setIconified(true);
+    }
+
+    @FXML
+    public void sortModulesByName() {
+        cl.dbg("Sorting by Name");
+        api.sortData("byName");
+        list_view.getItems().clear();
+        api.setFrontend();
+    }
+
+    @FXML
+    public void sortModulesById() {
+        cl.dbg("Sorting by Id");
+        api.sortData("byId");
+        list_view.getItems().clear();
+        api.setFrontend();
+    }
+
+    @FXML
+    public void sortModulesByTypeTheName() {
+        cl.dbg("Sorting by Type");
+        api.sortData("byType");
+        list_view.getItems().clear();
+        api.setFrontend();
     }
 
 }

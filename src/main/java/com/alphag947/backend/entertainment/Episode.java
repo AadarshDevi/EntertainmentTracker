@@ -14,7 +14,6 @@ public class Episode extends Entertainment {
             String type,
 
             int episodeNum,
-
             String episodeTitle,
 
             String[] status,

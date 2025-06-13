@@ -156,4 +156,8 @@ public class AppApi {
             }
         }
     }
+
+    public void sortData(String sortype) {
+        backend.sortData(sortype);
+    }
 }
