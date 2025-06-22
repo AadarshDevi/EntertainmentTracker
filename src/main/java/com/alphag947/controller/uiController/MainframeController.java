@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import com.alphag947.App;
 import com.alphag947.api.AppApi;
 import com.alphag947.api.AppApiFactory;
 import com.alphag947.backend.entertainment.*;
@@ -13,9 +14,6 @@ import com.alphag947.backend.logging.LoggerFactory;
 import com.alphag947.controller.ParentController;
 import com.alphag947.controller.entertainmentViewer.moduleViewer.*;
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,7 +22,6 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
-import javafx.scene.control.SplitPane.Divider;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.TextAlignment;
@@ -48,10 +45,15 @@ public class MainframeController extends ParentController {
      * mi_app_close: closes the app
      * mi_test: tests and event like mouse clicke keyboard click and other.
      * 
+     * Sorting Modules:
      * sortByName: sorts data in ListView by stage name
      * sortById: sorts data by their ids
      * sortByTypeTheName: sorts data by their type and then by their name.
      * 
+     * Window Size:
+     * mi_75_percent: makes the window width and height 75% of width and height
+     * mi_80_percent: makes the window width and height 80% of width and height
+     * mi_fullscreen: makes app fullscreen
      * 
      * 
      * 
@@ -66,6 +68,11 @@ public class MainframeController extends ParentController {
 
     @FXML private MenuItem mi_viewer;
 
+    @FXML private MenuItem mi_75_percent;
+    @FXML private MenuItem mi_80_percent;
+    @FXML private MenuItem mi_100_percent;
+    @FXML private MenuItem mi_fullscreen;
+
     @FXML private TextField search_bar_textfield;
     @FXML private Button search_bar_search_button;
 
@@ -76,38 +83,19 @@ public class MainframeController extends ParentController {
 
     @FXML
     public void initialize() {
+
+        mi_75_percent.setOnAction(e -> App.setStageSize(0.75, 0.75));
+        mi_80_percent.setOnAction(e -> App.setStageSize(0.8, 0.8));
+        mi_100_percent.setOnAction(e -> App.setStageSize(1, 1));
+        mi_fullscreen.setOnAction(e -> App.getStage().setFullScreen(true));
+
         api = AppApiFactory.getApi();
         viewerEnabled = false;
         setViewerWidth();
     }
 
-    public void setAppSize() {
-
-        // double stageWidth = App.getCurrentStage().getWidth();
-        // cl.log(this, "Stage Width: " + stageWidth);
-
-        // double viewerWidthPercentage = 0.3;
-        // double viewerWidth = viewerWidthPercentage * stageWidth;
-        // cl.log(this, "Info Viewer Width: " + viewerWidth);
-
-        // info_viewer_placeholder.setPrefWidth(viewerWidth);
-        // info_viewer_placeholder.setMinWidth(viewerWidth);
-        // info_viewer_placeholder.setMaxWidth(viewerWidth);
-
-        // cl.log(this, "ListView Width: " + (1 - viewerWidthPercentage));
-        // double listViewWidth = (1.0 - viewerWidthPercentage) * stageWidth;
-        // cl.log(this, "ListView Width: " + listViewWidth);
-
-        // info_viewer_placeholder.setPrefWidth(listViewWidth);
-        // info_viewer_placeholder.setMinWidth(0);
-        // info_viewer_placeholder.setMaxWidth(listViewWidth);
-
-        // cl.log(this, "Total Width: " + (viewerWidth + listViewWidth));
-    }
-
     @FXML
     public void testAction() {
-        setViewerWidth();
     }
 
     @FXML
@@ -154,7 +142,6 @@ public class MainframeController extends ParentController {
         MovieModuleController mmc = mmp.getController();
         mmc.setId(++listId);
         mmc.setEntertainment(movie);
-        // mm.setPrefSize(list_view.getPrefWidth(), moduleHeight);
         return mm;
     }
 
@@ -224,7 +211,7 @@ public class MainframeController extends ParentController {
 
     @FXML
     public void setViewerWidth() {
-        cl.dbg(this, "Divider Clicked");
+        // cl.dbg(this, "Divider Clicked");
         if (!viewerEnabled) {
             mi_viewer.setText("Close Viewer");
             viewerEnabled = true;

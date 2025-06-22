@@ -3,13 +3,12 @@ package com.alphag947.controller.entertainmentViewer.moduleViewer;
 import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.Episode;
 import com.alphag947.controller.ModuleController;
-import com.alphag947.controller.uiController.interfaces.SortingEntertainment;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
-public class EpisodeModuleController extends ModuleController implements SortingEntertainment {
+public class EpisodeModuleController extends ModuleController {
 
     @FXML private Label module_id;
     @FXML private Label module_name;

@@ -3,13 +3,12 @@ package com.alphag947.controller.entertainmentViewer.moduleViewer;
 import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.Movie;
 import com.alphag947.controller.ModuleController;
-import com.alphag947.controller.uiController.interfaces.SortingEntertainment;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
-public class MovieModuleController extends ModuleController implements SortingEntertainment {
+public class MovieModuleController extends ModuleController {
 
     @FXML private BorderPane module;
     @FXML private Label module_id;
@@ -38,12 +37,12 @@ public class MovieModuleController extends ModuleController implements SortingEn
 
     // @Override
     // public String getStageName() {
-    //     return getEntertainment().getStageName();
+    // return getEntertainment().getStageName();
     // }
 
     // @Override
     // public int getEntertainmentId() {
-    //     return getEntertainment().getId();
+    // return getEntertainment().getId();
     // }
 
 }

@@ -65,6 +65,14 @@
                     </items>
                   </Menu>
                   <MenuItem fx:id="mi_viewer" mnemonicParsing="false" onAction="#setViewerWidth" text="Viewer" />
+                  <Menu mnemonicParsing="false" text="App Size">
+                    <items>
+                        <MenuItem fx:id="mi_75_percent" mnemonicParsing="false" text="75%" />
+                        <MenuItem fx:id="mi_80_percent" mnemonicParsing="false" text="80%" />
+                        <MenuItem fx:id="mi_100_percent" mnemonicParsing="false" text="100%" />
+                      <MenuItem fx:id="mi_fullscreen" mnemonicParsing="false" text="FullScreen" />
+                    </items>
+                  </Menu>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

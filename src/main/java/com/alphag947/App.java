@@ -63,8 +63,7 @@ public class App extends Application {
         sceneManager = new SceneManager(homeScene);
 
         try {
-            setRoot(sceneManager.getScene(0), Screen.getPrimary().getBounds().getWidth() * 0.8,
-                    Screen.getPrimary().getBounds().getHeight() * 0.8);
+            setRoot(sceneManager.getScene(0), 0.8, 0.8);
         } catch (Exception e) {
             cl.err(e);
         }
@@ -83,6 +82,17 @@ public class App extends Application {
 
     public static void setRoot(Scene scene, double width, double height) {
         sceneHistory.add(scene);
+        setStageSize(width, height);
         currentStage.setScene(scene);
+    }
+
+    public static void setStageSize(double widthPercentage, double heightPercentqage) {
+        currentStage.setWidth(Screen.getPrimary().getBounds().getWidth() * widthPercentage);
+        currentStage.setHeight(Screen.getPrimary().getBounds().getHeight() * heightPercentqage);
+        currentStage.centerOnScreen();
+    }
+
+    public static Stage getStage() {
+        return currentStage;
     }
 }
