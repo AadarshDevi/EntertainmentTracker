@@ -1,7 +1,9 @@
 package com.alphag947.backend;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -70,39 +72,62 @@ public class Backend {
 
     public ArrayList<String[]> readData() {
 
-        InputStream dataStream = Settings.class.getResourceAsStream(settings.getValue("READ_ACTUAL_FILEPATH_DATA"));
-        if (dataStream == null)
-            LoggerFactory.getLogger().err(new Exception("\"is\" is null"));
-
         ArrayList<String[]> parsedData = new ArrayList<>();
+        boolean usingOGFile = true;
 
-        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(dataStream, "UTF-8"))) {
+        if (usingOGFile) {
+            try (BufferedReader fileReader = new BufferedReader(
+                    new FileReader(new File(settings.getValue("READ_FILEPATH_DATA"))))) {
 
-            // String line;
+                String line;
 
-            // while ((line = fileReader.readLine()) != null) {
+                while ((line = fileReader.readLine()) != null) {
 
-            // if (!(line.startsWith("//"))) {
-            // settings.put(line.split("<:>")[0], line.split("<:>")[1]);
-            // LoggerFactory.getLogger().dbg(line);
-            // }
-            // }
-
-            String line;
-
-            while ((line = fileReader.readLine()) != null) {
-
-                if (!(line.startsWith("//"))) {
-                    parsedData.add(line.split("<##>")); // level 1 parsed data
+                    if (!(line.startsWith("//"))) {
+                        parsedData.add(line.split("<##>")); // level 1 parsed data
+                    }
                 }
-            }
-            // LoggerFactory.getLogger().log("\"settings.txt\" successfully read.");
+                // LoggerFactory.getLogger().log("\"settings.txt\" successfully read.");
 
-            fileReader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+                fileReader.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            InputStream dataStream = Settings.class.getResourceAsStream(settings.getValue("READ_FILEPATH_DATA"));
+            if (dataStream == null)
+                LoggerFactory.getLogger().err(new Exception("\"is\" is null"));
+
+            try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(dataStream, "UTF-8"))) {
+
+                // String line;
+
+                // while ((line = fileReader.readLine()) != null) {
+
+                // if (!(line.startsWith("//"))) {
+                // settings.put(line.split("<:>")[0], line.split("<:>")[1]);
+                // LoggerFactory.getLogger().dbg(line);
+                // }
+                // }
+
+                String line;
+
+                while ((line = fileReader.readLine()) != null) {
+
+                    if (!(line.startsWith("//"))) {
+                        parsedData.add(line.split("<##>")); // level 1 parsed data
+                    }
+                }
+                // LoggerFactory.getLogger().log("\"settings.txt\" successfully read.");
+
+                fileReader.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         //

@@ -19,20 +19,20 @@ public class ModuleController extends ParentController {
 
     public void setStatus(BorderPane module, Label indicator, Entertainment entertainment) {
         switch (entertainment.getPrimaryStatus()) {
-            case Entertainment.COMPLETED:
+            case COMPLETED:
                 module.getStyleClass().removeAll();
                 module.getStyleClass().addAll("module", "module_completed");
                 indicator.getStyleClass().removeAll();
                 indicator.getStyleClass().addAll("status_indicator", "status_indicator_completed");
                 break;
-            case Entertainment.RELEASED:
-            case Entertainment.ONGOING:
+            case RELEASED:
+            case ONGOING:
                 module.getStyleClass().removeAll();
                 module.getStyleClass().addAll("module", "module_released_ongoing");
                 indicator.getStyleClass().removeAll();
                 indicator.getStyleClass().addAll("status_indicator", "status_indicator_released_ongoing");
                 break;
-            case Entertainment.UPCOMING:
+            case UPCOMING:
                 module.getStyleClass().removeAll();
                 module.getStyleClass().addAll("module", "module_upcoming");
                 indicator.getStyleClass().removeAll();

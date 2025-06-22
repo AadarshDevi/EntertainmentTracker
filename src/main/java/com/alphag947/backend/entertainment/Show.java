@@ -90,13 +90,27 @@ public class Show extends Entertainment {
     }
 
     public void addEpisode(Episode episode) {
-        if (episode.getPrimaryStatus() == 1) {
-            isCompletedEpisodes = true;
-        } else if (episode.getPrimaryStatus() == 2) {
-            isReleasedEpisodes = true;
-        } else if (episode.getPrimaryStatus() == 3) {
-            isUpcomingEpisodes = true;
+        switch (episode.getPrimaryStatus()) {
+            case COMPLETED:
+                isCompletedEpisodes = true;
+                break;
+            case RELEASED:
+                isCompletedEpisodes = true;
+                break;
+            case UPCOMING:
+                isCompletedEpisodes = true;
+                break;
+            default:
+                logger.err(new Exception(String.format("Episode status \"%s\" does not exist.",
+                        episode.getPrimaryStatus())));
         }
+        // if (episode.getPrimaryStatus() == 1) {
+        // isCompletedEpisodes = true;
+        // } else if (episode.getPrimaryStatus() == 2) {
+        // isReleasedEpisodes = true;
+        // } else if (episode.getPrimaryStatus() == 3) {
+        // isUpcomingEpisodes = true;
+        // }
 
         // TO-DO: check if the episode exists in list
 

@@ -4,9 +4,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
+import com.alphag947.backend.logging.LoggerFactory;
+
 public class Entertainment {
-    public static final String MOVIE = "Movie";
-    public static final String ANIME = "Anime";
+    // public static final String MOVIE = "Movie";
+    // public static final String ANIME = "Anime";
 
     private String type;
     private String franchise;
@@ -18,18 +20,20 @@ public class Entertainment {
     protected String stageName;
     protected String visualDate;
 
-    private int primaryStatus;
-    private int secondaryStatus;
+    // private int primaryStatus;
+    private EntertainmentStatus primaryStatus;
+    private EntertainmentStatus secondaryStatus;
+    // private int secondaryStatus;
 
     private boolean isSpecial; // 4
     private boolean isPilot; // 5
     private boolean isFavorite; // 6
     private int id;
 
-    public static final int COMPLETED = 1; // 1
-    public static final int RELEASED = 2; // 2
-    public static final int UPCOMING = 3; // 3
-    public static final int ONGOING = 9; // 9
+    // public static final int COMPLETED = 1; // 1
+    // public static final int RELEASED = 2; // 2
+    // public static final int UPCOMING = 3; // 3
+    // public static final int ONGOING = 9; // 9
 
     public Entertainment(int id, String type, String franchise, String title, String[] statuses, String[] tags,
             LocalDate date) {
@@ -73,22 +77,34 @@ public class Entertainment {
         for (String string : statuses) {
             switch (Integer.parseInt(string)) {
                 case 1: // completed
-                case 2: // released, ongoing
+                    primaryStatus = EntertainmentStatus.COMPLETED;
+                    break;
+                case 2: // released
+                    primaryStatus = EntertainmentStatus.RELEASED;
+                    break;
                 case 3: // upcoming
+                    primaryStatus = EntertainmentStatus.UPCOMING;
+                    break;
                 case 9: // ongoing
-                    primaryStatus = Integer.parseInt(string);
+                    primaryStatus = EntertainmentStatus.ONGOING;
                     break;
                 case 4: // special
                     isSpecial = true;
-                    secondaryStatus = Integer.parseInt(string);
+                    secondaryStatus = EntertainmentStatus.SPECIAL;
                     break;
                 case 5: // pilot
                     isPilot = true;
-                    secondaryStatus = Integer.parseInt(string);
+                    secondaryStatus = EntertainmentStatus.PILOT;
+                    break;
+                // secondaryStatus = Integer.parseInt(string);
                 case 6: // favorite
                     isFavorite = true;
-                    secondaryStatus = Integer.parseInt(string);
+                    secondaryStatus = EntertainmentStatus.FAVORITE;
+                    // secondaryStatus = Integer.parseInt(string);
                     break;
+                default:
+                    LoggerFactory.getConsoleLogger().err(new Exception(String
+                            .format("Primary Status \"%d\" does not exist.", string)));
             }
         }
     }
@@ -125,11 +141,11 @@ public class Entertainment {
         return date;
     }
 
-    public int getPrimaryStatus() {
+    public EntertainmentStatus getPrimaryStatus() {
         return primaryStatus;
     }
 
-    public int getSecondaryStatus() {
+    public EntertainmentStatus getSecondaryStatus() {
         return secondaryStatus;
     }
 
@@ -161,11 +177,11 @@ public class Entertainment {
         this.date = date;
     }
 
-    public void setPrimaryStatus(int primaryStatus) {
+    public void setPrimaryStatus(EntertainmentStatus primaryStatus) {
         this.primaryStatus = primaryStatus;
     }
 
-    public void setSecondaryStatus(int secondaryStatus) {
+    public void setSecondaryStatus(EntertainmentStatus secondaryStatus) {
         this.secondaryStatus = secondaryStatus;
     }
 
@@ -234,7 +250,7 @@ public class Entertainment {
         LocalDate today = LocalDate.now();
 
         if (date.isBefore(today)) {
-            primaryStatus = 2;
+            primaryStatus = EntertainmentStatus.RELEASED;
         }
 
         if (date.equals(LocalDate.of(3000, 01, 01))) {

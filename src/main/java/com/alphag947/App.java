@@ -1,6 +1,7 @@
 package com.alphag947;
 
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
@@ -34,7 +35,6 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         currentStage = stage;
-
         sceneHistory = new SceneHistory();
 
         // create api and console logger
@@ -68,6 +68,7 @@ public class App extends Application {
         } catch (Exception e) {
             cl.err(e);
         }
+
         currentStage.setTitle("Entertainment Tracker");
         currentStage.setResizable(true);
         currentStage.centerOnScreen();
@@ -80,7 +81,7 @@ public class App extends Application {
         cmdThread.start();
     }
 
-    public static void setRoot(Scene scene, double width, double size) {
+    public static void setRoot(Scene scene, double width, double height) {
         sceneHistory.add(scene);
         currentStage.setScene(scene);
     }

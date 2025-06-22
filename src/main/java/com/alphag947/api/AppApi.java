@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.alphag947.backend.Backend;
 import com.alphag947.backend.entertainment.Entertainment;
+import com.alphag947.backend.entertainment.EntertainmentStatus;
 import com.alphag947.backend.entertainment.Episode;
 import com.alphag947.backend.entertainment.Movie;
 import com.alphag947.backend.entertainment.Show;
@@ -60,7 +61,7 @@ public class AppApi {
         return module;
     }
 
-    public int getEntertainmentPrimaryStatusByIndex(int base_num, int child_num) {
+    public EntertainmentStatus getEntertainmentPrimaryStatusByIndex(int base_num, int child_num) {
         try {
             Entertainment entertainment = backend.getEntertainmentById(base_num - 1);
 
@@ -82,7 +83,7 @@ public class AppApi {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return 0;
+        return EntertainmentStatus.NULL;
 
     }
 
@@ -112,14 +113,15 @@ public class AppApi {
         return null;
     }
 
-    public void setEntertainmentPrimaryStatus(int parent_value, int child_value, int new_primary_status) {
+    public void setEntertainmentPrimaryStatus(int parent_value, int child_value,
+            EntertainmentStatus new_primary_status) {
         Entertainment entertainment = getEntertainmentByIndex(parent_value, child_value);
         System.out.println("Before: " + entertainment.getPrimaryStatus());
         entertainment.setPrimaryStatus(new_primary_status);
         System.out.println("After: " + entertainment.getPrimaryStatus());
     }
 
-    public ArrayList<String> getEntertainmentByPrimartStatus(int primaryStatus) {
+    public ArrayList<String> getEntertainmentByPrimartStatus(EntertainmentStatus primaryStatus) {
         ArrayList<String> list = new ArrayList<>();
         int i = 0;
         for (Entertainment entertainment : backend.getEntertainmentList()) {

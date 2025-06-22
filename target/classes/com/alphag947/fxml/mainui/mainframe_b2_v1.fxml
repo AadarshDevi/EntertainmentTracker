@@ -13,11 +13,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="968.0" prefWidth="1680.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.controller.uiController.MainframeController">
+<BorderPane maxWidth="1.7976931348623157E308" prefHeight="968.0" prefWidth="1680.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.controller.uiController.MainframeController">
    <center>
-      <SplitPane dividerPositions="0.24" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <SplitPane fx:id="splitPane" dividerPositions="0.1808426073131955" onMouseClicked="#setViewerWidth" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
-            <AnchorPane fx:id="info_viewer_placeholder" maxWidth="500.0" minWidth="500.0" prefHeight="935.0" prefWidth="500.0" />
+            <AnchorPane fx:id="info_viewer_placeholder" maxWidth="300.0" minWidth="0.0" prefHeight="935.0" prefWidth="300.0" />
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="1235.0" spacing="5.0">
@@ -37,7 +37,7 @@
                         <Insets left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <ListView fx:id="list_view" prefHeight="847.3333333333334" prefWidth="1244.6666666666667" style="-fx-border-radius: 10; -fx-background-radius: 10;" VBox.vgrow="ALWAYS">
+                  <ListView fx:id="list_view" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="150.0" prefHeight="847.3333333333334" prefWidth="1244.6666666666667" style="-fx-border-radius: 10; -fx-background-radius: 10;" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </VBox.margin>
@@ -57,15 +57,14 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-                  <MenuItem fx:id="mi_test" mnemonicParsing="false" onAction="#testAction" text="Test" />
                   <Menu mnemonicParsing="false" text="Sort Main Data">
                     <items>
-                      <MenuItem fx:id="sortByName" mnemonicParsing="false" onAction="#sortModulesByName" text="byName" />
-                        <MenuItem fx:id="sortById" mnemonicParsing="false" onAction="#sortModulesById" text="byId" />
-                        <MenuItem fx:id="sortByTypeTheName" mnemonicParsing="false" onAction="#sortModulesByTypeTheName" text="byTypeThenName" />
+                      <MenuItem fx:id="mi_sortByName" mnemonicParsing="false" onAction="#sortModulesByName" text="byName" />
+                        <MenuItem fx:id="mi_sortById" mnemonicParsing="false" onAction="#sortModulesById" text="byId" />
+                        <MenuItem fx:id="mi_sortByTypeTheName" mnemonicParsing="false" onAction="#sortModulesByTypeTheName" text="byTypeThenName" />
                     </items>
                   </Menu>
+                  <MenuItem fx:id="mi_viewer" mnemonicParsing="false" onAction="#setViewerWidth" text="Viewer" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -73,6 +72,12 @@
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Dev">
+              <items>
+                  <MenuItem fx:id="mi_test" mnemonicParsing="false" onAction="#testAction" text="Test" />
+              <MenuItem mnemonicParsing="false" text="Delete" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import com.alphag947.CommandLineInterface.api.DataAPI;
 import com.alphag947.CommandLineInterface.api.DataAPIFactory;
+import com.alphag947.backend.entertainment.EntertainmentStatus;
+import com.alphag947.backend.logging.LoggerFactory;
 
 public class CommandLine implements Runnable {
 
@@ -54,7 +56,8 @@ public class CommandLine implements Runnable {
                         case "-gp":
                             if (values.length > 1)
                                 child_value = Integer.parseInt(values[1]); // episode > 1-1 :: showid-episodeNum
-                            int primary_status = dAPI.getEntertainmentPrimaryStatus(parent_value, child_value);
+                            EntertainmentStatus primary_status = dAPI.getEntertainmentPrimaryStatus(parent_value,
+                                    child_value);
                             System.out.println(" >>> Primary Status: " + primary_status);
                             break;
                         case "-gs":
@@ -64,15 +67,53 @@ public class CommandLine implements Runnable {
                                 child_value = Integer.parseInt(values[1]); // episode > 1-1 :: showid-episodeNum
                             }
                             int new_primary_status = Integer.parseInt(cmds[3]);
-                            dAPI.setEntertainmentPrimaryStatus(parent_value, child_value,
-                                    new_primary_status);
+                            switch (new_primary_status) {
+                                case 1:
+                                    dAPI.setEntertainmentPrimaryStatus(parent_value, child_value,
+                                            EntertainmentStatus.COMPLETED);
+                                    break;
+                                case 2:
+                                    dAPI.setEntertainmentPrimaryStatus(parent_value, child_value,
+                                            EntertainmentStatus.RELEASED);
+                                    break;
+                                case 3:
+                                    dAPI.setEntertainmentPrimaryStatus(parent_value, child_value,
+                                            EntertainmentStatus.UPCOMING);
+                                    break;
+                                case 9:
+                                    dAPI.setEntertainmentPrimaryStatus(parent_value, child_value,
+                                            EntertainmentStatus.ONGOING);
+                                    break;
+                                default:
+                                    LoggerFactory.getConsoleLogger().err(new Exception(String
+                                            .format("Primary Status \"%d\" does not exist.", new_primary_status)));
+                            }
                             break;
                         case "-ss":
                             break;
 
                         case "-gpl":
-                            int val = Integer.parseInt(cmds[2]);
-                            ArrayList<String> list = dAPI.getEntertainmentByPrimartStatus(val);
+                            int get_primary_status = Integer.parseInt(cmds[2]);
+                            ArrayList<String> list = new ArrayList<>();
+                            switch (get_primary_status) {
+                                case 1:
+                                    list = dAPI.getEntertainmentByPrimartStatus(EntertainmentStatus.COMPLETED);
+                                    break;
+                                case 2:
+                                    list = dAPI.getEntertainmentByPrimartStatus(EntertainmentStatus.RELEASED);
+                                    break;
+                                case 3:
+                                    list = dAPI.getEntertainmentByPrimartStatus(EntertainmentStatus.UPCOMING);
+                                    break;
+                                case 9:
+                                    list = dAPI.getEntertainmentByPrimartStatus(EntertainmentStatus.ONGOING);
+                                    break;
+                                default:
+                                    LoggerFactory.getConsoleLogger().err(new Exception(String
+                                            .format("Primary Status \"%d\" does not exist.", get_primary_status)));
+                            }
+
+                            // ArrayList<String> list = dAPI.getEntertainmentByPrimartStatus(val);
                             if (list.size() == 0) {
                                 System.out.println(" >>> [Empty List]");
                                 break;

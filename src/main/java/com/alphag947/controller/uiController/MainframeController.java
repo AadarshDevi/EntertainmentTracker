@@ -10,17 +10,21 @@ import com.alphag947.backend.entertainment.*;
 import com.alphag947.backend.fxmlLoading.*;
 import com.alphag947.backend.logging.ConsoleLogger;
 import com.alphag947.backend.logging.LoggerFactory;
-import com.alphag947.controller.ModuleController;
 import com.alphag947.controller.ParentController;
 import com.alphag947.controller.entertainmentViewer.moduleViewer.*;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
+import javafx.scene.control.SplitPane.Divider;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.TextAlignment;
@@ -29,32 +33,81 @@ import javafx.stage.Stage;
 public class MainframeController extends ParentController {
 
     AppApi api;
-    @FXML private MenuBar menubar;
-    @FXML private MenuItem mi_app_close;
-    @FXML private MenuItem mi_test;
-
-    @FXML private MenuItem sortByName;
-    @FXML private MenuItem sortById;
-    @FXML private MenuItem sortByTypeTheName;
-
-    @FXML private TextField search_bar_textfield;
-    @FXML private Button search_bar_search_button;
-
-    @FXML private ListView<BorderPane> list_view;
-    @FXML private AnchorPane info_viewer_placeholder;
 
     private BorderPane noEpisodesPane = new BorderPane();
     private Label noEpisodesLabel = new Label("No Entertainment. Create Movie or Shows to view here");
 
     private int listId = 0;
+    // private int moduleHeight = 40;
+
+    private boolean viewerEnabled;
+
+    /*
+     * Menu Bar
+     * 
+     * mi_app_close: closes the app
+     * mi_test: tests and event like mouse clicke keyboard click and other.
+     * 
+     * sortByName: sorts data in ListView by stage name
+     * sortById: sorts data by their ids
+     * sortByTypeTheName: sorts data by their type and then by their name.
+     * 
+     * 
+     * 
+     * 
+     */
+    @FXML private MenuBar menubar;
+    @FXML private MenuItem mi_app_close;
+    @FXML private MenuItem mi_test;
+
+    @FXML private MenuItem mi_sortByName;
+    @FXML private MenuItem mi_sortById;
+    @FXML private MenuItem mi_sortByTypeTheName;
+
+    @FXML private MenuItem mi_viewer;
+
+    @FXML private TextField search_bar_textfield;
+    @FXML private Button search_bar_search_button;
+
+    @FXML private SplitPane splitPane;
+
+    @FXML private ListView<BorderPane> list_view;
+    @FXML private AnchorPane info_viewer_placeholder;
 
     @FXML
     public void initialize() {
         api = AppApiFactory.getApi();
+        viewerEnabled = false;
+        setViewerWidth();
+    }
+
+    public void setAppSize() {
+
+        // double stageWidth = App.getCurrentStage().getWidth();
+        // cl.log(this, "Stage Width: " + stageWidth);
+
+        // double viewerWidthPercentage = 0.3;
+        // double viewerWidth = viewerWidthPercentage * stageWidth;
+        // cl.log(this, "Info Viewer Width: " + viewerWidth);
+
+        // info_viewer_placeholder.setPrefWidth(viewerWidth);
+        // info_viewer_placeholder.setMinWidth(viewerWidth);
+        // info_viewer_placeholder.setMaxWidth(viewerWidth);
+
+        // cl.log(this, "ListView Width: " + (1 - viewerWidthPercentage));
+        // double listViewWidth = (1.0 - viewerWidthPercentage) * stageWidth;
+        // cl.log(this, "ListView Width: " + listViewWidth);
+
+        // info_viewer_placeholder.setPrefWidth(listViewWidth);
+        // info_viewer_placeholder.setMinWidth(0);
+        // info_viewer_placeholder.setMaxWidth(listViewWidth);
+
+        // cl.log(this, "Total Width: " + (viewerWidth + listViewWidth));
     }
 
     @FXML
     public void testAction() {
+        setViewerWidth();
     }
 
     @FXML
@@ -101,6 +154,7 @@ public class MainframeController extends ParentController {
         MovieModuleController mmc = mmp.getController();
         mmc.setId(++listId);
         mmc.setEntertainment(movie);
+        // mm.setPrefSize(list_view.getPrefWidth(), moduleHeight);
         return mm;
     }
 
@@ -168,4 +222,19 @@ public class MainframeController extends ParentController {
         api.setFrontend();
     }
 
+    @FXML
+    public void setViewerWidth() {
+        cl.dbg(this, "Divider Clicked");
+        if (!viewerEnabled) {
+            mi_viewer.setText("Close Viewer");
+            viewerEnabled = true;
+            info_viewer_placeholder.setPrefWidth(300);
+            splitPane.setDividerPositions(0.4);
+        } else {
+            mi_viewer.setText("Open Viewer");
+            viewerEnabled = false;
+            info_viewer_placeholder.setPrefWidth(0);
+            splitPane.setDividerPositions(0.0);
+        }
+    }
 }
