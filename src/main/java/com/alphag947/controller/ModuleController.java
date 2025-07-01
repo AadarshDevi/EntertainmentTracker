@@ -1,13 +1,17 @@
 package com.alphag947.controller;
 
+import com.alphag947.api.AppApi;
 import com.alphag947.backend.entertainment.Entertainment;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 public class ModuleController extends ParentController {
 
     private int id;
+    // private AppApi api;
 
     public void setId(int id) {
         this.id = id;
@@ -17,7 +21,12 @@ public class ModuleController extends ParentController {
         return id;
     }
 
-    public void setStatus(BorderPane module, Label indicator, Entertainment entertainment) {
+    public void setAppApi(AppApi api) {
+        this.api = api;
+    }
+
+    public void setStatus(BorderPane module, Label indicator, Entertainment entertainment)
+            throws EntertainmentException {
         switch (entertainment.getPrimaryStatus()) {
             case COMPLETED:
                 module.getStyleClass().removeAll();
@@ -39,7 +48,12 @@ public class ModuleController extends ParentController {
                 indicator.getStyleClass().addAll("status_indicator", "status_indicator_upcoming");
                 break;
             default:
-                cl.err(new Exception("Primary Status \"" + entertainment.getPrimaryStatus() + "\" does not exist."));
+                throw new EntertainmentException(entertainment.getPrimaryStatus());
         }
+    }
+
+    @FXML
+    public void viewEntertainment() throws EntertainmentException {
+        api.viewEntertainment(getEntertainment().getId());
     }
 }

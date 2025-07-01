@@ -272,7 +272,7 @@
 269<##>Movie<##>The Mitchells vs the Machines<##><##>1<##>tmvtm<##>109<##>2021-04-30<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Lord Miller Productions<<>>One Cool Films
 270<##>Movie<##>Barbie (Live Action)<##><##>1<##>Barbie (Live Action)<##>114<##>2023-07-21<##>Warner Bros.<<>>Mattel<<>>Heyday Films
 271<##>Movie<##>No Time To Spy<##>A Loud House Movie<##>1<##>No Time To Spy: A Loud House Movie<##>86<##>2024-06-21<##>Nickolodeon Movies
-272<##>Movie<##>Miraculous World**<##>Tokyo Stellar Force<##>3<<>>4<<>>5<##>Miraculous ladybug<##>0<##>3000-01-01<##>unknown
+272<##>Movie<##>Miraculous World**<##>Tokyo, Stellar Force<##>3<<>>4<<>>5<##>Miraculous ladybug<<>>Stellar Force<<>>Stellar Force Pilot<<>>Miraculous Special<<>>Miraculous Special<<>>Miraculous World<##>60<##>2025-12-25<##>Zagtoon
 273<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>1<##>26<##>2010-10-10<##>1
 274<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>2<##>26<##>2011-09-17<##>2
 275<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>3<##>13<##>2012-11-10<##>3
@@ -553,4 +553,4 @@
 // shrek 2, 3,4 5
 // iyanu currently s1 completed
 // iwaiju currently s1 completed
-// Tokyo Stellar Force > 60 min special
+// miraculous world Tokyo Stellar Force > 60 min special

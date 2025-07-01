@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="viewer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.controller.entertainmentViewer.infoViewer.MovieViewerController">
+   <children>
+      <Label fx:id="e_type" alignment="CENTER" prefHeight="33.0" prefWidth="529.0" text="Entertainment Type" textAlignment="CENTER" />
+   </children>
+</VBox>

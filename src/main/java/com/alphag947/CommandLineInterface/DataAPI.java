@@ -1,17 +1,22 @@
-package com.alphag947.CommandLineInterface.api;
+package com.alphag947.CommandLineInterface;
 
 import java.util.ArrayList;
 
 import com.alphag947.api.AppApi;
 import com.alphag947.api.AppApiFactory;
-import com.alphag947.backend.entertainment.EntertainmentStatus;
+import com.alphag947.backend.entertainment.Entertainment;
+import com.alphag947.backend.entertainment.enumeration.EntertainmentStatus;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
+import com.alphag947.backend.logging.ConsoleLogger;
 
 public class DataAPI {
 
     AppApi api;
+    ConsoleLogger logger;
 
     public DataAPI() {
         api = AppApiFactory.getApi();
+        logger = new ConsoleLogger();
     }
 
     public EntertainmentStatus getEntertainmentPrimaryStatus(int base_num, int child_num) {
@@ -31,4 +36,12 @@ public class DataAPI {
         return list;
     }
 
+    public Entertainment getEntertainmentById(int entertainmentId) {
+        try {
+            return api.getEntertainmentById(entertainmentId);
+        } catch (EntertainmentException e) {
+            logger.err(new EntertainmentException(entertainmentId));
+        }
+        return Entertainment.EMPTY;
+    }
 }

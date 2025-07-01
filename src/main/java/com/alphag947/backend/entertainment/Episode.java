@@ -2,6 +2,8 @@ package com.alphag947.backend.entertainment;
 
 import java.time.LocalDate;
 
+import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
+
 public class Episode extends Entertainment {
 
     private int seasonID;
@@ -11,7 +13,7 @@ public class Episode extends Entertainment {
 
     public Episode(
             int id,
-            String type,
+            EntertainmentType type,
 
             int episodeNum,
             String episodeTitle,

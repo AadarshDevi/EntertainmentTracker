@@ -8,10 +8,12 @@ import com.alphag947.App;
 import com.alphag947.api.AppApi;
 import com.alphag947.api.AppApiFactory;
 import com.alphag947.backend.entertainment.*;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
 import com.alphag947.backend.fxmlLoading.*;
 import com.alphag947.backend.logging.ConsoleLogger;
 import com.alphag947.backend.logging.LoggerFactory;
 import com.alphag947.controller.ParentController;
+import com.alphag947.controller.entertainmentViewer.infoViewer.MovieViewerController;
 import com.alphag947.controller.entertainmentViewer.moduleViewer.*;
 
 import javafx.fxml.FXML;
@@ -24,6 +26,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
@@ -92,6 +95,9 @@ public class MainframeController extends ParentController {
         api = AppApiFactory.getApi();
         viewerEnabled = false;
         setViewerWidth();
+
+        hasDataInViewer = false;
+        hasSameData = false;
     }
 
     @FXML
@@ -104,6 +110,7 @@ public class MainframeController extends ParentController {
         ConsoleLogger cl = LoggerFactory.getConsoleLogger();
         cl.log(this, "Closing App");
 
+        api.closeApp();
         System.exit(0);
         // TO-DO: get window todo save and then exit
     }
@@ -209,19 +216,101 @@ public class MainframeController extends ParentController {
         api.setFrontend();
     }
 
+    private boolean hasDataInViewer;
+    private boolean hasSameData;
+    private String currentStageName = "";
+
+    /**
+     * this method will check if the viewer should be open or not and change the ui.
+     * if the new data in the viewer is the same as the old data, the viewer will
+     * close. if the old data and the new data are not the same, the viewer will
+     * remain open.
+     */
     @FXML
     public void setViewerWidth() {
-        // cl.dbg(this, "Divider Clicked");
-        if (!viewerEnabled) {
-            mi_viewer.setText("Close Viewer");
-            viewerEnabled = true;
-            info_viewer_placeholder.setPrefWidth(300);
-            splitPane.setDividerPositions(0.4);
-        } else {
-            mi_viewer.setText("Open Viewer");
-            viewerEnabled = false;
+
+        if (!hasDataInViewer) {
+            cl.hlt(this, "No Data in Viewer");
             info_viewer_placeholder.setPrefWidth(0);
             splitPane.setDividerPositions(0.0);
+            return;
         }
+
+        if (viewerEnabled) {
+            cl.log(this, "Closing Viewer");
+            mi_viewer.setText("Closing Viewer");
+
+            if (hasSameData) {
+                info_viewer_placeholder.setPrefWidth(0);
+                splitPane.setDividerPositions(0.0);
+                viewerEnabled = false;
+            } else {
+                info_viewer_placeholder.setPrefWidth(300);
+                splitPane.setDividerPositions(0.4);
+                viewerEnabled = true;
+            }
+
+        } else {
+            cl.log(this, "Closing Viewer");
+            mi_viewer.setText("Closing Viewer");
+            info_viewer_placeholder.setPrefWidth(300);
+            splitPane.setDividerPositions(0.4);
+            viewerEnabled = true;
+        }
+    }
+
+    public void viewEntertainment(Entertainment entertainment) throws EntertainmentException {
+
+        cl.dbg(this, entertainment.getStageName());
+
+        if (currentStageName == null)
+            cl.hlt("value null: \"currentStageName\"");
+
+        hasDataInViewer = true;
+        if (currentStageName != null) {
+            if (!currentStageName.equals(entertainment.getStageName())) {
+                cl.hlt(this, "\nOld: " + currentStageName + "\nNew: " + entertainment.getStageName());
+                currentStageName = entertainment.getStageName();
+                hasSameData = false;
+            } else {
+                cl.hlt(this, "Same: " + currentStageName);
+                hasSameData = true;
+            }
+        }
+
+        setViewerWidth();
+
+        switch (entertainment.getType()) {
+            case MOVIE:
+                FXMLPackage<VBox, MovieViewerController> mvp = FXMLFactory.getFxmlManager().getMovieViewer();
+                VBox mv = mvp.getPane();
+                MovieViewerController mvc = mvp.getController();
+                info_viewer_placeholder.getChildren().addAll(mv);
+                info_viewer_placeholder.requestFocus();
+
+                if (!entertainment.getStageName().equals(currentStageName)) {
+                    cl.dbg("Viewer Data: " + entertainment.getStageName());
+                    mvc.view(entertainment);
+                }
+                break;
+
+            case ANIME:
+                break;
+            case TVSHOW:
+                break;
+            case EPISODE:
+                break;
+
+            default:
+                throw new EntertainmentException(entertainment.getType());
+        }
+
+        cl.hlt(this, "Viewer viewing data");
+
+    }
+
+    @FXML
+    private void runCommandLine() {
+        // api.runCmdLine();
     }
 }

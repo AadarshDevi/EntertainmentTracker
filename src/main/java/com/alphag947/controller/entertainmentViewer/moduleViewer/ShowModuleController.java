@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.Show;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
 import com.alphag947.controller.ModuleController;
 
 import javafx.fxml.FXML;
@@ -23,6 +24,8 @@ public class ShowModuleController extends ModuleController {
     @FXML private BorderPane module;
     @FXML private Label status_indicator;
 
+    @FXML private BorderPane module_info;
+
     ArrayList<BorderPane> episodeList;
 
     private boolean shrunk;
@@ -40,7 +43,13 @@ public class ShowModuleController extends ModuleController {
     public void setEntertainment(Entertainment entertainment) {
         shrunk = true;
         super.setEntertainment(entertainment);
-        view();
+        setData();
+    }
+
+    @FXML
+    public void viewData() {
+        cl.dbg("Viewing: " + ((Show) getEntertainment()).getStageName() + ", "
+                + ((Show) getEntertainment()).getSeasonNum());
     }
 
     public void addEpisodeModule(BorderPane sm) {
@@ -54,16 +63,19 @@ public class ShowModuleController extends ModuleController {
     }
 
     @FXML
-    private void view() {
+    private void setData() {
         Show show = (Show) getEntertainment();
         module_id.setText(getId() + ".");
         module_name.setText(show.getStageName());
-        // module_season.setVisible(false);
-        // module_season.setManaged(false);
         module_season.setText(show.getVisualSeason());
         module_episodes.setText(show.getVisualEpisodeCount());
 
-        setStatus(module, status_indicator, show);
+        try {
+            setStatus(module, status_indicator, show);
+        } catch (EntertainmentException e) {
+            e.printStackTrace();
+        }
+
         if (show.getEpisodes().size() <= 0)
             shrunk = true;
         shrink_grow_module();

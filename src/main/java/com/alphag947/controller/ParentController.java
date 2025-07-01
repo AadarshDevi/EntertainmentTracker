@@ -19,11 +19,6 @@ import javafx.util.Callback;
 public class ParentController implements ParentControllerInterface {
 
     Entertainment entertainment;
-    // AppApi api;
-
-    // public AppApi getAppApi() {
-    // return api;
-    // }
 
     public void setEntertainment(Entertainment entertainment) {
         this.entertainment = entertainment;
@@ -33,7 +28,7 @@ public class ParentController implements ParentControllerInterface {
         return entertainment;
     }
 
-    private AppApi api;
+    protected AppApi api;
     protected ConsoleLogger cl;
 
     public AppApi getAppApi() {
@@ -54,7 +49,7 @@ public class ParentController implements ParentControllerInterface {
     @Override
     public void disconnectAPI() {
         api = null;
-        cl.log("Disconnected from AppApi");
+        // cl.log("Disconnected from AppApi");
     }
 
     @SuppressWarnings("unchecked")

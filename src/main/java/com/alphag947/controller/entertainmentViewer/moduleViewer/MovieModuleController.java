@@ -2,6 +2,7 @@ package com.alphag947.controller.entertainmentViewer.moduleViewer;
 
 import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.Movie;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
 import com.alphag947.controller.ModuleController;
 
 import javafx.fxml.FXML;
@@ -19,30 +20,30 @@ public class MovieModuleController extends ModuleController {
     @FXML private Label status_indicator;
 
     @FXML
-    private void view() {
+    public void viewData() throws EntertainmentException {
+        cl.bl();
+        cl.log(this, getEntertainment().getStageName());
+        api.viewEntertainment(getEntertainment().getId());
+
+    }
+
+    private void setData() {
         Movie movie = (Movie) getEntertainment();
         module_id.setText(super.getId() + ".");
         module_name.setText(movie.getStageName());
         module_info_left.setText(movie.getVisualDuration());
         module_info_right.setText(movie.getVisualDate());
 
-        setStatus(module, status_indicator, movie);
+        try {
+            setStatus(module, status_indicator, movie);
+        } catch (EntertainmentException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void setEntertainment(Entertainment entertainment) {
         super.setEntertainment(entertainment);
-        view();
+        setData();
     }
-
-    // @Override
-    // public String getStageName() {
-    // return getEntertainment().getStageName();
-    // }
-
-    // @Override
-    // public int getEntertainmentId() {
-    // return getEntertainment().getId();
-    // }
-
 }

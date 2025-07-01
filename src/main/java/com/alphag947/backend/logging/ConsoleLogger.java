@@ -2,6 +2,8 @@ package com.alphag947.backend.logging;
 
 public class ConsoleLogger extends Logger {
 
+    private final String ANSI_CYAN = "\u001b[36m";
+
     public void log(Object object, String string) {
         System.out.println("[log:" + object.getClass() + "] > " + string);
     }
@@ -27,5 +29,12 @@ public class ConsoleLogger extends Logger {
 
     public void ex(Object obj, Exception e) {
         e.printStackTrace();
+    }
+
+    public void bl() {
+        System.out
+                .println(ANSI_CYAN + "\u001B[1m"
+                        + "\n------------------------------------------------------------------------------------------------------------------------"
+                        + Logger.ANSI_RESET);
     }
 }

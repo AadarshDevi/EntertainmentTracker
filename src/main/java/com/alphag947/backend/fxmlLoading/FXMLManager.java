@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.alphag947.backend.logging.ConsoleLogger;
 import com.alphag947.backend.logging.LoggerFactory;
 import com.alphag947.controller.ParentController;
+import com.alphag947.controller.entertainmentViewer.infoViewer.MovieViewerController;
 import com.alphag947.controller.entertainmentViewer.moduleViewer.EpisodeModuleController;
 import com.alphag947.controller.entertainmentViewer.moduleViewer.MovieModuleController;
 import com.alphag947.controller.entertainmentViewer.moduleViewer.ShowModuleController;
@@ -13,8 +14,10 @@ import com.alphag947.controller.uiController.MainframeController;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
-public class FXMLManager<T extends BorderPane, C extends ParentController> {
+public class FXMLManager<T extends Pane, C extends ParentController> {
 
     private ConsoleLogger cl;
 
@@ -40,19 +43,18 @@ public class FXMLManager<T extends BorderPane, C extends ParentController> {
             cl.err(this, e);
             e.getStackTrace();
         }
-        cl.err(this, new Exception("FXMLPackage is null!"));
+        cl.err(this, new Exception("FXMLPackage is null! > " + filepath));
         return null;
     }
 
+    // MainUI Elements
     @SuppressWarnings("unchecked")
     public FXMLPackage<BorderPane, MainframeController> getMainframe() {
         return (FXMLPackage<BorderPane, MainframeController>) readFXML(
                 "/com/alphag947/fxml/mainui/mainframe_b2_v1.fxml");
     }
 
-    public void getMovieViewer() {
-    }
-
+    // ModuleUI Elements
     @SuppressWarnings("unchecked")
     public FXMLPackage<BorderPane, MovieModuleController> getMovieModule() {
         return (FXMLPackage<BorderPane, MovieModuleController>) readFXML(
@@ -71,13 +73,17 @@ public class FXMLManager<T extends BorderPane, C extends ParentController> {
                 "/com/alphag947/fxml/entertainmentViewer/moduleViewer/show_module_b2_v1.fxml");
     }
 
-    public void getShowViewer() {
-    }
-
     @SuppressWarnings("unchecked")
     public FXMLPackage<BorderPane, EpisodeModuleController> getEpisodeModule() {
         return (FXMLPackage<BorderPane, EpisodeModuleController>) readFXML(
                 "/com/alphag947/fxml/entertainmentViewer/moduleViewer/episode_module_b2_v1.fxml");
+    }
+
+    // ViewerUI Elements
+    @SuppressWarnings("unchecked")
+    public FXMLPackage<VBox, MovieViewerController> getMovieViewer() {
+        return (FXMLPackage<VBox, MovieViewerController>) readFXML(
+                "com/alphag947/fxml/entertainmentViewer/infoViewer/movie_viewer_v1.fxml");
     }
 
 }

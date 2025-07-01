@@ -2,6 +2,7 @@ package com.alphag947.controller.entertainmentViewer.moduleViewer;
 
 import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.Episode;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
 import com.alphag947.controller.ModuleController;
 
 import javafx.fxml.FXML;
@@ -18,7 +19,7 @@ public class EpisodeModuleController extends ModuleController {
     @FXML private BorderPane module;
 
     @FXML
-    public void view() {
+    public void setData() {
         Episode episode = (Episode) getEntertainment();
         module_id.setText(episode.visualEpisodeNum() + ".");
         module_name.setText(episode.getStageName());
@@ -26,23 +27,21 @@ public class EpisodeModuleController extends ModuleController {
         String stringedDate = (episode.getDate() == null) ? "No Data" : episode.getVisualDate();
         module_date.setText(stringedDate);
 
-        setStatus(module, status_indicator, episode);
+        try {
+            setStatus(module, status_indicator, episode);
+        } catch (EntertainmentException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void setEntertainment(Entertainment entertainment) {
         super.setEntertainment(entertainment);
-        view();
+        setData();
     }
 
-    // @Override
-    // public String getStageName() {
-    // return getEntertainment().getStageName();
-    // }
-
-    // @Override
-    // public int getEntertainmentId() {
-    // return getEntertainment().getId();
-    // }
-
+    @FXML
+    public void viewData() {
+        cl.dbg("Viewing: " + getEntertainment().getStageName());
+    }
 }

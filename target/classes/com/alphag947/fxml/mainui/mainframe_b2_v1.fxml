@@ -15,7 +15,7 @@
 
 <BorderPane maxWidth="1.7976931348623157E308" prefHeight="968.0" prefWidth="1680.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.controller.uiController.MainframeController">
    <center>
-      <SplitPane fx:id="splitPane" dividerPositions="0.1808426073131955" onMouseClicked="#setViewerWidth" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <SplitPane fx:id="splitPane" dividerPositions="0.1808426073131955" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
             <AnchorPane fx:id="info_viewer_placeholder" maxWidth="300.0" minWidth="0.0" prefHeight="935.0" prefWidth="300.0" />
             <VBox prefHeight="200.0" prefWidth="100.0">
@@ -84,6 +84,7 @@
               <items>
                   <MenuItem fx:id="mi_test" mnemonicParsing="false" onAction="#testAction" text="Test" />
               <MenuItem mnemonicParsing="false" text="Delete" />
+                  <MenuItem fx:id="mi_cmd_line" mnemonicParsing="false" onAction="#runCommandLine" text="Start CommandLine" />
               </items>
             </Menu>
         </menus>

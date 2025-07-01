@@ -17,6 +17,9 @@ import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.Episode;
 import com.alphag947.backend.entertainment.Movie;
 import com.alphag947.backend.entertainment.Show;
+import com.alphag947.backend.entertainment.enumeration.EntertainmentStatus;
+import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
 import com.alphag947.backend.logging.ConsoleLogger;
 import com.alphag947.backend.logging.LoggerFactory;
 
@@ -29,6 +32,8 @@ public class Backend {
     private ArrayList<Episode> episodeList;
     private ArrayList<Show> showList;
     private Settings settings;
+
+    public boolean dataChanged;
 
     public Backend() {
         settings = SettingsFactory.getSettings();
@@ -163,7 +168,7 @@ public class Backend {
             case "Movie":
                 return new Movie(
                         Integer.parseInt(list[0]), // Id
-                        list[1], // type
+                        EntertainmentType.MOVIE, // type
                         list[2], // franchise
                         list[3], // title
                         list[4].split("<<>>"), // status
@@ -173,10 +178,25 @@ public class Backend {
                         list[8].split("<<>>")); // production companies
 
             case "TV Show":
+                return new Show(
+                        Integer.parseInt(list[0]), // Id
+                        EntertainmentType.TVSHOW, // type: TV Show or Anime
+                        list[2], // franchise
+                        list[3], // title
+
+                        list[4].split("<<>>"), // status
+                        list[5].split("<<>>"), // tags
+
+                        Integer.parseInt(list[6]), // season number
+                        Integer.parseInt(list[7]), // total episodes
+
+                        LocalDate.parse(list[8]), // date
+                        Integer.parseInt(list[9]) // season ID
+                );
             case "Anime":
                 return new Show(
                         Integer.parseInt(list[0]), // Id
-                        list[1], // type: TV Show or Anime
+                        EntertainmentType.ANIME, // type: TV Show or Anime
                         list[2], // franchise
                         list[3], // title
 
@@ -193,7 +213,7 @@ public class Backend {
             case "Episode":
                 return new Episode(
                         Integer.parseInt(list[0]), // Id
-                        list[1], // type
+                        EntertainmentType.EPISODE, // type
 
                         Integer.parseInt(list[2]), // episode number
 
@@ -208,13 +228,11 @@ public class Backend {
                         Integer.parseInt(list[8]) // season ID
                 );
 
-            //
-
             default:
-                cl.err(new Exception("Entertainment Type \"" + list[1] + "\" does not exist"));
+                cl.err(new EntertainmentException(EntertainmentStatus.resolve(list[1])));
                 return new Entertainment(
                         0, // Id
-                        list[1], // type
+                        EntertainmentType.NULL, // type
                         list[2], // franchise
                         list[3], // title
                         list[4].split("<<>>"), // status
@@ -269,9 +287,6 @@ public class Backend {
                 showExists = true;
                 episodeAdded = true;
                 show.addEpisode(episode);
-                // cl.log("Episode added to Show: " +
-                // show.getStageName() + ", Season " + show.getSeasonNum() +
-                // " Episode " + episode.getEpisodeNum() + ": " + episode.getEpisodeTitle());
             }
         }
 
@@ -308,14 +323,53 @@ public class Backend {
             throw new Exception("Id out of bounds");
 
         for (Entertainment entertainment : entertainmentList) {
-            if (entertainment.getId() == id)
+            if (entertainment.getId() == id) {
+                cl.hlt(this, "id: " + id);
                 return entertainment;
+            }
         }
 
-        throw new Exception("Entertainment with id: " + id + " does not exist");
+        throw new EntertainmentException(id);
     }
 
     public ArrayList<Show> getShowList() {
         return showList;
     }
+
+    public void writeData() {
+        int i = 0;
+        for (Entertainment entertainment : entertainmentList) {
+            i++;
+            switch (entertainment.getType()) {
+                case MOVIE:
+                    Movie movie = (Movie) entertainment;
+                    try {
+                        String mdl = movie.getDataLine();
+                        System.out.println(i + movie.mainDelimiter + mdl);
+                    } catch (EntertainmentException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case ANIME:
+                    break;
+                case TVSHOW:
+                    break;
+                case EPISODE:
+                    break;
+                case NULL:
+                    cl.err(new Exception("entertainment type is \"NULL\" > " + entertainment.getStageName()));
+                    break;
+
+                default:
+                    cl.err(new Exception("entertainment type > " + entertainment.getStageName() + " does not exist"));
+            }
+        }
+    }
+
+    // for CLI
+    public boolean hasDataChanged() {
+        return dataChanged;
+    }
+
+    // space for new methods [Enter]
 }

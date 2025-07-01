@@ -2,6 +2,9 @@ package com.alphag947.backend.entertainment;
 
 import java.time.LocalDate;
 
+import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
+
 public class Movie extends Entertainment {
 
     private int duration;
@@ -11,7 +14,7 @@ public class Movie extends Entertainment {
 
     public Movie(
             int id,
-            String type,
+            EntertainmentType type,
             String franchise,
             String title,
             String[] statuses,
@@ -52,4 +55,25 @@ public class Movie extends Entertainment {
         return visualDuration;
     }
 
+    @Override
+    public String getDataLine() throws EntertainmentException {
+        return getType() + mainDelimiter +
+                getFranchise() + mainDelimiter +
+                getTitle() + mainDelimiter +
+                getStatusLine() + mainDelimiter +
+                getTagsDataLine() + mainDelimiter +
+                getDuration() + mainDelimiter +
+                getDate() + mainDelimiter +
+                getAnimationCompaniesDataLine();
+    }
+
+    private String getAnimationCompaniesDataLine() {
+        String animationCompaniesDataLine = "";
+        for (int i = 0; i < animation_companies.length; i++) {
+            animationCompaniesDataLine += animation_companies[i];
+            if (i != animation_companies.length - 1)
+                animationCompaniesDataLine += subDelimiter;
+        }
+        return animationCompaniesDataLine;
+    }
 }

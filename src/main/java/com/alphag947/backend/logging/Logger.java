@@ -6,7 +6,6 @@ public class Logger implements LoggerInterface {
     protected static final String ANSI_GREEN = "\u001B[32m";
     protected static final String ANSI_RESET = "\u001B[0m";
     protected static final String ANSI_YELLOW = "\u001b[33m";
-    // protected static final String ANSI_CYAN = "\u001b[36m";
 
     @Override
     public void log(String string) {

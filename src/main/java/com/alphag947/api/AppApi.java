@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 import com.alphag947.backend.Backend;
 import com.alphag947.backend.entertainment.Entertainment;
-import com.alphag947.backend.entertainment.EntertainmentStatus;
 import com.alphag947.backend.entertainment.Episode;
 import com.alphag947.backend.entertainment.Movie;
 import com.alphag947.backend.entertainment.Show;
+import com.alphag947.backend.entertainment.enumeration.EntertainmentStatus;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
 import com.alphag947.backend.logging.ConsoleLogger;
 import com.alphag947.backend.logging.LoggerFactory;
 import com.alphag947.backend.searchengine.SearchEngine;
@@ -79,7 +80,7 @@ public class AppApi {
                 }
             }
 
-            throw new Exception("Entertainment Not found");
+            throw new EntertainmentException();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -161,5 +162,28 @@ public class AppApi {
 
     public void sortData(String sortype) {
         backend.sortData(sortype);
+    }
+
+    public void viewEntertainment(int id) {
+        try {
+            Entertainment entertainment = backend.getEntertainmentById(id);
+            cl.log(this, id + ": " + entertainment.getStageName());
+            mainframeController.viewEntertainment(entertainment);
+        } catch (Exception e) {
+            new EntertainmentException(id);
+        }
+    }
+
+    public Entertainment getEntertainmentById(int entertainmentId) throws EntertainmentException {
+        try {
+            return backend.getEntertainmentById(entertainmentId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        throw new EntertainmentException(entertainmentId);
+    }
+
+    public void closeApp() {
+        backend.writeData();
     }
 }

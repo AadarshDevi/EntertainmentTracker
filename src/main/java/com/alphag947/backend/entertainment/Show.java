@@ -3,6 +3,8 @@ package com.alphag947.backend.entertainment;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
+import com.alphag947.backend.entertainment.exception.EntertainmentException;
 import com.alphag947.backend.logging.ConsoleLogger;
 import com.alphag947.backend.logging.LoggerFactory;
 
@@ -26,7 +28,7 @@ public class Show extends Entertainment {
 
     public Show(
             int id,
-            String type,
+            EntertainmentType type,
 
             String franchise,
             String title,
@@ -101,18 +103,8 @@ public class Show extends Entertainment {
                 isCompletedEpisodes = true;
                 break;
             default:
-                logger.err(new Exception(String.format("Episode status \"%s\" does not exist.",
-                        episode.getPrimaryStatus())));
+                logger.err(new EntertainmentException(episode.getPrimaryStatus()));
         }
-        // if (episode.getPrimaryStatus() == 1) {
-        // isCompletedEpisodes = true;
-        // } else if (episode.getPrimaryStatus() == 2) {
-        // isReleasedEpisodes = true;
-        // } else if (episode.getPrimaryStatus() == 3) {
-        // isUpcomingEpisodes = true;
-        // }
-
-        // TO-DO: check if the episode exists in list
 
         episodes.add(episode);
     }

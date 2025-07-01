@@ -1,7 +1,6 @@
 package com.alphag947;
 
 import javafx.application.Application;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
@@ -9,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import com.alphag947.CommandLineInterface.CommandLine.CommandLine;
+import com.alphag947.CommandLineInterface.CommandLine;
 import com.alphag947.SceneFactory.SceneHistory;
 import com.alphag947.SceneFactory.SceneManager;
 import com.alphag947.api.AppApi;

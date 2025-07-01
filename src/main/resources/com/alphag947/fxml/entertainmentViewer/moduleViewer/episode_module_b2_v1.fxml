@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane fx:id="module" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onMouseClicked="#view" prefHeight="40.0" prefWidth="754.0" styleClass="module" stylesheets="@../../../css/module_viewer/status_indicator.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.controller.entertainmentViewer.moduleViewer.EpisodeModuleController">
+<BorderPane fx:id="module" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onMouseClicked="#viewData" prefHeight="40.0" prefWidth="754.0" styleClass="module" stylesheets="@../../../css/module_viewer/status_indicator.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.controller.entertainmentViewer.moduleViewer.EpisodeModuleController">
    <left>
       <HBox BorderPane.alignment="CENTER">
          <children>
@@ -32,6 +32,6 @@
       </Label>
    </center>
    <right>
-      <Label fx:id="module_date" alignment="CENTER" maxWidth="-Infinity" onMouseClicked="#view" prefHeight="40.0" prefWidth="135.0" text="date" />
+      <Label fx:id="module_date" alignment="CENTER" maxWidth="-Infinity" prefHeight="40.0" prefWidth="135.0" text="date" />
    </right>
 </BorderPane>

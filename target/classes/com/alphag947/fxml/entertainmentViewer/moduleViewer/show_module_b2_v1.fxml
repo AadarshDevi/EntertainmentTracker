@@ -31,7 +31,7 @@
             </BorderPane>
          </center>
          <top>
-            <BorderPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="754.0" BorderPane.alignment="CENTER">
+            <BorderPane fx:id="module_info" maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#viewData" prefHeight="40.0" prefWidth="754.0" BorderPane.alignment="CENTER">
                <left>
                   <Label fx:id="module_id" maxHeight="115.0" minHeight="40.0" prefHeight="44.0" prefWidth="72.0" text="#">
                      <padding>
@@ -53,7 +53,7 @@
                   <HBox alignment="CENTER" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="210.0" BorderPane.alignment="CENTER">
                      <children>
                         <Label fx:id="module_season" alignment="CENTER" maxWidth="-Infinity" prefHeight="40.0" prefWidth="105.0" text="min" HBox.hgrow="ALWAYS" />
-                        <Label fx:id="module_episodes" alignment="CENTER" maxWidth="-Infinity" onMouseClicked="#view" prefHeight="100.0" prefWidth="105.0" text="date" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="module_episodes" alignment="CENTER" maxWidth="-Infinity" prefHeight="100.0" prefWidth="105.0" text="date" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </right>
