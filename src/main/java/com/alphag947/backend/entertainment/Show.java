@@ -1,29 +1,26 @@
 package com.alphag947.backend.entertainment;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-
 import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
-import com.alphag947.backend.entertainment.exception.EntertainmentException;
+import com.alphag947.backend.entertainment.exception.EntertainmentStatusNotFoundException;
+import com.alphag947.backend.entertainment.exception.EpisodeNotfoundException;
 import com.alphag947.backend.logging.ConsoleLogger;
 import com.alphag947.backend.logging.LoggerFactory;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class Show extends Entertainment {
 
+    private final ArrayList<Episode> episodes;
+    private final String visualEpisodeCount;
+    private final String visualSeason;
     private int seasonID;
     private int seasonNum;
     private String seasonName;
     private int totalEpisodes;
-
-    private ArrayList<Episode> episodes;
-
     private boolean isCompletedEpisodes;
     private boolean isReleasedEpisodes;
     private boolean isUpcomingEpisodes;
-
-    private String visualEpisodeCount;
-    private String visualSeason;
-
     private ConsoleLogger logger = LoggerFactory.getConsoleLogger();
 
     public Show(
@@ -65,30 +62,30 @@ public class Show extends Entertainment {
         return seasonID;
     }
 
-    public int getSeasonNum() {
-        return seasonNum;
-    }
-
-    public int getTotalEpisodes() {
-        return totalEpisodes;
-    }
-
-    public ArrayList<Episode> getEpisodes() {
-        return episodes;
-    }
-
-    // Setters
-
     public void setSeasonID(int seasonID) {
         this.seasonID = seasonID;
+    }
+
+    public int getSeasonNum() {
+        return seasonNum;
     }
 
     public void setSeasonNum(int seasonNum) {
         this.seasonNum = seasonNum;
     }
 
+    // Setters
+
+    public int getTotalEpisodes() {
+        return totalEpisodes;
+    }
+
     public void setTotalEpisodes(int totalEpisodes) {
         this.totalEpisodes = totalEpisodes;
+    }
+
+    public ArrayList<Episode> getEpisodes() {
+        return episodes;
     }
 
     public void addEpisode(Episode episode) {
@@ -103,22 +100,19 @@ public class Show extends Entertainment {
                 isCompletedEpisodes = true;
                 break;
             default:
-                logger.err(new EntertainmentException(episode.getPrimaryStatus()));
+                logger.err(new EntertainmentStatusNotFoundException(episode.getPrimaryStatus()));
         }
 
         episodes.add(episode);
     }
 
-    public Episode getEpisode(int episodeNum) throws Exception {
-        if (episodeNum <= 0 && episodeNum > episodes.size())
-            return null;
+    public Episode getEpisode(int episodeNum) throws EpisodeNotfoundException {
 
         for (Episode episode : episodes)
             if (episode.getEpisodeNum() == episodeNum)
                 return episode;
 
-        logger.err(new Exception("Episode Number \"" + episodeNum + "\" does not exist"));
-        return null;
+        throw new EpisodeNotfoundException(episodeNum);
     }
 
     private String setVisualEpisodeCount() {
@@ -139,6 +133,10 @@ public class Show extends Entertainment {
 
     public String getVisualEpisodeCount() {
         return visualEpisodeCount;
+    }
+
+    public boolean hasTitle() {
+        return !(seasonName == null || seasonName.isEmpty() || seasonName.isBlank());
     }
 
     public boolean hasCompletedEpisodes() {

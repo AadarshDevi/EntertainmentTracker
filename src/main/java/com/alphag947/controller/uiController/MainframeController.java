@@ -1,121 +1,258 @@
 package com.alphag947.controller.uiController;
 
+import com.alphag947.App;
+import com.alphag947.api.Api;
+import com.alphag947.api.ApiFactory;
+import com.alphag947.api.SortType;
+import com.alphag947.backend.entertainment.Entertainment;
+import com.alphag947.backend.entertainment.Episode;
+import com.alphag947.backend.entertainment.Movie;
+import com.alphag947.backend.entertainment.Show;
+import com.alphag947.backend.entertainment.exception.EntertainmentIdNotFoundException;
+import com.alphag947.backend.entertainment.exception.EntertainmentTypeNotFoundException;
+import com.alphag947.backend.fxmlLoading.FXMLFactory;
+import com.alphag947.backend.fxmlLoading.FXMLPackage;
+import com.alphag947.controller.ParentController;
+import com.alphag947.controller.entertainmentViewer.dataModule.MovieModuleController;
+import com.alphag947.controller.entertainmentViewer.dataModule.ShowModuleController;
+import com.alphag947.controller.entertainmentViewer.dataViewer.EpisodeViewerController;
+import com.alphag947.controller.entertainmentViewer.dataViewer.MovieViewerController;
+import com.alphag947.controller.entertainmentViewer.dataViewer.ShowViewerController;
+import com.alphag947.v2.cli.CommandLineInterface;
+import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.*;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
+import org.apache.log4j.Logger;
+import org.fxmisc.richtext.StyleClassedTextArea;
+import org.fxmisc.richtext.model.StyleSpans;
+import org.fxmisc.richtext.model.StyleSpansBuilder;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
-import com.alphag947.App;
-import com.alphag947.api.AppApi;
-import com.alphag947.api.AppApiFactory;
-import com.alphag947.backend.entertainment.*;
-import com.alphag947.backend.entertainment.exception.EntertainmentException;
-import com.alphag947.backend.fxmlLoading.*;
-import com.alphag947.backend.logging.ConsoleLogger;
-import com.alphag947.backend.logging.LoggerFactory;
-import com.alphag947.controller.ParentController;
-import com.alphag947.controller.entertainmentViewer.infoViewer.MovieViewerController;
-import com.alphag947.controller.entertainmentViewer.moduleViewer.*;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.Stage;
-
 public class MainframeController extends ParentController {
 
-    AppApi api;
-
-    private BorderPane noEpisodesPane = new BorderPane();
-    private Label noEpisodesLabel = new Label("No Entertainment. Create Movie or Shows to view here");
-
+    private final BorderPane noEpisodesPane = new BorderPane();
+    private final Label noEpisodesLabel = new Label("No Entertainment. Create Movie or Shows to view here");
+    private final Logger LOGGER = Logger.getLogger(MainframeController.class);
+    private Api api;
     private int listId = 0;
-    // private int moduleHeight = 40;
-
     private boolean viewerEnabled;
+    private boolean hasSameData;
+    private String currentStageName = "";
+    private Entertainment currentEntertainment;
+    private CommandLineInterface cli = new CommandLineInterface();
 
     /*
      * Menu Bar
-     * 
-     * mi_app_close: closes the app
-     * mi_test: tests and event like mouse clicke keyboard click and other.
-     * 
+     *
+     * mi_app_close:
+     * mi_test: tests and event like mouse click keyboard click and other.
+     *
      * Sorting Modules:
      * sortByName: sorts data in ListView by stage name
      * sortById: sorts data by their ids
      * sortByTypeTheName: sorts data by their type and then by their name.
-     * 
+     *
      * Window Size:
      * mi_75_percent: makes the window width and height 75% of width and height
      * mi_80_percent: makes the window width and height 80% of width and height
      * mi_fullscreen: makes app fullscreen
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
-    @FXML private MenuBar menubar;
-    @FXML private MenuItem mi_app_close;
-    @FXML private MenuItem mi_test;
+    @FXML
+    private MenuBar menubar;
+    @FXML
+    private MenuItem mi_app_close; // closes the app
+    @FXML
+    @SuppressWarnings("unused")
+    private MenuItem mi_test;
+    @SuppressWarnings("unused")
+    @FXML
+    private MenuItem mi_sortByName;
+    @FXML
+    private MenuItem mi_sortById;
+    @FXML
+    private MenuItem mi_sortByTypeTheName;
 
-    @FXML private MenuItem mi_sortByName;
-    @FXML private MenuItem mi_sortById;
-    @FXML private MenuItem mi_sortByTypeTheName;
+    @FXML
+    private MenuItem mi_viewer;
+    @FXML
+    private Menu m_monitors;
 
-    @FXML private MenuItem mi_viewer;
+    @FXML
+    private MenuItem mi_75_percent;
+    @FXML
+    private MenuItem mi_80_percent;
+    @FXML
+    private MenuItem mi_90_percent;
+    @FXML
+    private MenuItem mi_100_percent;
+    @FXML
+    private MenuItem mi_fullscreen;
 
-    @FXML private MenuItem mi_75_percent;
-    @FXML private MenuItem mi_80_percent;
-    @FXML private MenuItem mi_100_percent;
-    @FXML private MenuItem mi_fullscreen;
+    @FXML
+    private TextField search_bar_textfield;
+    @FXML
+    private Button search_bar_search_button;
 
-    @FXML private TextField search_bar_textfield;
-    @FXML private Button search_bar_search_button;
+    @FXML
+    private SplitPane splitPane;
 
-    @FXML private SplitPane splitPane;
-
-    @FXML private ListView<BorderPane> list_view;
-    @FXML private AnchorPane info_viewer_placeholder;
+    @FXML
+    private ListView<BorderPane> list_view;
+    @FXML
+    private AnchorPane info_viewer_placeholder;
+    @FXML
+    private BorderPane homebase;
+    @FXML
+    private HBox searchbar;
 
     @FXML
     public void initialize() {
 
-        mi_75_percent.setOnAction(e -> App.setStageSize(0.75, 0.75));
-        mi_80_percent.setOnAction(e -> App.setStageSize(0.8, 0.8));
-        mi_100_percent.setOnAction(e -> App.setStageSize(1, 1));
-        mi_fullscreen.setOnAction(e -> App.getStage().setFullScreen(true));
+        searchbar.getChildren().remove(search_bar_textfield);
 
-        api = AppApiFactory.getApi();
-        viewerEnabled = false;
-        setViewerWidth();
+        /*
+         * this is creating a commandline text so that
+         */
+        StyleClassedTextArea scta = new StyleClassedTextArea();
+        scta.setWrapText(false);
 
-        hasDataInViewer = false;
-        hasSameData = false;
+        scta.setPrefHeight(35);
+        scta.setMinHeight(35);
+
+        HBox.setHgrow(scta, Priority.ALWAYS);
+
+        scta.setPrefWidth(Region.USE_COMPUTED_SIZE);
+        scta.setMaxWidth(Double.MAX_VALUE);
+
+        HBox.setMargin(scta, new Insets(0, 0, 5, 0));
+
+        scta.getStylesheets().add(getClass().getResource("/com/alphag947/v1/css/texthighlighting.css").toExternalForm());
+        scta.getStyleClass().add("style-classed-text-area");
+
+
+        scta.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+
+                String text = scta.getText();
+                search_bar_textfield.setText(text);
+                LOGGER.info(text);
+                scta.clear();
+                e.consume();
+
+                if (text.strip().equals("@cli =enter")) cli.setInCLI(true);
+                else if (text.strip().equals("@cli =exit")) cli.setInCLI(false);
+                else if (cli.isInCLI()) cli.sendCommand(text);
+//                else LOGGER.info(text);
+            }
+        });
+
+        scta.textProperty().addListener((obs, oldtext, newtext) -> {
+            scta.setStyleSpans(0, computeHighlighting(newtext));
+        });
+        searchbar.getChildren().add(scta);
+
+        mi_75_percent.setOnAction(e -> resizeApp(0.75, 0.75, 0.3));
+        mi_80_percent.setOnAction(e -> resizeApp(0.8, 0.8, 0.3));
+        mi_90_percent.setOnAction(e -> resizeApp(0.9, 0.9, 0.25));
+        mi_100_percent.setOnAction(e -> resizeApp(1, 1, 0.2));
+
+        mi_fullscreen.setOnAction(e -> {
+            api.getSceneManager().getStage().setFullScreen(true);
+            cl.log(this, "App: width  = " + api.getSceneManager().getStage().getWidth() + ", height = " + api.getSceneManager().getStage().getHeight());
+            setViewerWidth(0.2);
+            try {
+                hasSameData = false;
+                viewEntertainment(currentEntertainment);
+            } catch (EntertainmentTypeNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        api = ApiFactory.getApi();
+//        info_viewer_placeholder.setBackground(new Background(new BackgroundFill(Paint.valueOf("BLUE"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+        viewerEnabled = true;
+        hasSameData = true;
+        mi_viewer.setText("Open Viewer");
+
+        splitPane.requestLayout();
+
+        AnchorPane.setTopAnchor(info_viewer_placeholder, 0.0);
+        AnchorPane.setBottomAnchor(info_viewer_placeholder, 0.0);
+        AnchorPane.setLeftAnchor(info_viewer_placeholder, 0.0);
+        AnchorPane.setRightAnchor(info_viewer_placeholder, 0.0);
+
+        setViewerWidth(0.24);
+        api.getSceneManager().setStageSize(0.9, 0.9);
+    }
+
+
+    private StyleSpans<Collection<String>> computeHighlighting(String text) {
+        StyleSpansBuilder<Collection<String>> spansBuilder = new StyleSpansBuilder<>();
+
+        if (text.startsWith("@cli")) cli.setInCLI(true);
+
+        int lastIndex = 0;
+        String[] tokens = text.split(" ");
+
+        for (String token : tokens) {
+            int tokenStart = text.indexOf(token, lastIndex);
+            int tokenEnd = tokenStart + token.length();
+
+            if (tokenStart > lastIndex) spansBuilder.add(Collections.emptyList(), tokenStart - lastIndex);
+            if (token.contains("@") && cli.isInCLI()) spansBuilder.add(Collections.singleton("cli"), token.length());
+            else if (token.contains("=") && cli.isInCLI()) {
+                int equalIndex = token.indexOf("=");
+                spansBuilder.add(Collections.singleton("command"), equalIndex + 1);
+                spansBuilder.add(Collections.singleton("value"), token.length() - (equalIndex + 1));
+            } else spansBuilder.add(Collections.singleton("text"), token.length()); // anything that is not above
+
+            lastIndex = tokenEnd;
+        }
+
+        if (lastIndex < text.length()) spansBuilder.add(Collections.emptyList(), text.length() - lastIndex);
+
+        return spansBuilder.create();
+
+    }
+
+    public void setScreenCount(int screenCount) {
+        for (int i = 1; i <= screenCount; i++) {
+            MenuItem mi = new MenuItem("Monitor " + i);
+            mi.setVisible(true);
+            m_monitors.getItems().addAll(mi);
+        }
     }
 
     @FXML
     public void testAction() {
+        LOGGER.debug("Hello User!");
+        api.test();
     }
 
     @FXML
     public void closeApp() {
 
-        ConsoleLogger cl = LoggerFactory.getConsoleLogger();
-        cl.log(this, "Closing App");
-
+        // TODO: todo save and then exit
+        if (App.DEBUG) cl.log(this, "Closing App");
         api.closeApp();
         System.exit(0);
-        // TO-DO: get window todo save and then exit
     }
 
-    public boolean setEntertainments(ArrayList<Entertainment> entertainments) {
+    public void setEntertainments(ArrayList<Entertainment> entertainments) {
 
         if (entertainments.size() <= 0) {
             cl.err(new Exception("Data List is <= 0"));
@@ -127,7 +264,7 @@ public class MainframeController extends ParentController {
             noEpisodesLabel.setTextAlignment(TextAlignment.CENTER);
 
             list_view.getItems().add(noEpisodesPane);
-            return false;
+            return;
         }
 
         listId = 0;
@@ -140,7 +277,6 @@ public class MainframeController extends ParentController {
                 cl.err(new Exception("\"entertainment\" is an unknown instance"));
             }
         }
-        return true;
     }
 
     public BorderPane createModule(Movie movie) {
@@ -164,22 +300,13 @@ public class MainframeController extends ParentController {
         smc.getModule().setBottom(null);
 
         ArrayList<Episode> episodes = show.getEpisodes();
-        Collections.sort(episodes, Comparator.comparing(Episode::getEpisodeNum));
+        episodes.sort(Comparator.comparing(Episode::getEpisodeNum));
 
         for (Episode episode : episodes) {
-            smc.addEpisodeModule(createModule(episode));
+            smc.addEpisodeModule(episode);
         }
 
         return sm;
-    }
-
-    public BorderPane createModule(Episode episode) {
-        FXMLPackage<BorderPane, EpisodeModuleController> emp = FXMLFactory.getFxmlManager().getEpisodeModule();
-        BorderPane em = emp.getPane();
-        EpisodeModuleController emc = emp.getController();
-        emc.setEntertainment(episode);
-        emc.setId(episode.getEpisodeNum());
-        return em;
     }
 
     public BorderPane getModule() {
@@ -194,123 +321,292 @@ public class MainframeController extends ParentController {
 
     @FXML
     public void sortModulesByName() {
-        cl.dbg("Sorting by Name");
-        api.sortData("byName");
+        if (App.DEBUG)
+            cl.dbg("Sorting by Name");
+        api.sortData(SortType.BY_NAME);
         list_view.getItems().clear();
         api.setFrontend();
     }
 
     @FXML
     public void sortModulesById() {
-        cl.dbg("Sorting by Id");
-        api.sortData("byId");
+        if (App.DEBUG)
+            cl.dbg("Sorting by Id");
+        api.sortData(SortType.BY_ID);
         list_view.getItems().clear();
         api.setFrontend();
     }
 
     @FXML
     public void sortModulesByTypeTheName() {
-        cl.dbg("Sorting by Type");
-        api.sortData("byType");
+        if (App.DEBUG)
+            cl.dbg("Sorting by Type");
+        api.sortData(SortType.BY_TYPE);
         list_view.getItems().clear();
         api.setFrontend();
     }
 
-    private boolean hasDataInViewer;
-    private boolean hasSameData;
-    private String currentStageName = "";
-
     /**
-     * this method will check if the viewer should be open or not and change the ui.
-     * if the new data in the viewer is the same as the old data, the viewer will
-     * close. if the old data and the new data are not the same, the viewer will
-     * remain open.
+     * This is same as setViewerWidth() but this is used for the menuitem
+     * mi_viewer to open/close the viewer.
      */
     @FXML
-    public void setViewerWidth() {
-
-        if (!hasDataInViewer) {
-            cl.hlt(this, "No Data in Viewer");
-            info_viewer_placeholder.setPrefWidth(0);
-            splitPane.setDividerPositions(0.0);
-            return;
+    public void setViewer() {
+        if (viewerEnabled) {
+            mi_viewer.setText("Open Viewer");
+            viewerEnabled = true;
+            hasSameData = true;
+            setViewerWidth(0.24);
+        } else {
+            mi_viewer.setText("Close Viewer");
+            viewerEnabled = false;
+            hasSameData = false;
+            setViewerWidth(0.24);
         }
+    }
+
+    /**
+     * The viewer when has no data, will be closed. If a datamodule is clicked, the
+     * viewer will open and show the data. if another datamodule is clicked, the
+     * viewer will show the new data. if the same datamodule is clicked, then the
+     * viewer will close.
+     */
+    @FXML
+    public void setViewerWidth(double widthPercentage) {
+
+        double width = api.getSceneManager().getStage().getWidth() * widthPercentage;
 
         if (viewerEnabled) {
-            cl.log(this, "Closing Viewer");
-            mi_viewer.setText("Closing Viewer");
-
             if (hasSameData) {
+                mi_viewer.setText("Open Viewer");
+                info_viewer_placeholder.setMinWidth(0);
                 info_viewer_placeholder.setPrefWidth(0);
-                splitPane.setDividerPositions(0.0);
+                splitPane.setDividerPosition(0, 0.0);
+                info_viewer_placeholder.setManaged(false);
+                info_viewer_placeholder.setVisible(false);
+                info_viewer_placeholder.requestLayout();
+                splitPane.requestLayout();
                 viewerEnabled = false;
+                hasSameData = false;
             } else {
-                info_viewer_placeholder.setPrefWidth(300);
-                splitPane.setDividerPositions(0.4);
+                mi_viewer.setText("Close Viewer");
+                info_viewer_placeholder.setMinWidth(width);
+                info_viewer_placeholder.setPrefWidth(width);
+                splitPane.setDividerPosition(0, 0.3);
+                info_viewer_placeholder.setManaged(true);
+                info_viewer_placeholder.setVisible(true);
+                info_viewer_placeholder.requestLayout();
+                splitPane.requestLayout();
                 viewerEnabled = true;
             }
 
         } else {
-            cl.log(this, "Closing Viewer");
-            mi_viewer.setText("Closing Viewer");
-            info_viewer_placeholder.setPrefWidth(300);
-            splitPane.setDividerPositions(0.4);
+            mi_viewer.setText("Close Viewer");
+            info_viewer_placeholder.setMinWidth(width);
+            info_viewer_placeholder.setPrefWidth(width);
+            splitPane.setDividerPosition(0, 0.3);
+            info_viewer_placeholder.setManaged(true);
+            info_viewer_placeholder.setVisible(true);
+            info_viewer_placeholder.requestLayout();
+            splitPane.requestLayout();
             viewerEnabled = true;
         }
+
+        LOGGER.info("Viewer width: " + info_viewer_placeholder.getPrefWidth());
+        info_viewer_placeholder.requestLayout();
+        LOGGER.debug("SameData: " + hasSameData + ", ViewerOpen: " + viewerEnabled);
     }
 
-    public void viewEntertainment(Entertainment entertainment) throws EntertainmentException {
+    public void viewEntertainment(Entertainment entertainment) throws EntertainmentTypeNotFoundException {
 
-        cl.dbg(this, entertainment.getStageName());
+        this.currentEntertainment = entertainment;
+        info_viewer_placeholder.getChildren().clear(); // remove all viewers
 
-        if (currentStageName == null)
+        if (App.DEBUG) cl.log(this, entertainment.getStageName());
+        if (currentStageName == null && App.DEBUG) {
             cl.hlt("value null: \"currentStageName\"");
+        }
 
-        hasDataInViewer = true;
+        /*
+         *
+         * [FIXED]
+         *
+         * TOD-O: @start ViewerVisible Logic
+         * TOD-O: rewrite this part of code
+         * FIXM-E:
+         *  - this part of the code only checks for stage names.
+         *      but in shows, the stage name between many shows is the same
+         *      with different season numbers.
+         *  - When the show does not have a season name, the logic error
+         *      happens.
+         *
+         * FIXM-E: Only change "currentStageName" and "hasSameData"
+         *  - Without LogicError: StageName is not the same
+         *          Lego Ninjago Dragons Rising: New World
+         *          Lego Ninjago Dragons Rising: Another Season
+         *  - With LogicError: The StageName is the same
+         *          Lego Ninjago Dragons Rising (But this is referencing S1)
+         *          Lego Ninjago Dragons Rising (But this is referencing S2)
+         *
+         * Old Logic:
+         *  - Without LogicError: different stagename
+         *          Lego Ninjago Dragons Rising: New World
+         *          Lego Ninjago Dragons Rising: Another Season
+         *  - With LogicError: both have same stagename
+         *          Lego Ninjago Dragons Rising
+         *          Lego Ninjago Dragons Rising
+         *
+         * New Logic: both not same.
+         *  - Miraculous Ladybug S2
+         *  - Miraculous Ladybug S6
+         *
+         * [The Fix] season number added to current stagename to differentiate between different
+         *   season of the same show
+         */
         if (currentStageName != null) {
-            if (!currentStageName.equals(entertainment.getStageName())) {
-                cl.hlt(this, "\nOld: " + currentStageName + "\nNew: " + entertainment.getStageName());
-                currentStageName = entertainment.getStageName();
-                hasSameData = false;
-            } else {
-                cl.hlt(this, "Same: " + currentStageName);
+            String newStageName = "";
+            switch (entertainment.getType()) {
+                case MOVIE:
+                    newStageName = ((Movie) entertainment).getStageName();
+                    LOGGER.info("Generated New StageName: " + newStageName);
+                    break;
+                case ANIME:
+                case TVSHOW:
+                    Show show = (Show) entertainment;
+                    if (show.getTitle() == null || show.getTitle().isBlank() || show.getTitle().isEmpty())
+                        newStageName = show.getStageName() + " S" + show.getSeasonNum();
+                    else newStageName = show.getStageName();
+                    LOGGER.info("Generated New StageName: " + newStageName);
+                    break;
+                case EPISODE:
+                    newStageName = ((Episode) entertainment).getStageName();
+                    LOGGER.info("Generated New StageName: " + newStageName);
+                    break;
+                default:
+                    throw new EntertainmentTypeNotFoundException(entertainment.getType());
+            }
+
+            if (currentStageName.equals(newStageName)) {
                 hasSameData = true;
+                LOGGER.info("Same StageName: " + currentStageName);
+                LOGGER.info("Current StageName: " + currentStageName);
+                LOGGER.info("New StageName: " + newStageName);
+            } else {
+                hasSameData = false;
+                LOGGER.info("Different Stage Name");
+                LOGGER.info("Old StageName: " + currentStageName);
+                LOGGER.info("New StageName: " + newStageName);
+                currentStageName = newStageName;
             }
         }
 
-        setViewerWidth();
+        setViewerWidth(0.24);
 
         switch (entertainment.getType()) {
             case MOVIE:
                 FXMLPackage<VBox, MovieViewerController> mvp = FXMLFactory.getFxmlManager().getMovieViewer();
                 VBox mv = mvp.getPane();
                 MovieViewerController mvc = mvp.getController();
-                info_viewer_placeholder.getChildren().addAll(mv);
-                info_viewer_placeholder.requestFocus();
 
-                if (!entertainment.getStageName().equals(currentStageName)) {
-                    cl.dbg("Viewer Data: " + entertainment.getStageName());
-                    mvc.view(entertainment);
-                }
+                cl.log(this, "Viewer: " + mv);
+                cl.log(this, "\nController: " + mvc);
+
+                mv.setPrefWidth(info_viewer_placeholder.getWidth());
+                info_viewer_placeholder.getChildren().addAll(mv);
+                AnchorPane.setTopAnchor(mv, 0.0);
+                AnchorPane.setBottomAnchor(mv, 0.0);
+                AnchorPane.setLeftAnchor(mv, 0.0);
+                AnchorPane.setRightAnchor(mv, 0.0);
+
+                mvc.view(entertainment);
+                mv.setVisible(true);
                 break;
 
             case ANIME:
-                break;
             case TVSHOW:
+
+                FXMLPackage<VBox, ShowViewerController> svp = FXMLFactory.getFxmlManager().getShowViewer();
+                VBox sv = svp.getPane();
+                ShowViewerController svc = svp.getController();
+
+                cl.log(this, "Viewer: " + sv);
+                cl.log(this, "\nController: " + svc);
+
+                sv.setPrefWidth(info_viewer_placeholder.getWidth());
+                info_viewer_placeholder.getChildren().addAll(sv);
+                AnchorPane.setTopAnchor(sv, 0.0);
+                AnchorPane.setBottomAnchor(sv, 0.0);
+                AnchorPane.setLeftAnchor(sv, 0.0);
+                AnchorPane.setRightAnchor(sv, 0.0);
+
+                svc.view(entertainment);
+                sv.setVisible(true);
                 break;
             case EPISODE:
+                try {
+
+                    FXMLPackage<VBox, EpisodeViewerController> evp = FXMLFactory.getFxmlManager().getEpisodeViewer();
+                    VBox ev = evp.getPane();
+                    EpisodeViewerController evc = evp.getController();
+
+                    LOGGER.info("Viewer: " + ev);
+                    LOGGER.info("Controller: " + evc);
+
+                    ev.setPrefWidth(info_viewer_placeholder.getWidth());
+                    info_viewer_placeholder.getChildren().addAll(ev);
+                    AnchorPane.setTopAnchor(ev, 0.0);
+                    AnchorPane.setBottomAnchor(ev, 0.0);
+                    AnchorPane.setLeftAnchor(ev, 0.0);
+                    AnchorPane.setRightAnchor(ev, 0.0);
+
+                    Episode episode = (Episode) entertainment;
+                    Show show = api.getShow(episode.getSeasonID());
+
+                    evc.view(show, episode);
+                    ev.setVisible(true);
+
+                } catch (EntertainmentIdNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
                 break;
 
             default:
-                throw new EntertainmentException(entertainment.getType());
+                throw new EntertainmentTypeNotFoundException(entertainment.getType());
         }
 
-        cl.hlt(this, "Viewer viewing data");
+        if (App.DEBUG)
+            cl.log(this, "Viewer viewing data");
 
+    }
+
+    public void resizeApp(double appWidthPercent, double appHeightPercent, double viewerWidthPercent) {
+        api.getSceneManager().setStageSize(appWidthPercent, appHeightPercent);
+
+        if (info_viewer_placeholder == null) return;
+
+        info_viewer_placeholder.setPrefHeight(Screen.getPrimary().getBounds().getHeight() - 800);
+        info_viewer_placeholder.setMinHeight(Screen.getPrimary().getBounds().getHeight() - 800);
+        cl.log(this, "App: width  = " + api.getSceneManager().getStage().getWidth() + ", height = " + api.getSceneManager().getStage().getHeight());
+        setViewerWidth(viewerWidthPercent);
+        try {
+            hasSameData = false;
+            if (currentEntertainment == null) return;
+            viewEntertainment(currentEntertainment);
+        } catch (EntertainmentTypeNotFoundException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    public AnchorPane getViewerPlaceholder() {
+        return info_viewer_placeholder;
     }
 
     @FXML
     private void runCommandLine() {
         // api.runCmdLine();
+    }
+
+    public void debrief(String command) {
+
     }
 }

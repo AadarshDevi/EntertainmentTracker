@@ -3,7 +3,6 @@ package com.alphag947.CommandLineInterface;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.enumeration.EntertainmentStatus;
 import com.alphag947.backend.logging.LoggerFactory;
 
@@ -137,11 +136,12 @@ public class CommandLine implements Runnable {
 
                 // -id > get entertainment by id
                 case "-id":
-                    int entertainmentId = Integer.parseInt(cmds[1]);
-                    Entertainment entertainment = dAPI.getEntertainmentById(entertainmentId);
-                    if (entertainment != null)
-                        System.out
-                                .println("Entertainment: " + dAPI.getEntertainmentById(entertainmentId).getStageName());
+                    // int entertainmentId = Integer.parseInt(cmds[1]);
+                    // Entertainment entertainment = dAPI.getEntertainmentById(entertainmentId);
+                    // if (entertainment != null)
+                    // System.out
+                    // .println("Entertainment: " +
+                    // dAPI.getEntertainmentById(entertainmentId).getStageName());
                     break;
 
                 case "-lcd":

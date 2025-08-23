@@ -1,8 +1,9 @@
 package com.alphag947.controller;
 
-import com.alphag947.api.AppApi;
+import com.alphag947.api.Api;
 import com.alphag947.backend.entertainment.Entertainment;
-import com.alphag947.backend.entertainment.exception.EntertainmentException;
+import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundException;
+import com.alphag947.backend.entertainment.exception.EntertainmentStatusNotFoundException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -11,7 +12,6 @@ import javafx.scene.layout.BorderPane;
 public class ModuleController extends ParentController {
 
     private int id;
-    // private AppApi api;
 
     public void setId(int id) {
         this.id = id;
@@ -21,12 +21,12 @@ public class ModuleController extends ParentController {
         return id;
     }
 
-    public void setAppApi(AppApi api) {
+    public void setAppApi(Api api) {
         this.api = api;
     }
 
     public void setStatus(BorderPane module, Label indicator, Entertainment entertainment)
-            throws EntertainmentException {
+            throws EntertainmentStatusNotFoundException {
         switch (entertainment.getPrimaryStatus()) {
             case COMPLETED:
                 module.getStyleClass().removeAll();
@@ -35,11 +35,16 @@ public class ModuleController extends ParentController {
                 indicator.getStyleClass().addAll("status_indicator", "status_indicator_completed");
                 break;
             case RELEASED:
-            case ONGOING:
                 module.getStyleClass().removeAll();
-                module.getStyleClass().addAll("module", "module_released_ongoing");
+                module.getStyleClass().addAll("module", "module_released");
                 indicator.getStyleClass().removeAll();
                 indicator.getStyleClass().addAll("status_indicator", "status_indicator_released_ongoing");
+                break;
+            case ONGOING:
+                module.getStyleClass().removeAll();
+                module.getStyleClass().addAll("module", "module_ongoing");
+                indicator.getStyleClass().removeAll();
+                indicator.getStyleClass().addAll("status_indicator", "status_indicator_upcoming");
                 break;
             case UPCOMING:
                 module.getStyleClass().removeAll();
@@ -48,12 +53,14 @@ public class ModuleController extends ParentController {
                 indicator.getStyleClass().addAll("status_indicator", "status_indicator_upcoming");
                 break;
             default:
-                throw new EntertainmentException(entertainment.getPrimaryStatus());
+                throw new EntertainmentStatusNotFoundException(entertainment.getPrimaryStatus());
         }
     }
 
     @FXML
-    public void viewEntertainment() throws EntertainmentException {
+    public void viewEntertainment() throws EntertainmentNotFoundException {
+        // FIXME: Use better error handling
+        // use try catch
         api.viewEntertainment(getEntertainment().getId());
     }
 }

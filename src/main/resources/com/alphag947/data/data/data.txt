@@ -68,7 +68,7 @@
 68<##>Movie<##>Ice Age 3<##>The Dawn of the Dinosaurs<##>1<##>Ice Age 3: The Dawn of the Dinosaurs<##>94<##>2009-07-01<##>Blue Sky Studios<<>>20th Century Fox Animation
 69<##>Movie<##>Ice Age 4<##>Continental Drift<##>1<##>Ice Age 4: Continental Drift<##>88<##>2012-07-13<##>Blue Sky Studios<<>>20th Century Fox Animation
 70<##>Movie<##>Ice Age 5<##>Collision Course<##>1<##>Ice Age 5: Collision Course<##>94<##>2016-07-22<##>Blue Sky Studios
-71<##>Movie<##>Ice Age (Spinoff)<##>The Adventures of Buck Wild<##>1<##>Ice Age: The Adventures of Buck Wild (Spinoff)<##>82<##>2022-01-28<##>20th Century Fox Animation<<>>Bardel Entertainment
+71<##>Movie<##>Ice Age<##>The Adventures of Buck Wild<##>1<##>Ice Age: The Adventures of Buck Wild (Spinoff)<##>82<##>2022-01-28<##>20th Century Fox Animation<<>>Bardel Entertainment
 72<##>Movie<##>Inside Out<##><##>1<##>Inside Out<##>95<##>2015-06-19<##>Pixar Animation Studios
 73<##>Movie<##>Inside Out 2<##><##>1<##>Inside Out 2<##>96<##>2024-06-14<##>Pixar Animation Studios
 74<##>Movie<##>Kung Fu Panda<##><##>1<##>Kung Fu Panda<##>92<##>2008-06-06<##>DreamWorks Animation
@@ -210,7 +210,7 @@
 207<##>Movie<##>The Lion King<##><##>1<##>The Lion King<##>88<##>1994-06-15<##>Disney
 208<##>Movie<##>The Lion King II<##>Simba's Pride<##>1<##>The Lion King 2<##>82<##>1998-10-27<##>Disney
 209<##>Movie<##>The Lorax<##><##>1<##>Dr. Seuss' The Lorax<<>>dr seuss<##>86<##>2012-03-02<##>Universal Pictures<<>>Illumination Entertainment
-210<##>Movie<##>The Mitchells vs the Machine<##><##>1<##>The Mitchells vs the Machine<##>109<##>2021-04-23<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Lord Miller Productions<<>>One Cool Films
+// 210<##>Movie<##>The Mitchells vs the Machine<##><##>1<##>The Mitchells vs the Machine<##>109<##>2021-04-23<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Lord Miller Productions<<>>One Cool Films
 211<##>Movie<##>The Nutcracker and the Magic Flute<##><##>1<##>The Nutcracker and the Magic Flute<##>90<##>2022-12-08<##>CTB Film Company
 212<##>Movie<##>The Peanuts Movie<##><##>1<##>Snoopy and Charlie Brown: A Peanuts Movie<##>88<##>2015-11-06<##>20th Century Fox Animation<<>>Blue Sky Studios
 213<##>Movie<##>The Penguins of Madagascar<##><##>1<##>Madagascar<##>92<##>2014-11-26<##>DreamWorks Animation
@@ -265,14 +265,14 @@
 262<##>Movie<##>Ghostforce<##>Origins<##>3<<>>4<##>Ghostforce: Origins<##>44<##>3000-01-01<##>Zagtoon<<>>Method Animation<<>>SAMG Animation<<>>Disney Channel/The Walt Disney Company<<>>TF1<<>>KidsMe S.R.L.
 263<##>Movie<##>Zootopia 2<##><##>3<##>Zootopia 2<##>0<##>3000-01-01<##>unknown
 264<##>Movie<##>Moana 2<##><##>2<##>Moana 2<##>100<##>2024-11-27<##>Walt Disney Animation Studios
-265<##>Movie<##>Elio<##><##>3<##>Elio<##>0<##>3000-01-01<##>Pixar
+265<##>Movie<##>Elio<##><##>2<##>Elio<##>0<##>3000-01-01<##>Pixar
 266<##>Movie<##>Hoppers<##><##>3<##>Hoppers<##>0<##>3000-01-01<##>Pixar
 267<##>Movie<##>Toy Story 5<##><##>3<##>Toy Story 5<##>0<##>3000-01-01<##>Pixar
 268<##>Movie<##>Mufasa: The Lion King<##><##>2<##>Mufasa The Lion King<##>118<##>2024-12-20<##>Disney
 269<##>Movie<##>The Mitchells vs the Machines<##><##>1<##>tmvtm<##>109<##>2021-04-30<##>Columbia Pictures<<>>Sony Pictures Animation<<>>Lord Miller Productions<<>>One Cool Films
 270<##>Movie<##>Barbie (Live Action)<##><##>1<##>Barbie (Live Action)<##>114<##>2023-07-21<##>Warner Bros.<<>>Mattel<<>>Heyday Films
 271<##>Movie<##>No Time To Spy<##>A Loud House Movie<##>1<##>No Time To Spy: A Loud House Movie<##>86<##>2024-06-21<##>Nickolodeon Movies
-272<##>Movie<##>Miraculous World**<##>Tokyo, Stellar Force<##>3<<>>4<<>>5<##>Miraculous ladybug<<>>Stellar Force<<>>Stellar Force Pilot<<>>Miraculous Special<<>>Miraculous Special<<>>Miraculous World<##>60<##>2025-12-25<##>Zagtoon
+272<##>Movie<##>Miraculous World**<##>Tokyo, Stellar Force<##>3<<>>4<<>>5<##>Miraculous ladybug<<>>Stellar Force<<>>Stellar Force Pilot<<>>Miraculous Special<<>>Miraculous World<##>54<##>2025-12-25<##>Zagtoon
 273<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>1<##>26<##>2010-10-10<##>1
 274<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>2<##>26<##>2011-09-17<##>2
 275<##>TV Show<##>My Little Pony<##>Friendship Is Magic<##>1<##>mlp<<>>mlpfim<<>>mlp fim<##>3<##>13<##>2012-11-10<##>3
@@ -325,7 +325,7 @@
 322<##>Anime<##>Pokemon Ultimate Journeys<##><##>1<##>Pokemon Journeys<##>25<##>0<##>3000-01-02<##>50
 323<##>Anime<##>Pokemon Horizons The Series<##><##>1<##>Pokemon Horizons The Series<##>1<##>80<##>2025-01-17<##>51
 324<##>Anime<##>Pokemon Horizons The Series<##>The Search for Laqua<##>1<##>Pokemon Horizons The Series<##>2<##>80<##>2025-01-17<##>52
-325<##>Anime<##>Pokemon Horizons The Series<##><##>9<##>Pokemon Horizons The Series<##>3<##>80<##>2025-01-17<##>53
+325<##>Anime<##>Pokemon Horizons The Series<##><##>9<##>Pokemon Horizons The Series<<>>1 year time skip<<>>mega lucorio<<>>rakurium still alive<##>3<##>80<##>2025-01-17<##>53
 326<##>TV Show<##>Slugterra<##>The 99 Caverns<##>1<##>Slugterra<##>1<##>39<##>3000-01-02<##>54
 // season 2: ghoul from beyond, return of elements, slug fu showdown (all are specials and season episodes)
 327<##>TV Show<##>Slugterra<##>The Eastern Caverns<##>1<##>Slugterra<##>3<##>3<##>3000-01-02<##>55
@@ -507,7 +507,7 @@
 503<##>Episode<##>26<##>Nemesis<##>3<##><##>22<##>3000-01-01<##>112
 504<##>Episode<##>1<##>Where the West Begins, Part 1<##>1<##>indie animation<<>>indie studio<<>>western style<##>24<##>2024-02-14<##>181
 505<##>Episode<##>2<##>Where the West Begins, Part 2<##>1<##>indie<<>>indie animation<<>>indie studio<<>>western<<>>cowboy and robots<##>24<##>2025-01-24<##>181
-506<##>Episode<##>3<##><##>3<##>indie<<>>indie animation<<>>indie studio<<>>western<<>>cowboy and robots<##>24<##>3000-01-01<##>181
+506<##>Episode<##>3<##>Centureno<##>1<##>indie<<>>indie animation<<>>indie studio<<>>western<<>>cowboy and robots<##>24<##>2025-07-23<##>181
 507<##>Episode<##>1<##>Thanks to Them<##>1<<>>4<##><##>44<##>2022-10-15<##>60
 508<##>Episode<##>2<##>For the Future<##>1<<>>4<##><##>44<##>2023-01-21<##>60
 509<##>Episode<##>3<##>Watching and Dreaming<##>1<<>>4<##><##>55<##>2023-04-08<##>60
@@ -515,42 +515,29 @@
 511<##>TV Show<##>LEGO Dreamz<##><##>9<##>LEGO Dreamz<##>3<##>26<##>3000-01-02<##>186
 512<##>TV Show<##>Hamster and Gretal<##><##>3<##>Hamster and Gretal<##>3<##>0<##>3000-01-02<##>187
 513<##>Anime<##>Apothecary Diaries<##><##>1<##>Apothecary Diaries<##>2<##>0<##>3000-01-02<##>188
-514<##>Anime<##>Windbreaker<##><##>1<##>Windbreaker<##>2<##>0<##>3000-01-02<##>189
-515<##>TV Show<##>Phineas and Ferb<##><##>9<##>Phineas and Ferb<##>5<##>0<##>3000-01-02<##>190
-516<##>Movie<##>Miraculous World**<##>Rio<##>3<<>>4<##>Miraculous ladybug<##>0<##>3000-01-01<##>191
+// 514 LEGO friends next chapter s3 ep 17 completed
+// 515 Wallice and Gromit: Vengance Most Fowl (seen)
+// 516 iyanu currently s1 completed
+// 517 iwaiju currently s1 completed
+// 518 The Loud House Movie (2021) completed
+// 519 winx club -> s1 - s8 completed
+520<##>Anime<##>Windbreaker<##><##>1<##>Windbreaker<##>2<##>0<##>3000-01-02<##>189
+521<##>TV Show<##>Phineas and Ferb<##><##>9<##>Phineas and Ferb<##>5<##>12<##>3000-01-02<##>190
+522<##>Movie<##>Miraculous World**<##>Rio<##>3<<>>4<##>Miraculous ladybug<##>0<##>3000-01-01<##>191
+// 523 Disney's Wicked, completed
+524<##>Episode<##>7<##>Wonderbolts Academy<##>1<##><##>24<##>2012-12-15<##>3
+525<##>Episode<##>7<##>Newbie Dash<##>1<##><##>24<##>2016-05-07<##>6
 // Secret Life of Pets 3
+// flow tag: blender, blender movie, indie, indie movie
 // Inside Out 3
 // Wild Robot 2
-// The Loud House Movie (2021) completed
-// Planet 51
-// Thelma the Unicorn
 // Superklaus
 // Aurthor's Christmas
-// flow tag: blender
-// Spellbound
-// 10 Lives
-// Dragonkeeper
-// Jungle B__?: Operation Meltdown
-// Asteriz: The Secret of the Magic Potion
-// the inseperables
-// smelliville
-// buffalo kids
-// ferdinand
-// Mummies
-// Bigfoot family
-// Mission to the Moon
-// Wallice and Gromit: Vengance Most Fowl (seen)
-// 200% wolf
-// mlp fav episodes
-// winx club -> s1 - s8 completed
 // winx club reboot s1 upcoming
 // carmen sandiego s1 - s3-4?
-// LEGO friends next chapter s3 ep 8 completed
-// Phineas and ferb s5
 // totaly spies
 // totaly spies reboot
 // penn zero: part time hero
 // shrek 2, 3,4 5
-// iyanu currently s1 completed
-// iwaiju currently s1 completed
-// miraculous world Tokyo Stellar Force > 60 min special
+// Disney's Wicked 2
+// The Cat in the Hat, Warner Bros. > Feb 2027

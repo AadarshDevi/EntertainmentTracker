@@ -3,7 +3,7 @@ package com.alphag947.backend.entertainment;
 import java.time.LocalDate;
 
 import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
-import com.alphag947.backend.entertainment.exception.EntertainmentException;
+import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundException;
 
 public class Movie extends Entertainment {
 
@@ -56,7 +56,7 @@ public class Movie extends Entertainment {
     }
 
     @Override
-    public String getDataLine() throws EntertainmentException {
+    public String getDataLine() throws EntertainmentNotFoundException {
         return getType() + mainDelimiter +
                 getFranchise() + mainDelimiter +
                 getTitle() + mainDelimiter +

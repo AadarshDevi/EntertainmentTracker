@@ -1,19 +1,25 @@
 package com.alphag947.SceneFactory;
 
 import java.util.ArrayList;
-
 import javafx.scene.Scene;
 
-public class SceneHistory {
-    private ArrayList<Scene> sceneHistory = new ArrayList<>();
+import com.alphag947.SceneFactory.exception.SceneHistoryEmptyException;
 
-    public Scene getPreviousScene() throws Exception {
-        if (sceneHistory.size() > 0) {
+
+public class SceneHistory {
+    private final ArrayList<Scene> sceneHistory;
+
+    public SceneHistory() {
+        sceneHistory = new ArrayList<>();
+    }
+
+    public Scene getPreviousScene() throws SceneHistoryEmptyException {
+        if (!sceneHistory.isEmpty()) {
             Scene scene = sceneHistory.get(sceneHistory.size() - 2);
-            sceneHistory.removeLast();
+            sceneHistory.remove(sceneHistory.size() - 2);
             return scene;
         }
-        throw new Exception("SceneHistory is Empty");
+        throw new SceneHistoryEmptyException();
     }
 
     public void add(Scene scene) {
@@ -24,11 +30,10 @@ public class SceneHistory {
         sceneHistory.clear();
     }
 
-    public Scene getCurrentScene() throws Exception {
-        if (sceneHistory.size() > 0) {
-            Scene scene = sceneHistory.getLast();
-            return scene;
+    public Scene getCurrentScene() throws SceneHistoryEmptyException {
+        if (!sceneHistory.isEmpty()) {
+            return sceneHistory.get(sceneHistory.size() - 1);
         }
-        throw new Exception("SceneHistory is Empty");
+        throw new SceneHistoryEmptyException();
     }
 }

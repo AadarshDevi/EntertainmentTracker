@@ -1,0 +1,43 @@
+.style-classed-text-area .text.cli {
+  -fx-font-size: 14pt;
+  -fx-font-family: "Cascadia Mono";
+  -fx-font-style: italic;
+  -fx-font-weight: 300;
+  -fx-fill: #ff8f16;
+}
+
+.style-classed-text-area .text.command {
+  -fx-font-size: 14pt;
+  -fx-font-family: "Cascadia Mono";
+  -fx-font-style: italic;
+  -fx-font-weight: 300;
+  -fx-fill: #008746;
+}
+
+.style-classed-text-area .text.value {
+  -fx-font-size: 14pt;
+  -fx-font-family: "Cascadia Mono";
+  -fx-font-style: italic;
+  -fx-font-weight: 300;
+  -fx-fill: #00a6ff;
+}
+
+.style-classed-text-area .text.text {
+  -fx-fill: #000000;
+  -fx-font-size: 14pt;
+  -fx-font-family: "System";
+  /* -fx-font-family: "Bahnschrift SemiBold Condensed"; */
+  -fx-font-style: normal;
+  -fx-font-weight: normal;
+}
+
+.style-classed-text-area {
+  /* -fx-font-size: 14pt;
+  -fx-font-family: "Cascadia Mono";
+  -fx-font-style: italic;
+  -fx-font-weight: 300; */
+}
+
+.style-classed-text-area .paragraph-box {
+  -fx-padding: 5 0 5 0; /* top right bottom left */
+}

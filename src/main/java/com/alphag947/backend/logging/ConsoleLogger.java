@@ -24,7 +24,7 @@ public class ConsoleLogger extends Logger {
     }
 
     public void hlt(Object object, String string) {
-        hlt(Logger.ANSI_YELLOW + "[log:" + object.getClass() + "] > " + string + Logger.ANSI_RESET);
+        System.err.println(Logger.ANSI_YELLOW + "[log:" + object.getClass() + "] > " + string + Logger.ANSI_RESET);
     }
 
     public void ex(Object obj, Exception e) {

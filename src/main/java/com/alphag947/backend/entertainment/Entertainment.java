@@ -1,20 +1,22 @@
 package com.alphag947.backend.entertainment;
 
+import com.alphag947.backend.entertainment.enumeration.EntertainmentStatus;
+import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
+import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundException;
+import com.alphag947.backend.entertainment.exception.EntertainmentStatusNotFoundException;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
-import com.alphag947.backend.entertainment.enumeration.EntertainmentStatus;
-import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
-import com.alphag947.backend.entertainment.exception.EntertainmentException;
-
 public class Entertainment {
-    // public static final String MOVIE = "Movie";
-    // public static final String ANIME = "Anime";
 
     public static final Entertainment EMPTY = new Entertainment(0, EntertainmentType.NULL, new String[0], new String[0],
             LocalDate.now());
-
+    public String mainDelimiter = "<##>";
+    public String subDelimiter = "<<>>";
+    protected String stageName;
+    protected String visualDate;
     private EntertainmentType type;
     private String franchise;
     private String title;
@@ -22,32 +24,22 @@ public class Entertainment {
     private String[] tags;
     private LocalDate date;
 
-    protected String stageName;
-    protected String visualDate;
-
-    // private int primaryStatus;
+    // public static final int COMPLETED = 1; // 1
+    // public static final int RELEASED = 2; // 2
+    // public static final int UPCOMING = 3; // 3
+    // public static final int ONGOING = 9; // 9
     private EntertainmentStatus primaryStatus;
-    // private EntertainmentStatus secondaryStatus;
     private int secondaryStatus;
-
     private boolean isSpecial; // 4
     private boolean isPilot; // 5
     private boolean isFavorite; // 6
     // private boolean isReviewed; // 7
     private int id;
 
-    // public static final int COMPLETED = 1; // 1
-    // public static final int RELEASED = 2; // 2
-    // public static final int UPCOMING = 3; // 3
-    // public static final int ONGOING = 9; // 9
-
-    public String mainDelimiter = "<##>";
-    public String subDelimiter = "<<>>";
-
     public Entertainment(int id,
-            EntertainmentType type, String franchise, String title, String[] statuses,
-            String[] tags,
-            LocalDate date) {
+                         EntertainmentType type, String franchise, String title, String[] statuses,
+                         String[] tags,
+                         LocalDate date) {
         this.id = id;
         this.type = type;
         this.franchise = franchise;
@@ -66,7 +58,7 @@ public class Entertainment {
             setStatus();
         } catch (NumberFormatException e) {
             e.printStackTrace();
-        } catch (EntertainmentException e) {
+        } catch (EntertainmentNotFoundException e) {
             e.printStackTrace();
         }
         stageName = createStageName();
@@ -87,15 +79,14 @@ public class Entertainment {
         visualDate = setVisualDate();
         try {
             setStatus();
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        } catch (EntertainmentException e) {
+        } catch (NumberFormatException | EntertainmentNotFoundException e) {
             e.printStackTrace();
         }
         stageName = createStageName();
     }
 
-    private void setStatus() throws NumberFormatException, EntertainmentException {
+
+    private void setStatus() throws NumberFormatException, EntertainmentNotFoundException {
 
         for (String string : statuses) {
             switch (Integer.parseInt(string)) {
@@ -114,22 +105,17 @@ public class Entertainment {
                 case 4: // special
                     isSpecial = true;
                     secondaryStatus++;
-                    // secondaryStatus = EntertainmentStatus.SPECIAL;
                     break;
                 case 5: // pilot
                     isPilot = true;
                     secondaryStatus++;
-                    // secondaryStatus = EntertainmentStatus.PILOT;
                     break;
-                // secondaryStatus = Integer.parseInt(string);
                 case 6: // favorite
                     isFavorite = true;
                     secondaryStatus++;
-                    // secondaryStatus = EntertainmentStatus.FAVORITE;
-                    // secondaryStatus = Integer.parseInt(string);
                     break;
                 default:
-                    throw new EntertainmentException(Integer.parseInt(string));
+                    throw new EntertainmentStatusNotFoundException(Integer.parseInt(string));
             }
         }
     }
@@ -146,69 +132,61 @@ public class Entertainment {
         return franchise;
     }
 
-    public String[] getStatuses() {
-        return statuses;
-    }
-
-    public String[] getTags() {
-        return tags;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public EntertainmentType getType() {
-        return type;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public EntertainmentStatus getPrimaryStatus() {
-        return primaryStatus;
-    }
-
-    // public EntertainmentStatus getSecondaryStatus() {
-    // return secondaryStatus;
-    // }
-
-    public String getStageName() {
-        return stageName;
-    }
-
     public void setFranchise(String franchise) {
         this.franchise = franchise;
+    }
+
+    public String[] getStatuses() {
+        return statuses;
     }
 
     public void setStatuses(String[] statuses) {
         this.statuses = statuses;
     }
 
+    public String[] getTags() {
+        return tags;
+    }
+
     public void setTags(String[] tags) {
         this.tags = tags;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
+    public EntertainmentType getType() {
+        return type;
+    }
+
     public void setType(EntertainmentType type) {
         this.type = type;
+    }
+
+    public LocalDate getDate() {
+        return date;
     }
 
     public void setDate(LocalDate date) {
         this.date = date;
     }
 
+    public EntertainmentStatus getPrimaryStatus() {
+        return primaryStatus;
+    }
+
     public void setPrimaryStatus(EntertainmentStatus primaryStatus) {
         this.primaryStatus = primaryStatus;
     }
 
-    // public void setSecondaryStatus(EntertainmentStatus secondaryStatus) {
-    // this.secondaryStatus = secondaryStatus;
-    // }
+    public String getStageName() {
+        return stageName;
+    }
 
     public boolean equals(Entertainment inEntertainment) {
 
@@ -258,31 +236,18 @@ public class Entertainment {
     }
 
     public String createStageName() {
-        String sn = "";
-        if (title == null || title.isEmpty() || title.equals("NVR")) {
-            sn = franchise;
-        } else if (franchise.contains("**")) {
-            sn = (franchise.replace("**", " ") + title);
-        } else {
-            sn = (franchise + ": " + title);
-        }
-
-        return sn;
+        if (title == null || title.isEmpty() || title.equals("NVR")) return franchise;
+        else if (franchise.contains("**")) return (franchise.replace("**", " ") + title);
+        else return (franchise + ": " + title);
     }
 
     public String setVisualDate() {
 
         LocalDate today = LocalDate.now();
 
-        if (date.isBefore(today)) {
-            primaryStatus = EntertainmentStatus.RELEASED;
-        }
-
-        if (date.equals(LocalDate.of(3000, 01, 01))) {
-            return "Upcoming";
-        } else if (date.equals(LocalDate.of(3000, 01, 02))) {
-            return "Released";
-        }
+        if (date.isBefore(today)) primaryStatus = EntertainmentStatus.RELEASED;
+        else if (date.equals(LocalDate.of(3000, 01, 01))) return "Upcoming";
+        else if (date.equals(LocalDate.of(3000, 01, 02))) return "Released";
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
         String formattedDate = date.format(formatter);
@@ -293,10 +258,8 @@ public class Entertainment {
         return visualDate;
     }
 
-    public String getDataLine() throws EntertainmentException {
-        return
-        // id + mainDelimiter +
-        type + mainDelimiter +
+    public String getDataLine() throws EntertainmentNotFoundException {
+        return type + mainDelimiter +
                 franchise + mainDelimiter +
                 title + mainDelimiter +
                 getStatusLine() + subDelimiter +
@@ -308,13 +271,12 @@ public class Entertainment {
         String tagdataline = "";
         for (int i = 0; i < tags.length; i++) {
             tagdataline += tags[i];
-            if (i != tags.length - 1)
-                tagdataline += subDelimiter;
+            if (i != tags.length - 1) tagdataline += subDelimiter;
         }
         return tagdataline;
     }
 
-    protected String getStatusLine() throws EntertainmentException {
+    protected String getStatusLine() throws EntertainmentNotFoundException {
         String statusdataline = "";
 
         switch (primaryStatus) {
@@ -331,23 +293,24 @@ public class Entertainment {
                 statusdataline += 9 + "";
                 break;
             default:
-                throw new EntertainmentException(primaryStatus);
+                throw new EntertainmentStatusNotFoundException(primaryStatus);
         }
 
-        if (secondaryStatus > 0)
-            statusdataline += subDelimiter;
+        if (secondaryStatus > 0) statusdataline += subDelimiter;
 
         for (int i = 0; i < secondaryStatus; i++) {
-            if (isSpecial)
-                statusdataline += 4 + "";
-            if (isPilot)
-                statusdataline += 5 + "";
-            if (isFavorite)
-                statusdataline += 6 + "";
-            if (i != secondaryStatus - 1)
-                statusdataline += subDelimiter;
+            if (isSpecial) statusdataline += 4 + "";
+            if (isPilot) statusdataline += 5 + "";
+            if (isFavorite) statusdataline += 6 + "";
+            if (i != secondaryStatus - 1) statusdataline += subDelimiter;
         }
         // Add reviewed
         return statusdataline;
+    }
+
+    public boolean contains(String phrase) {
+        if (stageName.contains(phrase)) return true;
+        for (String string : tags) if (string.contains(phrase)) return true;
+        return false;
     }
 }

@@ -1,0 +1,23 @@
+Movie = [
+    id: int,
+    type: EntertainmentType,
+    franchise: String,
+    title: String,
+    status: EntertainmentStatus[], (data > int[], EntertainmentStatus > int) = {
+        primary status (only 1) = {
+            completed (data > 1),
+            released (data > 2),
+            upcoming (data > 3),
+            ongoing (data > 9),
+        }
+        booleans = [
+            isSpecial (data > 4)
+            isPilot (data > 5)
+            isFavorite (data > 6)
+            isReviewed (data > 7) // For reviewer edition, future addition
+        ]
+    }
+    duration: int,
+    date: LocalDate,
+    production_companies/animation_companies: String[],
+]

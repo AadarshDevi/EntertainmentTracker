@@ -1,7 +1,7 @@
 package com.alphag947.controller;
 
-import com.alphag947.api.AppApi;
-import com.alphag947.api.AppApiFactory;
+import com.alphag947.api.Api;
+import com.alphag947.api.ApiFactory;
 import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.logging.ConsoleLogger;
 import com.alphag947.backend.logging.LoggerFactory;
@@ -28,10 +28,10 @@ public class ParentController implements ParentControllerInterface {
         return entertainment;
     }
 
-    protected AppApi api;
+    protected Api api;
     protected ConsoleLogger cl;
 
-    public AppApi getAppApi() {
+    public Api getAppApi() {
         return api;
     }
 
@@ -42,7 +42,7 @@ public class ParentController implements ParentControllerInterface {
 
     @Override
     public void connectAPI() {
-        api = AppApiFactory.getApi();
+        api = ApiFactory.getApi();
         // cl.log(this, "Connected to AppApi");
     }
 

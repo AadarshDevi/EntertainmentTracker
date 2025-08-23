@@ -1,45 +1,79 @@
 package com.alphag947.backend;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Comparator;
-
-import com.alphag947.backend.Settings.Settings;
-import com.alphag947.backend.Settings.SettingsFactory;
+import com.alphag947.App;
+import com.alphag947.api.Api;
+import com.alphag947.api.ApiFactory;
+import com.alphag947.api.SortType;
 import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.Episode;
 import com.alphag947.backend.entertainment.Movie;
 import com.alphag947.backend.entertainment.Show;
 import com.alphag947.backend.entertainment.enumeration.EntertainmentStatus;
 import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
-import com.alphag947.backend.entertainment.exception.EntertainmentException;
-import com.alphag947.backend.logging.ConsoleLogger;
-import com.alphag947.backend.logging.LoggerFactory;
+import com.alphag947.backend.entertainment.exception.EntertainmentIdNotFoundException;
+import com.alphag947.backend.entertainment.exception.EntertainmentIdOutOfBoundsException;
+import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundException;
+import com.alphag947.backend.entertainment.exception.EntertainmentStatusNotFoundException;
+import com.alphag947.backend.settings.SettingKey;
+import com.alphag947.backend.settings.Settings;
+import com.alphag947.backend.settings.SettingsAccessDeniedException;
+import com.alphag947.backend.settings.SettingsFactory;
+import org.apache.log4j.Logger;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Backend {
 
-    private ConsoleLogger cl;
-    // private AppApi api;
+    /**
+     * Logger for Backend
+     */
+    private final Logger LOGGER = Logger.getLogger(Backend.class);
 
-    private ArrayList<Entertainment> entertainmentList;
-    private ArrayList<Episode> episodeList;
-    private ArrayList<Show> showList;
+    /**
+     * Contains all the data for movies, tvshows, etc
+     */
+    private final ArrayList<Entertainment> entertainmentList;
+
+    /**
+     * contains all the episodes when reading the data.
+     */
+    private final ArrayList<Episode> episodeList;
+
+    /**
+     * contains all the shows.
+     */
+    private final ArrayList<Show> showList;
+    /**
+     * api for the backend
+     * API is universal and only 1 exists so can call ApiFactory here.
+     *
+     * @see Api
+     * @see ApiFactory
+     */
+    private final Api api = ApiFactory.getApi();
+    /**
+     * Contains the supposed to be only settings file so it is not universal
+     * the SettingsFactory block request if there are many Settings objs
+     */
     private Settings settings;
 
-    public boolean dataChanged;
+    {
+        try {
+            settings = SettingsFactory.getSettings();
+        } catch (SettingsAccessDeniedException e) {
+            LOGGER.error(e);
+        }
+    }
+
 
     public Backend() {
-        settings = SettingsFactory.getSettings();
-        cl = LoggerFactory.getConsoleLogger();
-        // api = AppApiFactory.getApi();
-
         entertainmentList = new ArrayList<>();
         episodeList = new ArrayList<>();
         showList = new ArrayList<>();
@@ -47,42 +81,52 @@ public class Backend {
 
     public void start() {
         setEntertainments(readData());
-        sortData(settings.getValue("SORT_TYPE"));
-        // entertainmentList
-        // .sort(Comparator.comparing(Entertainment::getFranchise).thenComparing(Entertainment::getTitle));
+        String sst = settings.getValue(SettingKey.SORT_TYPE);
+        sortData(SortType.valueOf(sst));
     }
 
-    public void sortData(String sortype) {
-        switch (sortype) {
-            case "byName":
+    public void sortData(SortType st) {
+        switch (st) {
+            case BY_NAME:
                 entertainmentList
                         .sort(Comparator.comparing(
                                 Entertainment::getStageName));
                 break;
-            case "byId":
+            case BY_ID:
                 entertainmentList
                         .sort(Comparator.comparing(
                                 Entertainment::getId));
                 break;
-            case "byType":
+            case BY_TYPE:
                 entertainmentList
                         .sort(Comparator.comparing(
-                                Entertainment::getType).thenComparing(Entertainment::getStageName));
+                                Entertainment::getType));
+                break;
+
+            case BY_DATE:
+                entertainmentList.sort(Comparator.comparing(Entertainment::getDate));
                 break;
 
             default:
-                cl.err(new Exception("Sort Type \"" + sortype + "\"does not exist"));
+                LOGGER.error(new Exception("Sort Type \"" + st + "\"does not exist"));
         }
+    }
+
+    public File getDataFile() {
+        URL url = getClass().getResource("/com/alphag947/data/data/data.txt");
+        if (url == null) LOGGER.info("url is null");
+        File file = new File(url.getFile());
+        return file;
     }
 
     public ArrayList<String[]> readData() {
 
         ArrayList<String[]> parsedData = new ArrayList<>();
-        boolean usingOGFile = true;
+        boolean usingOGFile = false;
 
         if (usingOGFile) {
             try (BufferedReader fileReader = new BufferedReader(
-                    new FileReader(new File(settings.getValue("READ_FILEPATH_DATA"))))) {
+                    new FileReader(new File(settings.getValue(SettingKey.DATA_FILEPATH))))) {
 
                 String line;
 
@@ -92,30 +136,11 @@ public class Backend {
                         parsedData.add(line.split("<##>")); // level 1 parsed data
                     }
                 }
-                // LoggerFactory.getLogger().log("\"settings.txt\" successfully read.");
-
-                fileReader.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
-                e.printStackTrace();
+                LOGGER.error(e);
             }
         } else {
-            InputStream dataStream = Settings.class.getResourceAsStream(settings.getValue("READ_FILEPATH_DATA"));
-            if (dataStream == null)
-                LoggerFactory.getLogger().err(new Exception("\"is\" is null"));
-
-            try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(dataStream, "UTF-8"))) {
-
-                // String line;
-
-                // while ((line = fileReader.readLine()) != null) {
-
-                // if (!(line.startsWith("//"))) {
-                // settings.put(line.split("<:>")[0], line.split("<:>")[1]);
-                // LoggerFactory.getLogger().dbg(line);
-                // }
-                // }
+            try (BufferedReader fileReader = new BufferedReader(new FileReader(getDataFile()))) {
 
                 String line;
 
@@ -125,39 +150,14 @@ public class Backend {
                         parsedData.add(line.split("<##>")); // level 1 parsed data
                     }
                 }
-                // LoggerFactory.getLogger().log("\"settings.txt\" successfully read.");
 
-                fileReader.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
-                e.printStackTrace();
+                LOGGER.error(e);
             }
         }
 
-        //
-
-        //
-
-        //
-
-        // try (BufferedReader fileReader = new BufferedReader(
-        // new FileReader(new File(settings.getDataPath())))) {
-
-        // String line;
-
-        // while ((line = fileReader.readLine()) != null) {
-
-        // }
-        // } catch (
-
-        // FileNotFoundException e) {
-        // e.printStackTrace();
-        // } catch (IOException e) {
-        // e.printStackTrace();
-        // }
-
-        cl.hlt("Parse data length: " + parsedData.size());
+        if (App.DEBUG)
+            LOGGER.info("Parse data length: " + parsedData.size());
         return parsedData;
     }
 
@@ -229,7 +229,7 @@ public class Backend {
                 );
 
             default:
-                cl.err(new EntertainmentException(EntertainmentStatus.resolve(list[1])));
+                LOGGER.error((new EntertainmentStatusNotFoundException(EntertainmentStatus.resolve(list[1]))));
                 return new Entertainment(
                         0, // Id
                         EntertainmentType.NULL, // type
@@ -261,22 +261,27 @@ public class Backend {
         ArrayList<Episode> removedEpisodes = new ArrayList<>();
         for (Episode episode : episodeList) {
 
-            boolean successful = addEpisodeToShow(showList, episode);
+            boolean successful = false;
+            try {
+                successful = addEpisodeToShow(showList, episode);
+            } catch (Exception e) {
+                LOGGER.error(e);
+            }
             if (successful)
                 removedEpisodes.remove(episode);
         }
         episodeList.removeAll(removedEpisodes);
     }
 
-    private boolean addEpisodeToShow(ArrayList<Show> allShows, Episode episode) {
+    private boolean addEpisodeToShow(ArrayList<Show> allShows, Episode episode) throws Exception {
 
         // checks if episode id is out of range
         try {
             if (episode.getSeasonID() < 0 || episode.getSeasonID() > allShows.size())
-                cl.ex(this, new Exception("This episode's ShowID is out of range: "));
+                LOGGER.error(new Exception("This episode's ShowID is out of range: "));
 
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
 
         // checks if show exists
@@ -291,25 +296,15 @@ public class Backend {
         }
 
         // throws error if show does not exist
-        try {
-            if (!showExists)
-                cl.ex(this, new Exception("Show with ShowId \"" + episode.getSeasonID() + "\" does not exist"));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        if (!showExists)
+            throw new Exception("Show with ShowId \"" + episode.getSeasonID() + "\" does not exist");
 
         /*
-         * show exists but episodes that dont have shows not added need to stay on the
+         * show exists but episodes that don't have shows not added need to stay on the
          * list
          */
-        try {
-            if (!episodeAdded) {
-                cl.ex(this, new Exception("Episode \"" + episode.getEpisodeTitle() + "\" does not have show"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        if (!episodeAdded)
+            throw new Exception("Episode \"" + episode.getEpisodeTitle() + "\" does not have show");
 
         return episodeAdded;
     }
@@ -318,25 +313,25 @@ public class Backend {
         return entertainmentList;
     }
 
-    public Entertainment getEntertainmentById(int id) throws Exception {
-        if (id < 0 || id > entertainmentList.size())
-            throw new Exception("Id out of bounds");
+    public Entertainment getEntertainmentById(int id)
+            throws EntertainmentIdOutOfBoundsException, EntertainmentIdNotFoundException {
 
         for (Entertainment entertainment : entertainmentList) {
             if (entertainment.getId() == id) {
-                cl.hlt(this, "id: " + id);
+                if (App.DEBUG)
+                    LOGGER.info("id: " + id);
                 return entertainment;
             }
         }
 
-        throw new EntertainmentException(id);
+        throw new EntertainmentIdNotFoundException(id);
     }
 
     public ArrayList<Show> getShowList() {
         return showList;
     }
 
-    public void writeData() {
+    public void writeData() throws Exception {
         int i = 0;
         for (Entertainment entertainment : entertainmentList) {
             i++;
@@ -346,8 +341,8 @@ public class Backend {
                     try {
                         String mdl = movie.getDataLine();
                         System.out.println(i + movie.mainDelimiter + mdl);
-                    } catch (EntertainmentException e) {
-                        e.printStackTrace();
+                    } catch (EntertainmentNotFoundException e) {
+                        LOGGER.error(e);
                     }
                     break;
                 case ANIME:
@@ -357,19 +352,17 @@ public class Backend {
                 case EPISODE:
                     break;
                 case NULL:
-                    cl.err(new Exception("entertainment type is \"NULL\" > " + entertainment.getStageName()));
-                    break;
-
+                    throw new Exception("entertainment type is \"NULL\" > " + entertainment.getStageName());
                 default:
-                    cl.err(new Exception("entertainment type > " + entertainment.getStageName() + " does not exist"));
+                    throw new Exception("entertainment type > " + entertainment.getStageName() + " does not exist");
             }
         }
     }
 
-    // for CLI
-    public boolean hasDataChanged() {
-        return dataChanged;
+    public Show getShow(int seasonID) throws EntertainmentNotFoundException {
+        for (Show show : showList) {
+            if (show.getSeasonID() == seasonID) return show;
+        }
+        throw new EntertainmentNotFoundException("Show with id \"" + seasonID + "\" not found");
     }
-
-    // space for new methods [Enter]
 }

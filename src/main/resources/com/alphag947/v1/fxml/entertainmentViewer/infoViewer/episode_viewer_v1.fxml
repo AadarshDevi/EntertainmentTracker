@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="viewer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.controller.entertainmentViewer.dataViewer.EpisodeViewerController">
+   <children>
+      <Label alignment="CENTER" maxHeight="33.0" prefHeight="33.0" prefWidth="529.0" text="Episode" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="show_franchise" alignment="CENTER" maxHeight="33.0" prefHeight="33.0" prefWidth="529.0" text="Show" textAlignment="CENTER">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="season_title" alignment="CENTER" maxHeight="33.0" prefHeight="33.0" prefWidth="529.0" text="Season Title" textAlignment="CENTER">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Label>
+      <HBox maxHeight="33.0" prefHeight="33.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="season_num" alignment="CENTER" maxHeight="33.0" prefHeight="33.0" prefWidth="529.0" text="Season Num" textAlignment="CENTER">
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="ep_num" alignment="CENTER" maxHeight="33.0" prefHeight="33.0" prefWidth="529.0" text="Episode Num" textAlignment="CENTER">
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="ep_name" alignment="CENTER" maxHeight="33.0" prefHeight="33.0" prefWidth="529.0" text="Episode Name" textAlignment="CENTER">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="release_date" alignment="CENTER" maxHeight="33.0" prefHeight="33.0" prefWidth="529.0" text="Date" textAlignment="CENTER">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="runtime" alignment="CENTER" maxHeight="33.0" prefHeight="33.0" prefWidth="529.0" text="Duration" textAlignment="CENTER">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>
