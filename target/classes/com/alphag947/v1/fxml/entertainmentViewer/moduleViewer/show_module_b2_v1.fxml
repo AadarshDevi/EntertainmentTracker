@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="module" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="40.0" minWidth="-Infinity" prefHeight="300.0" prefWidth="754.0" styleClass="module" stylesheets="@../../../css/module_viewer/status_indicator.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.controller.entertainmentViewer.dataModule.ShowModuleController">
+   <left>
+      <Label fx:id="status_indicator" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="40.0" onMouseClicked="#shrink_grow_module" prefHeight="300.0" prefWidth="27.0" styleClass="status_indicator" stylesheets="@../../../css/module_viewer/status_indicator.css" text="▲" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="-1.0" left="-1.0" top="-1.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="7.0" />
+         </padding>
+      </Label>
+   </left>
+   <center>
+      <BorderPane prefHeight="300.0" prefWidth="809.0" BorderPane.alignment="CENTER">
+         <center>
+            <BorderPane prefHeight="255.0" prefWidth="754.0" BorderPane.alignment="CENTER">
+               <center>
+                  <ListView fx:id="module_list" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="0.0" prefHeight="272.0" prefWidth="754.0" style="-fx-border-radius: 0 0 10 10; -fx-background-radius: 0 0 10 10;" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </ListView>
+               </center>
+            </BorderPane>
+         </center>
+         <top>
+            <BorderPane fx:id="module_info" maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#viewData" prefHeight="40.0" prefWidth="754.0" BorderPane.alignment="CENTER">
+               <left>
+                  <Label fx:id="module_id" maxHeight="115.0" minHeight="40.0" prefHeight="44.0" prefWidth="72.0" text="#">
+                     <padding>
+                        <Insets left="7.0" />
+                     </padding>
+                  </Label>
+               </left>
+               <center>
+                  <Label fx:id="module_name" maxHeight="96.0" maxWidth="1.7976931348623157E308" minHeight="40.0" prefHeight="96.0" prefWidth="433.0" text="Franchise + Title" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets left="7.0" />
+                     </padding>
+                  </Label>
+               </center>
+               <right>
+                  <HBox alignment="CENTER" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="210.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="module_season" alignment="CENTER" maxWidth="-Infinity" prefHeight="40.0" prefWidth="105.0" text="min" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="module_episodes" alignment="CENTER" maxWidth="-Infinity" prefHeight="100.0" prefWidth="105.0" text="date" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </right>
+            </BorderPane>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

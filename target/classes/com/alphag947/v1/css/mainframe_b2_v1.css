@@ -1,0 +1,26 @@
+.list-view .list-cell {
+  .list-cell {
+    -fx-background-radius: 0; /* no rounding on cells */
+    -fx-background-insets: 0; /* fill completely */
+    -fx-padding: 5px; /*spacing inside cell*/
+    -fx-background-color: transparent; /* or a flat color */
+  }
+}
+
+.list-view {
+  -fx-background-radius: 10px;
+}
+
+.list-view > .virtual-flow {
+  -fx-padding: 15 0 15 0; /* top right bottom left */
+}
+
+.cenla {
+  -fx-background-radius: 10px;
+}
+
+.list-view .list-cell:filled:hover {
+  -fx-background-color: #c9c9c9; /* Or your desired hover color */
+  -fx-text-fill: black; /* Ensure text color is visible */
+  -fx-background-radius: 10px;
+}

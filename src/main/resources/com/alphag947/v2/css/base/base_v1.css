@@ -1,0 +1,17 @@
+.button {
+  -fx-border-radius: 10px;
+  -fx-border-width: 2px;
+  -fx-border-color: black;
+  -fx-border-style: solid;
+
+  -fx-background-radius: 12px;
+  -fx-background-color: white;
+  -fx-background-insets: 1;
+
+  -fx-text-fill: black;
+  -fx-font-size: 13.1pt;
+  -fx-font-family: "Agency FB", "Bahnschrift SemiBold Condensed";
+  -fx-font-style: normal;
+  -fx-font-weight: bold;
+  -fx-alignment: center;
+}
