@@ -101,6 +101,12 @@ Edit information and show new changed data.
 
 Create new entertainment data.
 
+### Progress
+
+1. Created UI.BaseEditor to contain all UI.Editors
+2. Created New Inheritance System for UI.MovieEditor
+3. Support classes also created for this
+
 ## Stage 5: Write Data
 
 write data to the sqlite database.
