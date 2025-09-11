@@ -43,6 +43,12 @@ public class ShowModuleController extends ModuleController {
     private BorderPane module_info;
     private boolean shrunk;
 
+    @FXML
+    public void initialize() {
+        module.getStylesheets().removeAll(module.getStylesheets());
+        module.getStylesheets().add(getClass().getResource(getCssFilepath()).toExternalForm());
+    }
+
     @Override
     public void setEntertainment(Entertainment entertainment) {
         shrunk = true;

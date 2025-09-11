@@ -5,6 +5,8 @@ module com.alphag947 {
     requires java.desktop;
     requires log4j;
     requires org.fxmisc.richtext;
+    requires java.sql;
+    requires static lombok;
 
     exports com.alphag947.controller to javafx.fxml;
 

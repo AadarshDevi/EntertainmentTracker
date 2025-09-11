@@ -5,20 +5,31 @@ import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.Movie;
 import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundException;
 import com.alphag947.controller.ModuleController;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 public class MovieModuleController extends ModuleController {
 
-    @FXML private BorderPane module;
-    @FXML private Label module_id;
-    @FXML private Label module_name;
-    @FXML private Label module_info_left;
-    @FXML private Label module_info_right;
+    @FXML
+    private BorderPane module;
+    @FXML
+    private Label module_id;
+    @FXML
+    private Label module_name;
+    @FXML
+    private Label module_info_left;
+    @FXML
+    private Label module_info_right;
 
-    @FXML private Label status_indicator;
+    @FXML
+    private Label status_indicator;
+
+    @FXML
+    public void initialize() {
+        module.getStylesheets().removeAll(module.getStylesheets());
+        module.getStylesheets().add(getClass().getResource(getCssFilepath()).toExternalForm());
+    }
 
     @FXML
     public void viewData() throws EntertainmentNotFoundException {

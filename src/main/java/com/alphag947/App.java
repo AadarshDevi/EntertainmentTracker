@@ -15,8 +15,6 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.io.File;
-
 /**
  * C:\Users\{{user.name}}\AppData\Local\AlphaGeN_Studios
  *
@@ -29,7 +27,13 @@ public class App extends Application {
      * This is used for logging. If this is true, the logger will not log the information. used
      * for distribution.
      */
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
+
+
+    /**
+     * this is for testing or using the app for specific reason
+     */
+    public static final boolean TESTING = true;
 
     /**
      * Main method for the app
@@ -51,30 +55,6 @@ public class App extends Application {
 
         // the logger for App.start()
         final Logger LOGGER = LogManager.getLogger(App.class);
-        LOGGER.info(System.getProperty("java.version"));
-
-        /*
-         * gets the name of the user, it is the login name of the user.
-         */
-        String user = System.getProperty("user.name");
-        LOGGER.info(user);
-
-        /*
-         * uses the user to generate the database folder if it does not exist
-         */
-        File folder = new File("C:/Users/" + user + "/AppData/Local/AlphaGeN_Studios/EntertainmentTracker/database");
-        if (!(folder.exists() && folder.isDirectory()))
-            folder.mkdirs();
-        else LOGGER.info("Directory Exists");
-
-        /*
-         * uses the user to generate default settings file if it does not exist
-         */
-        File settings = new File("C:/Users/" + user + "/AppData/Local/AlphaGeN_Studios/EntertainmentTracker/settings.txt");
-        if (!settings.exists()) {
-            // TODO: generate default settings folder
-            LOGGER.info("Create Settings File");
-        }
 
         /*
          * Creates API that manages all calls between UIControllers, Backend and sometimes the CLI
@@ -125,7 +105,7 @@ public class App extends Application {
          * then it starts the backend and readies the SearchEngine
          */
         api.createBackend();
-        api.setBackend(settings.getAbsolutePath());
+        api.setBackend();
         LOGGER.info("Backend: Ready");
 
         /*

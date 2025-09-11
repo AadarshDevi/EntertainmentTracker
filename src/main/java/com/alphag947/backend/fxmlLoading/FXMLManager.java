@@ -1,5 +1,6 @@
 package com.alphag947.backend.fxmlLoading;
 
+import com.alphag947.App;
 import com.alphag947.backend.entertainment.Movie;
 import com.alphag947.backend.fxmlLoading.exception.FXMLNullException;
 import com.alphag947.controller.ParentController;
@@ -79,11 +80,11 @@ public class FXMLManager<T extends Pane, C extends ParentController> {
             if (url == null)
                 throw new URLNullException(filepath);
             FXMLLoader loader = new FXMLLoader(url);
-            LOGGER.info("FXMLLoader: " + loader);
+            if (App.DEBUG) LOGGER.info("FXMLLoader: " + loader);
             T pane = loader.load();
-            LOGGER.info("Pre-Pane: " + pane);
+            if (App.DEBUG) LOGGER.info("Pre-Pane: " + pane);
             C controller = loader.getController();
-            LOGGER.info("Pre-Package Controller: " + controller);
+            if (App.DEBUG) LOGGER.info("Pre-Package Controller: " + controller);
             pane.getProperties().put("controller", controller);
             if (controller == null)
                 throw new ControllerNullException(filepath);

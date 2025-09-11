@@ -26,7 +26,7 @@
 
 ## Stage 2: View Entertainment
 
-### Stage 2.1
+### Stage 2.1: Viewer Position
 
 - viewer closes when there is no data or the data is same. viewer will not close when the data changes.
 
@@ -37,15 +37,16 @@
 - [Fixed] UI Problem: The viewer when initially opened after closing has width of 0.0px instead of 300.0px
     - widths by the bug > -0.0, 136
 
-### Stage 2.2
+### Stage 2.2: Correct Viewer Data
 
-- TODO: Correct Viewer is shown
+- Correct Viewer is shown
 - Exception Handling V2
   > Exception handling is better. Specific Exception classes are created.
 
-### Stage 2.3
+### Stage 2.3: Adding All Viewers
 
-- Show correct Viewers: MovieViewer, ShowViewer and EpisodeViewer
+- Show correct Viewers: MovieViewer, ShowViewer and EpisodeViewer.
+- All viewers will have all the data needed to view.
 
 #### Problems
 
@@ -55,24 +56,65 @@
   of entertainmentList.size() because entertainmentList.size() would be 3 for 3 shows.
     - Lego Dreamz S3
 
-- [] Episodes are out of bounds because they are in shows
+- [FIXED] Episodes are out of bounds because they are in shows
+  > created a getShow() method in MainFrame to get the show and created custom view method for EpisodeViewer.
 
-## Stage 3: EntertainmentEditor
+- [FIXED] Shows have same stage name because the franchise and titles are the same while season num is different
+  > The fix was reworking some of the logic. for Movies and Episodes, it is the same. for shows, it takes in the stage
+  name and then adds the season number so when stagenames are the same, the season number will differentiate them. the
+  new stagename is in a new variable. if the new var value and old var value are different, the new var val goes to the
+  old var val. generates newStageName then checks if it same as currentStageName.
 
-### Create Entertainment
+#### Changes
+
+1. the modules not have the colored border to all around. Before, the right border was transparent.
+2. The shows with EntertainmentStatus Ongoing have a custom border. it is different from released border.
+3. the viewer open algorithm was improved so was checking for having sameStageName for hasSameStageName.
+4. CLI is converted from a separate thread to in app.
+5. The SearchField in OldUI.Main.MainFrame is using RichTextFX library for custom font and colors. It replaced the
+   JavaFX TextField.
+6. More exception handling in app.
+7. MovieViewer changed format
+8. Viewer will be open if the data is not the same but will close if the data is same.
+
+#### Additions
+
+1. Logging is done with the help of Log4J logging library
+2. The RichTextFX library is used for the cli input and search input.
+3. Create ShowViewer and EpisodeViewer
+4. Created new packages and folders for NewUI
+5. Created new classes, interfaces, etc. for NewUI
+6. Creates database folders in appdata/local/...
+7. [Future] Creates new settings folder to be used. (replaces in app settings file)
+8. Files are separated from each other (NewUI and OldUI).
+9. [Future] AppUI can change from OldUI to NewUI using cli.
+
+## [Replaced = New Stage 4] Stage 3: EntertainmentEditor
+
+## New Stage 3: Migrating to SQLite
+
+## New Stage 4: EntertainmentEditor
+
+The EditorUI will replace the ListUI. The editor will be in place or the module list.
 
 ### Edit Entertainment
 
-## Stage 5: Write Data
+Edit information and show new changed data.
 
-- writes only movies
+### Create Entertainment
+
+Create new entertainment data.
+
+## [Replaced = New Stage 4] Stage 5: Write Data
+
+write data to the sqlite database.
 
 ## Stage 6: Store Settings
 
 - Stores filepath
 - Stores data sorting type
 
-# Version 2.0
+# [Replaced = Version 1 New Stage 3] Version 2.0
 
 > This version focus is migrating the data from a .txt to a database. The database used will be SQLite for its
 > serverless and embedding into the project.
@@ -87,7 +129,7 @@
 
 # Version 3.0
 
-> V2 will be focused on improving CLI for the app. it will be running on the same or different project. This will be
+> V3 will be focused on improving CLI for the app. it will be running on the same or different project. This will be
 > used to get, change, delete or create data.
 
 - [] Data will be put in a thread save ArrayList(Class that is similar to ArrayList but starts with "B"?)

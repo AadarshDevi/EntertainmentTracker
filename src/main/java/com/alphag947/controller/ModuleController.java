@@ -4,21 +4,23 @@ import com.alphag947.api.Api;
 import com.alphag947.backend.entertainment.Entertainment;
 import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundException;
 import com.alphag947.backend.entertainment.exception.EntertainmentStatusNotFoundException;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 public class ModuleController extends ParentController {
 
+    private final String oldui_css_filepath = "/com/alphag947/v1/css/module_viewer/status_indicator.css";
+    private final String newui_css_filepath = "/com/alphag947/v2/css/data/module/new_status_indicator.css";
+    private final String cssFilepath = newui_css_filepath;
     private int id;
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setAppApi(Api api) {
@@ -44,7 +46,10 @@ public class ModuleController extends ParentController {
                 module.getStyleClass().removeAll();
                 module.getStyleClass().addAll("module", "module_ongoing");
                 indicator.getStyleClass().removeAll();
-                indicator.getStyleClass().addAll("status_indicator", "status_indicator_upcoming");
+                if (cssFilepath.equals(newui_css_filepath))
+                    indicator.getStyleClass().addAll("status_indicator", "status_indicator_upcoming");
+                else
+                    indicator.getStyleClass().addAll("status_indicator", "status_indicator_released_ongoing");
                 break;
             case UPCOMING:
                 module.getStyleClass().removeAll();
@@ -62,5 +67,9 @@ public class ModuleController extends ParentController {
         // FIXME: Use better error handling
         // use try catch
         api.viewEntertainment(getEntertainment().getId());
+    }
+
+    public String getCssFilepath() {
+        return cssFilepath;
     }
 }

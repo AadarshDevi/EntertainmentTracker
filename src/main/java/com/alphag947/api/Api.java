@@ -14,53 +14,36 @@ import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundExcept
 import com.alphag947.backend.fxmlLoading.FXMLFactory;
 import com.alphag947.backend.fxmlLoading.FXMLPackage;
 import com.alphag947.backend.fxmlLoading.exception.FXMLNullException;
-import com.alphag947.backend.searchengine.SearchEngine;
 import com.alphag947.controller.TestController;
 import com.alphag947.controller.uiController.MainframeController;
-import com.alphag947.v2.file.DataBaseHandler;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import lombok.Data;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
+@Data
 public class Api {
 
     private static final Logger LOGGER = LogManager.getLogger(Api.class);
     private final SceneManager sceneManager;
     private MainframeController mainframeController;
     private Backend backend;
-    private SearchEngine searchEngine;
-    private DataBaseHandler dbh;
 
     public Api() {
         sceneManager = new SceneManager();
         LOGGER.info("SceneManager ready. Set stage");
     }
 
-    public MainframeController getMainframeController() {
-        return this.mainframeController;
-    }
-
-    public void setMainframeController(MainframeController mfc) {
-        this.mainframeController = mfc;
-    }
 
     public void createBackend() {
         backend = new Backend();
-        dbh = new DataBaseHandler();
-        searchEngine = new SearchEngine();
     }
 
-    public void setBackend(String dataBasePath) {
-        dbh.setPath(dataBasePath);
+    public void setBackend() {
         backend.start();
-        searchEngine.setData(backend.getEntertainmentList());
-    }
-
-    public SceneManager getSceneManager() {
-        return sceneManager;
     }
 
     public Show getShow(int showId) throws EntertainmentIdNotFoundException {
@@ -75,9 +58,7 @@ public class Api {
     }
 
     public void setFrontend() {
-
         mainframeController.setEntertainments(backend.getEntertainmentList());
-
     }
 
     public BorderPane getEntertainmentModule(int base_num) {
@@ -139,14 +120,16 @@ public class Api {
         try {
             entertainment = getEntertainmentByIndex(parent_value, child_value);
 //            System.out.println("Before: " + entertainment.getPrimaryStatus());
-            entertainment.setPrimaryStatus(new_primary_status);
-            System.out.println("After: " + entertainment.getPrimaryStatus());
+            if (entertainment != null) {
+                entertainment.setPrimaryStatus(new_primary_status);
+                System.out.println("After: " + entertainment.getPrimaryStatus());
+            }
         } catch (EntertainmentIdNotFoundException | EntertainmentIdOutOfBoundsException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public ArrayList<String> getEntertainmentByPrimartStatus(EntertainmentStatus primaryStatus) {
+    public ArrayList<String> getEntertainmentByPrimaryStatus(EntertainmentStatus primaryStatus) {
         ArrayList<String> list = new ArrayList<>();
         int i = 0;
         for (Entertainment entertainment : backend.getEntertainmentList()) {
@@ -181,7 +164,7 @@ public class Api {
                     System.out.print("\t");
                     if (App.DEBUG)
                         LOGGER.info(episode.getType() + "(" + episode.getPrimaryStatus() + ") > " + episode.getEpisodeNum()
-                                + ": " + episode.getEpisodeTitle());
+                                + ": " + episode.getTitle());
                 }
             }
         }
@@ -238,6 +221,7 @@ public class Api {
     public void closeApp() {
         try {
             backend.writeData();
+            System.exit(0);
         } catch (Exception e) {
             LOGGER.error(e);
         }
@@ -262,5 +246,17 @@ public class Api {
     public void readFilePath(String filepath) {
         // TODO: write settings reading here
         LOGGER.info("Put settings file read through");
+    }
+
+    public void setCliView() {
+        mainframeController.setCliView();
+    }
+
+    public void resetMainUI() {
+        mainframeController.resetMainUI();
+    }
+
+    public void showInCliUI(Entertainment entertainment) {
+        mainframeController.showEntertainmentInCli(entertainment);
     }
 }

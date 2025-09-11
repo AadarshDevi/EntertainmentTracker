@@ -33,10 +33,7 @@ import org.fxmisc.richtext.StyleClassedTextArea;
 import org.fxmisc.richtext.model.StyleSpans;
 import org.fxmisc.richtext.model.StyleSpansBuilder;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class MainframeController extends ParentController {
 
@@ -50,6 +47,8 @@ public class MainframeController extends ParentController {
     private String currentStageName = "";
     private Entertainment currentEntertainment;
     private CommandLineInterface cli = new CommandLineInterface();
+    private StyleClassedTextArea scta;
+    private TextArea ta;
 
     /*
      * Menu Bar
@@ -118,15 +117,21 @@ public class MainframeController extends ParentController {
     @FXML
     private HBox searchbar;
 
+
     @FXML
     public void initialize() {
 
         searchbar.getChildren().remove(search_bar_textfield);
 
+        // TODO: Create padding for textarea
+        ta = new TextArea();
+        ta.setEditable(false);
+
+
         /*
          * this is creating a commandline text so that
          */
-        StyleClassedTextArea scta = new StyleClassedTextArea();
+        scta = new StyleClassedTextArea();
         scta.setWrapText(false);
 
         scta.setPrefHeight(35);
@@ -139,7 +144,7 @@ public class MainframeController extends ParentController {
 
         HBox.setMargin(scta, new Insets(0, 0, 5, 0));
 
-        scta.getStylesheets().add(getClass().getResource("/com/alphag947/v1/css/texthighlighting.css").toExternalForm());
+        scta.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/alphag947/v1/css/texthighlighting.css")).toExternalForm());
         scta.getStyleClass().add("style-classed-text-area");
 
 
@@ -149,19 +154,32 @@ public class MainframeController extends ParentController {
                 String text = scta.getText();
                 search_bar_textfield.setText(text);
                 LOGGER.info(text);
+                ta.setText(ta.getText() + "\n" + text);
                 scta.clear();
                 e.consume();
 
-                if (text.strip().equals("@cli =enter")) cli.setInCLI(true);
-                else if (text.strip().equals("@cli =exit")) cli.setInCLI(false);
-                else if (cli.isInCLI()) cli.sendCommand(text);
-//                else LOGGER.info(text);
+                switch (text.strip()) {
+                    case "@cli enter=true" -> cli.setInCLI(true);
+                    case "@cli exit=true" -> cli.setInCLI(false);
+                    case "@cli enterview=true" -> {
+                        cli.setInCLI(true);
+                        setCliView();
+                    }
+                    case "@cli exitview=true" -> {
+                        cli.setInCLI(false);
+                        resetMainUI();
+                    }
+                    default -> {
+                        if (cli.isInCLI()) cli.sendCommand(text);
+                    }
+                }
             }
         });
 
         scta.textProperty().addListener((obs, oldtext, newtext) -> {
             scta.setStyleSpans(0, computeHighlighting(newtext));
         });
+        scta.requestFocus();
         searchbar.getChildren().add(scta);
 
         mi_75_percent.setOnAction(e -> resizeApp(0.75, 0.75, 0.3));
@@ -249,7 +267,6 @@ public class MainframeController extends ParentController {
         // TODO: todo save and then exit
         if (App.DEBUG) cl.log(this, "Closing App");
         api.closeApp();
-        System.exit(0);
     }
 
     public void setEntertainments(ArrayList<Entertainment> entertainments) {
@@ -473,7 +490,7 @@ public class MainframeController extends ParentController {
                 case ANIME:
                 case TVSHOW:
                     Show show = (Show) entertainment;
-                    if (show.getTitle() == null || show.getTitle().isBlank() || show.getTitle().isEmpty())
+                    if (show.getTitle() == null || show.getTitle().isBlank())
                         newStageName = show.getStageName() + " S" + show.getSeasonNum();
                     else newStageName = show.getStageName();
                     LOGGER.info("Generated New StageName: " + newStageName);
@@ -608,5 +625,29 @@ public class MainframeController extends ParentController {
 
     public void debrief(String command) {
 
+    }
+
+    public void setCliView() {
+        homebase.setCenter(ta);
+        homebase.setBottom(scta);
+    }
+
+    public void resetMainUI() {
+        homebase.setCenter(splitPane);
+    }
+
+    public void showEntertainmentInCli(Entertainment entertainment) {
+        ta.setText(
+                ta.getText() + "\n" +
+                        entertainment.getType() + "\n" +
+                        entertainment.getFranchise() + "\n" +
+                        entertainment.getTitle() + "\n" +
+                        entertainment.getVisualDate() + "\n" +
+                        "\n"
+
+        );
+    }
+
+    public void showMessageInCli(String string) {
     }
 }

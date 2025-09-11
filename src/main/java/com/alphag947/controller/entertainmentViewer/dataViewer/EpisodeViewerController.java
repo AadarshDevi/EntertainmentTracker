@@ -34,7 +34,7 @@ public class EpisodeViewerController extends ViewerController {
         LOGGER.info(show.getStageName() + // show stagename
                 " S" + show.getSeasonNum() + // season num
                 " E" + episode.getEpisodeNum() + // episode num
-                ": " + episode.getEpisodeTitle() // episode name
+                ": " + episode.getTitle() // episode name
         );
 
         if (show.getTitle() != null) {
@@ -55,7 +55,7 @@ public class EpisodeViewerController extends ViewerController {
 
         season_num.setText(show.getVisualSeason());
         release_date.setText(episode.getVisualDate());
-        ep_name.setText(episode.getEpisodeTitle());
+        ep_name.setText(episode.getTitle());
         ep_num.setText("Episode " + episode.getEpisodeNum());
         viewer.getChildren().add(1, new CenterLabel(getStatus(episode.getPrimaryStatus())));
 

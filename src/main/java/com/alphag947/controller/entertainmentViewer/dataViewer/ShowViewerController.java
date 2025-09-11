@@ -15,7 +15,7 @@ import java.time.LocalDate;
 
 public class ShowViewerController extends ViewerController {
 
-    private final Logger LOGGER = Logger.getLogger(MovieViewerController.class);
+    private final Logger LOGGER = Logger.getLogger(ShowViewerController.class);
 
     @FXML
     private VBox viewer;

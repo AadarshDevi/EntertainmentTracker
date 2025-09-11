@@ -14,10 +14,12 @@ import com.alphag947.backend.entertainment.exception.EntertainmentIdNotFoundExce
 import com.alphag947.backend.entertainment.exception.EntertainmentIdOutOfBoundsException;
 import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundException;
 import com.alphag947.backend.entertainment.exception.EntertainmentStatusNotFoundException;
+import com.alphag947.backend.searchengine.SearchEngine;
 import com.alphag947.backend.settings.SettingKey;
 import com.alphag947.backend.settings.Settings;
 import com.alphag947.backend.settings.SettingsAccessDeniedException;
 import com.alphag947.backend.settings.SettingsFactory;
+import com.alphag947.v2.file.DataBaseHandler;
 import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
@@ -25,6 +27,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -63,26 +66,66 @@ public class Backend {
      * the SettingsFactory block request if there are many Settings objs
      */
     private Settings settings;
-
-    {
-        try {
-            settings = SettingsFactory.getSettings();
-        } catch (SettingsAccessDeniedException e) {
-            LOGGER.error(e);
-        }
-    }
+    /**
+     * this is engine used for searching information. any information that needs to be found happens here
+     */
+    private SearchEngine searchEngine;
+    /**
+     * This is the handler for databases.
+     */
+    private DataBaseHandler dbh;
 
 
     public Backend() {
         entertainmentList = new ArrayList<>();
         episodeList = new ArrayList<>();
         showList = new ArrayList<>();
+        try {
+            settings = SettingsFactory.getSettings();
+            dbh = new DataBaseHandler();
+        } catch (SettingsAccessDeniedException e) {
+            LOGGER.error(e);
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        }
+        searchEngine = new SearchEngine();
     }
 
     public void start() {
+
+
+        LOGGER.info(System.getProperty("java.version"));
+
+        /*
+         * gets the name of the user, it is the login name of the user.
+         */
+        String user = System.getProperty("user.name");
+        LOGGER.info(user);
+
+        /*
+         * uses the user to generate the database folder if it does not exist
+         */
+        File folder = new File("C:/Users/" + user + "/AppData/Local/AlphaGeN_Studios/EntertainmentTracker/database");
+        if (!(folder.exists() && folder.isDirectory()))
+            folder.mkdirs();
+        else LOGGER.info("Directory Exists");
+
+        /*
+         * uses the user to generate default settings file if it does not exist
+         */
+        File settingsFile = new File("C:/Users/" + user + "/AppData/Local/AlphaGeN_Studios/EntertainmentTracker/settings.txt");
+        if (!settingsFile.exists()) {
+            // TODO: generate default settings folder
+            LOGGER.info("Create Settings File");
+        }
+
+        // FIXME: Enable code below
+        // dbh.setPath(folder.getAbsolutePath());
+
         setEntertainments(readData());
         String sst = settings.getValue(SettingKey.SORT_TYPE);
         sortData(SortType.valueOf(sst));
+        searchEngine.setData(entertainmentList);
     }
 
     public void sortData(SortType st) {
@@ -304,7 +347,7 @@ public class Backend {
          * list
          */
         if (!episodeAdded)
-            throw new Exception("Episode \"" + episode.getEpisodeTitle() + "\" does not have show");
+            throw new Exception("Episode \"" + episode.getTitle() + "\" does not have show");
 
         return episodeAdded;
     }
@@ -338,12 +381,8 @@ public class Backend {
             switch (entertainment.getType()) {
                 case MOVIE:
                     Movie movie = (Movie) entertainment;
-                    try {
-                        String mdl = movie.getDataLine();
-                        System.out.println(i + movie.mainDelimiter + mdl);
-                    } catch (EntertainmentNotFoundException e) {
-                        LOGGER.error(e);
-                    }
+                    //                        String mdl = movie.getDataLine();
+                    System.out.println(movie.toString());
                     break;
                 case ANIME:
                     break;

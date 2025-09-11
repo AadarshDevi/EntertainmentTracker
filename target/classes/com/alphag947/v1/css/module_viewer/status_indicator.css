@@ -1,44 +1,24 @@
 .module {
-  /* . . . . . . . . t. r. .b. .l. */
-  -fx-border-radius: 10px 10px 10px 10px;
-  -fx-border-width: 3px 3px 3px 3px;
+  -fx-border-radius: 10px 0px 0px 10px; /* top-left top-right bottom-left bottom-right  */
+  -fx-border-width: 3px 0px 3px 3px;
   -fx-background-radius: 15px 15px 15px 15px;
 }
 
 .module_completed {
-  -fx-border-color: linear-gradient(to right, #97ff82, #97ff8275), transparent,
+  -fx-border-color: linear-gradient(to right, #97ff82, #97ff8275) transparent
     linear-gradient(to right, #97ff82, #97ff8275) #78ff5d;
 }
 .module_released {
-  -fx-border-color: linear-gradient(to right, #ffab5d, #ffab5d75), transparent,
+  -fx-border-color: linear-gradient(to right, #ffab5d, #ffab5d75) transparent
     linear-gradient(to right, #ffab5d, #ffab5d75) #ffab5d;
 }
 .module_upcoming {
-  -fx-border-color: linear-gradient(to right, #ff5d5d, #ff5d5d75), transparent,
+  -fx-border-color: linear-gradient(to right, #ff5d5d, #ff5d5d75) transparent
     linear-gradient(to right, #ff5d5d, #ff5d5d75) #ff5d5d;
 }
 .module_ongoing {
-  -fx-border-color: linear-gradient(
-      to right,
-      #ff5d5d 0%,
-      #ff5d5d 25%,
-      #ffab5d 30%,
-      #ffab5d 55%,
-      #72e45c 60%,
-      #72e45c 80%,
-      #ff5d5d 100%
-    ),
-    #ff5d5d,
-    linear-gradient(
-      to right,
-      #ff5d5d 0%,
-      #ff5d5d 25%,
-      #ffab5d 30%,
-      #ffab5d 55%,
-      #72e45c 60%,
-      #72e45c 80%,
-      #ff5d5d 100%
-    );
+  -fx-border-color: linear-gradient(to right, #ffab5d, #ffab5d75) transparent
+    linear-gradient(to right, #ffab5d, #ffab5d75) #ffab5d;
 }
 
 .status_indicator {

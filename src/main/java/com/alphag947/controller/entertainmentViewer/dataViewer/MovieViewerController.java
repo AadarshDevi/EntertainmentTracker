@@ -33,7 +33,7 @@ public class MovieViewerController extends ViewerController {
 
         e_franchise.setText(movie.getFranchise().replace("**", ""));
 
-        if (movie.getTitle() == null || movie.getTitle().isBlank() || movie.getTitle().isEmpty()) {
+        if (movie.getTitle() == null || movie.getTitle().isBlank()) {
             e_title.setManaged(false);
             e_title.setVisible(false);
             viewer.requestLayout();

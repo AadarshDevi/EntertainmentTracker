@@ -30,7 +30,7 @@ public class DataAPI {
     }
 
     public ArrayList<String> getEntertainmentByPrimartStatus(EntertainmentStatus primaryStatus) {
-        ArrayList<String> list = api.getEntertainmentByPrimartStatus(primaryStatus);
+        ArrayList<String> list = api.getEntertainmentByPrimaryStatus(primaryStatus);
         return list;
     }
 

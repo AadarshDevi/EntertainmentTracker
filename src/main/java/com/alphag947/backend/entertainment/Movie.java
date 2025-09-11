@@ -1,15 +1,23 @@
 package com.alphag947.backend.entertainment;
 
+import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
-import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
-import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundException;
-
+@EqualsAndHashCode(callSuper = true)
 public class Movie extends Entertainment {
 
+    @Getter
+    @Setter
     private int duration;
-    private String[] animation_companies;
 
+    @Getter
+    private String[] animationCompanies;
+
+    @Getter
     private String visualDuration;
 
     public Movie(
@@ -21,59 +29,42 @@ public class Movie extends Entertainment {
             String[] tags,
             int duration,
             LocalDate date,
-            String[] animation_companies
+            String[] animationCompanies
 
     ) {
         super(id, type, franchise, title, statuses, tags, date);
 
         this.duration = duration;
-        this.animation_companies = animation_companies;
+        this.animationCompanies = animationCompanies;
 
         visualDuration = setVisualDuration();
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public String[] getAnimationCompanies() {
-        return animation_companies;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
     }
 
     public String setVisualDuration() {
         if (duration == 0)
             return "Unknown";
-
         return duration + " min";
     }
 
-    public String getVisualDuration() {
-        return visualDuration;
-    }
-
-    @Override
-    public String getDataLine() throws EntertainmentNotFoundException {
-        return getType() + mainDelimiter +
-                getFranchise() + mainDelimiter +
-                getTitle() + mainDelimiter +
-                getStatusLine() + mainDelimiter +
-                getTagsDataLine() + mainDelimiter +
-                getDuration() + mainDelimiter +
-                getDate() + mainDelimiter +
-                getAnimationCompaniesDataLine();
-    }
+//    @Override
+//    public String getDataLine() throws EntertainmentNotFoundException {
+//        return getType() + mainDelimiter +
+//                getFranchise() + mainDelimiter +
+//                getTitle() + mainDelimiter +
+//                getStatusLine() + mainDelimiter +
+//                getTagsDataLine() + mainDelimiter +
+//                getDuration() + mainDelimiter +
+//                getDate() + mainDelimiter +
+//                getAnimationCompaniesDataLine();
+//    }
 
     private String getAnimationCompaniesDataLine() {
-        String animationCompaniesDataLine = "";
-        for (int i = 0; i < animation_companies.length; i++) {
-            animationCompaniesDataLine += animation_companies[i];
-            if (i != animation_companies.length - 1)
-                animationCompaniesDataLine += subDelimiter;
+        StringBuilder animationCompaniesDataLine = new StringBuilder();
+        for (int i = 0; i < animationCompanies.length; i++) {
+            animationCompaniesDataLine.append(animationCompanies[i]);
+            if (i != animationCompanies.length - 1)
+                animationCompaniesDataLine.append(subDelimiter);
         }
-        return animationCompaniesDataLine;
+        return animationCompaniesDataLine.toString();
     }
 }

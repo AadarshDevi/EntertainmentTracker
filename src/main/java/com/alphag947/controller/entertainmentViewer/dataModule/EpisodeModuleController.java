@@ -27,6 +27,12 @@ public class EpisodeModuleController extends ModuleController {
     private BorderPane module;
 
     @FXML
+    public void initialize() {
+        module.getStylesheets().removeAll(module.getStylesheets());
+        module.getStylesheets().add(getClass().getResource(getCssFilepath()).toExternalForm());
+    }
+
+    @FXML
     public void setData() {
         Episode episode = (Episode) getEntertainment();
         module_id.setText(episode.visualEpisodeNum());

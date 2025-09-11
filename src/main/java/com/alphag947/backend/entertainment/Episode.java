@@ -1,35 +1,35 @@
 package com.alphag947.backend.entertainment;
 
+import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
+import lombok.Data;
+
 import java.time.LocalDate;
 
-import com.alphag947.backend.entertainment.enumeration.EntertainmentType;
-
+@Data
 public class Episode extends Entertainment {
 
     private int seasonID;
     private int episodeNum;
-    private String episodeTitle;
     private int duration;
 
     public Episode(
-            int id,
-            EntertainmentType type,
+            int id, // episode id
+            EntertainmentType type, // episode type
 
             int episodeNum,
-            String episodeTitle,
+            String episodeTitle, // episode title
 
-            String[] status,
-            String[] tags,
+            String[] status, // status
+            String[] tags, // tags
 
             int duration,
-            LocalDate date,
+            LocalDate date, // date
             int seasonID
 
     ) {
-        super(id, type, status, tags, date);
+        super(id, type, null, episodeTitle, status, tags, date);
         this.seasonID = seasonID;
         this.episodeNum = episodeNum;
-        this.episodeTitle = episodeTitle;
         this.duration = duration;
 
         this.stageName = createStageName();
@@ -37,58 +37,25 @@ public class Episode extends Entertainment {
 
     }
 
-    // Getters
-    public int getSeasonID() {
-        return seasonID;
-    }
 
-    public int getEpisodeNum() {
-        return episodeNum;
-    }
-
-    public String getEpisodeTitle() {
-        return episodeTitle;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
+    // Setters
 
     @Override
     public String getStageName() {
         return stageName;
     }
 
-    // Setters
-
-    public void setSeasonID(int seasonID) {
-        this.seasonID = seasonID;
-    }
-
-    public void setEpisodeNum(int episodeNum) {
-        this.episodeNum = episodeNum;
-    }
-
-    public void setEpisodeTitle(String episodeTitle) {
-        this.episodeTitle = episodeTitle;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
     @Override
     public boolean equals(Entertainment entertainment) {
         Episode inEpisode = (Episode) entertainment;
-        return episodeTitle.equals(inEpisode.getEpisodeTitle()) && episodeNum == inEpisode.getEpisodeNum();
+        return getFranchise().equals(inEpisode.getFranchise()) && episodeNum == inEpisode.getEpisodeNum();
     }
 
     @Override
     public String createStageName() {
-        if (episodeTitle == null || episodeTitle.isBlank() || episodeTitle.isEmpty())
-
+        if (getTitle() == null || getTitle().isBlank())
             return "Episode " + episodeNum;
-        return episodeTitle;
+        return getFranchise();
     }
 
     public String visualEpisodeNum() {

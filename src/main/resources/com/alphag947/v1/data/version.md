@@ -91,13 +91,19 @@
 
 ## Stage 3: EntertainmentEditor
 
-### Create Entertainment
+The EditorUI will replace the ListUI. The editor will be in place or the module list.
 
 ### Edit Entertainment
 
+Edit information and show new changed data.
+
+### Create Entertainment
+
+Create new entertainment data.
+
 ## Stage 5: Write Data
 
-- writes only movies
+write data to the sqlite database.
 
 ## Stage 6: Store Settings
 
@@ -119,10 +125,10 @@
 
 # Version 3.0
 
-> V2 will be focused on improving CLI for the app. it will be running on the same or different project. This will be
+> V3 will be focused on improving CLI for the app. it will be running on the same or different project. This will be
 > used to get, change, delete or create data.
 
-- [] Data will be put in a thread save ArrayList(Class that is similar to ArrayList but starts with "B"?)
+- [ ] Data will be put in a thread save ArrayList(Class that is similar to ArrayList but starts with "B"?)
 - [Maybe] CommandLine Interface and JavaFX App Seperation
 
 ## Stage 0: Store data in a local DataBase/Thread Safe List

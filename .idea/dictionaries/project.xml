@@ -5,14 +5,19 @@
       <w>anchorpane</w>
       <w>centerlabel</w>
       <w>centerlabels</w>
+      <w>enterview</w>
+      <w>exitview</w>
       <w>fxmlpackage</w>
       <w>menuitem</w>
       <w>newtext</w>
       <w>ninjago</w>
       <w>oldtext</w>
       <w>scta</w>
+      <w>shadybug</w>
       <w>stagename</w>
       <w>stagenames</w>
+      <w>statusdataline</w>
+      <w>tagdataline</w>
       <w>texthighlighting</w>
       <w>tvshow</w>
     </words>
