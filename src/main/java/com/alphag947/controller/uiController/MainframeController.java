@@ -634,6 +634,8 @@ public class MainframeController extends ParentController {
 
     public void resetMainUI() {
         homebase.setCenter(splitPane);
+        homebase.setBottom(null);
+        searchbar.getChildren().add(scta);
     }
 
     public void showEntertainmentInCli(Entertainment entertainment) {

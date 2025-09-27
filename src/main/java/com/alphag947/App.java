@@ -126,6 +126,9 @@ public class App extends Application {
         stage.setTitle("Entertainment Tracker");
         stage.setResizable(true);
         stage.centerOnScreen();
+
+//        api.test();
+
         stage.show();
         LOGGER.info("App Running");
 

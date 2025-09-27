@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="968.0" prefWidth="1680.0" styleClass="main_app" stylesheets="@../../css/base/base_v2.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.v2.controller.data.editor.movie.MovieEditorController">
+   <bottom>
+      <Label maxWidth="1.7976931348623157E308" prefHeight="15.0" prefWidth="1680.0" style="-fx-background-color: #333333ff; -fx-text-fill: #777777ff;" text="Entertainment Tracker Alpha Group 4 Build 3 Version 1 Stage 3" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+   </bottom>
+   <top>
+      <HBox maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #333333ff;" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <MenuBar maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="1512.0" style="-fx-background-color: white;" HBox.hgrow="NEVER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #333333ff;" styleClass="app_minimize_button" stylesheets="@../../css/base/base_v2.css">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <SVGPath content="M 10,30 H 20" stroke="BLACK" strokeWidth="3.0" translateY="12.0" />
+               </graphic>
+            </Label>
+            <Label alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #333333ff;" styleClass="app_maximize_button" stylesheets="@../../css/base/base_v2.css">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" scaleX="0.1" scaleY="0.1" translateY="-85.0">
+                     <image>
+                        <Image url="@../../../../../../../../../../../../SVGs/entertainment_tracker/minimize-01-svgrepo-com.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0" styleClass="app_close_button" stylesheets="@../../css/base/base_v2.css">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" scaleX="0.1" scaleY="0.1" translateY="-85.0">
+                     <image>
+                        <Image url="@../../../../../../../../../../../../SVGs/entertainment_tracker/close-bold-svgrepo-com.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="80.0" prefWidth="80.0" style="-fx-background-color: #333333ff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="side_bar_menu" stylesheets="@../../css/base/base_v2.css">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" scaleX="0.2" scaleY="0.2">
+                     <image>
+                        <Image url="@../../../../../../../../../../../../SVGs/entertainment_tracker/sidebar-left-svgrepo-com_3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="921.0" prefWidth="80.0" spacing="10.0" style="-fx-background-color: #333333ff;">
+               <children>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="side_bar_menu" stylesheets="@../../css/base/base_v2.css">
+                     <graphic>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" scaleX="0.2" scaleY="0.2">
+                           <image>
+                              <Image url="@../../../../../../../../../../../../SVGs/entertainment_tracker/home-svgrepo-com_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="side_bar_menu" stylesheets="@../../css/base/base_v2.css">
+                     <graphic>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" scaleX="0.2" scaleY="0.2">
+                           <image>
+                              <Image url="@../../../../../../../../../../../../SVGs/entertainment_tracker/settings-svgrepo-com_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="side_bar_menu" stylesheets="@../../css/base/base_v2.css">
+                     <graphic>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" scaleX="0.2" scaleY="0.2">
+                           <image>
+                              <Image url="@../../../../../../../../../../../../SVGs/entertainment_tracker/search-svgrepo-com_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="side_bar_menu" stylesheets="@../../css/base/base_v2.css">
+                     <graphic>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" scaleX="0.2" scaleY="0.2">
+                           <image>
+                              <Image url="@../../../../../../../../../../../../SVGs/entertainment_tracker/edit-3-svgrepo-com_3_highlighted.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </children>
+            </VBox>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="create_data" stylesheets="@../../css/base/base_v2.css">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" scaleX="0.2" scaleY="0.2">
+                     <image>
+                        <Image url="@../../../../../../../../../../../../SVGs/entertainment_tracker/add-square-svgrepo-com_2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+</BorderPane>

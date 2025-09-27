@@ -2,8 +2,6 @@ package com.alphag947.v2.cli;
 
 import com.alphag947.api.Api;
 import com.alphag947.api.ApiFactory;
-import com.alphag947.backend.entertainment.Entertainment;
-import com.alphag947.backend.entertainment.exception.EntertainmentIdNotFoundException;
 import javafx.scene.control.Alert;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +18,23 @@ public class CommandLineInterface {
     private boolean inCLI;
     private ArrayList<String> commandHistory = new ArrayList<>();
 
+    private String commands =
+            """
+                    
+                        @cli
+                        @exitapp
+                    
+                        enter=true
+                        exit=true
+                    
+                        cliview=true
+                        cliview=false
+                    
+                        newui=true
+                        newui=false
+                    
+                    """;
+
     public CommandLineInterface() {
         inCLI = false;
         api = ApiFactory.getApi();
@@ -34,50 +49,43 @@ public class CommandLineInterface {
 
             // TODO: create @cmd method and "cmd" methods
             switch (cmds[i]) {
-//                case "get=id":
-////                    printData(cmds[i].substring(3));
-//                    try {
-//                        Entertainment entertainment = api.getEntertainmentById(Integer.parseInt(cmds[++i]));
-//                        LOGGER.info(entertainment.getStageName());
-//                        api.showInCliUI(entertainment);
-//                    } catch (EntertainmentIdNotFoundException e) {
-//                        throw new RuntimeException(e);
-//                    }
-//                    break; // next commands help to get entertainment based on given info
-//
-//
-//                case "enterview=true":
-//                    api.setCliView();
-//                    break; // go to cli view
-//                case "exitview=false":
-//                    api.resetMainUI();
-//                    break; // exit cli view and go to homescreen
-//                case "newui=true":
-//                    break; // enter NewUI view
-//                case "newui=false":
-//                    break; // exit NewUI view and go to homescreen
 
-                case "@entercli": // enters cli
+                case "@cli":
+                    LOGGER.info("CLI Command");
                     break;
-                case "@exitcli": // exits cli
-                    break;
-                case "@noui": // enterview=true
-                    break;
-                case "@yesui": // exitview=true
-                    break;
-                case "@exitapp": // exit and closes app
+                case "@exitapp":
                     api.closeApp();
                     break;
-                case "@enternewui": // goto NewUI
+
+                case "cliview=true":
+                    setInCLI(true);
+                    api.setCliView();
                     break;
-                case "@exitnewui": // goto OldUI
+                case "cliview=false":
+                    setInCLI(false);
+                    api.resetMainUI();
+                    break;
+
+                case "newui=true":
+                    api.test();
+                    break;
+                case "newui=false":
+                    api.resetMainUI();
+                    break;
+
+
+                case "enter=true":
+                    setInCLI(true);
+                    break;
+                case "exit=true":
+                    setInCLI(false);
                     break;
 
                 default:
                     LOGGER.error("Command \"" + cmds[i] + "\" not found.");
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Command Error");
                     alert.setHeaderText(null);  // No header
-                    alert.setContentText("Command \"" + cmds[i] + "\" not found.");
+                    alert.setContentText("Command \"" + cmds[i] + "\" not found." + "\n" + commands);
                     alert.showAndWait();
             }
         }

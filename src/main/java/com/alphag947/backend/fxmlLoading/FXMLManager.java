@@ -133,22 +133,22 @@ public class FXMLManager<T extends Pane, C extends ParentController> {
                         "--------------------------------------------"
         );
         LOGGER.debug("Getting TestFrame...");
-        FXMLPackage<T, C> fp = readFXML("/com/alphag947/v2/fxml/base/base_v1.fxml");
+        FXMLPackage<T, C> fp = readFXML("/com/alphag947/v2/fxml/base/base_v2.fxml");
         if (fp == null) {
             LOGGER.error("NewUI FXMLPackage is null");
-            throw new FXMLNullException("FXMLPackage null: NewUI.Base.v1");
+            throw new FXMLNullException("FXMLPackage null: NewUI.Base");
         }
 
         BorderPane bp = (BorderPane) fp.getPane();
         if (bp == null) {
-            LOGGER.error("NewUI.Base.v1 is null");
-            throw new RuntimeException("UI null: NewUI.Base.v1");
+            LOGGER.error("NewUI.Base.v2 is null");
+            throw new RuntimeException("UI null: NewUI.Base.v2");
         }
 
         TestController tc = (TestController) fp.getController();
         if (tc == null) {
-            LOGGER.error("NewController.Base is null");
-            throw new RuntimeException("Controller null: NewUI.Base");
+            LOGGER.error("NewController.Base.Controller.2 is null");
+            throw new RuntimeException("Controller null: NewUI.Base.Controller.2");
         }
         return new FXMLPackage<>(bp, tc);
     }

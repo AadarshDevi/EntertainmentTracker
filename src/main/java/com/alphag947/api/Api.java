@@ -228,11 +228,12 @@ public class Api {
     }
 
     public void test() {
-        try {
-            FXMLPackage<BorderPane, TestController> tp = FXMLFactory.getFxmlManager().getTestFrame();
 
-            BorderPane tbp = tp.getPane();
-            TestController tc = tp.getController();
+        try {
+            FXMLPackage<BorderPane, TestController> fxmlPackage = FXMLFactory.getFxmlManager().getTestFrame();
+
+            BorderPane tbp = fxmlPackage.getPane();
+            TestController tc = fxmlPackage.getController();
 
             LOGGER.info("TestObject: " + tbp);
             sceneManager.setScene(new Scene(tbp));

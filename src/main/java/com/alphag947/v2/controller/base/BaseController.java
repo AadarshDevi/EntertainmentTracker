@@ -6,8 +6,8 @@ import com.alphag947.v2.controller.Controller;
 import javafx.scene.layout.Pane;
 
 public class BaseController extends Controller {
-    @Override
-    public FXMLPackage<Pane, ParentController> getFXML(String basepath, String filename) {
-        return null;
-    }
+//    @Override
+//    public FXMLPackage<Pane, ParentController> getFXML(String basepath, String filename) {
+//        return null;
+//    }
 }
