@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="894.0" prefWidth="1156.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="946.0" prefWidth="1156.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ButtonBar prefHeight="49.0" prefWidth="1156.0" VBox.vgrow="NEVER">
         <buttons>
@@ -28,7 +27,7 @@
             <Insets right="7.0" />
          </padding>
       </ButtonBar>
-      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="70.0" prefWidth="200.0">
          <children>
             <Label alignment="CENTER" prefHeight="70.0" prefWidth="40.0" text="ⓘ">
                <font>
@@ -49,28 +48,49 @@
             <TextField prefHeight="41.0" prefWidth="914.0" />
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0">
+      <VBox maxHeight="-Infinity" prefHeight="140.0">
          <children>
-            <Label alignment="CENTER" prefHeight="70.0" prefWidth="40.0" text="ⓘ">
-               <font>
-                  <Font name="SansSerif Bold" size="21.0" />
-               </font>
-               <padding>
-                  <Insets left="12.0" />
-               </padding>
-            </Label>
-            <Label maxHeight="1.7976931348623157E308" prefHeight="70.0" prefWidth="185.0" text="Title">
-               <font>
-                  <Font name="SansSerif Bold" size="16.0" />
-               </font>
-               <padding>
-                  <Insets left="24.0" />
-               </padding>
-            </Label>
-            <TextField prefHeight="41.0" prefWidth="914.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="70.0" prefWidth="40.0" text="ⓘ">
+                     <font>
+                        <Font name="SansSerif Bold" size="21.0" />
+                     </font>
+                     <padding>
+                        <Insets left="12.0" />
+                     </padding>
+                  </Label>
+                  <Label maxHeight="1.7976931348623157E308" prefHeight="70.0" prefWidth="185.0" text="Title">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" />
+                     </padding>
+                  </Label>
+                  <TextField prefHeight="41.0" prefWidth="914.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0">
+               <children>
+                  <CheckBox mnemonicParsing="false" prefHeight="70.0" prefWidth="228.0" text="No Title">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="225.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" prefHeight="70.0" prefWidth="228.0" text="Part of Franchise">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0">
+      </VBox>
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="70.0" prefWidth="200.0">
          <children>
             <Label alignment="CENTER" prefHeight="70.0" prefWidth="40.0" text="ⓘ">
                <font>
@@ -110,7 +130,7 @@
             </CheckBox>
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="70.0" prefWidth="200.0">
          <children>
             <Label alignment="CENTER" prefHeight="70.0" prefWidth="40.0" text="ⓘ">
                <font>
@@ -140,7 +160,7 @@
             </CheckBox>
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="70.0" prefWidth="200.0">
          <children>
             <Label alignment="CENTER" prefHeight="70.0" prefWidth="40.0" text="ⓘ">
                <font>
@@ -170,7 +190,7 @@
             </CheckBox>
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="70.0" prefWidth="200.0">
          <children>
             <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="70.0" prefWidth="578.0" HBox.hgrow="ALWAYS">
                <children>
@@ -222,7 +242,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox prefHeight="200.0" prefWidth="578.0" HBox.hgrow="ALWAYS">
+            <VBox maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="578.0" HBox.hgrow="ALWAYS">
                <children>
                   <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="70.0" prefWidth="185.0" text="Tags">
                      <font>
@@ -241,7 +261,7 @@
                   </Button>
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="578.0">
+            <VBox maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="578.0">
                <children>
                   <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="70.0" prefWidth="185.0" text="Production Companies">
                      <font>

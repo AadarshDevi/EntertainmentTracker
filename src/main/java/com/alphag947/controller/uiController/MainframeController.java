@@ -38,7 +38,6 @@ import java.util.*;
 public class MainframeController extends ParentController {
 
     private final BorderPane noEpisodesPane = new BorderPane();
-    private final Label noEpisodesLabel = new Label("No Entertainment. Create Movie or Shows to view here");
     private final Logger LOGGER = Logger.getLogger(MainframeController.class);
     private Api api;
     private int listId = 0;
@@ -49,7 +48,6 @@ public class MainframeController extends ParentController {
     private CommandLineInterface cli = new CommandLineInterface();
     private StyleClassedTextArea scta;
     private TextArea ta;
-
     /*
      * Menu Bar
      *
@@ -83,12 +81,10 @@ public class MainframeController extends ParentController {
     private MenuItem mi_sortById;
     @FXML
     private MenuItem mi_sortByTypeTheName;
-
     @FXML
     private MenuItem mi_viewer;
     @FXML
     private Menu m_monitors;
-
     @FXML
     private MenuItem mi_75_percent;
     @FXML
@@ -99,24 +95,24 @@ public class MainframeController extends ParentController {
     private MenuItem mi_100_percent;
     @FXML
     private MenuItem mi_fullscreen;
-
     @FXML
     private TextField search_bar_textfield;
     @FXML
     private Button search_bar_search_button;
-
     @FXML
     private SplitPane splitPane;
-
     @FXML
     private ListView<BorderPane> list_view;
     @FXML
-    private AnchorPane info_viewer_placeholder;
+    private BorderPane info_viewer_placeholder;
     @FXML
     private BorderPane homebase;
     @FXML
     private HBox searchbar;
-
+    @FXML
+    private Button button_edit_entertainment;
+    @FXML
+    private Button button_copy_name_entertainment;
 
     @FXML
     public void initialize() {
@@ -199,6 +195,13 @@ public class MainframeController extends ParentController {
             }
         });
 
+        button_edit_entertainment.setOnAction(e -> {
+            homebase.setCenter(null);
+            FXMLPackage<BorderPane, EditorController> ep = FXMLFactory.getFxmlManager().getEditor();
+            BorderPane ebp = ep.getPane();
+            EditorController ec = ep.getController();
+        });
+
         api = ApiFactory.getApi();
 //        info_viewer_placeholder.setBackground(new Background(new BackgroundFill(Paint.valueOf("BLUE"), CornerRadii.EMPTY, Insets.EMPTY)));
 
@@ -274,6 +277,7 @@ public class MainframeController extends ParentController {
         if (entertainments.size() <= 0) {
             cl.err(new Exception("Data List is <= 0"));
 
+            Label noEpisodesLabel = new Label("No Entertainment. Create Movie or Shows to view here");
             noEpisodesPane.setPrefHeight(41);
             noEpisodesPane.setCenter(noEpisodesLabel);
             noEpisodesPane.getStyleClass().addAll("module", "no_episode_pane");
@@ -382,41 +386,23 @@ public class MainframeController extends ParentController {
         }
     }
 
-    /**
-     * The viewer when has no data, will be closed. If a datamodule is clicked, the
-     * viewer will open and show the data. if another datamodule is clicked, the
-     * viewer will show the new data. if the same datamodule is clicked, then the
-     * viewer will close.
-     */
+
     @FXML
     public void setViewerWidth(double widthPercentage) {
 
         double width = api.getSceneManager().getStage().getWidth() * widthPercentage;
 
-        if (viewerEnabled) {
-            if (hasSameData) {
-                mi_viewer.setText("Open Viewer");
-                info_viewer_placeholder.setMinWidth(0);
-                info_viewer_placeholder.setPrefWidth(0);
-                splitPane.setDividerPosition(0, 0.0);
-                info_viewer_placeholder.setManaged(false);
-                info_viewer_placeholder.setVisible(false);
-                info_viewer_placeholder.requestLayout();
-                splitPane.requestLayout();
-                viewerEnabled = false;
-                hasSameData = false;
-            } else {
-                mi_viewer.setText("Close Viewer");
-                info_viewer_placeholder.setMinWidth(width);
-                info_viewer_placeholder.setPrefWidth(width);
-                splitPane.setDividerPosition(0, 0.3);
-                info_viewer_placeholder.setManaged(true);
-                info_viewer_placeholder.setVisible(true);
-                info_viewer_placeholder.requestLayout();
-                splitPane.requestLayout();
-                viewerEnabled = true;
-            }
-
+        if (viewerEnabled && hasSameData) {
+            mi_viewer.setText("Open Viewer");
+            info_viewer_placeholder.setMinWidth(0);
+            info_viewer_placeholder.setPrefWidth(0);
+            splitPane.setDividerPosition(0, 0.0);
+            info_viewer_placeholder.setManaged(false);
+            info_viewer_placeholder.setVisible(false);
+            info_viewer_placeholder.requestLayout();
+            splitPane.requestLayout();
+            viewerEnabled = false;
+            hasSameData = false;
         } else {
             mi_viewer.setText("Close Viewer");
             info_viewer_placeholder.setMinWidth(width);
@@ -529,7 +515,8 @@ public class MainframeController extends ParentController {
                 cl.log(this, "\nController: " + mvc);
 
                 mv.setPrefWidth(info_viewer_placeholder.getWidth());
-                info_viewer_placeholder.getChildren().addAll(mv);
+//                info_viewer_placeholder.getChildren().addAll(mv);
+                info_viewer_placeholder.setCenter(mv);
                 AnchorPane.setTopAnchor(mv, 0.0);
                 AnchorPane.setBottomAnchor(mv, 0.0);
                 AnchorPane.setLeftAnchor(mv, 0.0);
@@ -550,7 +537,8 @@ public class MainframeController extends ParentController {
                 cl.log(this, "\nController: " + svc);
 
                 sv.setPrefWidth(info_viewer_placeholder.getWidth());
-                info_viewer_placeholder.getChildren().addAll(sv);
+//                info_viewer_placeholder.getChildren().addAll(sv);
+                info_viewer_placeholder.setCenter(sv);
                 AnchorPane.setTopAnchor(sv, 0.0);
                 AnchorPane.setBottomAnchor(sv, 0.0);
                 AnchorPane.setLeftAnchor(sv, 0.0);
@@ -570,7 +558,8 @@ public class MainframeController extends ParentController {
                     LOGGER.info("Controller: " + evc);
 
                     ev.setPrefWidth(info_viewer_placeholder.getWidth());
-                    info_viewer_placeholder.getChildren().addAll(ev);
+//                    info_viewer_placeholder.getChildren().addAll(ev);
+                    info_viewer_placeholder.setCenter(ev);
                     AnchorPane.setTopAnchor(ev, 0.0);
                     AnchorPane.setBottomAnchor(ev, 0.0);
                     AnchorPane.setLeftAnchor(ev, 0.0);
@@ -614,7 +603,7 @@ public class MainframeController extends ParentController {
         }
     }
 
-    public AnchorPane getViewerPlaceholder() {
+    public BorderPane getViewerPlaceholder() {
         return info_viewer_placeholder;
     }
 

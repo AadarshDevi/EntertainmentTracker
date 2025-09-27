@@ -14,6 +14,7 @@ import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundExcept
 import com.alphag947.controller.uiController.MainframeController;
 import com.alphag947.v2.controller.main.MainController;
 import com.alphag947.v2.controller.utli.FXMLReader;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import lombok.Data;
 import org.apache.log4j.LogManager;
@@ -218,6 +219,7 @@ public class Api {
         com.alphag947.v2.controller.utli.FXMLPackage fxmlPackage = FXMLReader.getInstance().getFXML(FXMLReader.V2_HOME);
         BorderPane bp = (BorderPane) fxmlPackage.getPane();
         MainController mc = (MainController) fxmlPackage.getController();
+        sceneManager.setScene(new Scene(bp));
     }
 
     public void readFilePath(String filepath) {

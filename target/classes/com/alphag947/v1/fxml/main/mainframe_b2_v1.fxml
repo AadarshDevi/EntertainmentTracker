@@ -8,7 +8,6 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -17,7 +16,7 @@
    <center>
       <SplitPane fx:id="splitPane" dividerPositions="0.4" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
-            <AnchorPane fx:id="info_viewer_placeholder" maxWidth="300.0" minWidth="0.0" prefHeight="935.0" prefWidth="0.0" />
+            <BorderPane fx:id="info_viewer_placeholder" maxWidth="300.0" minWidth="0.0" prefHeight="935.0" prefWidth="0.0" />
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
                   <HBox fx:id="searchbar" alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="1235.0" spacing="5.0" VBox.vgrow="NEVER">

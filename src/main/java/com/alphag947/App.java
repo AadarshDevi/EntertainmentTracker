@@ -7,18 +7,13 @@ import com.alphag947.backend.fxmlLoading.FXMLPackage;
 import com.alphag947.backend.fxmlLoading.exception.FXMLNullException;
 import com.alphag947.controller.uiController.MainframeController;
 import com.alphag947.controller.uiController.excepsion.UIException;
-import com.alphag947.v2.controller.main.MainController;
-import com.alphag947.v2.controller.utli.FXMLReader;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-
-import java.io.IOException;
 
 /**
  * C:\Users\{{user.name}}\AppData\Local\AlphaGeN_Studios
@@ -38,7 +33,7 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
 
         // the logger for App.start()
         final Logger LOGGER = LogManager.getLogger(App.class);
@@ -83,7 +78,7 @@ public class App extends Application {
         stage.setResizable(true);
         stage.centerOnScreen();
 
-        api.test();
+//        api.test();
 
         stage.show();
         LOGGER.info("App Running");

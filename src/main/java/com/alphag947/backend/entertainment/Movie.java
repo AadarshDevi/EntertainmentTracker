@@ -34,8 +34,8 @@ public class Movie extends Entertainment {
     ) {
         super(id, type, franchise, title, statuses, tags, date);
 
-        this.duration = duration;
-        this.animationCompanies = animationCompanies;
+            this.duration = duration;
+            this.animationCompanies = animationCompanies;
 
         visualDuration = setVisualDuration();
     }
