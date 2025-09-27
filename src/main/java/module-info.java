@@ -14,6 +14,6 @@ module com.alphag947 {
     opens com.alphag947.controller.uiController to javafx.fxml;
     opens com.alphag947.controller.entertainmentViewer.dataModule to javafx.fxml;
     opens com.alphag947.controller.entertainmentViewer.dataViewer to javafx.fxml;
-
+    opens com.alphag947.v2.controller.main to javafx.fxml;
     exports com.alphag947;
 }

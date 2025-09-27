@@ -11,12 +11,9 @@ import com.alphag947.backend.entertainment.enumeration.EntertainmentStatus;
 import com.alphag947.backend.entertainment.exception.EntertainmentIdNotFoundException;
 import com.alphag947.backend.entertainment.exception.EntertainmentIdOutOfBoundsException;
 import com.alphag947.backend.entertainment.exception.EntertainmentNotFoundException;
-import com.alphag947.backend.fxmlLoading.FXMLFactory;
-import com.alphag947.backend.fxmlLoading.FXMLPackage;
-import com.alphag947.backend.fxmlLoading.exception.FXMLNullException;
-import com.alphag947.controller.TestController;
 import com.alphag947.controller.uiController.MainframeController;
-import javafx.scene.Scene;
+import com.alphag947.v2.controller.main.MainController;
+import com.alphag947.v2.controller.utli.FXMLReader;
 import javafx.scene.layout.BorderPane;
 import lombok.Data;
 import org.apache.log4j.LogManager;
@@ -72,8 +69,7 @@ public class Api {
             if (entertainment != null && child_num == 0)
                 return entertainment.getPrimaryStatus();
 
-            if (entertainment instanceof Show && child_num > 0) {
-                Show show = (Show) entertainment;
+            if (entertainment instanceof Show show && child_num > 0) {
                 Episode episode;
                 try {
                     episode = show.getEpisode(child_num);
@@ -103,8 +99,7 @@ public class Api {
         if (entertainment != null && child_value == 0)
             return entertainment;
 
-        if (entertainment instanceof Show && child_value > 0) {
-            Show show = (Show) entertainment;
+        if (entertainment instanceof Show show && child_value > 0) {
 
             for (Episode episode : show.getEpisodes()) {
                 if (episode.getEpisodeNum() == child_value)
@@ -137,8 +132,7 @@ public class Api {
             if (entertainment.getPrimaryStatus() == primaryStatus)
                 list.add(i + "");
 
-            if (entertainment instanceof Show) {
-                Show show = (Show) entertainment;
+            if (entertainment instanceof Show show) {
                 for (Episode episode : show.getEpisodes())
                     if (episode.getPrimaryStatus() == primaryStatus)
                         list.add(i + "-" + episode.getEpisodeNum());
@@ -149,13 +143,11 @@ public class Api {
 
     public void printData() {
         for (Entertainment entertainment : backend.getEntertainmentList()) {
-            if (entertainment instanceof Movie) {
-                Movie movie = (Movie) entertainment;
+            if (entertainment instanceof Movie movie) {
                 if (App.DEBUG)
                     LOGGER.info(movie.getType() + " (" + movie.getPrimaryStatus() + "): "
                             + movie.getStageName());
-            } else if (entertainment instanceof Show) {
-                Show show = (Show) entertainment;
+            } else if (entertainment instanceof Show show) {
                 if (App.DEBUG)
                     LOGGER.info(show.getType() + " (" + show.getPrimaryStatus() + "): "
                             + show.getStageName());
@@ -175,18 +167,13 @@ public class Api {
     }
 
     public SortType convert(String string) {
-        switch (string) {
-            case "byName":
-                return SortType.BY_NAME;
-            case "byId":
-                return SortType.BY_ID;
-            case "byDate":
-                return SortType.BY_DATE;
-            case "byType":
-                return SortType.BY_TYPE;
-            default:
-                return SortType.BY_NULL;
-        }
+        return switch (string) {
+            case "byName" -> SortType.BY_NAME;
+            case "byId" -> SortType.BY_ID;
+            case "byDate" -> SortType.BY_DATE;
+            case "byType" -> SortType.BY_TYPE;
+            default -> SortType.BY_NULL;
+        };
     }
 
     public void viewEntertainment(int id) {
@@ -228,20 +215,9 @@ public class Api {
     }
 
     public void test() {
-
-        try {
-            FXMLPackage<BorderPane, TestController> fxmlPackage = FXMLFactory.getFxmlManager().getTestFrame();
-
-            BorderPane tbp = fxmlPackage.getPane();
-            TestController tc = fxmlPackage.getController();
-
-            LOGGER.info("TestObject: " + tbp);
-            sceneManager.setScene(new Scene(tbp));
-
-        } catch (FXMLNullException e) {
-            throw new RuntimeException(e);
-        }
-
+        com.alphag947.v2.controller.utli.FXMLPackage fxmlPackage = FXMLReader.getInstance().getFXML(FXMLReader.V2_HOME);
+        BorderPane bp = (BorderPane) fxmlPackage.getPane();
+        MainController mc = (MainController) fxmlPackage.getController();
     }
 
     public void readFilePath(String filepath) {

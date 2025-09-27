@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="968.0" prefWidth="1680.0" styleClass="main_app" stylesheets="@../../css/base/base_v2.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.v2.controller.data.editor.movie.MovieEditorController">
+<BorderPane prefHeight="968.0" prefWidth="1680.0" styleClass="main_app" stylesheets="@../../css/base/base_v2.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphag947.v2.controller.main.MainController">
    <bottom>
       <Label maxWidth="1.7976931348623157E308" prefHeight="15.0" prefWidth="1680.0" style="-fx-background-color: #333333ff; -fx-text-fill: #777777ff;" text="Entertainment Tracker Alpha Group 4 Build 3 Version 1 Stage 3" BorderPane.alignment="CENTER">
          <padding>

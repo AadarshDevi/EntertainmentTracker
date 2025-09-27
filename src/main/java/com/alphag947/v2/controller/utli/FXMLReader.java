@@ -14,8 +14,7 @@ import java.net.URL;
 public class FXMLReader {
 
     public static final Logger LOGGER = Logger.getLogger(FXMLReader.class);
-    public static final String V2_EDITOR_MOVIE_1 = "/com/alphag947/v2/fxml/base/base_v2.fxml";
-    public static final String V2_HOME_2 = "/com/alphag947/v2/fxml/base/base_v2.fxml";
+    public static final String V2_HOME = "/com/alphag947/v2/fxml/base/base_v2.fxml";
     private static FXMLReader fxmlReader = null;
 
     public static FXMLReader getInstance() {
