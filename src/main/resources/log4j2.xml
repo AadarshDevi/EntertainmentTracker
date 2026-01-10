@@ -4,7 +4,7 @@
         <Console name="ConsoleLogger" target="SYSTEM_OUT">
             <PatternLayout>
                 <Pattern>
-                    %d - [%c] - (%p) - %m%n
+                    %d - %-p - [%c] - %m%n
                 </Pattern>
             </PatternLayout>
         </Console>
