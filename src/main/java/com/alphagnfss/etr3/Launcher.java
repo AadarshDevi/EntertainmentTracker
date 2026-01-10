@@ -1,6 +1,8 @@
 package com.alphagnfss.etr3;
 
+import com.alphagnfss.etr3.api.v1.Api;
 import com.alphagnfss.etr3.backend.v1.Backend;
+import com.alphagnfss.etr3.cli.v1.Cli;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,8 +16,14 @@ public class Launcher {
 		LOGGER.info("Backend initialized");
 
 		// Set Api
+		Api api = Api.getInstance();
+		LOGGER.info("Api initialized");
 
 		// Set CLI
+		Cli cli = Cli.getInstance();
+		LOGGER.info("Cli initialized");
+
+		cli.start();
 
 		// Set UI
 //		Application.launch(Main.class, args);
