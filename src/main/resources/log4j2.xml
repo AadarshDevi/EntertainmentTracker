@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration status="info">
+    <Appenders>
+        <Console name="ConsoleLogger" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>
+                    %d - [%c] - (%p) - %m%n
+                </Pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="ConsoleLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>
