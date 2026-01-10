@@ -1,6 +1,7 @@
 package com.alphagnfss.etr3.backend.v1;
 
 import com.alphagnfss.etr3.backend.data.Entertainment;
+import com.alphagnfss.etr3.backend.data.EntertainmentDoesNotExistException;
 import com.alphagnfss.etr3.backend.data.EntertainmentNotFoundException;
 import com.alphagnfss.etr3.backend.data.VisualEntertainment;
 import com.alphagnfss.etr3.backend.database.DataBaseManager;
@@ -52,16 +53,6 @@ public class Backend {
 		System.out.println();
 		dataBaseQuerier = new DataBaseQuerier(dataBaseManager.getConnection(), internalConfig.getConfig("tablename"));
 
-		try {
-			dataBaseManager.close();
-			LOGGER.info("Database Disconnected");
-		} catch (SQLException e) {
-			LOGGER.error(e);
-			System.exit(0);
-		}
-
-		LOGGER.info("Closing app...");
-		System.exit(0);
 	}
 
 	public static Backend getInstance() {
@@ -77,6 +68,9 @@ public class Backend {
 			return null;
 		} catch (EntertainmentNotFoundException e) {
 			return null;
+		} catch (EntertainmentDoesNotExistException e) {
+			// todo add logger for this too
+			return null;
 		}
 	}
 
@@ -87,6 +81,9 @@ public class Backend {
 			// todo add logger
 			return null;
 		} catch (EntertainmentNotFoundException e) {
+			return null;
+		} catch (EntertainmentDoesNotExistException e) {
+			// todo add logger for this too
 			return null;
 		}
 	}
