@@ -4,8 +4,6 @@ module com.alphagnfss.etr3 {
 	requires java.sql;
 	requires org.apache.logging.log4j;
 	requires static lombok;
-	requires com.alphagnfss.etr3;
-
 
 	opens com.alphagnfss.etr3 to javafx.fxml;
 	exports com.alphagnfss.etr3;
