@@ -29,10 +29,10 @@ public class DataBaseQuerier {
 		return exists;
 	}
 
-	public Entertainment getEntertainment(int id) throws SQLException, EntertainmentNotFoundException {
+	public Entertainment getEntertainment(int id) throws SQLException, EntertainmentNotFoundException, EntertainmentDoesNotExistException {
 
 		if (!checkId(id)) {
-			throw new EntertainmentNotFoundException(id);
+			throw new EntertainmentDoesNotExistException(id);
 		}
 
 		String searchQuery = String.format("select * from %s where id = %d;", tableName, id);
@@ -63,7 +63,6 @@ public class DataBaseQuerier {
 		for (int i = 1; i <= 15; i++) {
 			String tag = resultSet.getString("tags_" + i);
 			if (tag.isBlank()) continue;
-			System.out.println("tag_" + i + ": " + tag);
 			tags.add(tag);
 		}
 
@@ -90,7 +89,7 @@ public class DataBaseQuerier {
 		return entertainment;
 	}
 
-	public VisualEntertainment getVisualEntertainment(int id) throws SQLException, EntertainmentNotFoundException {
+	public VisualEntertainment getVisualEntertainment(int id) throws SQLException, EntertainmentNotFoundException, EntertainmentDoesNotExistException {
 		return new VisualEntertainment(getEntertainment(id));
 	}
 
@@ -99,9 +98,10 @@ public class DataBaseQuerier {
 		return null;
 	}
 
-	public VisualEntertainment[] getVisualEntertainment(String text) {
+	public VisualEntertainment[] getVisualEntertainments(String text) {
 		Entertainment[] entertainments = getEntertainments(text);
 
+		if (entertainments == null) return null;
 		if (entertainments.length == 0) return null;
 
 		ArrayList<VisualEntertainment> visualEntertainments = new ArrayList<>();
