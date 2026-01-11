@@ -13,8 +13,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * <p>
  * DataBaseQuerier does all the sql querying to the database. this helps to organise
  * sql statements
+ * </p>
+ * <p>
+ * Format of docs > HTTP : HTTP Method : Target Object : Arguments
+ * </p>
+ * <p>
+ * HTTP Method does its http process on the Target Object that is found in the database using the Arguments
+ * </p>
  *
  * @see Connection
  * @see Entertainment
