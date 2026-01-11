@@ -113,6 +113,20 @@ public class Backend {
 		try {
 			dataBaseQuerier.createEntertainment(entertainment);
 		} catch (SQLException e) {
+			LOGGER.error(e);
+			LOGGER.error("Unable to create Entertainment");
+			return false;
+		}
+		return true;
+	}
+
+	// HTTP : Delete : Entertainment : id
+	public boolean deleteEntertainment(int id) {
+		try {
+			dataBaseQuerier.deleteEntertainment(id);
+		} catch (SQLException e) {
+			LOGGER.error(e);
+			LOGGER.error("Unable to delete Entertainment");
 			return false;
 		}
 		return true;
