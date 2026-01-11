@@ -12,16 +12,37 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * DataBaseQuerier does all the sql querying to the database. this helps to organise
+ * sql statements
+ *
+ * @see Connection
+ * @see Entertainment
+ * @see VisualEntertainment
+ */
 public class DataBaseQuerier {
 	private static final Logger LOGGER = LogManager.getLogger(DataBaseQuerier.class);
 	private final Connection connection;
 	private final String tableName;
 
+	/**
+	 * Get the connection to the database and the table name for querying.
+	 *
+	 * @param connection the connection to the database
+	 * @param tableName  the name of the table
+	 */
 	public DataBaseQuerier(Connection connection, String tableName) {
 		this.connection = connection;
 		this.tableName = tableName;
 	}
 
+	/**
+	 * checks if the given id exists in the database
+	 *
+	 * @param id id to be checked
+	 * @return if the id in the database exists or not
+	 * @throws SQLException for sql statements
+	 */
 	public boolean checkId(int id) throws SQLException {
 		String searchQuery = String.format("select id from %s where exists (select id from %s where id = %d)",
 				tableName, tableName, id);
@@ -32,8 +53,15 @@ public class DataBaseQuerier {
 		return exists;
 	}
 
-
-	// HTTP : GET : Entertainment : id
+	/**
+	 * HTTP : GET : Entertainment : id
+	 *
+	 * @param id entertainment id
+	 * @return Entertainment object with the requested id
+	 * @throws SQLException                       for sql statements
+	 * @throws EntertainmentNotFoundException     when entertainment with id is not found
+	 * @throws EntertainmentDoesNotExistException when entertainment id does not exist
+	 */
 	public Entertainment getEntertainment(int id) throws SQLException, EntertainmentNotFoundException, EntertainmentDoesNotExistException {
 
 		if (!checkId(id)) {
@@ -44,7 +72,140 @@ public class DataBaseQuerier {
 		PreparedStatement preparedStatement = connection.prepareStatement(searchQuery);
 		ResultSet resultSet = preparedStatement.executeQuery();
 
-		int eid = resultSet.getInt("id");
+		Entertainment entertainment = getEntertainment(resultSet);
+
+		resultSet.close();
+		return entertainment;
+	}
+
+	/**
+	 * HTTP : GET : VisualEntertainment : id
+	 *
+	 * @param id entertainment id
+	 * @return VisualEntertainment object with the requested id
+	 * @throws SQLException                       for sql statements
+	 * @throws EntertainmentNotFoundException     when entertainment with id is not found
+	 * @throws EntertainmentDoesNotExistException when entertainment id does not exist
+	 */
+	public VisualEntertainment getVisualEntertainment(int id) throws SQLException, EntertainmentNotFoundException, EntertainmentDoesNotExistException {
+		return new VisualEntertainment(getEntertainment(id));
+	}
+
+	/**
+	 * HTTP : GET : Entertainment[] : String
+	 *
+	 * @param text the text that each data will have in any shape or form
+	 * @return data containing the specific text
+	 * @throws SQLException for sql statements
+	 */
+	public Entertainment[] getEntertainments(String text) throws SQLException {
+		String sqlText = "%" + text + "%";
+		LOGGER.debug("sqlText: {}", sqlText);
+		String searchQuery = String.format(
+				"select * from %s where " +
+						"name like ? or " +
+						"tags_1 like ? or tags_2 like ? or tags_3 like ? or tags_4 like ? or " +
+						"tags_5 like ? or tags_6 like ? or tags_7 like ? or tags_8 like ? or " +
+						"tags_9 like ? or tags_10 like ? or tags_11 like ? or tags_12 like ? or " +
+						"tags_13 like ? or tags_14 like ? or tags_15 like ?;",
+				tableName
+		);
+		LOGGER.debug("sql: {}", searchQuery);
+
+		PreparedStatement preparedStatement = connection.prepareStatement(searchQuery);
+
+		for (int i = 1; i <= 15; i++) {
+			preparedStatement.setString(i, sqlText);
+		}
+
+		ResultSet resultSet = preparedStatement.executeQuery();
+
+		Entertainment[] entertainments = getEntertainments(resultSet);
+
+		resultSet.close();
+		return entertainments;
+	}
+
+	/**
+	 * HTTP : GET : VisualEntertainment[] : String
+	 *
+	 * @param text the text that each data will have in any shape or form
+	 * @return data containing the specific text
+	 * @throws SQLException for sql statements
+	 */
+	public VisualEntertainment[] getVisualEntertainments(String text) throws SQLException {
+		Entertainment[] entertainments = getEntertainments(text);
+
+		if (entertainments == null) return null;
+		if (entertainments.length == 0) return null;
+
+		ArrayList<VisualEntertainment> visualEntertainments = new ArrayList<>();
+		Arrays.stream(entertainments).toList().forEach((entertainment) ->
+				visualEntertainments.add(new VisualEntertainment(entertainment))
+		);
+
+		return visualEntertainments.toArray(new VisualEntertainment[0]);
+	}
+
+	/**
+	 * HTTP : GET : Entertainments : min id, max id
+	 *
+	 * @param min the min entertainment id
+	 * @param max the max entertainment id
+	 * @return data that are in the range of the given entertainment ids
+	 * @throws SQLException for sql statements
+	 */
+	public Entertainment[] getEntertainments(int min, int max) throws SQLException {
+		LOGGER.debug("range: [{}, {}]", min, max);
+		String searchQuery = String.format(
+				"select * from %s where id >= ? and id <= ? and not type = \"episode\";",
+				tableName
+		);
+		LOGGER.debug("sql: {}", searchQuery);
+
+		PreparedStatement preparedStatement = connection.prepareStatement(searchQuery);
+		preparedStatement.setInt(1, min);
+		preparedStatement.setInt(2, max);
+
+		ResultSet resultSet = preparedStatement.executeQuery();
+
+		Entertainment[] entertainments = getEntertainments(resultSet);
+
+		resultSet.close();
+		return entertainments;
+	}
+
+	/**
+	 * HTTP : GET : VisualEntertainments : min id, max id
+	 *
+	 * @param min the min entertainment id
+	 * @param max the max entertainment id
+	 * @return data that are in the range of the given entertainment ids
+	 * @throws SQLException for sql statements
+	 */
+	public VisualEntertainment[] getVisualEntertainments(int min, int max) throws SQLException {
+		Entertainment[] entertainments = getEntertainments(min, max);
+
+		if (entertainments == null) return null;
+		if (entertainments.length == 0) return null;
+
+		ArrayList<VisualEntertainment> visualEntertainments = new ArrayList<>();
+		Arrays.stream(entertainments).toList().forEach((entertainment) ->
+				visualEntertainments.add(new VisualEntertainment(entertainment))
+		);
+
+		return visualEntertainments.toArray(new VisualEntertainment[0]);
+	}
+
+	/**
+	 * Convert : Entertainment : ResultSet : min id, max id
+	 *
+	 * @param resultSet the set of rows received from database
+	 * @return data that was in the resultSet
+	 * @throws SQLException for sql statements
+	 */
+	private Entertainment getEntertainment(ResultSet resultSet) throws SQLException {
+		int id = resultSet.getInt("id");
 		String name = resultSet.getString("name");
 		EntertainmentType type = EntertainmentType.valueOf(resultSet.getString("type").toUpperCase());
 		LocalDate date = LocalDate.parse(resultSet.getString("localDate"));
@@ -71,140 +232,42 @@ public class DataBaseQuerier {
 			tags.add(tag);
 		}
 
-		Entertainment entertainment = Entertainment.builder()
-				.id(eid)
-				.name(name)
-				.type(type)
-				.date(date)
-
-				.status(status)
-				.isSpecial(isSpecial)
-				.isPilot(isPilot)
-				.isFavorite(isFavorite)
-
-				.seasonId(seasonId)
-				.episodeNum(episodeNum)
-				.duration(duration)
-
+		Entertainment entertainment;
+		entertainment = Entertainment.builder()
+				.id(id).name(name).type(type).date(date)
+				.status(status).isSpecial(isSpecial).isPilot(isPilot).isFavorite(isFavorite)
+				.seasonId(seasonId).episodeNum(episodeNum).duration(duration)
 				.tags(tags.toArray(new String[0]))
-
 				.build();
 
-		resultSet.close();
 		return entertainment;
 	}
 
-	// HTTP : GET : VisualEntertainment : id
-	public VisualEntertainment getVisualEntertainment(int id) throws SQLException, EntertainmentNotFoundException, EntertainmentDoesNotExistException {
-		return new VisualEntertainment(getEntertainment(id));
-	}
+	/**
+	 * Convert : Entertainment[] : ResultSet : min id, max id
+	 *
+	 * @param resultSet the set of rows received from database
+	 * @return data that was in the resultSet
+	 * @throws SQLException for sql statements
+	 */
+	private Entertainment[] getEntertainments(ResultSet resultSet) throws SQLException {
 
-	// HTTP : GET : Entertainments : String
-	public Entertainment[] getEntertainments(String text) throws SQLException {
-		String sqlText = "%" + text + "%";
-		LOGGER.debug("sqlText: {}", sqlText);
-		String searchQuery = String.format(
-				"select * from %s where " +
-						"name like ? or " +
-						"tags_1 like ? or " +
-						"tags_2 like ? or " +
-						"tags_3 like ? or " +
-						"tags_4 like ? or " +
-						"tags_5 like ? or " +
-						"tags_6 like ? or " +
-						"tags_7 like ? or " +
-						"tags_8 like ? or " +
-						"tags_9 like ? or " +
-						"tags_10 like ? or " +
-						"tags_11 like ? or " +
-						"tags_12 like ? or " +
-						"tags_13 like ? or " +
-						"tags_14 like ? or " +
-						"tags_15 like ?;",
-				tableName
-		);
-		LOGGER.debug("sql: {}", searchQuery);
+		final ArrayList<Entertainment> entertainments = new ArrayList<>();
 
-		PreparedStatement preparedStatement = connection.prepareStatement(searchQuery);
-
-		for (int i = 1; i <= 15; i++) {
-			preparedStatement.setString(i, sqlText);
-		}
-
-		ResultSet resultSet = preparedStatement.executeQuery();
-
-		ArrayList<Entertainment> entertainments = new ArrayList<>();
 		while (resultSet.next()) {
-
-			int id = resultSet.getInt("id");
-			String name = resultSet.getString("name");
-			EntertainmentType type = EntertainmentType.valueOf(resultSet.getString("type").toUpperCase());
-			LocalDate date = LocalDate.parse(resultSet.getString("localDate"));
-
-			EntertainmentStatus status = EntertainmentStatus.valueOf(resultSet.getString("status").toUpperCase());
-			if (status.equals(EntertainmentStatus.UPCOMING) && LocalDate.now().isAfter(date)) {
-				status = EntertainmentStatus.RELEASED;
-			} else if (LocalDate.now().isBefore(date)) {
-				status = EntertainmentStatus.UPCOMING;
-			}
-
-			boolean isSpecial = resultSet.getBoolean("isSpecial");
-			boolean isPilot = resultSet.getBoolean("isPilot");
-			boolean isFavorite = resultSet.getBoolean("isFavorite");
-
-			int seasonId = resultSet.getInt("seasonId");
-			int episodeNum = resultSet.getInt("episodeNum");
-			int duration = resultSet.getInt("duration");
-
-			ArrayList<String> tags = new ArrayList<>();
-			for (int i = 1; i <= 15; i++) {
-				String tag = resultSet.getString("tags_" + i);
-				if (tag.isBlank()) continue;
-				tags.add(tag);
-			}
-
-			Entertainment entertainment = Entertainment.builder()
-					.id(id)
-					.name(name)
-					.type(type)
-					.date(date)
-
-					.status(status)
-					.isSpecial(isSpecial)
-					.isPilot(isPilot)
-					.isFavorite(isFavorite)
-
-					.seasonId(seasonId)
-					.episodeNum(episodeNum)
-					.duration(duration)
-
-					.tags(tags.toArray(new String[0]))
-
-					.build();
-
+			Entertainment entertainment = getEntertainment(resultSet);
 			entertainments.add(entertainment);
 		}
 
-		resultSet.close();
 		return entertainments.toArray(new Entertainment[0]);
 	}
 
-	// HTTP : GET : VisualEntertainments : String
-	public VisualEntertainment[] getVisualEntertainments(String text) throws SQLException {
-		Entertainment[] entertainments = getEntertainments(text);
-
-		if (entertainments == null) return null;
-		if (entertainments.length == 0) return null;
-
-		ArrayList<VisualEntertainment> visualEntertainments = new ArrayList<>();
-		Arrays.stream(entertainments).toList().forEach((entertainment) ->
-				visualEntertainments.add(new VisualEntertainment(entertainment))
-		);
-
-		return visualEntertainments.toArray(new VisualEntertainment[0]);
-	}
-
-	// HTTP : POST : Entertainment : Entertainment
+	/**
+	 * HTTP : POST : Entertainment : Entertainment
+	 *
+	 * @param entertainment the data to be created
+	 * @throws SQLException for sql statements
+	 */
 	public void createEntertainment(Entertainment entertainment) throws SQLException {
 		String insertQuery = String.format("insert into %s (" +
 				"name, type, localDate, " +
@@ -253,7 +316,12 @@ public class DataBaseQuerier {
 		preparedStatement.executeUpdate();
 	}
 
-	// HTTP : DELETE : Entertainment : id
+	/**
+	 * HTTP : DELETE : Entertainment : id
+	 *
+	 * @param id the data that will be deleted which has this id
+	 * @throws SQLException for sql statements
+	 */
 	public void deleteEntertainment(int id) throws SQLException {
 		String deleteQuery = String.format("delete from %s where id = ?", tableName);
 		PreparedStatement preparedStatement = null;
