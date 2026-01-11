@@ -96,7 +96,6 @@ public class DataBaseQuerier {
 		return new VisualEntertainment(getEntertainment(id));
 	}
 
-	// todo
 	public Entertainment[] getEntertainments(String text) throws SQLException {
 		String sqlText = "%" + text + "%";
 		LOGGER.debug("sqlText: {}", sqlText);
