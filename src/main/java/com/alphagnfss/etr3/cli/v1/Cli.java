@@ -1,6 +1,7 @@
 package com.alphagnfss.etr3.cli.v1;
 
 import com.alphagnfss.etr3.api.v1.Api;
+import com.alphagnfss.etr3.backend.data.Entertainment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,12 +34,16 @@ public class Cli {
 		LOGGER.info("Cli running");
 		while (running) {
 			System.out.print("Enter eid > ");
+			String string = scanner.nextLine();
 			try {
-				int eid = Integer.parseInt(scanner.nextLine());
-				System.out.println(api.getEntertainment(eid));
-				System.out.println(api.getVisualEntertainment(eid));
+				int eid = Integer.parseInt(string);
+				LOGGER.info(api.getEntertainment(eid));
 			} catch (NumberFormatException e) {
 				LOGGER.error("Invalid eid enter");
+				Entertainment[] entertainments = api.getEntertainments(string);
+				if (entertainments == null || entertainments.length == 0) LOGGER.error("No entertainments found");
+				else for (int i = 0; i < entertainments.length; i++) LOGGER.info("{}: {}", (i + 1), entertainments[i]);
+
 			}
 		}
 	}
