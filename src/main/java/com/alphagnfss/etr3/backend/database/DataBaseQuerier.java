@@ -32,6 +32,8 @@ public class DataBaseQuerier {
 		return exists;
 	}
 
+
+	// HTTP : GET : Entertainment : id
 	public Entertainment getEntertainment(int id) throws SQLException, EntertainmentNotFoundException, EntertainmentDoesNotExistException {
 
 		if (!checkId(id)) {
@@ -92,10 +94,12 @@ public class DataBaseQuerier {
 		return entertainment;
 	}
 
+	// HTTP : GET : VisualEntertainment : id
 	public VisualEntertainment getVisualEntertainment(int id) throws SQLException, EntertainmentNotFoundException, EntertainmentDoesNotExistException {
 		return new VisualEntertainment(getEntertainment(id));
 	}
 
+	// HTTP : GET : Entertainments : String
 	public Entertainment[] getEntertainments(String text) throws SQLException {
 		String sqlText = "%" + text + "%";
 		LOGGER.debug("sqlText: {}", sqlText);
@@ -185,6 +189,7 @@ public class DataBaseQuerier {
 		return entertainments.toArray(new Entertainment[0]);
 	}
 
+	// HTTP : GET : VisualEntertainments : String
 	public VisualEntertainment[] getVisualEntertainments(String text) throws SQLException {
 		Entertainment[] entertainments = getEntertainments(text);
 
@@ -197,5 +202,47 @@ public class DataBaseQuerier {
 		);
 
 		return visualEntertainments.toArray(new VisualEntertainment[0]);
+	}
+
+	// HTTP : POST : Entertainment : Entertainment
+	public void createEntertainment(Entertainment entertainment) throws SQLException {
+		String insertQuery = String.format("insert into %s (" +
+				"name, type, localDate, " +
+				"status, isSpecial, isPilot, isFavorite, " +
+				"seasonId, episodeNum, duration, " +
+
+				"tags_1, tags_2, tags_3, tags_4, tags_5, tags_6 " +
+				"tags_7, tags_8, tags_9, tags_10, tags_11, tags_12 " +
+				"tags_13, tags_14, tags_15)" +
+				"values (" +
+				"? ? ? " +
+				"? ? ? ? " +
+				"? ? ?" +
+				"? ? ? ? ? ? " +
+				"? ? ? ? ? ? " +
+				"? ? ?)", tableName);
+
+		PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+		preparedStatement.setString(1, entertainment.name());
+		preparedStatement.setString(2, entertainment.type().name().toLowerCase());
+		preparedStatement.setString(3, entertainment.date().toString());
+		preparedStatement.setString(4, entertainment.status().name().toLowerCase());
+		preparedStatement.setBoolean(5, entertainment.isSpecial());
+		preparedStatement.setBoolean(6, entertainment.isPilot());
+		preparedStatement.setBoolean(7, entertainment.isFavorite());
+		preparedStatement.setInt(8, entertainment.seasonId());
+		preparedStatement.setInt(9, entertainment.episodeNum());
+		preparedStatement.setInt(10, entertainment.duration());
+
+		String[] tags = entertainment.tags();
+		for (int i = 1; i <= 15; i++) {
+			String tag = "";
+			try {
+				tag = tags[i];
+			} catch (NullPointerException _) {}
+			preparedStatement.setString((10 + i), tag);
+		}
+
+		ResultSet resultSet = preparedStatement.executeQuery();
 	}
 }
