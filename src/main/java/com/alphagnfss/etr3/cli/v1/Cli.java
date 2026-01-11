@@ -43,7 +43,6 @@ public class Cli {
 				Entertainment[] entertainments = api.getEntertainments(string);
 				if (entertainments == null || entertainments.length == 0) LOGGER.error("No entertainments found");
 				else for (int i = 0; i < entertainments.length; i++) LOGGER.info("{}: {}", (i + 1), entertainments[i]);
-
 			}
 		}
 	}
