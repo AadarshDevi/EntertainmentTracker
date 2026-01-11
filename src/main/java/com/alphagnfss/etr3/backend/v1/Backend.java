@@ -59,6 +59,7 @@ public class Backend {
 		return backend;
 	}
 
+	// HTTP : GET : Entertainment : id
 	public Entertainment getEntertainment(int id) {
 		try {
 			return dataBaseQuerier.getEntertainment(id);
@@ -73,6 +74,7 @@ public class Backend {
 		}
 	}
 
+	// HTTP : GET : VisualEntertainment : id
 	public VisualEntertainment getVisualEntertainment(int id) {
 		try {
 			return dataBaseQuerier.getVisualEntertainment(id);
@@ -87,6 +89,7 @@ public class Backend {
 		}
 	}
 
+	// HTTP : GET : Entertainments : String
 	public Entertainment[] getEntertainments(String text) {
 		try {
 			return dataBaseQuerier.getEntertainments(text);
@@ -96,11 +99,22 @@ public class Backend {
 		}
 	}
 
+	// HTTP : GET : VisualEntertainments : String
 	public VisualEntertainment[] getVisualEntertainments(String text) {
 		try {
 			return dataBaseQuerier.getVisualEntertainments(text);
 		} catch (SQLException e) {
 			return null;
 		}
+	}
+
+	// HTTP : POST : Entertainment : Entertainment
+	public boolean createEntertainment(Entertainment entertainment) {
+		try {
+			dataBaseQuerier.createEntertainment(entertainment);
+		} catch (SQLException e) {
+			return false;
+		}
+		return true;
 	}
 }
