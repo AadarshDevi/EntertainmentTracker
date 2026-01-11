@@ -108,24 +108,6 @@ public class Cli {
 							.tags(tags)
 							.build();
 
-					// test Entertainment Build
-//					Entertainment entertainment = Entertainment.builder()
-//							.name("Testing Entertainment via SQL Database")
-//							.type(EntertainmentType.MOVIE)
-//							.date(LocalDate.of(3000, 1, 1))
-//							.status(EntertainmentStatus.UPCOMING)
-//							.isSpecial(false)
-//							.isPilot(false)
-//							.isFavorite(false)
-//							.seasonId(0)
-//							.episodeNum(0)
-//							.duration(0)
-//							.tags(new String[]{
-//									"testing", "app testing",
-//									"", "", "", "", "", "", "",
-//									"", "", "", "", "", ""
-//							})
-//							.build();
 
 					boolean success = api.createEntertainment(entertainment);
 					LOGGER.info("created: {}", success);
@@ -134,6 +116,28 @@ public class Cli {
 					int id = Integer.parseInt(string.replace("--delete-id:", "").trim());
 					boolean success = api.deleteEntertainment(id);
 					LOGGER.info("deleted: {}", success);
+				} else if (string.startsWith("--test-post:")) {
+					// test Entertainment Build
+					Entertainment entertainment = Entertainment.builder()
+							.name("ETR3 Testing: Entertainment via SQL Database")
+							.type(EntertainmentType.MOVIE)
+							.date(LocalDate.of(3000, 1, 1))
+							.status(EntertainmentStatus.UPCOMING)
+							.isSpecial(false)
+							.isPilot(false)
+							.isFavorite(false)
+							.seasonId(0)
+							.episodeNum(0)
+							.duration(0)
+							.tags(new String[]{
+									"testing", "app testing",
+									"", "", "", "", "", "", "",
+									"", "", "", "", "", ""
+							})
+							.build();
+
+					boolean success = api.createEntertainment(entertainment);
+					LOGGER.info("test created: {}", success);
 				} else {
 					Entertainment[] entertainments = api.getEntertainments(string);
 					if (entertainments == null || entertainments.length == 0) LOGGER.error("No entertainments found");
