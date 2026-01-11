@@ -5,6 +5,7 @@ import com.alphagnfss.etr3.backend.data.Entertainment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Cli {
@@ -40,9 +41,41 @@ public class Cli {
 				LOGGER.info(api.getEntertainment(eid));
 			} catch (NumberFormatException e) {
 				LOGGER.error("Invalid eid enter");
-				Entertainment[] entertainments = api.getEntertainments(string);
-				if (entertainments == null || entertainments.length == 0) LOGGER.error("No entertainments found");
-				else for (int i = 0; i < entertainments.length; i++) LOGGER.info("{}: {}", (i + 1), entertainments[i]);
+
+				if (string.startsWith("--post-name:")) {
+
+					String name = string.replace("--post-name:", "").trim();
+
+					System.out.print("Enter type-status: ");
+					String ts = scanner.nextLine();
+					String type = ts.split("-")[0].trim();
+					String status = ts.split("-")[1].trim();
+
+					System.out.print("release date (yyyy-MM-dd): ");
+					String dateText = scanner.nextLine();
+					LocalDate localDate = LocalDate.of(Integer.parseInt(dateText.split("-")[0]), Integer.parseInt(dateText.split("-")[1]), Integer.parseInt(dateText.split("-")[2]));
+
+					System.out.print("Special, Pilot, Favorite (S-P-F): ");
+					String booleans = scanner.nextLine();
+					boolean isSpecial = false;
+					boolean isPilot = false;
+					boolean isFavorite = false;
+					if (booleans.split("-")[0].equalsIgnoreCase("1")) isSpecial = true;
+					if (booleans.split("-")[1].equalsIgnoreCase("1")) isPilot = true;
+					if (booleans.split("-")[2].equalsIgnoreCase("1")) isFavorite = true;
+
+					LOGGER.info("Name > {}", name);
+					LOGGER.info("Type > {}; Status > {}", type, status);
+					LOGGER.info("LocalDate > {}", localDate);
+					LOGGER.info("S, P, F > {}-{}-{}", isSpecial, isPilot, isFavorite);
+
+
+				} else {
+					Entertainment[] entertainments = api.getEntertainments(string);
+					if (entertainments == null || entertainments.length == 0) LOGGER.error("No entertainments found");
+					else for (int i = 0; i < entertainments.length; i++)
+						LOGGER.info("{}: {}", (i + 1), entertainments[i]);
+				}
 			}
 		}
 	}
