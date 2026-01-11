@@ -43,4 +43,9 @@ public class Api {
 		return backend.createEntertainment(entertainment);
 	}
 
+	// HTTP : Delete : Entertainment : id
+	public boolean deleteEntertainment(int id) {
+		return backend.deleteEntertainment(id);
+	}
+
 }
