@@ -50,7 +50,6 @@ public class Backend {
 			System.exit(0);
 		}
 
-		System.out.println();
 		dataBaseQuerier = new DataBaseQuerier(dataBaseManager.getConnection(), internalConfig.getConfig("tablename"));
 
 	}
@@ -89,10 +88,19 @@ public class Backend {
 	}
 
 	public Entertainment[] getEntertainments(String text) {
-		return dataBaseQuerier.getEntertainments(text);
+		try {
+			return dataBaseQuerier.getEntertainments(text);
+		} catch (SQLException e) {
+			LOGGER.error(e);
+			return null;
+		}
 	}
 
 	public VisualEntertainment[] getVisualEntertainments(String text) {
-		return dataBaseQuerier.getVisualEntertainments(text);
+		try {
+			return dataBaseQuerier.getVisualEntertainments(text);
+		} catch (SQLException e) {
+			return null;
+		}
 	}
 }
