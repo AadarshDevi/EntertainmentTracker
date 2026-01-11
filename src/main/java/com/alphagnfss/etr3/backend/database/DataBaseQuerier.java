@@ -211,38 +211,59 @@ public class DataBaseQuerier {
 				"status, isSpecial, isPilot, isFavorite, " +
 				"seasonId, episodeNum, duration, " +
 
-				"tags_1, tags_2, tags_3, tags_4, tags_5, tags_6 " +
-				"tags_7, tags_8, tags_9, tags_10, tags_11, tags_12 " +
+				"tags_1, tags_2, tags_3, tags_4, tags_5, tags_6, " +
+				"tags_7, tags_8, tags_9, tags_10, tags_11, tags_12, " +
 				"tags_13, tags_14, tags_15)" +
 				"values (" +
-				"? ? ? " +
-				"? ? ? ? " +
-				"? ? ?" +
-				"? ? ? ? ? ? " +
-				"? ? ? ? ? ? " +
-				"? ? ?)", tableName);
+				"?, ?, ?, " +
+				"?, ?, ?, ?, " +
+				"?, ?, ?, " +
+				"?, ?, ?, ?, ?, ?, " +
+				"?, ?, ?, ?, ?, ?, " +
+				"?, ?, ?)", tableName);
 
-		PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
-		preparedStatement.setString(1, entertainment.name());
-		preparedStatement.setString(2, entertainment.type().name().toLowerCase());
-		preparedStatement.setString(3, entertainment.date().toString());
-		preparedStatement.setString(4, entertainment.status().name().toLowerCase());
-		preparedStatement.setBoolean(5, entertainment.isSpecial());
-		preparedStatement.setBoolean(6, entertainment.isPilot());
-		preparedStatement.setBoolean(7, entertainment.isFavorite());
-		preparedStatement.setInt(8, entertainment.seasonId());
-		preparedStatement.setInt(9, entertainment.episodeNum());
-		preparedStatement.setInt(10, entertainment.duration());
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = connection.prepareStatement(insertQuery);
+			preparedStatement.setString(1, entertainment.name());
+			preparedStatement.setString(2, entertainment.type().name().toLowerCase());
+			preparedStatement.setString(3, entertainment.date().toString());
+			preparedStatement.setString(4, entertainment.status().name().toLowerCase());
+			preparedStatement.setBoolean(5, entertainment.isSpecial());
+			preparedStatement.setBoolean(6, entertainment.isPilot());
+			preparedStatement.setBoolean(7, entertainment.isFavorite());
+			preparedStatement.setInt(8, entertainment.seasonId());
+			preparedStatement.setInt(9, entertainment.episodeNum());
+			preparedStatement.setInt(10, entertainment.duration());
+			String[] tags = entertainment.tags();
+			for (int i = 1; i <= 15; i++) {
+				String tag;
+				try {
+					tag = tags[i];
+				} catch (NullPointerException | ArrayIndexOutOfBoundsException _) {
+					tag = "";
+				}
+				preparedStatement.setString((10 + i), tag);
+			}
 
-		String[] tags = entertainment.tags();
-		for (int i = 1; i <= 15; i++) {
-			String tag = "";
-			try {
-				tag = tags[i];
-			} catch (NullPointerException _) {}
-			preparedStatement.setString((10 + i), tag);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
 		}
 
-		ResultSet resultSet = preparedStatement.executeQuery();
+		preparedStatement.executeUpdate();
+	}
+
+	// HTTP : DELETE : Entertainment : id
+	public void deleteEntertainment(int id) throws SQLException {
+		String deleteQuery = String.format("delete from %s where id = ?", tableName);
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = connection.prepareStatement(deleteQuery);
+			preparedStatement.setInt(1, id);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+		preparedStatement.execute();
 	}
 }
