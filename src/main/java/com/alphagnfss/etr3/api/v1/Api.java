@@ -18,20 +18,29 @@ public class Api {
 		return api;
 	}
 
+	// HTTP : GET : Entertainment : id
 	public Entertainment getEntertainment(int id) {
 		return backend.getEntertainment(id);
 	}
 
+	// HTTP : GET : VisualEntertainment : id
 	public VisualEntertainment getVisualEntertainment(int id) {
 		return backend.getVisualEntertainment(id);
 	}
 
+	// HTTP : GET : Entertainments : String
 	public Entertainment[] getEntertainments(String text) {
 		return backend.getEntertainments(text);
 	}
 
+	// HTTP : GET : VisualEntertainments : String
 	public VisualEntertainment[] getVisualEntertainments(String text) {
 		return backend.getVisualEntertainments(text);
+	}
+
+	// HTTP : POST : Entertainment : Entertainment
+	public boolean createEntertainment(Entertainment entertainment) {
+		return backend.createEntertainment(entertainment);
 	}
 
 }
