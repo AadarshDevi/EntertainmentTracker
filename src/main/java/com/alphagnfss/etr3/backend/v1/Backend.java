@@ -111,24 +111,22 @@ public class Backend {
 	// HTTP : POST : Entertainment : Entertainment
 	public boolean createEntertainment(Entertainment entertainment) {
 		try {
-			dataBaseQuerier.createEntertainment(entertainment);
+			return dataBaseQuerier.createEntertainment(entertainment);
 		} catch (SQLException e) {
-			LOGGER.error(e);
 			LOGGER.error("Unable to create Entertainment");
+			LOGGER.error(e);
 			return false;
 		}
-		return true;
 	}
 
 	// HTTP : Delete : Entertainment : id
 	public boolean deleteEntertainment(int id) {
 		try {
-			dataBaseQuerier.deleteEntertainment(id);
+			return dataBaseQuerier.deleteEntertainment(id);
 		} catch (SQLException e) {
-			LOGGER.error(e);
 			LOGGER.error("Unable to delete Entertainment");
+			LOGGER.error(e);
 			return false;
 		}
-		return true;
 	}
 }
