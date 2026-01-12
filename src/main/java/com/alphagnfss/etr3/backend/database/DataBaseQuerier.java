@@ -274,9 +274,10 @@ public class DataBaseQuerier {
 	 * HTTP : POST : Entertainment : Entertainment
 	 *
 	 * @param entertainment the data to be created
+	 * @return if data was created
 	 * @throws SQLException for sql statements
 	 */
-	public void createEntertainment(Entertainment entertainment) throws SQLException {
+	public boolean createEntertainment(Entertainment entertainment) throws SQLException {
 		String insertQuery = String.format("insert into %s (" +
 				"name, type, localDate, " +
 				"status, isSpecial, isPilot, isFavorite, " +
@@ -318,28 +319,31 @@ public class DataBaseQuerier {
 			}
 
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			return false;
 		}
 
 		preparedStatement.executeUpdate();
+		return true;
 	}
 
 	/**
 	 * HTTP : DELETE : Entertainment : id
 	 *
 	 * @param id the data that will be deleted which has this id
+	 * @return if data was deleted
 	 * @throws SQLException for sql statements
 	 */
-	public void deleteEntertainment(int id) throws SQLException {
+	public boolean deleteEntertainment(int id) throws SQLException {
 		String deleteQuery = String.format("delete from %s where id = ?", tableName);
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = connection.prepareStatement(deleteQuery);
 			preparedStatement.setInt(1, id);
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			return false;
 		}
 
 		preparedStatement.execute();
+		return true;
 	}
 }
