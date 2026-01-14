@@ -119,12 +119,34 @@ public class Backend {
 		}
 	}
 
-	// HTTP : Delete : Entertainment : id
+	// HTTP : DELETE : Entertainment : id
 	public boolean deleteEntertainment(int id) {
 		try {
 			return dataBaseQuerier.deleteEntertainment(id);
 		} catch (SQLException e) {
 			LOGGER.error("Unable to delete Entertainment");
+			LOGGER.error(e);
+			return false;
+		}
+	}
+
+	// HTTP : PATCH : Entertainment : Entertainment
+	public boolean updateEntertainment(Entertainment updatedEntertainment) {
+		try {
+			return dataBaseQuerier.updateEntertainment(updatedEntertainment);
+		} catch (SQLException | EntertainmentDoesNotExistException | EntertainmentNotFoundException e) {
+			LOGGER.error("Unable to update Entertainment");
+			LOGGER.error(e);
+			return false;
+		}
+	}
+
+	// HTTP : PUT : Entertainment : Entertainment
+	public boolean replaceEntertainment(Entertainment updatedEntertainment) {
+		try {
+			return dataBaseQuerier.replaceEntertainment(updatedEntertainment);
+		} catch (SQLException e) {
+			LOGGER.error("Unable to replace Entertainment");
 			LOGGER.error(e);
 			return false;
 		}
