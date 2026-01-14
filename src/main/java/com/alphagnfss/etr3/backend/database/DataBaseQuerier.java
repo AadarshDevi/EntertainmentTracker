@@ -15,7 +15,7 @@ import java.util.Arrays;
 /**
  * <p>
  * DataBaseQuerier does all the sql querying to the database. this helps to organise
- * sql statements
+ * sql statements. More http get methods MIGHT be added for [Advanced Search].
  * </p>
  * <p>
  * Format of docs > HTTP : HTTP Method : Target Object : Arguments
@@ -476,6 +476,7 @@ public class DataBaseQuerier {
 	}
 
 	/**
+	 * updates a tag for the data id given
 	 *
 	 * @param id         the id of the data that will have its tag will be replaced
 	 * @param tagNum     the number of the tag that will be updated
@@ -498,7 +499,7 @@ public class DataBaseQuerier {
 	}
 
 	/**
-	 * the entire data will be put instead of the old data
+	 * the entire data will be put (replacing) instead of the old data
 	 *
 	 * @param replacedEntertainment data to replace the old data
 	 * @return returns true if the data replace was successful
