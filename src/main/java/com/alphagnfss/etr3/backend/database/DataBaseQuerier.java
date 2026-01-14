@@ -233,11 +233,11 @@ public class DataBaseQuerier {
 		int episodeNum = resultSet.getInt("episodeNum");
 		int duration = resultSet.getInt("duration");
 
-		ArrayList<String> tags = new ArrayList<>();
+		String[] tags = new String[15];
+		Arrays.fill(tags, "");
 		for (int i = 1; i <= 15; i++) {
 			String tag = resultSet.getString("tags_" + i);
-			if (tag.isBlank()) continue;
-			tags.add(tag);
+			tags[i - 1] = tag;
 		}
 
 		Entertainment entertainment;
@@ -245,7 +245,7 @@ public class DataBaseQuerier {
 				.id(id).name(name).type(type).date(date)
 				.status(status).isSpecial(isSpecial).isPilot(isPilot).isFavorite(isFavorite)
 				.seasonId(seasonId).episodeNum(episodeNum).duration(duration)
-				.tags(tags.toArray(new String[0]))
+				.tags(tags)
 				.build();
 
 		return entertainment;
@@ -315,6 +315,7 @@ public class DataBaseQuerier {
 				} catch (NullPointerException | ArrayIndexOutOfBoundsException _) {
 					tag = "";
 				}
+				LOGGER.debug("tag {}: {}", i, tag);
 				preparedStatement.setString((10 + i), tag);
 			}
 
@@ -345,5 +346,198 @@ public class DataBaseQuerier {
 
 		preparedStatement.execute();
 		return true;
+	}
+
+	/**
+	 * patches the old data information using the new updated data
+	 *
+	 * @param updatedEntertainment the new data to be replaced the old data
+	 * @return returns true if the data update was successful
+	 * @throws SQLException                       for sql statements
+	 * @throws EntertainmentDoesNotExistException when entertainment with id is not found
+	 * @throws EntertainmentNotFoundException     when entertainment id does not exist
+	 */
+	public boolean updateEntertainment(Entertainment updatedEntertainment) throws SQLException, EntertainmentDoesNotExistException, EntertainmentNotFoundException {
+		Entertainment entertainment = getEntertainment(updatedEntertainment.id());
+		if (!entertainment.name().equals(updatedEntertainment.name())) {
+			String updateQuery = String.format("update %s set name = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setString(1, updatedEntertainment.name());
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: Name");
+			else if (updated == 2) LOGGER.info("Update Failed: Name");
+		}
+
+		if (!entertainment.type().equals(updatedEntertainment.type())) {
+			String updateQuery = String.format("update %s set type = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setString(1, updatedEntertainment.type().toString());
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: Type");
+			else if (updated == 2) LOGGER.info("Update Failed: Type");
+		}
+
+		if (!entertainment.date().equals(updatedEntertainment.date())) {
+			String updateQuery = String.format("update %s set localDate = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setString(1, updatedEntertainment.date().toString());
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: LocalDate");
+			else if (updated == 2) LOGGER.info("Update Failed: LocalDate");
+		}
+
+		if (!entertainment.status().equals(updatedEntertainment.status())) {
+			String updateQuery = String.format("update %s set status = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setString(1, updatedEntertainment.status().toString());
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: Status");
+			else if (updated == 2) LOGGER.info("Update Failed: Status");
+		}
+
+		if (entertainment.isSpecial() != updatedEntertainment.isSpecial()) {
+			String updateQuery = String.format("update %s set isSpecial = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setInt(1, updatedEntertainment.isSpecial() ? 1 : 0);
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: Special");
+			else if (updated == 2) LOGGER.info("Update Failed: Special");
+		}
+
+		if (entertainment.isPilot() != updatedEntertainment.isPilot()) {
+			String updateQuery = String.format("update %s set isPilot = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setInt(1, updatedEntertainment.isPilot() ? 1 : 0);
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: Pilot");
+			else if (updated == 2) LOGGER.info("Update Failed: Pilot");
+		}
+
+		if (entertainment.isFavorite() != updatedEntertainment.isFavorite()) {
+			String updateQuery = String.format("update %s set isFavorite = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setInt(1, updatedEntertainment.isFavorite() ? 1 : 0);
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: Favorite");
+			else if (updated == 2) LOGGER.info("Update Failed: Favorite");
+		}
+
+		if (entertainment.seasonId() != updatedEntertainment.seasonId()) {
+			String updateQuery = String.format("update %s set seasonId = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setInt(1, updatedEntertainment.seasonId());
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: Season Id");
+			else if (updated == 2) LOGGER.info("Update Failed: Season Id");
+		}
+
+		if (entertainment.episodeNum() != updatedEntertainment.episodeNum()) {
+			String updateQuery = String.format("update %s set episodeNum = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setInt(1, updatedEntertainment.episodeNum());
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: Episode Num");
+			else if (updated == 2) LOGGER.info("Update Failed: Episode Num");
+		}
+
+		if (entertainment.duration() != updatedEntertainment.duration()) {
+			String updateQuery = String.format("update %s set duration = ? where id = ?;", tableName);
+			PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+			preparedStatement.setInt(2, updatedEntertainment.id());
+			preparedStatement.setInt(1, updatedEntertainment.duration());
+			int updated = preparedStatement.executeUpdate();
+			if (updated == 1) LOGGER.info("Update: Duration");
+			else if (updated == 2) LOGGER.info("Update Failed: Duration");
+		}
+
+		LOGGER.debug("New: {}, Old: {}", entertainment.tags().length, updatedEntertainment.tags().length);
+		if (entertainment.tags().length != updatedEntertainment.tags().length) {
+			for (int i = 0; i < updatedEntertainment.tags().length; i++) {
+				updateTag(entertainment.id(), i, updatedEntertainment.tags()[i]);
+			}
+		} else {
+			for (int i = 0; i < updatedEntertainment.tags().length; i++) {
+				if (!entertainment.tags()[i].equals(updatedEntertainment.tags()[i])) {
+					updateTag(entertainment.id(), i, updatedEntertainment.tags()[i]);
+				}
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 *
+	 * @param id         the id of the data that will have its tag will be replaced
+	 * @param tagNum     the number of the tag that will be updated
+	 * @param updatedTag the tag that will replace the old tag
+	 * @throws SQLException for sql statements
+	 */
+	private void updateTag(int id, int tagNum, String updatedTag) throws SQLException {
+		String updateQuery = String.format("update %s set %s = ? where id = ?;", tableName, "tags_" + (tagNum + 1));
+		PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+		preparedStatement.setInt(2, id);
+		preparedStatement.setString(1, updatedTag);
+		int updated = preparedStatement.executeUpdate();
+		if (updated == 1) {
+			LOGGER.info("Update: Id > {}; Tag {}", id, (tagNum + 1));
+		} else if (updated == 2) {
+			LOGGER.info("Update Failed: Id > {}; Tag {}", id, (tagNum + 1));
+		} else {
+			LOGGER.info("Update Unexpectedly Failed: Id > {}; Output {}; Tag {}", id, updated, (tagNum + 1));
+		}
+	}
+
+	/**
+	 * the entire data will be put instead of the old data
+	 *
+	 * @param replacedEntertainment data to replace the old data
+	 * @return returns true if the data replace was successful
+	 */
+	public boolean replaceEntertainment(Entertainment replacedEntertainment) throws SQLException {
+
+
+		String replaceQuery = String.format("update %s set name = ?, type = ?, localDate = ?, status = ?, " +
+				"isSpecial = ?, isPilot = ?, isFavorite = ?, " +
+				"seasonId = ?, episodeNum = ?, duration = ?, " +
+				"tags_1 = ?, tags_2 = ?, tags_3 = ?, tags_4 = ?, tags_5 = ?, tags_6 = ?, " +
+				"tags_7 = ?, tags_8 = ?, tags_9 = ?, tags_10 = ?, tags_11 = ?, tags_12 = ?, " +
+				"tags_13 = ?, tags_14 = ?, tags_15 = ? where id = ?;", tableName);
+
+		PreparedStatement preparedStatement = connection.prepareStatement(replaceQuery);
+
+		preparedStatement.setString(1, replacedEntertainment.name());
+		preparedStatement.setString(2, replacedEntertainment.type().toString());
+		preparedStatement.setString(3, replacedEntertainment.date().toString());
+		preparedStatement.setString(4, replacedEntertainment.status().toString());
+		preparedStatement.setInt(5, replacedEntertainment.isSpecial() ? 1 : 0);
+		preparedStatement.setInt(6, replacedEntertainment.isPilot() ? 1 : 0);
+		preparedStatement.setInt(7, replacedEntertainment.isFavorite() ? 1 : 0);
+		preparedStatement.setInt(8, replacedEntertainment.seasonId());
+		preparedStatement.setInt(9, replacedEntertainment.episodeNum());
+		preparedStatement.setInt(10, replacedEntertainment.duration());
+		for (int i = 1; i <= 15; i++) preparedStatement.setString((10 + i), replacedEntertainment.tags()[i - 1]);
+		preparedStatement.setInt(26, replacedEntertainment.id());
+
+		int updated = preparedStatement.executeUpdate();
+		if (updated == 1) {
+			LOGGER.info("Replaced: Id > {}", replacedEntertainment.id());
+			return true;
+		} else if (updated == 2) {
+			LOGGER.info("Replaced Failed: Id > {}", replacedEntertainment.id());
+			return false;
+		} else {
+			LOGGER.info("Replaced Unexpectedly Failed: Id > {}", replacedEntertainment.id());
+			return false;
+		}
 	}
 }
