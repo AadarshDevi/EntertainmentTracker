@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Cli {
@@ -45,7 +45,6 @@ public class Cli {
 			} catch (NumberFormatException e) {
 				LOGGER.error("Invalid eid enter");
 
-//				if (string.startsWith("-p")) {
 				if (string.startsWith("--post-name:")) {
 
 					String name = string.replace("--post-name:", "").trim();
@@ -68,10 +67,6 @@ public class Cli {
 					if (booleans.split("-")[1].equalsIgnoreCase("1")) isPilot = true;
 					if (booleans.split("-")[2].equalsIgnoreCase("1")) isFavorite = true;
 
-					int isSpecialNum = (isSpecial) ? 1 : 0;
-					int isPilotNum = (isPilot) ? 1 : 0;
-					int isFavoriteNum = (isFavorite) ? 1 : 0;
-
 					System.out.print("SeasonId, EpisodeNum, Duration (S-E-D): ");
 					String nums = scanner.nextLine();
 					int seasonId = Integer.parseInt(nums.split("-")[0]);
@@ -84,15 +79,15 @@ public class Cli {
 					LOGGER.info("S, P, F > {} {} {}", isSpecial, isPilot, isFavorite);
 					LOGGER.info("S, E, D > {}-{}-{}", seasonId, episodeNum, duration);
 
-					ArrayList<String> tagList = new ArrayList<>(15);
+					String[] tags = new String[15];
+					Arrays.fill(tags, "");
 					for (int i = 1; i <= 15; i++) {
 						System.out.print("tags_" + i + ": ");
 						String tagi = scanner.nextLine();
 						if (tagi.isBlank()) break;
-						tagList.add(tagi);
+						tags[i - 1] = tagi;
 					}
-					tagList.forEach(tag -> LOGGER.info("tag > {}", tag));
-					String[] tags = tagList.toArray(new String[15]); // array with length 15
+					for (int i = 0; i < tags.length; i++) LOGGER.debug("Tag {}: {}", (i + 1), tags[i]);
 
 					Entertainment entertainment = Entertainment.builder()
 							.name(name)
@@ -108,7 +103,6 @@ public class Cli {
 							.tags(tags)
 							.build();
 
-
 					boolean success = api.createEntertainment(entertainment);
 					LOGGER.info("created: {}", success);
 
@@ -119,7 +113,7 @@ public class Cli {
 				} else if (string.startsWith("--test-post:")) {
 					// test Entertainment Build
 					Entertainment entertainment = Entertainment.builder()
-							.name("ETR3 Testing: Entertainment via SQL Database")
+							.name("ETR3 Testing: Test Entertainment Data")
 							.type(EntertainmentType.MOVIE)
 							.date(LocalDate.of(3000, 1, 1))
 							.status(EntertainmentStatus.UPCOMING)
@@ -138,6 +132,54 @@ public class Cli {
 
 					boolean success = api.createEntertainment(entertainment);
 					LOGGER.info("test created: {}", success);
+				} else if (string.startsWith("--patch-id:")) {
+
+					Entertainment updatedEntertainment = Entertainment.builder()
+							.id(534)
+							.name("ETR3 Testing: Update Test VI")
+							.type(EntertainmentType.MOVIE)
+							.date(LocalDate.of(3000, 1, 1))
+							.status(EntertainmentStatus.UPCOMING)
+							.isSpecial(false)
+							.isPilot(false)
+							.isFavorite(false)
+							.seasonId(0)
+							.episodeNum(0)
+							.duration(0)
+							.tags(new String[]{
+									"testing", "Update VI",
+									"Update VII", "Update VIII", "", "", "", "", "",
+									"", "", "", "", "", ""
+							})
+							.build();
+
+					boolean success = api.updateEntertainment(updatedEntertainment);
+					LOGGER.info("updated: {}", success);
+
+				} else if (string.startsWith("--put-id:")) {
+
+					Entertainment replacedEntertainment = Entertainment.builder()
+							.id(529)
+							.name("ETR3 Testing: Replace Test I")
+							.type(EntertainmentType.MOVIE)
+							.date(LocalDate.of(3000, 1, 1))
+							.status(EntertainmentStatus.RELEASED)
+							.isSpecial(false)
+							.isPilot(false)
+							.isFavorite(false)
+							.seasonId(0)
+							.episodeNum(0)
+							.duration(0)
+							.tags(new String[]{
+									"Replace I", "Replace II",
+									"Replace III", "Replace IV", "", "", "", "", "",
+									"", "", "", "", "", ""
+							})
+							.build();
+
+					boolean success = api.replaceEntertainment(replacedEntertainment);
+					LOGGER.info("replaced: {}", success);
+
 				} else {
 					Entertainment[] entertainments = api.getEntertainments(string);
 					if (entertainments == null || entertainments.length == 0) LOGGER.error("No entertainments found");
