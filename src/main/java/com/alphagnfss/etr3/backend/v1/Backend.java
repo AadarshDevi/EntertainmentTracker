@@ -64,12 +64,14 @@ public class Backend {
 		try {
 			return dataBaseQuerier.getEntertainment(id);
 		} catch (SQLException e) {
-			// todo add logger
+			LOGGER.error("Unable to get Entertainment from database");
+			LOGGER.error(e);
 			return null;
 		} catch (EntertainmentNotFoundException e) {
 			return null;
 		} catch (EntertainmentDoesNotExistException e) {
-			// todo add logger for this too
+			LOGGER.error("Entertainment does not exist");
+			LOGGER.error(e);
 			return null;
 		}
 	}
@@ -79,12 +81,14 @@ public class Backend {
 		try {
 			return dataBaseQuerier.getVisualEntertainment(id);
 		} catch (SQLException e) {
-			// todo add logger
+			LOGGER.error("Unable to get VirtualEntertainment from database");
+			LOGGER.error(e);
 			return null;
 		} catch (EntertainmentNotFoundException e) {
 			return null;
 		} catch (EntertainmentDoesNotExistException e) {
-			// todo add logger for this too
+			LOGGER.error("VirtualEntertainment does not exist");
+			LOGGER.error(e);
 			return null;
 		}
 	}
