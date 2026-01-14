@@ -1,2 +1,2 @@
-dbpath=D:\\Programming\\Java\\Projects\\Entertainment_Tracker\\database.entertainmenttracker.sqlite
+dbpath=D:/Programming/Java/Projects/Entertainment_Tracker/data/databases/database.entertainmenttracker.sqlite
 tablename=entertainment_table
