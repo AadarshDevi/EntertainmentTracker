@@ -43,9 +43,18 @@ public class Api {
 		return backend.createEntertainment(entertainment);
 	}
 
-	// HTTP : Delete : Entertainment : id
+	// HTTP : DELETE : Entertainment : id
 	public boolean deleteEntertainment(int id) {
 		return backend.deleteEntertainment(id);
 	}
 
+	// HTTP : PATCH : Entertainment : Entertainment
+	public boolean updateEntertainment(Entertainment updatedEntertainment) {
+		return backend.updateEntertainment(updatedEntertainment);
+	}
+
+	// HTTP : PUT : Entertainment : Entertainment
+	public boolean replaceEntertainment(Entertainment updatedEntertainment) {
+		return backend.replaceEntertainment(updatedEntertainment);
+	}
 }
