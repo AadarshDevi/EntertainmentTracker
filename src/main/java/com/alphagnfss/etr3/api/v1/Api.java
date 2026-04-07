@@ -38,6 +38,10 @@ public class Api {
 		return backend.getVisualEntertainments(text);
 	}
 
+	public VisualEntertainment[] getVisualEntertainments(int min, int max) {
+		return backend.getVisualEntertainments(min, max);
+	}
+
 	// HTTP : POST : Entertainment : Entertainment
 	public boolean createEntertainment(Entertainment entertainment) {
 		return backend.createEntertainment(entertainment);

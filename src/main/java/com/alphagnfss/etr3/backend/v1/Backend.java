@@ -103,6 +103,14 @@ public class Backend {
 		}
 	}
 
+	public VisualEntertainment[] getVisualEntertainments(int min, int max) {
+		try {
+			return dataBaseQuerier.getVisualEntertainments(min, max);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	// HTTP : GET : VisualEntertainments : String
 	public VisualEntertainment[] getVisualEntertainments(String text) {
 		try {
