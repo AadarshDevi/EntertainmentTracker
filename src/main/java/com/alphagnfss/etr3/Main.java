@@ -1,4 +1,4 @@
-package com.alphagnfss.etr3.ui.v1;
+package com.alphagnfss.etr3;
 
 import com.alphagnfss.etr3.ui.v1.controllers.ControllerManager;
 import com.alphagnfss.etr3.ui.v1.controllers.MainController;
