@@ -2,8 +2,6 @@ package com.alphagnfss.etr3.database;
 
 import com.alphagnfss.etr3.communication.Response;
 
-import java.net.http.HttpRequest;
-
 public interface DatabaseInterface {
     Response connect();
     Response disconnect();
