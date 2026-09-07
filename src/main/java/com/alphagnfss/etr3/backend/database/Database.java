@@ -1,4 +1,4 @@
-package com.alphagnfss.etr3.database;
+package com.alphagnfss.etr3.backend.database;
 
 import com.alphagnfss.etr3.communication.Response;
 
