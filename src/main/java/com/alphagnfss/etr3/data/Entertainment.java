@@ -97,8 +97,8 @@ public abstract class Entertainment implements EntertainmentInterface {
 
     }
 
-    public void print() {
-        System.out.println("\t> Entertainment - Hello World!");
+    public String getMessage() {
+        return "Entertainment says \"Hello\".";
     }
 
 }
