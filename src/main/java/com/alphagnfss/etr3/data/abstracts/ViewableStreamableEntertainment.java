@@ -1,5 +1,7 @@
 package com.alphagnfss.etr3.data.abstracts;
 
-public abstract class ViewableStreamableEntertainment extends StreamableEntertainment {
+import com.alphagnfss.etr3.data.interfaces.Viewable;
+
+public abstract class ViewableStreamableEntertainment extends StreamableEntertainment implements Viewable {
     private int duration;
 }
