@@ -1,10 +1,11 @@
-package com.alphagnfss.etr3.data.abstracts;
+package com.alphagnfss.etr3.data.abstracts.streamable.listable;
 
+import com.alphagnfss.etr3.data.abstracts.streamable.StreamableEntertainment;
 import com.alphagnfss.etr3.data.interfaces.Listable;
 
 import java.util.Vector;
 
-public abstract class ListableEntertainment implements Listable {
+public abstract class StreamableListableEntertainment extends StreamableEntertainment implements Listable {
     private int segmentCount;
     private Vector<Integer> segmentList;
 

@@ -1,5 +1,6 @@
-package com.alphagnfss.etr3.data.abstracts;
+package com.alphagnfss.etr3.data.abstracts.streamable.viewable;
 
+import com.alphagnfss.etr3.data.abstracts.streamable.StreamableEntertainment;
 import com.alphagnfss.etr3.data.interfaces.Viewable;
 
 public abstract class ViewableStreamableEntertainment extends StreamableEntertainment implements Viewable {

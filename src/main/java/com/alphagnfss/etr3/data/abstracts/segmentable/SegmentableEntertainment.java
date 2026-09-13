@@ -1,4 +1,4 @@
-package com.alphagnfss.etr3.data.abstracts;
+package com.alphagnfss.etr3.data.abstracts.segmentable;
 
 import com.alphagnfss.etr3.data.Entertainment;
 import com.alphagnfss.etr3.data.interfaces.Segmentable;

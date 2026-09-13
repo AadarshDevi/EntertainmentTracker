@@ -1,5 +1,6 @@
-package com.alphagnfss.etr3.data.abstracts;
+package com.alphagnfss.etr3.data.abstracts.streamable.viewable.segmentable;
 
+import com.alphagnfss.etr3.data.abstracts.streamable.viewable.ViewableStreamableEntertainment;
 import com.alphagnfss.etr3.data.interfaces.Segmentable;
 
 public abstract class StreamableSegmentableEntertainment extends ViewableStreamableEntertainment implements Segmentable {

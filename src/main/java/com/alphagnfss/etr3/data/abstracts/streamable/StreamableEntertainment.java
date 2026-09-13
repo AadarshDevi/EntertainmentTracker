@@ -1,10 +1,11 @@
-package com.alphagnfss.etr3.data.abstracts;
+package com.alphagnfss.etr3.data.abstracts.streamable;
 
+import com.alphagnfss.etr3.data.Entertainment;
 import com.alphagnfss.etr3.data.interfaces.Streamable;
 
 import java.util.Vector;
 
-public abstract class StreamableEntertainment implements Streamable {
+public abstract class StreamableEntertainment extends Entertainment implements Streamable {
     private boolean isSpecial;
     private boolean isPilot;
     private Vector<String> productionCompanies;
