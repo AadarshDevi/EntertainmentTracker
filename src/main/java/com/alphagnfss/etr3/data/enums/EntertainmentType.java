@@ -1,4 +1,4 @@
-package com.alphagnfss.etr3.data;
+package com.alphagnfss.etr3.data.enums;
 
 public enum EntertainmentType {
     MOVIE,
