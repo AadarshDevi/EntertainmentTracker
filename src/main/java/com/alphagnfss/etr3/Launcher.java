@@ -11,7 +11,8 @@ public class Launcher {
 
     public static void main(String[] args) {
 
-        Movie entertainment = new Movie();
+        Movie movie = new Movie();
+        LOGGER.info(movie.getMessage());
 
         // Set UI
         Application.launch(Main.class, args);
