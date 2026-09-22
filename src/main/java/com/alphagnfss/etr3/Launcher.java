@@ -1,6 +1,5 @@
 package com.alphagnfss.etr3;
 
-import com.alphagnfss.etr3.data.Movie;
 import javafx.application.Application;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
