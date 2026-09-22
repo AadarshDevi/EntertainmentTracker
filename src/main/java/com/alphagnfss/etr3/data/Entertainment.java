@@ -21,86 +21,105 @@ public abstract class Entertainment implements EntertainmentInterface {
 
     @Override
     public boolean getIsFavorite() {
-        return false;
+        return isFavorite;
     }
 
     @Override
     public void setIsFavorite(boolean isFavorite) {
-
+        this.isFavorite = isFavorite;
     }
 
     @Override
     public int getEntertainmentId() {
-        return 0;
+        return entertainmentId;
     }
 
     @Override
     public void setEntertainmentId(int id) {
-
+        this.entertainmentId = id;
     }
 
     @Override
     public Vector<Integer> getCollections() {
-        return null;
+        return collections;
     }
 
     @Override
     public void setCollections(Vector<Integer> collections) {
-
+        this.collections = collections;
     }
 
     @Override
     public EntertainmentType getType() {
-        return null;
+        return type;
     }
 
     @Override
     public void setType(EntertainmentType type) {
-
+        this.type = type;
     }
 
     @Override
     public EntertainmentStatus getStatus() {
-        return null;
+        return status;
     }
 
     @Override
     public void setStatus(EntertainmentStatus status) {
-
+        this.status = status;
     }
 
     @Override
     public String getTitle() {
-        return "";
+        return title;
     }
 
     @Override
     public void setTitle(String title) {
-
+        this.title = title;
     }
 
     @Override
     public LocalDate getReleaseDate() {
-        return null;
+        return releaseDate;
     }
 
     @Override
     public void setReleaseDate(LocalDate releaseDate) {
-
+        this.releaseDate = releaseDate;
     }
 
     @Override
     public Vector<String> getTags() {
-        return null;
+        return tags;
     }
 
     @Override
     public void setTags(Vector<String> tags) {
-
+        this.tags = tags;
     }
 
     public String getMessage() {
         return "Entertainment says \"Hello\".";
     }
 
+    @Override
+    public Vector<String> getGenre() {
+        return genre;
+    }
+
+    @Override
+    public void setGenre(Vector<String> genre) {
+        this.genre = genre;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
