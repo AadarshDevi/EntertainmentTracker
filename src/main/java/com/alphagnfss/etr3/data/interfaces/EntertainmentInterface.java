@@ -40,4 +40,12 @@ public interface EntertainmentInterface {
     Vector<String> getTags();
 
     void setTags(Vector<String> tags);
+
+    Vector<String> getGenre();
+
+    void setGenre(Vector<String> genre);
+
+    String getDescription();
+
+    void setDescription(String description);
 }
