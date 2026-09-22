@@ -16,6 +16,8 @@ public abstract class Entertainment implements EntertainmentInterface {
     private LocalDate releaseDate;
     private EntertainmentStatus status;
     private EntertainmentType type;
+    private Vector<String> genre;
+    private String description;
 
     @Override
     public boolean getIsFavorite() {
