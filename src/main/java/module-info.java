@@ -5,6 +5,7 @@ module com.alphagnfss.etr3 {
 	requires org.apache.logging.log4j;
 	requires static lombok;
 	requires jdk.compiler;
+    requires jdk.jfr;
 
     exports com.alphagnfss.etr3;
 }
