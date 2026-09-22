@@ -1,6 +1,6 @@
 package com.alphagnfss.etr3.data.interfaces;
 
-public interface Segmentable {
+public interface SegmentableInterface {
     int getSegmentNumber();
 
     void setSegmentNumber(int segmentNumber);

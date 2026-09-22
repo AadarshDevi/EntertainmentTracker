@@ -2,7 +2,7 @@ package com.alphagnfss.etr3.data.interfaces;
 
 import java.util.Vector;
 
-public interface Listable {
+public interface ListableInterface {
 
     int getSegmentCount();
 

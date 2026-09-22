@@ -1,9 +1,9 @@
-package com.alphagnfss.etr3.data.abstracts.segmentable;
+package com.alphagnfss.etr3.data.extensions;
 
-import com.alphagnfss.etr3.data.Entertainment;
-import com.alphagnfss.etr3.data.interfaces.Segmentable;
+import com.alphagnfss.etr3.data.interfaces.SegmentableInterface;
 
-public abstract class SegmentableEntertainment extends Entertainment implements Segmentable {
+public class SegmentableExtension implements SegmentableInterface {
+
     private int segmentNum;
     private int placementId;
 

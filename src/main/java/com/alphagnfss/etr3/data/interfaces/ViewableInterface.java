@@ -1,6 +1,6 @@
 package com.alphagnfss.etr3.data.interfaces;
 
-public interface Viewable {
+public interface ViewableInterface {
 
     int getDuration();
 

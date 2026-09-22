@@ -2,7 +2,7 @@ package com.alphagnfss.etr3.data.interfaces;
 
 import java.util.Vector;
 
-public interface Streamable {
+public interface StreamableInterface {
     
     boolean getIsSpecial();
 
