@@ -1,6 +1,7 @@
 package com.alphagnfss.etr3.database;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.data.Entertainment;
 
 public class Database implements DatabaseInterface {
     @Override
@@ -14,32 +15,22 @@ public class Database implements DatabaseInterface {
     }
 
     @Override
-    public Response get(int id) {
+    public Response createData(Entertainment entertainment) {
         return null;
     }
 
     @Override
-    public Response get(String text) {
+    public Response readData(int id) {
         return null;
     }
 
     @Override
-    public Response post(int id) {
+    public Response updateData(Entertainment entertainment) {
         return null;
     }
 
     @Override
-    public Response put(int id) {
-        return null;
-    }
-
-    @Override
-    public Response patch(int id) {
-        return null;
-    }
-
-    @Override
-    public Response delete(int id) {
+    public Response deleteData(int id) {
         return null;
     }
 }
