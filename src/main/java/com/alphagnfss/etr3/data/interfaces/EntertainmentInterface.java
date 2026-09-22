@@ -9,6 +9,11 @@ import java.util.Vector;
 
 public interface EntertainmentInterface {
 
+    /**
+     * Gets the boolean is Favorite. Does the user like this entertainment?
+     *
+     * @return is favorite
+     */
     boolean getIsFavorite();
 
     void setIsFavorite(boolean isFavorite);
