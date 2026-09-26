@@ -19,7 +19,7 @@ public class DatabaseAPI implements DatabaseInterface {
 
     @Override
     public Response createDB(Path path) {
-        return null;
+        return database.createDB(path);
     }
 
     @Override
@@ -29,12 +29,12 @@ public class DatabaseAPI implements DatabaseInterface {
 
     @Override
     public Response connect() {
-        return null;
+        return database.connect();
     }
 
     @Override
     public Response disconnect() {
-        return null;
+        return database.disconnect();
     }
 
     @Override
