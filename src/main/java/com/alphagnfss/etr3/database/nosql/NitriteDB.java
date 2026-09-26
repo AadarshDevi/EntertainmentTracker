@@ -7,7 +7,7 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.mvstore.MVStoreModule;
 
 import javax.net.ssl.HttpsURLConnection;
-import java.net.HttpURLConnection;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class NitriteDB implements DatabaseInterface {
@@ -71,12 +71,12 @@ public class NitriteDB implements DatabaseInterface {
 
     @Override
     public Response connect() {
-        return null;
+        return null; // new Response(HttpsURLConnection.HTTP_MOVED_PERM);
     }
 
-    public Response databaseExists() {
-        if (database == null)
-            return new Response(HttpsURLConnection.HTTP_BAD_REQUEST, "Database Not Found", null);
-        return new Response(HttpsURLConnection.HTTP_CREATED);
-    }
+//    public Response databaseExists() {
+//        if (database == null)
+//            return new Response(HttpsURLConnection.HTTP_BAD_REQUEST, "Database Not Found", null);
+//        return new Response(HttpsURLConnection.HTTP_CREATED);
+//    }
 }
