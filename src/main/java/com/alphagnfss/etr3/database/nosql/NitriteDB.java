@@ -57,6 +57,11 @@ public class NitriteDB implements DatabaseInterface {
 
     @Override
     public Response disconnect() {
+//        Response response = databaseExists();
+//        if (response.getCode() == HttpURLConnection.HTTP_CREATED) {
+//            database.close();
+//        }
+//        return new Response(HttpsURLConnection.HTTP_NOT_FOUND);
         return null;
     }
 
