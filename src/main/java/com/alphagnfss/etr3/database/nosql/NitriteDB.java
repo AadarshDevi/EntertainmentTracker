@@ -23,11 +23,15 @@ public class NitriteDB implements DatabaseInterface {
         this.database = Nitrite.builder()
                 .loadModule(module)
                 .openOrCreate();
+        
+        Response response;
 
-        Response response = databaseExists();
-        return (response.getCode() == HttpURLConnection.HTTP_BAD_REQUEST) ?
-                response :
-                new Response(HttpsURLConnection.HTTP_CREATED);
+        if (Files.exists(path))
+            response = new Response(HttpsURLConnection.HTTP_CREATED);
+        else
+            response = new Response(HttpsURLConnection.HTTP_BAD_REQUEST, "Unable to create database");
+
+        return response;
     }
 
     @Override
