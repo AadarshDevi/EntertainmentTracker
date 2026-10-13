@@ -17,23 +17,19 @@ public class MongoDB implements DatabaseInterface {
      * @param path Database Path
      * @return database was created or not
      */
-    @Override
     public Response createDB(Path path) {
         MongoClient mongoClient = MongoClients.create(path.toString());
         return null;
     }
 
-    @Override
     public Response deleteDB(Path path) {
         return null;
     }
 
-    @Override
     public Response connect() {
         return null;
     }
 
-    @Override
     public Response disconnect() {
         return null;
     }
