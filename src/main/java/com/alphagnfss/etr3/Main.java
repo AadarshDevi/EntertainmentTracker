@@ -18,21 +18,18 @@ public class Main extends Application {
         MongoDB database = new MongoDB(uri);
         Response response = database.connect();
 
-        // Add a new Show
-
+//         Add a new Show
 //        Show show = new Show(
 //                EntertainmentType.TV_SHOW,
 //                "Avatar: The Last Airbender"
 //        );
 
-        Show show = Show.builder().
-
-        try {
-            System.out.println(show.getTitle());
-            System.out.println(show.getType());
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+//        try {
+//            System.out.println(show.getTitle());
+//            System.out.println(show.getType());
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
 
         database.disconnect();
 
