@@ -1,6 +1,6 @@
 package com.alphagnfss.etr3.database;
 
-import com.alphagnfss.etr3.database.nosql.NitriteDB;
+import com.alphagnfss.etr3.database.nosql.MongoDB;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +16,7 @@ public class DatabaseTest {
     @BeforeEach
     public void setup() {
 //        nitriteDB = ;
-        databaseAPI = new DatabaseAPI(new NitriteDB());
+        databaseAPI = new DatabaseAPI(new MongoDB());
     }
 
     @AfterEach
