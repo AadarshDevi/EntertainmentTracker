@@ -8,6 +8,7 @@ module com.alphagnfss.etr3 {
     requires jdk.jfr;
     requires org.dizitart.no2;
     requires org.dizitart.no2.mvstore;
+    requires org.mongodb.driver.sync.client;
 
     exports com.alphagnfss.etr3;
 }
