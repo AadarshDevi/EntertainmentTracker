@@ -38,6 +38,25 @@ public class MongoDB extends NoSQLDatabase implements DatabaseInterface {
         return null;
     }
 
+    public Response connect(String uri) {
+        try {
+            mongoClient = MongoClients.create(
+                    MongoClientSettings.builder()
+                            .applyConnectionString(new ConnectionString(uri))
+                            .build()
+            );
+            mongoClient.listDatabaseNames().forEach(System.out::println);
+            mongoClient.getDatabase("admin").runCommand(new Document("ping", 1));
+            System.out.println("Connected to MongoDB!");
+
+            database = mongoClient.getDatabase(databases.get(0));
+            System.out.println("Database Connected: " + database.getName());
+        } catch (Exception e) {
+            return new Response(HttpsURLConnection.HTTP_UNAVAILABLE, e.getMessage());
+        }
+        return new Response(HttpsURLConnection.HTTP_OK);
+    }
+
     public Response connect() {
         return null;
     }
