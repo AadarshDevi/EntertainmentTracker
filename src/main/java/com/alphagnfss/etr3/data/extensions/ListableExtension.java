@@ -6,8 +6,8 @@ import java.util.Vector;
 
 public class ListableExtension implements ListableInterface {
 
-    private final int segmentCount;
-    private final Vector<Integer> segmentList;
+    private int segmentCount;
+    private Vector<Integer> segmentList;
 
     public ListableExtension() {
         this(-1, null);
@@ -20,21 +20,21 @@ public class ListableExtension implements ListableInterface {
 
     @Override
     public int getSegmentCount() {
-        return 0;
+        return segmentCount;
     }
 
     @Override
     public void setSegmentCount(int segmentCount) {
-
+        this.segmentCount = segmentCount;
     }
 
     @Override
     public Vector<Integer> getSegmentList() {
-        return null;
+        return segmentList;
     }
 
     @Override
     public void setSegmentList(Vector<Integer> segmentList) {
-
+        this.segmentList = segmentList;
     }
 }
