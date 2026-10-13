@@ -5,8 +5,6 @@ import com.alphagnfss.etr3.data.Entertainment;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.nio.file.Path;
-
 public class DatabaseAPI implements DatabaseInterface {
 
     @Setter
@@ -16,26 +14,22 @@ public class DatabaseAPI implements DatabaseInterface {
     public DatabaseAPI(DatabaseInterface database) {
         this.database = database;
     }
-
-    @Override
-    public Response createDB(Path path) {
-        return database.createDB(path);
-    }
-
-    @Override
-    public Response deleteDB(Path path) {
-        return null;
-    }
-
-    @Override
-    public Response connect() {
-        return database.connect();
-    }
-
-    @Override
-    public Response disconnect() {
-        return database.disconnect();
-    }
+//
+//    public Response createDB(Path path) {
+//        return database.createDB(path);
+//    }
+//
+//    public Response deleteDB(Path path) {
+//        return null;
+//    }
+//
+//    public Response connect() {
+//        return database.();
+//    }
+//
+//    public Response disconnect() {
+//        return database.disconnect();
+//    }
 
     @Override
     public Response createData(Entertainment entertainment) {
