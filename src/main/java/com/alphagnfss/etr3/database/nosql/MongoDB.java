@@ -24,12 +24,10 @@ public class MongoDB extends NoSQLDatabase implements DatabaseInterface {
     private MongoDatabase database;
     private Response response;
 
-    /**
-     * Creates a new connection (database) in MongoDB.
-     *
-     * @param path Database Path
-     * @return database was created or not
-     */
+    public MongoDB(String connection) {
+        this.connection = connection;
+    }
+
     public Response createDB(Path path) {
 //        mongoClient = MongoClients.create(path.toString());
 //        System.out.println(mongoClient);
