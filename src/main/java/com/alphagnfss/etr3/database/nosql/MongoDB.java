@@ -15,6 +15,12 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Vector;
 
+/**
+ * Connecting to MongoDB
+ * - Step 1: Install MongoDB Compass
+ * - Step 2: (Win11) open "services.msc" and check if MongoDB Server is running.
+ * - Step 3: connect
+ */
 public class MongoDB extends NoSQLDatabase implements DatabaseInterface {
     private final String connection;
     private final Vector<String> databases = new Vector<>(List.of(

@@ -15,11 +15,6 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         LOGGER.info("Starting Main");
 
-        // Connecting to MongoDB
-        // Step 1: Install MongoDB Compass
-        // Step 2:
-        // 		- Win11: open "services.msc" and check if MongoDB Server is running
-        // Step 3: connect
 
         String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1?connectTimeoutMS=5000&serverSelectionTimeoutMS=5000";
         MongoDB database = new MongoDB(uri);
