@@ -8,16 +8,50 @@ import java.time.LocalDate;
 import java.util.Vector;
 
 public abstract class Entertainment implements EntertainmentInterface {
-    private int entertainmentId;
-    private boolean isFavorite;
-    private Vector<String> tags;
-    private Vector<Integer> collections;
-    private String title;
-    private LocalDate releaseDate;
-    private EntertainmentStatus status;
-    private EntertainmentType type;
-    private Vector<String> genre;
-    private String description;
+    protected int entertainmentId;
+    protected boolean isFavorite;
+    protected Vector<String> tags;
+    protected Vector<Integer> collections;
+    protected String title;
+    protected LocalDate releaseDate;
+    protected EntertainmentStatus status;
+    protected EntertainmentType type;
+    protected Vector<String> genre;
+    protected String description;
+
+    public Entertainment(
+            int entertainmentId,
+            boolean isFavorite,
+            Vector<String> tags,
+            Vector<Integer> collections,
+            String title,
+            LocalDate releaseDate,
+            EntertainmentStatus status,
+            EntertainmentType type,
+            Vector<String> genre,
+            String description
+    ) {
+        this.entertainmentId = entertainmentId;
+        this.tags = tags;
+        this.collections = collections;
+        this.isFavorite = isFavorite;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.status = status;
+        this.type = type;
+        this.genre = genre;
+        this.description = description;
+    }
+
+    public Entertainment() {
+        this(
+                -1, false,
+                null, null,
+                null, null,
+                null, null,
+                null, null
+        );
+    }
 
     @Override
     public boolean getIsFavorite() {
@@ -122,4 +156,17 @@ public abstract class Entertainment implements EntertainmentInterface {
     public void setDescription(String description) {
         this.description = description;
     }
+
+//    protected void setDefault() {
+//        this.entertainmentId = -1;
+//        this.isFavorite = false;
+//        this.tags = new Vector<>();
+//        this.collections = new Vector<>();
+//        this.title = null;
+//        this.releaseDate = LocalDate.MIN;
+//        this.status = null;
+//        this.type = null;
+//        this.genre = new Vector<>();
+//        this.description = null;
+//    }
 }
