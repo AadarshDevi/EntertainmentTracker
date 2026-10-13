@@ -1,5 +1,6 @@
 package com.alphagnfss.etr3;
 
+import com.alphagnfss.etr3.communication.Response;
 import com.alphagnfss.etr3.database.nosql.MongoDB;
 import javafx.application.Application;
 import javafx.stage.Stage;
