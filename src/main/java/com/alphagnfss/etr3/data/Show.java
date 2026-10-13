@@ -11,6 +11,51 @@ public class Show extends Entertainment implements StreamableInterface, Listable
     StreamableExtension stream;
     ListableExtension list;
 
+//    public Show(EntertainmentType type, String title) {
+//        super();
+//        stream = new StreamableExtension();
+//        list = new ListableExtension();
+//        this.type = type;
+//        this.title = title;
+//    }
+//
+//    public Show() {
+//        this(
+//                -1, false,
+//                null, null,
+//                null, null,
+//                null, null,
+//                null, null,
+//                null, null
+//        );
+//    }
+
+    public Show(
+            int entertainmentId,
+            boolean isFavorite,
+            Vector<String> tags,
+            Vector<Integer> collections,
+            String title,
+            LocalDate releaseDate,
+            EntertainmentStatus status,
+            EntertainmentType type,
+            Vector<String> genre,
+            String description,
+            StreamableExtension stream,
+            ListableExtension list
+    ) {
+        super(
+                entertainmentId, isFavorite,
+                tags, collections,
+                title, releaseDate,
+                status, type,
+                genre, description
+        );
+        this.stream = stream;
+        this.list = list;
+    }
+
+
     @Override
     public int getSegmentCount() {
         return list.getSegmentCount();
