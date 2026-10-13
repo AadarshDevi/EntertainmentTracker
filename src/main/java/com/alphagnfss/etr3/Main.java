@@ -20,25 +20,7 @@ public class Main extends Application {
         MongoDB database = new MongoDB(uri);
         database.connect();
         database.disconnect();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
 
         System.exit(0);
-        //        try (
-//                MongoClient mongoClient = MongoClients.create(
-//                        MongoClientSettings.builder()
-//                                .applyConnectionString(new ConnectionString(uri))
-//                                .build()
-//                )
-//        ) {
-//            mongoClient.getDatabase("admin").runCommand(new Document("ping", 1));
-//            System.out.println("Connected to MongoDB");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            System.out.println("Failed to connect to MongoDB");
-//        }
     }
 }
