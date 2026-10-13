@@ -29,7 +29,6 @@ public class MongoDB extends NoSQLDatabase {
     private final String DOCUMENT_NAME_COLLECTION = "collection";
     private String connection;
     private MongoClient mongoClient;
-    private MongoDatabase database;
     private Response response;
 
     public MongoDB(String connection) {
@@ -37,8 +36,6 @@ public class MongoDB extends NoSQLDatabase {
     }
 
     public Response createDB(Path path) {
-//        mongoClient = MongoClients.create(path.toString());
-//        System.out.println(mongoClient);
         return null;
     }
 
