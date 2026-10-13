@@ -1,4 +1,4 @@
-package com.alphagnfss.etr3.database;
+package com.alphagnfss.etr3.database.enums;
 
 public enum DatabaseType {
 
