@@ -24,11 +24,10 @@ import java.nio.file.Path;
  * - Step 1: Movie movie = new Movie(...);
  * - Step 2: add Movie (A Doc)
  */
-public class MongoDB extends NoSQLDatabase implements DatabaseInterface {
-    private final String connection;
-    private final Vector<String> databases = new Vector<>(List.of(
-            "data", "collection"
-    ));
+public class MongoDB extends NoSQLDatabase {
+    private final String DOCUMENT_NAME_DATA = "data";
+    private final String DOCUMENT_NAME_COLLECTION = "collection";
+    private String connection;
     private MongoClient mongoClient;
     private MongoDatabase database;
     private Response response;
