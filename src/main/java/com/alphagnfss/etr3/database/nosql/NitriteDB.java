@@ -13,7 +13,6 @@ import java.nio.file.Path;
 public class NitriteDB implements DatabaseInterface {
     private Nitrite database = null;
 
-    @Override
     public Response createDB(Path path) {
 
         MVStoreModule module = MVStoreModule.withConfig()
@@ -23,7 +22,7 @@ public class NitriteDB implements DatabaseInterface {
         this.database = Nitrite.builder()
                 .loadModule(module)
                 .openOrCreate();
-        
+
         Response response;
 
         if (Files.exists(path))
@@ -34,7 +33,6 @@ public class NitriteDB implements DatabaseInterface {
         return response;
     }
 
-    @Override
     public Response deleteDB(Path path) {
         return null;
     }
@@ -59,7 +57,6 @@ public class NitriteDB implements DatabaseInterface {
         return null;
     }
 
-    @Override
     public Response disconnect() {
 //        Response response = databaseExists();
 //        if (response.getCode() == HttpURLConnection.HTTP_CREATED) {
@@ -69,7 +66,6 @@ public class NitriteDB implements DatabaseInterface {
         return null;
     }
 
-    @Override
     public Response connect() {
         return null; // new Response(HttpsURLConnection.HTTP_MOVED_PERM);
     }
