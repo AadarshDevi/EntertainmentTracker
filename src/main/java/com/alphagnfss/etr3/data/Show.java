@@ -60,4 +60,14 @@ public class Show extends Entertainment implements StreamableInterface, Listable
     public void setProductionCompanies(Vector<String> productionCompanies) {
         stream.setProductionCompanies(productionCompanies);
     }
+
+    @Override
+    public Vector<String> getStreamingServices() {
+        return null;
+    }
+
+    @Override
+    public void setStreamingServices(Vector<String> streamingServices) {
+
+    }
 }

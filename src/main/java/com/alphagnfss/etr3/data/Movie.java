@@ -42,6 +42,16 @@ public class Movie extends Entertainment implements StreamableInterface, Viewabl
     }
 
     @Override
+    public Vector<String> getStreamingServices() {
+        return null;
+    }
+
+    @Override
+    public void setStreamingServices(Vector<String> streamingServices) {
+
+    }
+
+    @Override
     public int getDuration() {
         return view.getDuration();
     }
