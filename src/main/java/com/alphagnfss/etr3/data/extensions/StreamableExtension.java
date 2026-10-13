@@ -11,6 +11,13 @@ public class StreamableExtension implements StreamableInterface {
     private Vector<String> productionCompanies;
     private Vector<String> streamingServices;
 
+    public StreamableExtension() {
+        isSpecial = false;
+        isPilot = false;
+        productionCompanies = new Vector<>();
+        streamingServices = new Vector<>();
+    }
+
     @Override
     public boolean getIsSpecial() {
         return isSpecial;
