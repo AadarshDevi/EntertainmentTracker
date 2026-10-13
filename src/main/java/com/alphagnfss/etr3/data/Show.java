@@ -113,11 +113,11 @@ public class Show extends Entertainment implements StreamableInterface, Listable
 
     @Override
     public Vector<String> getStreamingServices() {
-        return null;
+        return stream.getStreamingServices();
     }
 
     @Override
     public void setStreamingServices(Vector<String> streamingServices) {
-
+        this.stream.setStreamingServices(streamingServices);
     }
 }
