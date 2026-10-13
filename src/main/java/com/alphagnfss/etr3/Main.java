@@ -14,10 +14,9 @@ public class Main extends Application {
     public void start(Stage stage) {
         LOGGER.info("Starting Main");
 
-
         String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1?connectTimeoutMS=5000&serverSelectionTimeoutMS=5000";
         MongoDB database = new MongoDB(uri);
-        database.connect();
+        Response response = database.connect();
         database.disconnect();
 
         System.exit(0);
