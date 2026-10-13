@@ -1,14 +1,11 @@
 package com.alphagnfss.etr3.data;
 
-import com.alphagnfss.etr3.data.enums.EntertainmentStatus;
-import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.alphagnfss.etr3.data.extensions.ListableExtension;
 import com.alphagnfss.etr3.data.extensions.StreamableExtension;
 import com.alphagnfss.etr3.data.interfaces.ListableInterface;
 import com.alphagnfss.etr3.data.interfaces.StreamableInterface;
 import lombok.Builder;
 
-import java.time.LocalDate;
 import java.util.Vector;
 
 @Builder
