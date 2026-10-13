@@ -15,8 +15,14 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Vector;
 
-public class MongoDB implements DatabaseInterface {
+public class MongoDB extends NoSQLDatabase implements DatabaseInterface {
+    private final String connection;
+    private final Vector<String> databases = new Vector<>(List.of(
+            "data", "collection"
+    ));
     private MongoClient mongoClient;
+    private MongoDatabase database;
+    private Response response;
 
     /**
      * Creates a new connection (database) in MongoDB.
