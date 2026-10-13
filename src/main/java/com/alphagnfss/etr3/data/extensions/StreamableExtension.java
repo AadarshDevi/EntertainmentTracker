@@ -9,7 +9,7 @@ public class StreamableExtension implements StreamableInterface {
     private boolean isSpecial;
     private boolean isPilot;
     private Vector<String> productionCompanies;
-    private Vector<String> streamingServices; // Streaming Services
+    private Vector<String> streamingServices;
 
     @Override
     public boolean getIsSpecial() {
