@@ -2,7 +2,6 @@ package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
 import com.alphagnfss.etr3.data.Entertainment;
-import com.alphagnfss.etr3.database.DatabaseInterface;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClient;
@@ -12,8 +11,6 @@ import org.bson.Document;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.nio.file.Path;
-import java.util.List;
-import java.util.Vector;
 
 /**
  * Connecting to MongoDB
