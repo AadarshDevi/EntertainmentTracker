@@ -9,34 +9,45 @@ public class StreamableExtension implements StreamableInterface {
     private boolean isSpecial;
     private boolean isPilot;
     private Vector<String> productionCompanies;
+    private Vector<String> streamingServices; // Streaming Services
 
     @Override
     public boolean getIsSpecial() {
-        return false;
+        return isSpecial;
     }
 
     @Override
     public void setIsSpecial(boolean isSpecial) {
-
+        this.isSpecial = isSpecial;
     }
 
     @Override
     public boolean getIsPilot() {
-        return false;
+        return isPilot;
     }
 
     @Override
     public void setIsPilot(boolean isPilot) {
-
+        this.isPilot = isPilot;
     }
 
     @Override
     public Vector<String> getProductionCompanies() {
-        return null;
+        return productionCompanies;
     }
 
     @Override
     public void setProductionCompanies(Vector<String> productionCompanies) {
+        this.productionCompanies = productionCompanies;
+    }
 
+    @Override
+    public Vector<String> getStreamingServices() {
+        return streamingServices;
+    }
+
+    @Override
+    public void setStreamingServices(Vector<String> streamingServices) {
+        this.streamingServices = streamingServices;
     }
 }
