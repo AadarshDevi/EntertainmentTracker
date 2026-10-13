@@ -38,7 +38,7 @@ public class MongoDB extends NoSQLDatabase implements DatabaseInterface {
         return null;
     }
 
-    public Response connect(String uri) {
+    private Response connect(String uri) {
         try {
             mongoClient = MongoClients.create(
                     MongoClientSettings.builder()
@@ -58,11 +58,12 @@ public class MongoDB extends NoSQLDatabase implements DatabaseInterface {
     }
 
     public Response connect() {
-        return null;
+        return connect(connection);
     }
 
     public Response disconnect() {
-        return null;
+        mongoClient.close();
+        return new Response(HttpsURLConnection.HTTP_OK);
     }
 
     @Override
