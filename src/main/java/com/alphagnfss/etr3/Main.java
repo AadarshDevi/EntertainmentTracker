@@ -15,6 +15,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         LOGGER.info("Starting Main");
 
+        // Connecting to MongoDB
         // Step 1: Install MongoDB Compass
         // Step 2:
         // 		- Win11: open "services.msc" and check if MongoDB Server is running
@@ -29,5 +30,20 @@ public class Main extends Application {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+        System.exit(0);
+        //        try (
+//                MongoClient mongoClient = MongoClients.create(
+//                        MongoClientSettings.builder()
+//                                .applyConnectionString(new ConnectionString(uri))
+//                                .build()
+//                )
+//        ) {
+//            mongoClient.getDatabase("admin").runCommand(new Document("ping", 1));
+//            System.out.println("Connected to MongoDB");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("Failed to connect to MongoDB");
+//        }
     }
 }
