@@ -55,64 +55,64 @@ public class Show extends Entertainment { // implements StreamableInterface, Lis
 //        this.list = list;
 //    }
 
-
-    @Override
-    public int getSegmentCount() {
-        return list.getSegmentCount();
-    }
-
-    @Override
-    public void setSegmentCount(int segmentCount) {
-        list.setSegmentCount(segmentCount);
-    }
-
-    @Override
-    public Vector<Integer> getSegmentList() {
-        return list.getSegmentList();
-    }
-
-    @Override
-    public void setSegmentList(Vector<Integer> segmentList) {
-        list.setSegmentList(segmentList);
-    }
-
-    @Override
-    public boolean getIsSpecial() {
-        return stream.getIsSpecial();
-    }
-
-    @Override
-    public void setIsSpecial(boolean isSpecial) {
-        stream.setIsSpecial(isSpecial);
-    }
-
-    @Override
-    public boolean getIsPilot() {
-        return stream.getIsPilot();
-    }
-
-    @Override
-    public void setIsPilot(boolean isPilot) {
-        stream.setIsPilot(isPilot);
-    }
-
-    @Override
-    public Vector<String> getProductionCompanies() {
-        return stream.getProductionCompanies();
-    }
-
-    @Override
-    public void setProductionCompanies(Vector<String> productionCompanies) {
-        stream.setProductionCompanies(productionCompanies);
-    }
-
-    @Override
-    public Vector<String> getStreamingServices() {
-        return stream.getStreamingServices();
-    }
-
-    @Override
-    public void setStreamingServices(Vector<String> streamingServices) {
-        this.stream.setStreamingServices(streamingServices);
-    }
+//
+//    @Override
+//    public int getSegmentCount() {
+//        return list.getSegmentCount();
+//    }
+//
+//    @Override
+//    public void setSegmentCount(int segmentCount) {
+//        list.setSegmentCount(segmentCount);
+//    }
+//
+//    @Override
+//    public Vector<Integer> getSegmentList() {
+//        return list.getSegmentList();
+//    }
+//
+//    @Override
+//    public void setSegmentList(Vector<Integer> segmentList) {
+//        list.setSegmentList(segmentList);
+//    }
+//
+//    @Override
+//    public boolean getIsSpecial() {
+//        return stream.getIsSpecial();
+//    }
+//
+//    @Override
+//    public void setIsSpecial(boolean isSpecial) {
+//        stream.setIsSpecial(isSpecial);
+//    }
+//
+//    @Override
+//    public boolean getIsPilot() {
+//        return stream.getIsPilot();
+//    }
+//
+//    @Override
+//    public void setIsPilot(boolean isPilot) {
+//        stream.setIsPilot(isPilot);
+//    }
+//
+//    @Override
+//    public Vector<String> getProductionCompanies() {
+//        return stream.getProductionCompanies();
+//    }
+//
+//    @Override
+//    public void setProductionCompanies(Vector<String> productionCompanies) {
+//        stream.setProductionCompanies(productionCompanies);
+//    }
+//
+//    @Override
+//    public Vector<String> getStreamingServices() {
+//        return stream.getStreamingServices();
+//    }
+//
+//    @Override
+//    public void setStreamingServices(Vector<String> streamingServices) {
+//        this.stream.setStreamingServices(streamingServices);
+//    }
 }
