@@ -35,30 +35,30 @@ public class Show extends Entertainment implements StreamableInterface, Listable
 //        );
 //    }
 
-    public Show(
-            int entertainmentId,
-            boolean isFavorite,
-            Vector<String> tags,
-            Vector<Integer> collections,
-            String title,
-            LocalDate releaseDate,
-            EntertainmentStatus status,
-            EntertainmentType type,
-            Vector<String> genre,
-            String description,
-            StreamableExtension stream,
-            ListableExtension list
-    ) {
-        super(
-                entertainmentId, isFavorite,
-                tags, collections,
-                title, releaseDate,
-                status, type,
-                genre, description
-        );
-        this.stream = stream;
-        this.list = list;
-    }
+//    public Show(
+//            int entertainmentId,
+//            boolean isFavorite,
+//            Vector<String> tags,
+//            Vector<Integer> collections,
+//            String title,
+//            LocalDate releaseDate,
+//            EntertainmentStatus status,
+//            EntertainmentType type,
+//            Vector<String> genre,
+//            String description,
+//            StreamableExtension stream,
+//            ListableExtension list
+//    ) {
+//        super(
+//                entertainmentId, isFavorite,
+//                tags, collections,
+//                title, releaseDate,
+//                status, type,
+//                genre, description
+//        );
+//        this.stream = stream;
+//        this.list = list;
+//    }
 
 
     @Override
