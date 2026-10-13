@@ -3,7 +3,7 @@ package com.alphagnfss.etr3.data.interfaces;
 import java.util.Vector;
 
 public interface StreamableInterface {
-    
+
     boolean getIsSpecial();
 
     void setIsSpecial(boolean isSpecial);
@@ -15,4 +15,11 @@ public interface StreamableInterface {
     Vector<String> getProductionCompanies();
 
     void setProductionCompanies(Vector<String> productionCompanies);
+
+
+    Vector<String> getStreamingServices();
+
+    void setStreamingServices(Vector<String> streamingServices);
+
+
 }
