@@ -20,19 +20,14 @@ public class Main extends Application {
         // 		- Win11: open "services.msc" and check if MongoDB Server is running
         // Step 3: connect
 
-        String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1";
-        try (
-                MongoClient mongoClient = MongoClients.create(
-                        MongoClientSettings.builder()
-                                .applyConnectionString(new ConnectionString(uri))
-                                .build()
-                )
-        ) {
-            mongoClient.getDatabase("admin").runCommand(new Document("ping", 1));
-            System.out.println("Connected to MongoDB");
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Failed to connect to MongoDB");
+        String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1?connectTimeoutMS=5000&serverSelectionTimeoutMS=5000";
+        MongoDB database = new MongoDB(uri);
+        database.connect();
+        database.disconnect();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }
