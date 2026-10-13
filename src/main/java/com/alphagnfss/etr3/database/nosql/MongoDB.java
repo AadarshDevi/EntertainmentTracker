@@ -18,7 +18,8 @@ public class MongoDB implements DatabaseInterface {
      * @return database was created or not
      */
     public Response createDB(Path path) {
-        MongoClient mongoClient = MongoClients.create(path.toString());
+        mongoClient = MongoClients.create(path.toString());
+        System.out.println(mongoClient);
         return null;
     }
 
