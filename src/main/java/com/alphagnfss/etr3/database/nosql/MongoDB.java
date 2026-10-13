@@ -45,21 +45,33 @@ public class MongoDB extends NoSQLDatabase {
 
     private Response connect(String uri) {
         try {
+
+            // connect to mongodb
             mongoClient = MongoClients.create(
                     MongoClientSettings.builder()
                             .applyConnectionString(new ConnectionString(uri))
                             .build()
             );
-            mongoClient.listDatabaseNames().forEach(System.out::println);
-            mongoClient.getDatabase("admin").runCommand(new Document("ping", 1));
-            System.out.println("Connected to MongoDB!");
 
-            database = mongoClient.getDatabase(databases.get(0));
-            System.out.println("Database Connected: " + database.getName());
+            connection = null;
+
+            // check if the connection was established
+            if (!isConnected()) {
+                return new Response(HttpsURLConnection.HTTP_UNAVAILABLE, "Unable to connect to server");
+            }
+
         } catch (Exception e) {
             return new Response(HttpsURLConnection.HTTP_UNAVAILABLE, e.getMessage());
         }
         return new Response(HttpsURLConnection.HTTP_OK);
+    }
+
+    private boolean isConnected() {
+
+        // pingResult = mongoClient.getDatabase("admin").runCommand(new Document("ping", 1))
+        // pingValue = pingResult.getDouble("ok")
+        Double result = mongoClient.getDatabase("admin").runCommand(new Document("ping", 1)).getDouble("ok");
+        return ((result != null) && (result == 1.0));
     }
 
     public Response connect() {
