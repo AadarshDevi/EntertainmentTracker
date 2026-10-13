@@ -1,5 +1,7 @@
 package com.alphagnfss.etr3;
 
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import javafx.application.Application;
@@ -23,7 +25,13 @@ public class Main extends Application {
         // Step 3: connect
 
         String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1";
-        try (MongoClient mongoClient = MongoClients.create(uri)) {
+        try (
+                MongoClient mongoClient = MongoClients.create(
+                        MongoClientSettings.builder()
+                                .applyConnectionString(new ConnectionString(uri))
+                                .build()
+                )
+        ) {
             mongoClient.getDatabase("admin").runCommand(new Document("ping", 1));
             System.out.println("Connected to MongoDB");
         } catch (Exception e) {
