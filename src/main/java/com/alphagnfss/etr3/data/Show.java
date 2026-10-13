@@ -3,10 +3,8 @@ package com.alphagnfss.etr3.data;
 import com.alphagnfss.etr3.data.extensions.ListableExtension;
 import com.alphagnfss.etr3.data.extensions.StreamableExtension;
 import lombok.Builder;
-import lombok.Data;
 
 @Builder
-@Data
 public class Show extends Entertainment { // implements StreamableInterface, ListableInterface {
     StreamableExtension stream;
     ListableExtension list;
