@@ -11,6 +11,9 @@ module com.alphagnfss.etr3 {
     requires org.mongodb.driver.sync.client;
     requires org.mongodb.bson;
     requires org.mongodb.driver.core;
+    requires tools.jackson.databind;
+
+    opens com.alphagnfss.etr3.data to tools.jackson.databind;
 
     exports com.alphagnfss.etr3;
 }
