@@ -1,11 +1,15 @@
 package com.alphagnfss.etr3;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.data.Show;
+import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.alphagnfss.etr3.database.nosql.MongoDB;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 public class Main extends Application {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
@@ -18,21 +22,17 @@ public class Main extends Application {
         MongoDB database = new MongoDB(uri);
         Response response = database.connect();
 
-//         Add a new Show
-//        Show show = new Show(
-//                EntertainmentType.TV_SHOW,
-//                "Avatar: The Last Airbender"
-//        );
+        Show show = Show.builder().title("Avatar: The Last Airbender").type(EntertainmentType.TV_SHOW).build();
+        ObjectMapper mapper = JsonMapper.builder().build();
 
-//        try {
-//            System.out.println(show.getTitle());
-//            System.out.println(show.getType());
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
+        try {
+            String string = mapper.writeValueAsString(show);
+            System.out.println(string);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         database.disconnect();
-
         System.exit(0);
     }
 }
