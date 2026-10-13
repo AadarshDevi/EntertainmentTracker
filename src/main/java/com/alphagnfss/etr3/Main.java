@@ -11,7 +11,7 @@ public class Main extends Application {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
         LOGGER.info("Starting Main");
 
 
