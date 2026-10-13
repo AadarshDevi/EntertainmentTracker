@@ -13,10 +13,16 @@ import javax.net.ssl.HttpsURLConnection;
 import java.nio.file.Path;
 
 /**
- * Connecting to MongoDB
+ * Connecting to MongoDB:
  * - Step 1: Install MongoDB Compass
  * - Step 2: (Win11) open "services.msc" and check if MongoDB Server is running.
  * - Step 3: connect
+ * <p>
+ * Server/Database --> Collection (Table) --> Document (Row)
+ * <p>
+ * Data in Server:
+ * - Step 1: Movie movie = new Movie(...);
+ * - Step 2: add Movie (A Doc)
  */
 public class MongoDB extends NoSQLDatabase implements DatabaseInterface {
     private final String connection;
