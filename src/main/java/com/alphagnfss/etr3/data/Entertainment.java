@@ -19,39 +19,39 @@ public abstract class Entertainment implements EntertainmentInterface {
     protected Vector<String> genre;
     protected String description;
 
-    public Entertainment(
-            int entertainmentId,
-            boolean isFavorite,
-            Vector<String> tags,
-            Vector<Integer> collections,
-            String title,
-            LocalDate releaseDate,
-            EntertainmentStatus status,
-            EntertainmentType type,
-            Vector<String> genre,
-            String description
-    ) {
-        this.entertainmentId = entertainmentId;
-        this.tags = tags;
-        this.collections = collections;
-        this.isFavorite = isFavorite;
-        this.title = title;
-        this.releaseDate = releaseDate;
-        this.status = status;
-        this.type = type;
-        this.genre = genre;
-        this.description = description;
-    }
-
-    public Entertainment() {
-        this(
-                -1, false,
-                null, null,
-                null, null,
-                null, null,
-                null, null
-        );
-    }
+//    public Entertainment(
+//            int entertainmentId,
+//            boolean isFavorite,
+//            Vector<String> tags,
+//            Vector<Integer> collections,
+//            String title,
+//            LocalDate releaseDate,
+//            EntertainmentStatus status,
+//            EntertainmentType type,
+//            Vector<String> genre,
+//            String description
+//    ) {
+//        this.entertainmentId = entertainmentId;
+//        this.tags = tags;
+//        this.collections = collections;
+//        this.isFavorite = isFavorite;
+//        this.title = title;
+//        this.releaseDate = releaseDate;
+//        this.status = status;
+//        this.type = type;
+//        this.genre = genre;
+//        this.description = description;
+//    }
+//
+//    public Entertainment() {
+//        this(
+//                -1, false,
+//                null, null,
+//                null, null,
+//                null, null,
+//                null, null
+//        );
+//    }
 
     @Override
     public boolean getIsFavorite() {
