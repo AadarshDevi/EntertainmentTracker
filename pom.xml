@@ -27,6 +27,18 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--      MongoDB BOM      -->
+
+            <!-- Source: https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-bom -->
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongodb-driver-bom</artifactId>
+                <version>5.13.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -104,7 +116,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!--    Nitrite: NoSQL Database    -->
+        <!--    Nitrite: NoSQL Serverless Database    -->
 
         <!-- Source: https://mvnrepository.com/artifact/org.dizitart/nitrite -->
         <dependency>
@@ -119,6 +131,26 @@
             <groupId>org.dizitart</groupId>
             <artifactId>nitrite-mvstore-adapter</artifactId>
             <version>5.3.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--    MongoDB: NoSQL Server Database    -->
+
+        <!-- Source: https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>5.13.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--    Jackson: JSON Parser    -->
+
+        <!-- Source: https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>3.2.3</version>
             <scope>compile</scope>
         </dependency>
 
