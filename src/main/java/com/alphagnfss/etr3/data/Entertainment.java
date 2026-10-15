@@ -31,10 +31,10 @@ public abstract class Entertainment {
 
     @JsonIgnore
     public String getHexId() {
-        // # - (letter) hex num symbol
-        // % - format specifier
-        // 04 - Tells String to pad the number with 0s to get a length of 4 chars
-        // X - num base - Hexadecimal
-        return String.format("#%04X", (entertainmentId + 1));
+//        // # - (letter) hex num symbol
+//        // % - format specifier
+//        // 04 - Tells String to pad the number with 0s to get a length of 4 chars
+//        // X - num base - Hexadecimal
+        return null;
     }
 }
