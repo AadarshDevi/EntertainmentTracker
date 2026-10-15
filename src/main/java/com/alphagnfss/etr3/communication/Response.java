@@ -7,9 +7,9 @@ import lombok.Data;
 @Data
 public class Response {
 
-    @Getter int code; // HTTP Code
-    @Getter String message; // Message (used for exceptions)
-    @Getter Object object; // The object to pass
+    int code; // HTTP Code
+    String message; // Message (used for exceptions)
+    Object object; // The object to pass
 
     public Response(int code, String message, Object object) {
         this.code = code;
