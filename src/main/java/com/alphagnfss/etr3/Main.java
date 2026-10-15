@@ -50,14 +50,8 @@ public class Main extends Application {
                 .build();
 
         createData(client, show);
-//        System.out.println("Entertainment ID: " + show.getEntertainmentId());
-
         createData(client, movie);
-//        System.out.println("Entertainment ID: " + movie.getEntertainmentId());
-
         createData(client, episode);
-//        System.out.println("Entertainment ID: " + episode.getEntertainmentId());
-
         client.disconnect();
         System.exit(0);
     }
