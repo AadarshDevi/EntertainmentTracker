@@ -24,8 +24,33 @@ public class Main extends Application {
         LOGGER.info("Starting Main");
 
         String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1?connectTimeoutMS=5000&serverSelectionTimeoutMS=5000";
-        MongoDB database = new MongoDB(uri);
-        Response response = database.connect();
+        MongoDB client = new MongoDB(uri);
+        Response response = client.connect();
+
+        // create Show
+        Entertainment show = Show.builder()
+                .entertainmentId(newEntertainmentId++)
+                .title("Avatar: The Last Airbender")
+                .type(EntertainmentType.TV_SHOW)
+                .status(EntertainmentStatus.RELEASED)
+                .build();
+
+        // create movie
+        Entertainment movie = Movie.builder()
+                .entertainmentId(newEntertainmentId++)
+                .title("Toy Story 5")
+                .type(EntertainmentType.MOVIE)
+                .status(EntertainmentStatus.COMPLETED)
+                .build();
+
+        // create episode
+        Entertainment episode = Episode.builder()
+                .entertainmentId(newEntertainmentId++)
+                .title("The Boy in the Iceberg.")
+                .type(EntertainmentType.EPISODE)
+                .status(EntertainmentStatus.RELEASED)
+                .episodeNum(1)
+                .build();
 
         createData(client, show);
         System.out.println("Entertainment ID: " + show.getHexId());
