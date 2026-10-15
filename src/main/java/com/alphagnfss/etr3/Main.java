@@ -29,7 +29,6 @@ public class Main extends Application {
 
         // create Show
         Entertainment show = Show.builder()
-                .entertainmentId(newEntertainmentId++)
                 .title("Avatar: The Last Airbender")
                 .type(EntertainmentType.TV_SHOW)
                 .status(EntertainmentStatus.RELEASED)
@@ -37,7 +36,6 @@ public class Main extends Application {
 
         // create movie
         Entertainment movie = Movie.builder()
-                .entertainmentId(newEntertainmentId++)
                 .title("Toy Story 5")
                 .type(EntertainmentType.MOVIE)
                 .status(EntertainmentStatus.COMPLETED)
@@ -45,7 +43,6 @@ public class Main extends Application {
 
         // create episode
         Entertainment episode = Episode.builder()
-                .entertainmentId(newEntertainmentId++)
                 .title("The Boy in the Iceberg.")
                 .type(EntertainmentType.EPISODE)
                 .status(EntertainmentStatus.RELEASED)
