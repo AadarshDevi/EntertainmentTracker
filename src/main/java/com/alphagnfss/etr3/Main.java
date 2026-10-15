@@ -35,4 +35,15 @@ public class Main extends Application {
         database.disconnect();
         System.exit(0);
     }
+
+    public void createData(MongoDB client, Entertainment entertainment) {
+        try {
+            Response response = client.createData(entertainment);
+            if (response.getCode() == HttpsURLConnection.HTTP_OK) {
+                System.out.println("Successfully Created Data");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
