@@ -17,6 +17,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class Main extends Application {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
+    int newEntertainmentId = 0;
 
     @Override
     public void start(Stage stage) {
