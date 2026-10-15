@@ -1,9 +1,10 @@
 package com.alphagnfss.etr3.communication;
 
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 
 @Builder
+@Data
 public class Response {
 
     @Getter int code; // HTTP Code
