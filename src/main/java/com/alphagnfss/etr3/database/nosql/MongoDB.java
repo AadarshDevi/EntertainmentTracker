@@ -90,7 +90,24 @@ public class MongoDB extends NoSQLDatabase {
 
     @Override
     public Response createData(Entertainment entertainment) {
-        return null;
+        MongoDatabase database = mongoClient.getDatabase(DataGroup.DATABASE);
+        MongoCollection<Document> collection = database.getCollection(DataGroup.DATA);
+
+        ObjectMapper mapper = JsonMapper.builder().build();
+        String string = mapper.writeValueAsString(entertainment);
+        System.out.println(string);
+
+        Document document = Document.parse(string);
+
+        result = collection.insertOne(document);
+        if (!result.wasAcknowledged()) {
+            response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
+            response.setMessage("Unable to write " + entertainment.getTitle() + "to database");
+            return response;
+        }
+
+        response.setCode(HttpsURLConnection.HTTP_OK);
+        return response;
     }
 
     @Override
