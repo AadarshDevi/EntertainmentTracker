@@ -34,7 +34,7 @@ public class MongoDB extends NoSQLDatabase {
     private final Response response = new Response(-1, "");
     private String connection;
     private MongoClient mongoClient;
-    private Response response;
+    private InsertOneResult result;
 
     public MongoDB(String connection) {
         this.connection = connection;
