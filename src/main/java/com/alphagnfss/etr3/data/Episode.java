@@ -10,57 +10,9 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Getter
 @Setter
-public class Episode extends Entertainment { // } implements StreamableInterface, ViewableInterface {
-    StreamableExtension stream;
-    ViewableExtension view;
-//
-//    @Override
-//    public boolean getIsSpecial() {
-//        return stream.getIsSpecial();
-//    }
-//
-//    @Override
-//    public void setIsSpecial(boolean isSpecial) {
-//        stream.setIsSpecial(isSpecial);
-//    }
-//
-//    @Override
-//    public boolean getIsPilot() {
-//        return stream.getIsPilot();
-//    }
-//
-//    @Override
-//    public void setIsPilot(boolean isPilot) {
-//        stream.setIsPilot(isPilot);
-//    }
-//
-//    @Override
-//    public Vector<String> getProductionCompanies() {
-//        return stream.getProductionCompanies();
-//    }
-//
-//    @Override
-//    public void setProductionCompanies(Vector<String> productionCompanies) {
-//        stream.setProductionCompanies(productionCompanies);
-//    }
-//
-//    @Override
-//    public Vector<String> getStreamingServices() {
-//        return null;
-//    }
-//
-//    @Override
-//    public void setStreamingServices(Vector<String> streamingServices) {
-//
-//    }
-//
-//    @Override
-//    public int getDuration() {
-//        return view.getDuration();
-//    }
-//
-//    @Override
-//    public void setDuration(int duration) {
-//        view.setDuration(duration);
-//    }
+public class Episode extends Entertainment {
+    private StreamableExtension stream;
+    private ViewableExtension view;
+    @NonNull private Integer showId;
+    @NonNull private Integer episodeNum;
 }
