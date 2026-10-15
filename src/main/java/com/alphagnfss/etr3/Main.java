@@ -33,10 +33,10 @@ public class Main extends Application {
         createData(client, movie);
         System.out.println("Entertainment ID: " + movie.getHexId());
 
-        database.disconnect();
         createData(client, episode);
         System.out.println("Entertainment ID: " + episode.getHexId());
 
+        client.disconnect();
         System.exit(0);
     }
 
