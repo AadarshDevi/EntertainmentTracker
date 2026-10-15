@@ -1,15 +1,19 @@
 package com.alphagnfss.etr3;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.data.Entertainment;
+import com.alphagnfss.etr3.data.Episode;
+import com.alphagnfss.etr3.data.Movie;
 import com.alphagnfss.etr3.data.Show;
+import com.alphagnfss.etr3.data.enums.EntertainmentStatus;
 import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.alphagnfss.etr3.database.nosql.MongoDB;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import tools.jackson.databind.ObjectMapper;
-import tools.jackson.databind.json.JsonMapper;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class Main extends Application {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
