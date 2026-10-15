@@ -1,16 +1,19 @@
 module com.alphagnfss.etr3 {
-	requires javafx.controls;
-	requires javafx.fxml;
-	requires java.sql;
-	requires org.apache.logging.log4j;
-	requires static lombok;
-	requires jdk.compiler;
+    requires javafx.controls;
+    requires javafx.fxml;
+    requires java.sql;
+    requires org.apache.logging.log4j;
+    requires static lombok;
+    requires jdk.compiler;
+    requires jdk.jfr;
+    requires org.dizitart.no2;
+    requires org.dizitart.no2.mvstore;
+    requires org.mongodb.driver.sync.client;
+    requires org.mongodb.bson;
+    requires org.mongodb.driver.core;
+    requires tools.jackson.databind;
 
-	exports com.alphagnfss.etr3;
-	exports com.alphagnfss.etr3.ui.v1;
+    opens com.alphagnfss.etr3.data to tools.jackson.databind;
 
-
-	opens com.alphagnfss.etr3 to javafx.fxml;
-	opens com.alphagnfss.etr3.ui.v1 to javafx.fxml;
-	opens com.alphagnfss.etr3.ui.v1.controllers to javafx.fxml;
+    exports com.alphagnfss.etr3;
 }
