@@ -18,9 +18,7 @@ import java.util.List;
 @Getter
 public abstract class Entertainment {
 
-    @JsonProperty("_id")
-    @NonNull
-    protected Integer entertainmentId;
+    @JsonIgnore protected String entertainmentId;
     protected boolean isFavorite;
     @Singular protected List<String> tags;
     @Singular protected List<Integer> collections;
