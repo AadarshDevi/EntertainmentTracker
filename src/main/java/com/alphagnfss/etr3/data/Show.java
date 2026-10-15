@@ -12,4 +12,5 @@ import lombok.experimental.SuperBuilder;
 public class Show extends Entertainment {
     private StreamableExtension stream;
     private ListableExtension list;
+    @Singular private List<Integer> episodeIds;
 }
