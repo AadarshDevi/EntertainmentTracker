@@ -24,10 +24,10 @@ public abstract class Entertainment {
     protected boolean isFavorite;
     @Singular protected List<String> tags;
     @Singular protected List<Integer> collections;
-    protected String title;
+    @NonNull protected String title;
     protected LocalDate releaseDate;
-    protected EntertainmentStatus status;
-    protected EntertainmentType type;
+    @NonNull protected EntertainmentStatus status;
+    @NonNull protected EntertainmentType type;
     @Singular protected List<String> genres;
     protected String description;
 
