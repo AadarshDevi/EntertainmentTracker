@@ -27,17 +27,16 @@ public class Main extends Application {
         MongoDB database = new MongoDB(uri);
         Response response = database.connect();
 
-        Show show = Show.builder().title("Avatar: The Last Airbender").type(EntertainmentType.TV_SHOW).build();
-        ObjectMapper mapper = JsonMapper.builder().build();
+        createData(client, show);
+        System.out.println("Entertainment ID: " + show.getHexId());
 
-        try {
-            String string = mapper.writeValueAsString(show);
-            System.out.println(string);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        createData(client, movie);
+        System.out.println("Entertainment ID: " + movie.getHexId());
 
         database.disconnect();
+        createData(client, episode);
+        System.out.println("Entertainment ID: " + episode.getHexId());
+
         System.exit(0);
     }
 
