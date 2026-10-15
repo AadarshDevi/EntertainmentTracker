@@ -2,12 +2,17 @@ package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
 import com.alphagnfss.etr3.data.Entertainment;
+import com.alphagnfss.etr3.database.DataGroup;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.InsertOneResult;
 import org.bson.Document;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.nio.file.Path;
