@@ -126,7 +126,6 @@ public class MongoDB extends NoSQLDatabase {
     }
 
     private MongoDatabase getDatabase(String databaseName) {
-        mongoClient.getDatabase(databaseName).runCommand(new Document("ping", 1));
         return mongoClient.getDatabase(databaseName);
 
     }
