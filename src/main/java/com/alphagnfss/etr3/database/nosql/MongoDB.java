@@ -30,8 +30,8 @@ import java.nio.file.Path;
  * - Step 2: add Movie (A Doc)
  */
 public class MongoDB extends NoSQLDatabase {
-    private final String DOCUMENT_NAME_DATA = "data";
-    private final String DOCUMENT_NAME_COLLECTION = "collection";
+
+    private final Response response = new Response(-1, "");
     private String connection;
     private MongoClient mongoClient;
     private Response response;
