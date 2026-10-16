@@ -57,7 +57,7 @@ public class MongoDB extends NoSQLDatabase {
         return null;
     }
 
-    private Response connect(String uri) {
+    protected Response connect(String uri) {
         try {
 
             // connect to mongodb
@@ -80,7 +80,7 @@ public class MongoDB extends NoSQLDatabase {
         return new Response(HttpsURLConnection.HTTP_OK);
     }
 
-    private boolean isConnected() {
+    public boolean isConnected() {
 
         // pingResult = mongoClient.getDatabase("admin").runCommand(new Document("ping", 1))
         // pingValue = pingResult.getDouble("ok")
