@@ -111,7 +111,7 @@ public class MongoDB extends NoSQLDatabase {
         Document document = Document.parse(string);
 
         // Inserts the Document in the Collection
-        result = collection.insertOne(document);
+        InsertOneResult result = collection.insertOne(document);
 
         // Check if writing the Document was not successful
         if (!result.wasAcknowledged()) {
