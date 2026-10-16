@@ -191,7 +191,35 @@ public class MongoDB extends NoSQLDatabase {
     }
 
     public Response deleteData(BsonObjectId id) {
-        return null;
+
+        try {
+            // Get Collection
+            MongoCollection<Document> collection = getCollection(DataGroup.DATA);
+
+            // Filter to find the right Entertainment Object
+            Bson filter = Filters.eq("_id", id);
+
+            // Use filter to delete the data of the specific Entertainment Object
+            DeleteResult deleteResult = collection.deleteOne(filter);
+
+            if (!deleteResult.wasAcknowledged()) {
+                response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
+                response.setMessage("Unable to delete " + id + " from database");
+                return response;
+            }
+
+            if (deleteResult.getDeletedCount() <= 0) {
+                response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
+                response.setMessage("Data was unable to be deleted from database: " + id);
+                return response;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        response.setCode(HttpsURLConnection.HTTP_OK);
+        return response;
     }
 
     public Response updateData(BsonObjectId id, Entertainment entertainment) {
