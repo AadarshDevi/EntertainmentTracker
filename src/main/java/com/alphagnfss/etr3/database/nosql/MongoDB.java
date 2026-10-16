@@ -137,8 +137,26 @@ public class MongoDB extends NoSQLDatabase {
         return response;
     }
 
-    @Override
-    public Response readData(int id) {
+    public Response readData(BsonObjectId id) {
+
+        // Internal Response object
+        Response response = Response.builder().build();
+
+        // get database from server
+        MongoDatabase database = mongoClient.getDatabase(DataGroup.DATABASE);
+
+        // get collection from server
+        MongoCollection<Document> collection = database.getCollection(DataGroup.DATA);
+
+        // Create a Document
+        Document searchResults = collection.find(new Document("_id", id.getValue())).first();
+
+        if (searchResults == null) {
+            response.setCode(HttpsURLConnection.HTTP_NOT_FOUND);
+            return response;
+        }
+
+
         return null;
     }
 
