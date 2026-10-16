@@ -199,8 +199,13 @@ public class MongoDB extends NoSQLDatabase {
         return null;
     }
 
-    private MongoDatabase getDatabase(String databaseName) {
-        return mongoClient.getDatabase(databaseName);
+    private MongoCollection<Document> getCollection(String dataGroup) {
+        // get database from server
+        MongoDatabase database = mongoClient.getDatabase(DataGroup.DATABASE);
+
+        // get collection from server
+        MongoCollection<Document> collection = database.getCollection(dataGroup);
+        return collection;
     }
 
     public Response updateData(BsonObjectId id1, BsonObjectId id2) {
