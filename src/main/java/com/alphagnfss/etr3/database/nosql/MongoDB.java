@@ -194,9 +194,41 @@ public class MongoDB extends NoSQLDatabase {
         return null;
     }
 
-    @Override
-    public Response deleteData(int id) {
-        return null;
+    public Response updateData(BsonObjectId id, Entertainment entertainment) {
+        try {
+            // Get Collection
+            MongoCollection<Document> collection = getCollection(DataGroup.DATA);
+
+            // Java Object --> JSON Strings
+            ObjectMapper mapper = JsonMapper.builder().build();
+
+            // EntertainmentObject Serialized
+            String string = mapper.writeValueAsString(entertainment);
+
+            // Document that contains the new updated version of the Entertainment Object
+            Document replacingDocument = Document.parse(string);
+
+            // Filter: Get Document with field "_id
+            Bson filters = Filters.eq("_id", id);
+
+            // Create a Replace Document Object
+            ReplaceOptions options = new ReplaceOptions().upsert(false);
+
+            // Use filter to find old doc and then use options to replace the old doc with the new doc
+            UpdateResult result = collection.replaceOne(filters, replacingDocument, options);
+
+            // Check if the update failed
+            if (!result.wasAcknowledged()) {
+                response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
+                response.setMessage("Unable to update \"" + entertainment.getTitle() + "\" to database");
+                return response;
+            }
+        } catch (JacksonException e) {
+            e.printStackTrace();
+        }
+
+        response.setCode(HttpsURLConnection.HTTP_OK);
+        return response;
     }
 
     private MongoCollection<Document> getCollection(String dataGroup) {
