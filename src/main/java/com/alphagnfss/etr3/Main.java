@@ -57,16 +57,21 @@ public class Main extends Application {
         System.out.println("Movie: " + movieId.getValue());
         System.out.println("Episode: " + episodeId.getValue());
 
-        try {
-            Thread.sleep(7_500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
         // read data as in JSON
-        client.readData(showId);
-        client.readData(movieId);
-        client.readData(episodeId);
+        response = client.readData(showId);
+        System.out.println("Show Response: " + response.getCode());
+        Show searchedShow = (Show) response.getObject();
+        System.out.println(searchedShow.getTitle());
+
+        response = client.readData(movieId);
+        System.out.println("Movie Response: " + response.getCode());
+        Movie searchedMovie = (Movie) response.getObject();
+        System.out.println(searchedMovie.getTitle());
+
+        response = client.readData(episodeId);
+        System.out.println("Episode Response: " + response.getCode());
+        Episode searchedEpisode = (Episode) response.getObject();
+        System.out.println(searchedEpisode.getTitle());
 
 
         client.disconnect();
