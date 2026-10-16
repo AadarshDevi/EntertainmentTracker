@@ -88,10 +88,12 @@ public class MongoDB extends NoSQLDatabase {
         return ((result != null) && (result == 1.0));
     }
 
+    @Override
     public Response connect() {
         return connect(connection);
     }
 
+    @Override
     public Response disconnect() {
         mongoClient.close();
         return new Response(HttpsURLConnection.HTTP_OK);
