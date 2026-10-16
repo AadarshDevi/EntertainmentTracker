@@ -95,14 +95,8 @@ public class MongoDB extends NoSQLDatabase {
     @Override
     public Response createData(Entertainment entertainment) {
 
-        // Internal Response object
-        Response response = Response.builder().build();
-
-        // get database from server
-        MongoDatabase database = mongoClient.getDatabase(DataGroup.DATABASE);
-
-        // get collection from server
-        MongoCollection<Document> collection = database.getCollection(DataGroup.DATA);
+        // Get Collection
+        MongoCollection<Document> collection = getCollection(DataGroup.DATA);
 
         // Java Object --> JSON Strings
         ObjectMapper mapper = JsonMapper.builder().build();
