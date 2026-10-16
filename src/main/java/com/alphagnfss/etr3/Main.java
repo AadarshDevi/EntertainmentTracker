@@ -28,6 +28,10 @@ public class Main extends Application {
         MongoDB client = new MongoDB(uri);
         Response response = client.connect();
 
+        if (response.getCode() == HttpURLConnection.HTTP_UNAVAILABLE) {
+            System.out.println("Unable to connect to mongodb");
+        }
+
         // create Show
         Entertainment show = Show.builder()
                 .title("Avatar: The Last Airbender")
