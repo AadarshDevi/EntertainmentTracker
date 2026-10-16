@@ -149,9 +149,9 @@ public class MongoDB extends NoSQLDatabase {
         MongoCollection<Document> collection = database.getCollection(DataGroup.DATA);
 
         // Create a Document
-        Document searchResults = collection.find(new Document("_id", id.getValue())).first();
+        Document searchResult = collection.find(new Document("_id", id.getValue())).first();
 
-        if (searchResults == null) {
+        if (searchResult == null) {
             response.setCode(HttpsURLConnection.HTTP_NOT_FOUND);
             return response;
         }
