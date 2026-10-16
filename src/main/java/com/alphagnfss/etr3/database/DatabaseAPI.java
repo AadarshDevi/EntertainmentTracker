@@ -2,6 +2,7 @@ package com.alphagnfss.etr3.database;
 
 import com.alphagnfss.etr3.communication.Response;
 import com.alphagnfss.etr3.data.Entertainment;
+import com.alphagnfss.etr3.database.operations.DatabaseInterface;
 import lombok.Getter;
 import lombok.Setter;
 
