@@ -190,7 +190,7 @@ public class MongoDB extends NoSQLDatabase {
         return response;
     }
 
-    public Response updateData(BsonObjectId id) {
+    public Response deleteData(BsonObjectId id) {
         return null;
     }
 
