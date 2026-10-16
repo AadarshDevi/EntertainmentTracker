@@ -177,7 +177,8 @@ public class MongoDB extends NoSQLDatabase {
             response.setObject(entertainment);
 
         } catch (JsonParseException e) {
-            e.printStackTrace();
+            response.setCode(HttpsURLConnection.HTTP_BAD_REQUEST);
+            response.setMessage(e.getMessage());
         }
 
         return response;
@@ -207,11 +208,13 @@ public class MongoDB extends NoSQLDatabase {
                 return response;
             }
 
+            response.setCode(HttpsURLConnection.HTTP_OK);
+
         } catch (Exception e) {
-            e.printStackTrace();
+            response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
+            response.setMessage(e.getMessage());
         }
 
-        response.setCode(HttpsURLConnection.HTTP_OK);
         return response;
     }
 
@@ -244,11 +247,14 @@ public class MongoDB extends NoSQLDatabase {
                 response.setMessage("Unable to update \"" + entertainment.getTitle() + "\" to database");
                 return response;
             }
+
+            response.setCode(HttpsURLConnection.HTTP_OK);
+
         } catch (JacksonException e) {
-            e.printStackTrace();
+            response.setCode(HttpsURLConnection.HTTP_BAD_REQUEST);
+            response.setMessage(e.getMessage());
         }
 
-        response.setCode(HttpsURLConnection.HTTP_OK);
         return response;
     }
 
