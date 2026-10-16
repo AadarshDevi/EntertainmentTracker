@@ -2,7 +2,7 @@ package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
 import com.alphagnfss.etr3.data.Entertainment;
-import com.alphagnfss.etr3.database.DatabaseInterface;
+import com.alphagnfss.etr3.database.operations.DatabaseInterface;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.mvstore.MVStoreModule;
 
