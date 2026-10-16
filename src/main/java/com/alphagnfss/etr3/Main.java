@@ -14,6 +14,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bson.BsonObjectId;
 
+import java.net.HttpURLConnection;
+
 public class Main extends Application {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
     int newEntertainmentId = 0;
