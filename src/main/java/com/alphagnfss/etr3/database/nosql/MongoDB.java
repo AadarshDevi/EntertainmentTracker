@@ -94,23 +94,46 @@ public class MongoDB extends NoSQLDatabase {
 
     @Override
     public Response createData(Entertainment entertainment) {
+
+        // Internal Response object
+        Response response = Response.builder().build();
+
+        // get database from server
         MongoDatabase database = mongoClient.getDatabase(DataGroup.DATABASE);
+
+        // get collection from server
         MongoCollection<Document> collection = database.getCollection(DataGroup.DATA);
 
+        // Java Object --> JSON Strings
         ObjectMapper mapper = JsonMapper.builder().build();
+
+        // EntertainmentObject Serialized
         String string = mapper.writeValueAsString(entertainment);
+
+        // Print JSON String
         System.out.println(string);
 
+        // JSON String to MongoDB Document
         Document document = Document.parse(string);
 
+        // Inserts the Document in the Collection
         result = collection.insertOne(document);
+
+        // Check if writing the Document was not successful
         if (!result.wasAcknowledged()) {
             response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
             response.setMessage("Unable to write " + entertainment.getTitle() + "to database");
             return response;
         }
 
+        // Document was written successfully
         response.setCode(HttpsURLConnection.HTTP_OK);
+        response.setObject(result.getInsertedId().asObjectId());
+
+        // print object's id
+        System.out.println("Successfully Created Data: Object ID - " + ((BsonObjectId) response.getObject()).getValue());
+
+        // return response
         return response;
     }
 
