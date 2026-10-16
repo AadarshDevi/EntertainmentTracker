@@ -156,6 +156,28 @@ public class MongoDB extends NoSQLDatabase {
             return response;
         }
 
+        try {
+
+            // Document to JSON
+            String json = searchResult.toJson();
+
+            // JSON --> Object Convertor
+            ObjectMapper mapper = JsonMapper.builder().build();
+
+            // Get Entertainment Object but getting the type and then deserializing it to get the correct subclass
+            Entertainment entertainment = switch (mapper.readValue(json, Entertainment.class).getType()) {
+                case MOVIE -> mapper.readValue(json, Movie.class);
+                case TV_SHOW -> mapper.readValue(json, Show.class);
+                case EPISODE -> mapper.readValue(json, Episode.class);
+                default -> mapper.readValue(json, Entertainment.class);
+            };
+
+            response.setCode(HttpsURLConnection.HTTP_OK);
+            response.setObject(entertainment);
+
+        } catch (JsonParseException e) {
+            e.printStackTrace();
+        }
 
         return null;
     }
