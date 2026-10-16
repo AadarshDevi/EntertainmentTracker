@@ -164,14 +164,22 @@ public class MongoDB extends NoSQLDatabase {
             // JSON --> Object Convertor
             ObjectMapper mapper = JsonMapper.builder().build();
 
-            // Get Entertainment Object but getting the type and then deserializing it to get the correct subclass
-            Entertainment entertainment = switch (mapper.readValue(json, Entertainment.class).getType()) {
-                case MOVIE -> mapper.readValue(json, Movie.class);
-                case TV_SHOW -> mapper.readValue(json, Show.class);
-                case EPISODE -> mapper.readValue(json, Episode.class);
-                default -> mapper.readValue(json, Entertainment.class);
-            };
+            // Generic JSON Tree
+            JsonNode jsonNode = mapper.readTree(json);
 
+            // Get EntertainmentType
+            EntertainmentType type = jsonNode.has("type") ? EntertainmentType.valueOf(jsonNode.get("type").toString().replace("\"", "")) : EntertainmentType.NONE;
+
+            // Get Entertainment Object but getting the type and then deserializing it to get the correct subclass
+            Entertainment entertainment = switch (type) {
+                case MOVIE -> mapper.readValue(json, Movie.class);
+                case TV_SHOW, ANIME -> mapper.readValue(json, Show.class);
+                case EPISODE -> mapper.readValue(json, Episode.class);
+                default -> mapper.readValue(json, Placeholder.class);
+            };
+            entertainment.setEntertainmentId(id.getValue().toHexString());
+
+            // Build Response and send entertainment object
             response.setCode(HttpsURLConnection.HTTP_OK);
             response.setObject(entertainment);
 
@@ -179,7 +187,7 @@ public class MongoDB extends NoSQLDatabase {
             e.printStackTrace();
         }
 
-        return null;
+        return response;
     }
 
     @Override
