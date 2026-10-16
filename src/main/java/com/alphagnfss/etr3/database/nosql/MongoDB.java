@@ -1,7 +1,8 @@
 package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
-import com.alphagnfss.etr3.data.Entertainment;
+import com.alphagnfss.etr3.data.*;
+import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.alphagnfss.etr3.database.DataGroup;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -9,12 +10,11 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.InsertOneResult;
 import org.bson.BsonObjectId;
 import org.bson.Document;
-import org.bson.conversions.Bson;
-import tools.jackson.core.JacksonException;
+import org.bson.json.JsonParseException;
+import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
 
