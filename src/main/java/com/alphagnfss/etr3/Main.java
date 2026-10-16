@@ -48,9 +48,27 @@ public class Main extends Application {
                 .episodeNum(1)
                 .build();
 
-        createData(client, show);
-        createData(client, movie);
-        createData(client, episode);
+        BsonObjectId showId = (BsonObjectId) client.createData(show).getObject();
+        BsonObjectId movieId = (BsonObjectId) client.createData(movie).getObject();
+        BsonObjectId episodeId = (BsonObjectId) client.createData(episode).getObject();
+
+        // print ids
+        System.out.println("Show: " + showId.getValue());
+        System.out.println("Movie: " + movieId.getValue());
+        System.out.println("Episode: " + episodeId.getValue());
+
+        try {
+            Thread.sleep(7_500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        // read data as in JSON
+        client.readData(showId);
+        client.readData(movieId);
+        client.readData(episodeId);
+
+
         client.disconnect();
         System.exit(0);
     }
