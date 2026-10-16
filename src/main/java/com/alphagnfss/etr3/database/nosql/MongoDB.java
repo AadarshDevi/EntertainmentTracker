@@ -190,8 +190,7 @@ public class MongoDB extends NoSQLDatabase {
         return response;
     }
 
-    @Override
-    public Response updateData(Entertainment entertainment) {
+    public Response updateData(BsonObjectId id) {
         return null;
     }
 
@@ -202,6 +201,9 @@ public class MongoDB extends NoSQLDatabase {
 
     private MongoDatabase getDatabase(String databaseName) {
         return mongoClient.getDatabase(databaseName);
+    }
 
+    public Response updateData(BsonObjectId id1, BsonObjectId id2) {
+        return null;
     }
 }
