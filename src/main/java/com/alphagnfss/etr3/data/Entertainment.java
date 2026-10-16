@@ -12,6 +12,8 @@ import java.util.List;
 @SuperBuilder
 @Setter
 @Getter
+@NoArgsConstructor // <-- Add this so Jackson can instantiate it
+@AllArgsConstructor
 public abstract class Entertainment {
 
     @JsonIgnore protected String entertainmentId;
