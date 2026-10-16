@@ -44,7 +44,6 @@ public class MongoDB extends NoSQLDatabase {
     private final Response response = Response.builder().build(); // Internal Response object
     private String connection;
     private MongoClient mongoClient;
-    private InsertOneResult result;
 
     public MongoDB(String connection) {
         this.connection = connection;
