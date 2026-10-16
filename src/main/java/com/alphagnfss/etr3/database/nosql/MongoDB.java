@@ -269,7 +269,10 @@ public class MongoDB extends NoSQLDatabase {
         return collection;
     }
 
-    public Response updateData(BsonObjectId id1, BsonObjectId id2) {
-        return null;
+    @Override
+    public Response deleteCollection() {
+        mongoClient.getDatabase(DataGroup.DATABASE).getCollection(DataGroup.DATA).drop();
+        response.setCode(HttpsURLConnection.HTTP_OK);
+        return response;
     }
 }
