@@ -3,10 +3,7 @@ package com.alphagnfss.etr3.data;
 import com.alphagnfss.etr3.data.enums.EntertainmentStatus;
 import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
-import lombok.Singular;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
