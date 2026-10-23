@@ -41,7 +41,6 @@ import java.nio.file.Path;
  */
 public class MongoDB extends NoSQLDatabase {
 
-    private final Response response = Response.builder().build(); // Internal Response object
     private String connection;
     private MongoClient mongoClient;
 
