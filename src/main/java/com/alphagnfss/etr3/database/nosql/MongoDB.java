@@ -143,7 +143,7 @@ public class MongoDB extends NoSQLDatabase {
 
         // Document was written successfully
         response.setCode(HttpsURLConnection.HTTP_OK);
-        response.setObject(result.getInsertedId().asObjectId());
+        response.setObject(returnId);
 
         // print object's id
         System.out.println("Successfully Created Data: Object ID - " + ((BsonObjectId) response.getObject()).getValue());
