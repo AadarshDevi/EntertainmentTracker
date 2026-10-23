@@ -53,9 +53,9 @@ public class Main extends Application {
                 .episodeNum(1)
                 .build();
 
-        BsonObjectId showId = (BsonObjectId) client.createData(show).getObject();
-        BsonObjectId movieId = (BsonObjectId) client.createData(movie).getObject();
-        BsonObjectId episodeId = (BsonObjectId) client.createData(episode).getObject();
+        String showId = (String) client.createData(show).getObject();
+        String movieId = (String) client.createData(movie).getObject();
+        String episodeId = (String) client.createData(episode).getObject();
 
         // print ids
         System.out.println("Show: " + showId.getValue());
