@@ -78,7 +78,6 @@ public class Main extends Application {
         Episode searchedEpisode = (Episode) response.getObject();
         System.out.println(searchedEpisode.getTitle());
 
-
         client.disconnect();
         System.exit(0);
     }
