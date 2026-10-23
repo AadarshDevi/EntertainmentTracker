@@ -139,6 +139,8 @@ public class MongoDB extends NoSQLDatabase {
             return response;
         }
 
+        String returnId = result.getInsertedId().asObjectId().getValue().toHexString();
+
         // Document was written successfully
         response.setCode(HttpsURLConnection.HTTP_OK);
         response.setObject(result.getInsertedId().asObjectId());
