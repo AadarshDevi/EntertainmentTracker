@@ -146,7 +146,7 @@ public class MongoDB extends NoSQLDatabase {
         response.setObject(returnId);
 
         // print object's id
-        System.out.println("Successfully Created Data: Object ID - " + ((BsonObjectId) response.getObject()).getValue());
+        System.out.println("Successfully Created Data: Object ID - " + response.getObject());
 
         // return response
         return response;
