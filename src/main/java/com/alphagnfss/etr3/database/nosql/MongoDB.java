@@ -112,6 +112,8 @@ public class MongoDB extends NoSQLDatabase {
     @Override
     public Response createData(Entertainment entertainment) {
 
+        final Response response = Response.builder().build();
+
         // Get Collection
         MongoCollection<Document> collection = getCollection(DataGroup.DATA);
 
@@ -161,6 +163,8 @@ public class MongoDB extends NoSQLDatabase {
     @Override
     public Response readData(String id) {
 
+        final Response response = Response.builder().build();
+
         // Get Collection
         MongoCollection<Document> collection = getCollection(DataGroup.DATA);
 
@@ -209,6 +213,8 @@ public class MongoDB extends NoSQLDatabase {
 
     public Response deleteData(BsonObjectId id) {
 
+        final Response response = Response.builder().build();
+
         try {
             // Get Collection
             MongoCollection<Document> collection = getCollection(DataGroup.DATA);
@@ -242,6 +248,9 @@ public class MongoDB extends NoSQLDatabase {
     }
 
     public Response updateData(BsonObjectId id, Entertainment entertainment) {
+
+        final Response response = Response.builder().build();
+
         try {
             // Get Collection
             MongoCollection<Document> collection = getCollection(DataGroup.DATA);
