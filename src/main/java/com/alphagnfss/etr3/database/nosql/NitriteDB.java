@@ -100,9 +100,4 @@ public class NitriteDB extends NoSQLDatabase {
         return null;
     }
 
-//    public Response databaseExists() {
-//        if (database == null)
-//            return new Response(HttpsURLConnection.HTTP_BAD_REQUEST, "Database Not Found", null);
-//        return new Response(HttpsURLConnection.HTTP_CREATED);
-//    }
 }
