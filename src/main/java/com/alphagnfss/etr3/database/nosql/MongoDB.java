@@ -100,6 +100,16 @@ public class MongoDB extends NoSQLDatabase {
     }
 
     @Override
+    public Response deleteDatabase() {
+        return null;
+    }
+
+    @Override
+    public Response createDatabase() {
+        return null;
+    }
+
+    @Override
     public Response createData(Entertainment entertainment) {
 
         // Get Collection
@@ -138,13 +148,24 @@ public class MongoDB extends NoSQLDatabase {
         return response;
     }
 
-    public Response readData(BsonObjectId id) {
+    @Override
+    public Response updateData(String id, Entertainment entertainment) {
+        return null;
+    }
+
+    @Override
+    public Response deleteData(String id) {
+        return null;
+    }
+
+    @Override
+    public Response readData(String id) {
 
         // Get Collection
         MongoCollection<Document> collection = getCollection(DataGroup.DATA);
 
         // Create a Document
-        Document searchResult = collection.find(new Document("_id", id.getValue())).first();
+        Document searchResult = collection.find(new Document("_id", id)).first();
 
         if (searchResult == null) {
             response.setCode(HttpsURLConnection.HTTP_NOT_FOUND);
@@ -172,7 +193,7 @@ public class MongoDB extends NoSQLDatabase {
                 case EPISODE -> mapper.readValue(json, Episode.class);
                 default -> mapper.readValue(json, Placeholder.class);
             };
-            entertainment.setEntertainmentId(id.getValue().toHexString());
+            entertainment.setEntertainmentId(id);
 
             // Build Response and send entertainment object
             response.setCode(HttpsURLConnection.HTTP_OK);
@@ -274,5 +295,20 @@ public class MongoDB extends NoSQLDatabase {
         mongoClient.getDatabase(DataGroup.DATABASE).getCollection(DataGroup.DATA).drop();
         response.setCode(HttpsURLConnection.HTTP_OK);
         return response;
+    }
+
+    @Override
+    public Response createStorage(String storageContainerName) {
+        return null;
+    }
+
+    @Override
+    public Response deleteStorage(String storageContainerName) {
+        return null;
+    }
+
+    @Override
+    public Response hasStorageContainer(String storageContainerName) {
+        return null;
     }
 }
