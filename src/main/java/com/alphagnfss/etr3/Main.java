@@ -63,17 +63,17 @@ public class Main extends Application {
         System.out.println("Episode: " + episodeId);
 
         // read data as in JSON
-        response = client.readData(showId.toString());
+        response = client.readData(showId);
         System.out.println("Show Response: " + response.getCode());
         Show searchedShow = (Show) response.getObject();
         System.out.println(searchedShow.getTitle());
 
-        response = client.readData(movieId.toString());
+        response = client.readData(movieId);
         System.out.println("Movie Response: " + response.getCode());
         Movie searchedMovie = (Movie) response.getObject();
         System.out.println(searchedMovie.getTitle());
 
-        response = client.readData(episodeId.toString());
+        response = client.readData(episodeId);
         System.out.println("Episode Response: " + response.getCode());
         Episode searchedEpisode = (Episode) response.getObject();
         System.out.println(searchedEpisode.getTitle());
