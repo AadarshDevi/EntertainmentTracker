@@ -2,7 +2,6 @@ package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
 import com.alphagnfss.etr3.data.Entertainment;
-import com.alphagnfss.etr3.database.operations.DatabaseInterface;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.mvstore.MVStoreModule;
 
@@ -10,7 +9,7 @@ import javax.net.ssl.HttpsURLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class NitriteDB implements DatabaseInterface {
+public class NitriteDB extends NoSQLDatabase {
     private Nitrite database = null;
 
     public Response createDB(Path path) {
@@ -33,27 +32,23 @@ public class NitriteDB implements DatabaseInterface {
         return response;
     }
 
-    public Response deleteDB(Path path) {
-        return null;
-    }
-
-    @Override
-    public Response deleteData(int id) {
-        return null;
-    }
-
-    @Override
-    public Response updateData(Entertainment entertainment) {
-        return null;
-    }
-
-    @Override
-    public Response readData(int id) {
-        return null;
-    }
-
     @Override
     public Response createData(Entertainment entertainment) {
+        return null;
+    }
+
+    @Override
+    public Response updateData(String id, Entertainment entertainment) {
+        return null;
+    }
+
+    @Override
+    public Response deleteData(String id) {
+        return null;
+    }
+
+    @Override
+    public Response readData(String id) {
         return null;
     }
 
@@ -66,8 +61,43 @@ public class NitriteDB implements DatabaseInterface {
         return null;
     }
 
+    @Override
+    public Response deleteCollection() {
+        return null;
+    }
+
+    @Override
+    public Response deleteDatabase() {
+        return null;
+    }
+
+    @Override
+    public Response createDatabase() {
+        return null;
+    }
+
+    @Override
+    public boolean isConnected() {
+        return false;
+    }
+
     public Response connect() {
         return null; // new Response(HttpsURLConnection.HTTP_MOVED_PERM);
+    }
+
+    @Override
+    public Response createStorage(String storageContainerName) {
+        return null;
+    }
+
+    @Override
+    public Response deleteStorage(String storageContainerName) {
+        return null;
+    }
+
+    @Override
+    public Response hasStorageContainer(String storageContainerName) {
+        return null;
     }
 
 //    public Response databaseExists() {
