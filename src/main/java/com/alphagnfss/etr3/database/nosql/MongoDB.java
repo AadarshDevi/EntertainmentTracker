@@ -188,7 +188,10 @@ public class MongoDB extends NoSQLDatabase {
             JsonNode jsonNode = mapper.readTree(json);
 
             // Get EntertainmentType
-            EntertainmentType type = jsonNode.has("type") ? EntertainmentType.valueOf(jsonNode.get("type").toString().replace("\"", "")) : EntertainmentType.NONE;
+            EntertainmentType type = jsonNode.has("type")
+                    ? EntertainmentType.valueOf(
+                    jsonNode.get("type").toString().replace("\"", ""))
+                    : EntertainmentType.NONE;
 
             // Get Entertainment Object but getting the type and then deserializing it to get the correct subclass
             Entertainment entertainment = switch (type) {
