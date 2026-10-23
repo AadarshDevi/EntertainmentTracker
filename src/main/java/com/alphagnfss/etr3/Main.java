@@ -58,9 +58,9 @@ public class Main extends Application {
         String episodeId = (String) client.createData(episode).getObject();
 
         // print ids
-        System.out.println("Show: " + showId.getValue());
-        System.out.println("Movie: " + movieId.getValue());
-        System.out.println("Episode: " + episodeId.getValue());
+        System.out.println("Show: " + showId);
+        System.out.println("Movie: " + movieId);
+        System.out.println("Episode: " + episodeId);
 
         // read data as in JSON
         response = client.readData(showId.toString());
