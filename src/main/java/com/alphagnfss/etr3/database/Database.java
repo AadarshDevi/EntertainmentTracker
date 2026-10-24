@@ -1,26 +1,9 @@
 package com.alphagnfss.etr3.database;
 
-import com.alphagnfss.etr3.communication.Response;
-import com.alphagnfss.etr3.data.Entertainment;
+import com.alphagnfss.etr3.database.operations.DataOperationInterface;
+import com.alphagnfss.etr3.database.operations.DatabaseInterface;
+import com.alphagnfss.etr3.database.operations.StorageContainerOperationInterface;
 
-public class Database implements DatabaseInterface {
-    @Override
-    public Response createData(Entertainment entertainment) {
-        return null;
-    }
-
-    @Override
-    public Response readData(int id) {
-        return null;
-    }
-
-    @Override
-    public Response updateData(Entertainment entertainment) {
-        return null;
-    }
-
-    @Override
-    public Response deleteData(int id) {
-        return null;
-    }
+public abstract class Database
+        implements DatabaseInterface, DataOperationInterface, StorageContainerOperationInterface {
 }
