@@ -82,3 +82,51 @@ public class Main extends Application {
         System.exit(0);
     }
 }
+
+
+//        // create Show
+//        Entertainment show = Show.builder()
+//                .title("Avatar: The Last Airbender")
+//                .type(EntertainmentType.TV_SHOW)
+//                .status(EntertainmentStatus.RELEASED)
+//                .build();
+//
+//        // create movie
+//        Entertainment movie = Movie.builder()
+//                .title("Toy Story 5")
+//                .type(EntertainmentType.MOVIE)
+//                .status(EntertainmentStatus.COMPLETED)
+//                .build();
+//
+//        // create episode
+//        Entertainment episode = Episode.builder()
+//                .title("The Boy in the Iceberg.")
+//                .type(EntertainmentType.EPISODE)
+//                .status(EntertainmentStatus.RELEASED)
+//                .episodeNum(1)
+//                .build();
+//
+//        String showId = (String) client.createData(show).getObject();
+//        String movieId = (String) client.createData(movie).getObject();
+//        String episodeId = (String) client.createData(episode).getObject();
+//
+//        // print ids
+//        System.out.println("Show: " + showId);
+//        System.out.println("Movie: " + movieId);
+//        System.out.println("Episode: " + episodeId);
+//
+//        // read data as in JSON
+//        response = client.readData(showId);
+//        System.out.println("Show Response: " + response.getCode());
+//        Show searchedShow = (Show) response.getObject();
+//        System.out.println(searchedShow.getTitle());
+//
+//        response = client.readData(movieId);
+//        System.out.println("Movie Response: " + response.getCode());
+//        Movie searchedMovie = (Movie) response.getObject();
+//        System.out.println(searchedMovie.getTitle());
+//
+//        response = client.readData(episodeId);
+//        System.out.println("Episode Response: " + response.getCode());
+//        Episode searchedEpisode = (Episode) response.getObject();
+//        System.out.println(searchedEpisode.getTitle());
