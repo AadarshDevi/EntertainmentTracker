@@ -208,6 +208,15 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--    Picocli: Command Line Argumnets Parser    -->
+        <!-- Source: https://mvnrepository.com/artifact/info.picocli/picocli -->
+        <dependency>
+            <groupId>info.picocli</groupId>
+            <artifactId>picocli</artifactId>
+            <version>4.7.7</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
