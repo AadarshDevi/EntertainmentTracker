@@ -190,15 +190,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <!--    JCommander: Command Line Argumnets Parser    -->
-        <!-- Source: https://mvnrepository.com/artifact/org.jcommander/jcommander -->
-        <dependency>
-            <groupId>org.jcommander</groupId>
-            <artifactId>jcommander</artifactId>
-            <version>3.0</version>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
