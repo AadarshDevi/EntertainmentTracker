@@ -16,4 +16,5 @@ module com.alphagnfss.etr3 {
     opens com.alphagnfss.etr3.data to tools.jackson.databind;
 
     exports com.alphagnfss.etr3;
+    exports com.alphagnfss.etr3.cli;
 }
