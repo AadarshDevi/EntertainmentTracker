@@ -54,6 +54,14 @@ public class NoSQLDatabaseTest {
                     .type(EntertainmentType.MOVIE)
                     .tag("Avatar movie")
                     .build();
+
+            Response response = database.createData(entertainment);
+
+            assertTrue((response.getCode() == HttpsURLConnection.HTTP_OK), "Data not created");
+
+            response = database.readData((String) response.getObject());
+
+// 
         }
 
     }
