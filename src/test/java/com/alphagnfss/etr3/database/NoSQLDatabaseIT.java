@@ -67,7 +67,7 @@ public class NoSQLDatabaseIT {
 
             response = database.readData((String) response.getObject());
 
-            // todo: check data via asserts
+            assertTrue((response.getCode() == HttpsURLConnection.HTTP_OK), "Unable to read data");
         }
 
     }
