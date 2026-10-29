@@ -28,12 +28,9 @@ public class NoSQLDatabaseIT {
         database = new MongoDB(uri);
 
         Response response = database.connect();
+        assertTrue(response.getCode() == HttpURLConnection.HTTP_UNAVAILABLE, "Connection failed.");
 
-        if (response.getCode() == HttpURLConnection.HTTP_UNAVAILABLE) {
-            System.out.println("Unable to connect to mongodb");
-        }
-
-        // Create "data" Collection
+        assertTrue(database.isConnected(), "Not connected to database.");
     }
 
     @AfterEach
