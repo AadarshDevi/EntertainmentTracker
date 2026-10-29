@@ -13,6 +13,8 @@ module com.alphagnfss.etr3 {
     requires org.mongodb.driver.core;
     requires tools.jackson.databind;
     requires java.desktop;
+    requires org.jline;
+    requires info.picocli;
 
     opens com.alphagnfss.etr3.data to tools.jackson.databind;
 
