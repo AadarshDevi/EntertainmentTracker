@@ -33,4 +33,29 @@ public class NoSQLDatabaseTest {
         database.disconnect();
     }
 
+    @Nested
+    class CreateDataIT {
+
+        @BeforeEach
+        public void localSetup() {
+
+        }
+
+        @AfterEach
+        public void localTeardown() {
+
+        }
+
+        @Test
+        public void createMovie() {
+            Entertainment entertainment = Movie.builder()
+                    .title("Avatar Aang: The Last Airbender")
+                    .status(EntertainmentStatus.RELEASED)
+                    .type(EntertainmentType.MOVIE)
+                    .tag("Avatar movie")
+                    .build();
+        }
+
+    }
+
 }
