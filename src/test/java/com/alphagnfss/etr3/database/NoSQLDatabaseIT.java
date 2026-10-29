@@ -21,7 +21,7 @@ public class NoSQLDatabaseIT {
     private MongoDB database;
 
     @BeforeEach
-    public void setup() {
+    public void globalSetup() {
 
         // Connect ot MongoDB
         String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1?connectTimeoutMS=5000&serverSelectionTimeoutMS=5000";
@@ -37,7 +37,7 @@ public class NoSQLDatabaseIT {
     }
 
     @AfterEach
-    public void teardown() {
+    public void globalTeardown() {
         database.deleteCollection();
         database.disconnect();
     }
