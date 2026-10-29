@@ -1,13 +1,22 @@
 package com.alphagnfss.etr3.database;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.data.Entertainment;
+import com.alphagnfss.etr3.data.Movie;
+import com.alphagnfss.etr3.data.enums.EntertainmentStatus;
+import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.alphagnfss.etr3.database.nosql.MongoDB;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
+import javax.net.ssl.HttpsURLConnection;
 import java.net.HttpURLConnection;
 
-public class NoSQLDatabaseTest {
+import static com.mongodb.assertions.Assertions.assertTrue;
+
+public class NoSQLDatabaseIT {
 
     private MongoDB database;
 
