@@ -217,6 +217,15 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--    JLine-Shell: JLine to Shell Adapter    -->
+        <!-- Source: https://mvnrepository.com/artifact/org.jline/jline-shell -->
+        <dependency>
+            <groupId>org.jline</groupId>
+            <artifactId>jline-shell</artifactId>
+            <version>4.4.8</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
