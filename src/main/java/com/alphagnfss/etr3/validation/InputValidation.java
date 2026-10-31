@@ -26,6 +26,13 @@ public class InputValidation {
         return validString(inputString, pattern);
     }
 
+    /**
+     * Checking the string to see if it is empty, null or has invalid chars given by the pattern
+     *
+     * @param inputString input to be validated
+     * @param pattern     pattern regex used to validate input
+     * @return response if the validation was successful or not
+     */
     public static Response validString(String inputString, Pattern pattern) {
         ResponseCode responseCode;
 
