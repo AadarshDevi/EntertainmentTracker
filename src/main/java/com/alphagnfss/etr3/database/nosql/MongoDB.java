@@ -327,7 +327,7 @@ public class MongoDB extends NoSQLDatabase {
 
         List<Bson> filters = new ArrayList<>();
 
-        if (EntertainmentInputValidation.validString(searchQuery.title()))
+        if (Responses.deepEquals(InputValidation.validString(searchQuery.title()).getResponseCode(), Responses.SUCCESS))
             filters.add(Filters.regex("title", Pattern.quote(searchQuery.title()), "i"));
         if (EntertainmentInputValidation.validType(searchQuery.type()))
             filters.add(Filters.eq("type", searchQuery.type().name()));
