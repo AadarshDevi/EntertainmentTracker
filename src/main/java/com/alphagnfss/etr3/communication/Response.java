@@ -15,6 +15,11 @@ public class Response {
         this.object = object;
     }
 
+    public Response(ResponseCode responseCode) {
+        this.responseCode = responseCode;
+        this.object = null;
+    }
+
     public static ResponseCode duplicate(ResponseCode responseCode) {
         return new ResponseCode(responseCode.code(), responseCode.message());
     }
