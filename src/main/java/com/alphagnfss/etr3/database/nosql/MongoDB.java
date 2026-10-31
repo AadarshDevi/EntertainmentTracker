@@ -159,16 +159,6 @@ public class MongoDB extends NoSQLDatabase {
     }
 
     @Override
-    public Response updateData(String id, Entertainment entertainment) {
-        return null;
-    }
-
-    @Override
-    public Response deleteData(String id) {
-        return null;
-    }
-
-    @Override
     public Response readData(String id) {
 
         final Response response = Response.builder().build();
