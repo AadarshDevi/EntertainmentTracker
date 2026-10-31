@@ -18,7 +18,7 @@ public class InputValidation {
      * @return string is a valid input
      */
     public static Response validString(String inputString, String forbiddenRegex) {
-        if (forbiddenRegex == null || forbiddenRegex.isBlank()) {
+        if (forbiddenRegex == null || forbiddenRegex.isBlank())
             return validString(inputString, (Pattern) null);
         }
         Pattern pattern = Pattern.compile(forbiddenRegex);
