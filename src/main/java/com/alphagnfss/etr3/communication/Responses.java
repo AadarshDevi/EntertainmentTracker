@@ -30,7 +30,7 @@ public class Responses {
     public static final ResponseCode INPUT_EMPTY_ERROR = new ResponseCode(202, "Input cannot be empty");
 
     // json parser
-    public static final ResponseCode BACKEND_PARSER_ERROR = new ResponseCode(201, "Failed to parse data");
+    public static final ResponseCode BACKEND_PARSER_ERROR = new ResponseCode(404, "Failed to parse data");
 
     public static boolean deepEquals(ResponseCode responseCode1, ResponseCode responseCode2) {
         return (
