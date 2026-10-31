@@ -26,8 +26,7 @@ public class InputValidation {
     }
 
     public static Response validString(String inputString, Pattern pattern) {
-
-        logger.info("Input: \"{}\", Regex: \"{}\"", inputString, pattern.pattern());
+        ResponseCode responseCode;
 
         if (inputString == null)
             responseCode = Responses.INPUT_NULL_ERROR;
