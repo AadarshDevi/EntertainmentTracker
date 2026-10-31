@@ -40,7 +40,7 @@ public class InputValidationTest {
 
         @Test
         public void nullEverything() {
-            assertEquals(InputValidation.validString(null, (String) null).getResponseCode().code(), Responses.INPUT_EMPTY_ERROR);
+            assertEquals(InputValidation.validString(null, (String) null).getResponseCode().code(), Responses.INPUT_NULL_ERROR);
         }
 
         @Test
