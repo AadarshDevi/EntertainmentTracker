@@ -1,4 +1,4 @@
-module com.alphagnfss.etr3 {
+module com.alphagnfss.etr {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
