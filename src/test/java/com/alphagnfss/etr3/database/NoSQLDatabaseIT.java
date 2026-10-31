@@ -77,6 +77,17 @@ public class NoSQLDatabaseIT {
                     .tag("beyblade")
                     .tag("beyblade x")
                     .build();
+
+            Response response = database.createData(entertainment);
+            assertEquals(Responses.SUCCESS, response.getResponseCode(), "Data not created");
+
+            response = database.readData((String) response.getObject());
+            assertEquals(Responses.SUCCESS, response.getResponseCode(), "Unable to read data");
+
+            Entertainment queryEntertainment = (Entertainment) response.getObject();
+            assertEquals(entertainment.getTitle(), queryEntertainment.getTitle(), "Anime title is not the same.");
+            assertSame(entertainment.getStatus(), queryEntertainment.getStatus(), "Anime status is not the same.");
+            assertSame(entertainment.getType(), queryEntertainment.getType(), "Anime type is not the same.");
         }
 
         @Test
@@ -88,6 +99,17 @@ public class NoSQLDatabaseIT {
                     .tag("avatar")
                     .tag("elements")
                     .build();
+
+            Response response = database.createData(entertainment);
+            assertEquals(Responses.SUCCESS, response.getResponseCode(), "Data not created");
+
+            response = database.readData((String) response.getObject());
+            assertEquals(Responses.SUCCESS, response.getResponseCode(), "Unable to read data");
+
+            Entertainment queryEntertainment = (Entertainment) response.getObject();
+            assertEquals(entertainment.getTitle(), queryEntertainment.getTitle(), "Show title is not the same.");
+            assertSame(entertainment.getStatus(), queryEntertainment.getStatus(), "Show status is not the same.");
+            assertSame(entertainment.getType(), queryEntertainment.getType(), "Show type is not the same.");
         }
 
         @Test
@@ -96,7 +118,19 @@ public class NoSQLDatabaseIT {
                     .title("The Boy in the Iceberg")
                     .status(EntertainmentStatus.COMPLETED)
                     .type(EntertainmentType.EPISODE)
+                    .episodeNum(1)
                     .build();
+
+            Response response = database.createData(entertainment);
+            assertEquals(Responses.SUCCESS, response.getResponseCode(), "Data not created");
+
+            response = database.readData((String) response.getObject());
+            assertEquals(Responses.SUCCESS, response.getResponseCode(), "Unable to read data");
+
+            Entertainment queryEntertainment = (Entertainment) response.getObject();
+            assertEquals(entertainment.getTitle(), queryEntertainment.getTitle(), "Episode title is not the same.");
+            assertSame(entertainment.getStatus(), queryEntertainment.getStatus(), "Episode status is not the same.");
+            assertSame(entertainment.getType(), queryEntertainment.getType(), "Episode type is not the same.");
         }
 
     }
