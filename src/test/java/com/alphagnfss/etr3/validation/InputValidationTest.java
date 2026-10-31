@@ -17,42 +17,42 @@ public class InputValidationTest {
     class StringTest {
         @Test
         public void nullString() {
-            assertEquals(InputValidation.validString(null).getResponseCode(), Responses.INPUT_NULL_ERROR);
+            assertEquals(InputValidation.validString(null), Responses.INPUT_NULL_ERROR);
         }
 
         @Test
         public void emptyString() {
-            assertEquals(InputValidation.validString("").getResponseCode(), Responses.INPUT_EMPTY_ERROR);
+            assertEquals(InputValidation.validString(""), Responses.INPUT_EMPTY_ERROR);
         }
 
         @Test
         public void blankString() {
-            assertEquals(InputValidation.validString("       ").getResponseCode(), Responses.INPUT_EMPTY_ERROR);
+            assertEquals(InputValidation.validString("       "), Responses.INPUT_EMPTY_ERROR);
         }
 
         @Test
         public void validString() {
-            assertEquals(InputValidation.validString("EntertainmentTracker is the best app").getResponseCode(), Responses.SUCCESS);
+            assertEquals(InputValidation.validString("EntertainmentTracker is the best app"), Responses.SUCCESS);
         }
 
         @Test
         public void nullStringRegex() {
-            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (String) null).getResponseCode(), Responses.SUCCESS);
+            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (String) null), Responses.SUCCESS);
         }
 
         @Test
         public void nullEverything() {
-            assertEquals(InputValidation.validString(null, (String) null).getResponseCode(), Responses.INPUT_NULL_ERROR);
+            assertEquals(InputValidation.validString(null, (String) null), Responses.INPUT_NULL_ERROR);
         }
 
         @Test
         public void emptyStringNullRegex() {
-            assertEquals(InputValidation.validString("", (String) null).getResponseCode(), Responses.INPUT_EMPTY_ERROR);
+            assertEquals(InputValidation.validString("", (String) null), Responses.INPUT_EMPTY_ERROR);
         }
 
         @Test
         public void nullPatternRegex() {
-            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (Pattern) null).getResponseCode(), Responses.SUCCESS);
+            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (Pattern) null), Responses.SUCCESS);
         }
     }
 }
