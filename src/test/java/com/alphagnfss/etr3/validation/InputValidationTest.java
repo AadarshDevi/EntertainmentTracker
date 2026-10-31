@@ -44,6 +44,11 @@ public class InputValidationTest {
         }
 
         @Test
+        public void emptyStringNullRegex() {
+            assertEquals(InputValidation.validString("", (String) null).getResponseCode().code(), Responses.INPUT_EMPTY_ERROR);
+        }
+
+        @Test
         public void nullPatternRegex() {
             assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (Pattern) null).getResponseCode().code(), Responses.INPUT_EMPTY_ERROR);
         }
