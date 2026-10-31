@@ -46,6 +46,7 @@ import java.util.List;
  */
 public class MongoDB extends NoSQLDatabase {
 
+    private final String databaseName;
     private String connection;
     private MongoClient mongoClient;
 
