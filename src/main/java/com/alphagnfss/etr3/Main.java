@@ -1,6 +1,7 @@
 package com.alphagnfss.etr3;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.Entertainment;
 import com.alphagnfss.etr3.data.Episode;
 import com.alphagnfss.etr3.data.Movie;
