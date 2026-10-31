@@ -35,7 +35,7 @@ public class NoSQLDatabaseIT {
     }
 
     @Nested
-    class CreateDataIT {
+    class CreateAndReadDataIT {
 
         @BeforeEach
         public void localSetup() {
