@@ -173,7 +173,7 @@ public class MongoDB extends NoSQLDatabase {
         Document searchResult = collection.find(new Document("_id", new ObjectId(id))).first();
 
         if (searchResult == null) {
-            response.setCode(HttpsURLConnection.HTTP_NOT_FOUND);
+            response.setResponseCode(Responses.DATABASE_DATA_READ_ERROR);
             return response;
         }
 
