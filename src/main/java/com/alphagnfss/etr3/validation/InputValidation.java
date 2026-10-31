@@ -52,4 +52,20 @@ public class InputValidation {
     public static Response validString(String inputString) {
         return validString(inputString, (Pattern) null);
     }
+
+    public static ResponseCode validType(String type) {
+
+        ResponseCode responseCode = validString(type);
+
+        if (responseCode != Responses.SUCCESS) {
+            return responseCode;
+        }
+
+        try {
+            EntertainmentType.valueOf(type);
+        } catch (IllegalArgumentException e) {
+            return Responses.INPUT_INVALID_DATA_TYPE;
+        }
+        return Responses.SUCCESS;
+    }
 }
