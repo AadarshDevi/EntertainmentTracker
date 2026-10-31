@@ -291,7 +291,7 @@ public class MongoDB extends NoSQLDatabase {
 
     private MongoCollection<Document> getCollection(String dataGroup) {
         // get database from server
-        MongoDatabase database = mongoClient.getDatabase(DataGroup.DATABASE);
+        MongoDatabase database = mongoClient.getDatabase(databaseName);
 
         // get collection from server
         MongoCollection<Document> collection = database.getCollection(dataGroup);
@@ -301,7 +301,7 @@ public class MongoDB extends NoSQLDatabase {
     @Override
     public Response deleteCollection() {
         final Response response = Response.builder().build();
-        mongoClient.getDatabase(DataGroup.DATABASE).getCollection(DataGroup.DATA).drop();
+        mongoClient.getDatabase(databaseName).getCollection(DataGroup.DATA).drop();
         response.setResponseCode(Responses.SUCCESS);
         return response;
     }
