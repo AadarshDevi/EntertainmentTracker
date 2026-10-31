@@ -11,6 +11,9 @@ public class Responses {
     // // connection: 201 - 215
     public static final ResponseCode DATABASE_CONNECTION_ERROR = new ResponseCode(201, "Unable to connect to database");
     public static final ResponseCode DATABASE_DISCONNECTION_ERROR = new ResponseCode(202, "Unable to disconnect from database");
+    public static final ResponseCode DATABASE_STORAGE_CONTAINER_CREATION_ERROR = new ResponseCode(202, "Unable to create the storage container of the database");
+    public static final ResponseCode DATABASE_STORAGE_CONTAINER_DELETION_ERROR = new ResponseCode(202, "Unable to delete the storage container of the database");
+
     // // crud ops: 216 - 225
     public static final ResponseCode DATABASE_DATA_CREATE_ERROR = new ResponseCode(216, "Unable to write data to database");
     public static final ResponseCode DATABASE_DATA_DELETE_ERROR = new ResponseCode(217, "Unable to delete data from database");
