@@ -135,9 +135,7 @@ public class MongoDB extends NoSQLDatabase {
 
         // Check if writing the Document was not successful
         if (!result.wasAcknowledged()) {
-            response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-            response.setMessage("Unable to write " + entertainment.getTitle() + "to database");
-            return response;
+            return Response.builder().responseCode(Responses.DATABASE_DATA_CREATE_ERROR).build();
         }
 
         String returnId = result.getInsertedId().asObjectId().getValue().toHexString();
