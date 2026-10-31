@@ -15,19 +15,7 @@ public class Response {
         this.object = object;
     }
 
-    public Response(int code) {
-        this(code, null, null);
-    }
-
-    public Response(int code, String message) {
-        this(code, message, null);
-    }
-
-    public Response(int code, Object object) {
-        this(code, null, object);
-    }
-
-    public Response notImplemented(String methodHeader) {
-        return new Response(501, "Method not been implemented yet: " + methodHeader + "()", null);
+    public static ResponseCode duplicate(ResponseCode responseCode) {
+        return new ResponseCode(responseCode.code(), responseCode.message());
     }
 }
