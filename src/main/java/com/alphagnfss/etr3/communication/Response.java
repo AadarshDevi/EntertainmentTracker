@@ -10,9 +10,8 @@ public class Response {
     ResponseCode responseCode; // Message (used for exceptions)
     Object object; // The object to pass
 
-    public Response(int code, String message, Object object) {
-        this.code = code;
-        this.message = message;
+    public Response(ResponseCode responseCode, Object object) {
+        this.responseCode = responseCode;
         this.object = object;
     }
 
