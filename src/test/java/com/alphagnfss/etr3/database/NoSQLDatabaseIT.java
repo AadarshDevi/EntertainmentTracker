@@ -54,11 +54,9 @@ public class NoSQLDatabaseIT {
                     .build();
 
             Response response = database.createData(entertainment);
-
             assertEquals(Responses.SUCCESS, response.getResponseCode(), "Data not created");
 
             response = database.readData((String) response.getObject());
-
             assertEquals(Responses.SUCCESS, response.getResponseCode(), "Unable to read data");
 
             Entertainment queryEntertainment = (Entertainment) response.getObject();
