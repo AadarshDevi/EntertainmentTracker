@@ -205,7 +205,7 @@ public class MongoDB extends NoSQLDatabase {
             entertainment.setEntertainmentId(id);
 
             // Build Response and send entertainment object
-            response.setCode(HttpsURLConnection.HTTP_OK);
+            response.setResponseCode(Responses.SUCCESS);
             response.setObject(entertainment);
 
         } catch (JsonParseException e) {
