@@ -5,11 +5,11 @@ public class Responses {
     // general: 100 - 199
     public static final ResponseCode SUCCESS = new ResponseCode(100, "Success");
 
-    // database: 100 - 199
-    // // connection
-    public static final ResponseCode DATABASE_ERROR = new ResponseCode(100, "Error in database");
-    public static final ResponseCode DATABASE_CONNECTION_ERROR = new ResponseCode(100, "Unable to connect to database");
-    public static final ResponseCode DATABASE_DISCONNECTION_ERROR = new ResponseCode(100, "Unable to disconnect from database");
+    // database: 200 - 299
+    public static final ResponseCode DATABASE_ERROR = new ResponseCode(200, "Error in database");
+    // // connection: 201 - 215
+    public static final ResponseCode DATABASE_CONNECTION_ERROR = new ResponseCode(201, "Unable to connect to database");
+    public static final ResponseCode DATABASE_DISCONNECTION_ERROR = new ResponseCode(202, "Unable to disconnect from database");
     // // crud
     public static final ResponseCode DATABASE_DATA_CREATE_ERROR = new ResponseCode(100, "Unable to write data to database");
     public static final ResponseCode DATABASE_DATA_DELETE_ERROR = new ResponseCode(100, "Unable to delete data from database");
