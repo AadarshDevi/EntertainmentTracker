@@ -306,7 +306,7 @@ public class MongoDB extends NoSQLDatabase {
     public Response deleteCollection() {
         final Response response = Response.builder().build();
         mongoClient.getDatabase(DataGroup.DATABASE).getCollection(DataGroup.DATA).drop();
-        response.setCode(HttpsURLConnection.HTTP_OK);
+        response.setResponseCode(Responses.SUCCESS);
         return response;
     }
 
