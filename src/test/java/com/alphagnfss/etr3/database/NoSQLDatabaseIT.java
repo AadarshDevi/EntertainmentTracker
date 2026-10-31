@@ -36,7 +36,7 @@ public class NoSQLDatabaseIT {
 
         @BeforeEach
         public void localSetup() {
-
+            assumeTrue(database.isConnected(), "Unable to connect to database");
         }
 
         @AfterEach
