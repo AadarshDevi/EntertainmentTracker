@@ -22,8 +22,8 @@ public class Main extends Application {
     public void start(Stage stage) {
         LOGGER.info("Starting Main");
 
-        String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1?connectTimeoutMS=5000&serverSelectionTimeoutMS=5000";
-        MongoDB client = new MongoDB(uri);
+        String uri = "mongodb://localhost:27017/?connectTimeoutMS=5000&serverSelectionTimeoutMS=5000";
+        MongoDB client = new MongoDB(uri, DataGroup.DATABASE);
         Response response = client.connect();
 
         if (Responses.deepEquals(response.getResponseCode(), Responses.DATABASE_CONNECTION_ERROR)) {
