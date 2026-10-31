@@ -17,42 +17,42 @@ public class InputValidationTest {
     class StringTest {
         @Test
         public void nullString() {
-            assertEquals(InputValidation.validString(null), Responses.INPUT_NULL_ERROR);
+            assertEquals(Responses.INPUT_NULL_ERROR, InputValidation.validString(null));
         }
 
         @Test
         public void emptyString() {
-            assertEquals(InputValidation.validString(""), Responses.INPUT_EMPTY_ERROR);
+            assertEquals(Responses.INPUT_EMPTY_ERROR, InputValidation.validString(""));
         }
 
         @Test
         public void blankString() {
-            assertEquals(InputValidation.validString("       "), Responses.INPUT_EMPTY_ERROR);
+            assertEquals(Responses.INPUT_EMPTY_ERROR, InputValidation.validString("       "));
         }
 
         @Test
         public void validString() {
-            assertEquals(InputValidation.validString("EntertainmentTracker is the best app"), Responses.SUCCESS);
+            assertEquals(Responses.SUCCESS, InputValidation.validString("EntertainmentTracker is the best app"));
         }
 
         @Test
         public void nullStringRegex() {
-            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (String) null), Responses.SUCCESS);
+            assertEquals(Responses.SUCCESS, InputValidation.validString("EntertainmentTracker is the best app!", (String) null));
         }
 
         @Test
         public void nullEverything() {
-            assertEquals(InputValidation.validString(null, (String) null), Responses.INPUT_NULL_ERROR);
+            assertEquals(Responses.INPUT_NULL_ERROR, InputValidation.validString(null, (String) null));
         }
 
         @Test
         public void emptyStringNullRegex() {
-            assertEquals(InputValidation.validString("", (String) null), Responses.INPUT_EMPTY_ERROR);
+            assertEquals(Responses.INPUT_EMPTY_ERROR, InputValidation.validString("", (String) null));
         }
 
         @Test
         public void nullPatternRegex() {
-            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (Pattern) null), Responses.SUCCESS);
+            assertEquals(Responses.SUCCESS, InputValidation.validString("EntertainmentTracker is the best app!", (Pattern) null));
         }
     }
 }
