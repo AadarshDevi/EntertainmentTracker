@@ -92,7 +92,11 @@ public class NoSQLDatabaseIT {
 
         @Test
         public void createAndReadEpisode() {
-
+            Entertainment entertainment = Episode.builder()
+                    .title("The Boy in the Iceberg")
+                    .status(EntertainmentStatus.COMPLETED)
+                    .type(EntertainmentType.EPISODE)
+                    .build();
         }
 
     }
