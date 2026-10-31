@@ -1,11 +1,12 @@
 package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.ResponseCode;
+import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.Entertainment;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.mvstore.MVStoreModule;
 
-import javax.net.ssl.HttpsURLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
