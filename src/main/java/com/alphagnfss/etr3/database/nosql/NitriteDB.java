@@ -1,6 +1,7 @@
 package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.ResponseCode;
 import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.Entertainment;
 import org.dizitart.no2.Nitrite;
@@ -25,9 +26,13 @@ public class NitriteDB extends NoSQLDatabase {
         Response response;
 
         if (Files.exists(path))
-            response = Response.builder().responseCode(Responses.SUCCESS).build();
+            response = Response.builder()
+                    .responseCode(Responses.SUCCESS)
+                    .build();
         else
-            response = Response.builder().responseCode(Responses.DATABASE_STORAGE_CONTAINER_CREATION_ERROR).build();
+            response = Response.builder()
+                    .responseCode(new ResponseCode(Responses.DATABASE_ERROR.code(), "Unable to create database"))
+                    .build();
 
         return response;
     }
