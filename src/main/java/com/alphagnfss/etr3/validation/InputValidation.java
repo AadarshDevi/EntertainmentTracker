@@ -8,5 +8,13 @@ public class InputValidation {
 
         if (string == null) return reponse;
 
+        if (string == null) return Response.builder().responseCode(Responses.INPUT_NULL_ERROR).build();
+        else if (string.isBlank()) return Response.builder().responseCode(Responses.INPUT_EMPTY_ERROR).build();
+
+        if (regex != null && !regex.isBlank()) {
+            boolean hasInvalidChars = Pattern.compile(regex).matcher(string).find();
+            if (hasInvalidChars) return Response.builder().responseCode(Responses.INPUT_INVALID_CHARACTERS).build();
+        }
+        return Response.builder().responseCode(Responses.SUCCESS).build();
     }
 }
