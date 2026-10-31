@@ -70,6 +70,13 @@ public class NoSQLDatabaseIT {
 
         @Test
         public void createAndReadAnime() {
+            Entertainment entertainment = Show.builder()
+                    .title("Beyblade X Season 4")
+                    .status(EntertainmentStatus.ONGOING)
+                    .type(EntertainmentType.ANIME)
+                    .tag("beyblade")
+                    .tag("beyblade x")
+                    .build();
         }
 
         @Test
