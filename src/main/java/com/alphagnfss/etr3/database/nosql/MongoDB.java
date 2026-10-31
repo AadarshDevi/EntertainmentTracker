@@ -99,9 +99,13 @@ public class MongoDB extends NoSQLDatabase {
 
     @Override
     public Response disconnect() {
-        mongoClient.close();
-        if (isConnected()) return new Response(Responses.DATABASE_DISCONNECTION_ERROR);
-        return new Response(Responses.SUCCESS);
+        if (mongoClient == null) return Response.builder().responseCode(Responses.SUCCESS).build();
+        try {
+            mongoClient.close();
+            return new Response(Responses.SUCCESS);
+        } catch (MongoException | IllegalStateException e) {
+            return new Response(Responses.DATABASE_DISCONNECTION_ERROR);
+        }
     }
 
     @Override
