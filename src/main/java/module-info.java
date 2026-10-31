@@ -13,8 +13,10 @@ module com.alphagnfss.etr3 {
     requires org.mongodb.driver.core;
     requires tools.jackson.databind;
     requires java.desktop;
+    requires org.junit.jupiter.api;
 
     opens com.alphagnfss.etr3.data to tools.jackson.databind;
+    opens com.alphagnfss.etr3.validation to org.junit.platform.commons;
 
     exports com.alphagnfss.etr3;
 }
