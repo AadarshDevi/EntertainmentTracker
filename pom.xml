@@ -160,15 +160,7 @@
         <dependency>
             <groupId>tools.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>3.2.3</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!-- Source: https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
-        <dependency>
-            <groupId>tools.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>3.2.3</version>
+            <version>3.2.4</version>
             <scope>compile</scope>
         </dependency>
 
@@ -196,24 +188,6 @@
             <groupId>org.jcommander</groupId>
             <artifactId>jcommander</artifactId>
             <version>3.0</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!--    JLine: Command Line Argumnets Parser    -->
-        <!-- Source: https://mvnrepository.com/artifact/org.jline/jline -->
-        <dependency>
-            <groupId>org.jline</groupId>
-            <artifactId>jline</artifactId>
-            <version>4.4.8</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!--    Picocli: Command Line Argumnets Parser    -->
-        <!-- Source: https://mvnrepository.com/artifact/info.picocli/picocli -->
-        <dependency>
-            <groupId>info.picocli</groupId>
-            <artifactId>picocli</artifactId>
-            <version>4.7.7</version>
             <scope>compile</scope>
         </dependency>
 
