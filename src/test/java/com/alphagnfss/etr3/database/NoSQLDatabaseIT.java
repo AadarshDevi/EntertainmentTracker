@@ -142,4 +142,9 @@ public class NoSQLDatabaseIT {
         
     }
 
+    @Nested
+    class UpdateDataIT {
+
+    }
+
 }
