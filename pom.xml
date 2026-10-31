@@ -12,6 +12,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <argLine>
+            --enable-native-access=javafx.graphics
+            --add-reads com.alphagnfss.etr=org.junit.jupiter.api
+            --add-opens com.alphagnfss.etr/com.alphagnfss.etr3.database=org.junit.platform.commons
+        </argLine>
     </properties>
 
     <dependencyManagement>
@@ -256,6 +261,9 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>com.alphagnfss.etr3.Launcher</mainClass>
+                            <options>
+                                <option>--enable-native-access=javafx.graphics</option>
+                            </options>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
