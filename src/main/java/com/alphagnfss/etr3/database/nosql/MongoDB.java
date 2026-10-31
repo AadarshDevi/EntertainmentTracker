@@ -1,6 +1,8 @@
 package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.ResponseCode;
+import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.*;
 import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.alphagnfss.etr3.database.DataGroup;
@@ -25,7 +27,6 @@ import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
 
-import javax.net.ssl.HttpsURLConnection;
 import java.nio.file.Path;
 
 /**
