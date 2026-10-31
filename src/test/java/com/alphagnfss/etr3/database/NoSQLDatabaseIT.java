@@ -137,4 +137,9 @@ public class NoSQLDatabaseIT {
 
     }
 
+    @Nested
+    class SearchDataIT {
+        
+    }
+
 }
