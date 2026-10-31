@@ -10,23 +10,26 @@ public class InputValidation {
     /**
      * The method takes in a string and uses a regex containing invalid chars to check if the string has any of those.
      *
-     * @param string         the input string
+     * @param inputString    the input string
      * @param forbiddenRegex list of chars that are banned in the string
      * @return string is a valid input
      */
-    public static Response validString(String string, String forbiddenRegex) {
+    public static Response validString(String inputString, String forbiddenRegex) {
+        Pattern pattern = Pattern.compile(forbiddenRegex);
+        return validString(inputString, pattern);
+    }
 
-        if (string == null) return Response.builder().responseCode(Responses.INPUT_NULL_ERROR).build();
-        else if (string.isBlank()) return Response.builder().responseCode(Responses.INPUT_EMPTY_ERROR).build();
+    public static Response validString(String inputString, Pattern pattern) {
+        if (inputString == null) return Response.builder().responseCode(Responses.INPUT_NULL_ERROR).build();
+        else if (inputString.isBlank()) return Response.builder().responseCode(Responses.INPUT_EMPTY_ERROR).build();
 
-        if (forbiddenRegex != null && !forbiddenRegex.isBlank()) {
-            boolean hasInvalidChars = Pattern.compile(forbiddenRegex).matcher(string).find();
-            if (hasInvalidChars) return Response.builder().responseCode(Responses.INPUT_INVALID_CHARACTERS).build();
-        }
+        if (pattern != null && pattern.matcher(inputString).find())
+            return Response.builder().responseCode(Responses.INPUT_INVALID_CHARACTERS).build();
+
         return Response.builder().responseCode(Responses.SUCCESS).build();
     }
 
-    public static Response validString(String string) {
-        return validString(string, null);
+    public static Response validString(String inputString) {
+        return validString(inputString, "");
     }
 }
