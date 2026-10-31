@@ -31,6 +31,7 @@ import tools.jackson.databind.json.JsonMapper;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Connecting to MongoDB:
@@ -325,14 +326,14 @@ public class MongoDB extends NoSQLDatabase {
 
         List<Bson> filters = new ArrayList<>();
 
-//        if (EntertainmentInputValidation.validString(searchQuery.title()))
-//            filters.add(Filters.regex("title", Pattern.quote(searchQuery.title()), "i"));
-//        if (EntertainmentInputValidation.validType(searchQuery.type()))
-//            filters.add(Filters.eq("type", searchQuery.type().name()));
-//        if (EntertainmentInputValidation.validStatus(searchQuery.status()))
-//            filters.add(Filters.eq("status", searchQuery.status().name()));
-//        if (EntertainmentInputValidation.validType(searchQuery.type()))
-//            filters.add(Filters.eq("type", searchQuery.type().name()));
+        if (EntertainmentInputValidation.validString(searchQuery.title()))
+            filters.add(Filters.regex("title", Pattern.quote(searchQuery.title()), "i"));
+        if (EntertainmentInputValidation.validType(searchQuery.type()))
+            filters.add(Filters.eq("type", searchQuery.type().name()));
+        if (EntertainmentInputValidation.validStatus(searchQuery.status()))
+            filters.add(Filters.eq("status", searchQuery.status().name()));
+        if (EntertainmentInputValidation.validType(searchQuery.type()))
+            filters.add(Filters.eq("type", searchQuery.type().name()));
 
 
         return null;
