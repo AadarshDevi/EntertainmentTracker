@@ -68,6 +68,12 @@ public class NoSQLDatabaseIT {
             response = database.readData((String) response.getObject());
 
             assertTrue((response.getCode() == HttpsURLConnection.HTTP_OK), "Unable to read data");
+
+            Entertainment queryEntertainment = (Entertainment) response.getObject();
+
+            assertTrue(queryEntertainment.getTitle().equals(entertainment.getTitle()), "Movie title is not the same.");
+            assertTrue(queryEntertainment.getStatus() == entertainment.getStatus(), "Movie status is not the same.");
+            assertTrue(queryEntertainment.getType() == entertainment.getType(), "Movie type is not the same.");
         }
 
     }
