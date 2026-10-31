@@ -81,6 +81,13 @@ public class NoSQLDatabaseIT {
 
         @Test
         public void createAndReadShow() {
+            Entertainment entertainment = Show.builder()
+                    .title("Avatar: The Last Airbender")
+                    .status(EntertainmentStatus.RELEASED)
+                    .type(EntertainmentType.TV_SHOW)
+                    .tag("avatar")
+                    .tag("elements")
+                    .build();
         }
 
         @Test
