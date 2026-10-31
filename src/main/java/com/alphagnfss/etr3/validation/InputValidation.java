@@ -29,12 +29,12 @@ public class InputValidation {
 
         logger.info("Input: \"{}\", Regex: \"{}\"", inputString, pattern.pattern());
 
-        if (inputString == null) return Response.builder().responseCode(Responses.INPUT_NULL_ERROR).build();
-        else if (inputString.isBlank()) return Response.builder().responseCode(Responses.INPUT_EMPTY_ERROR).build();
-
-        if (pattern != null && pattern.matcher(inputString).find())
-            return Response.builder().responseCode(Responses.INPUT_INVALID_CHARACTERS).build();
-
+        if (inputString == null)
+            responseCode = Responses.INPUT_NULL_ERROR;
+        else if (inputString.isBlank())
+            responseCode = Responses.INPUT_EMPTY_ERROR;
+        else if (pattern != null && pattern.matcher(inputString).find())
+            responseCode = Responses.INPUT_INVALID_CHARACTERS;
         else
             responseCode = Responses.SUCCESS;
 
