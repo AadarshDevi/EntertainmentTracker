@@ -28,6 +28,7 @@ public class Responses {
     public static final ResponseCode INPUT_ERROR = new ResponseCode(202, "Input error");
     public static final ResponseCode INPUT_NULL_ERROR = new ResponseCode(202, "Input cannot be null");
     public static final ResponseCode INPUT_EMPTY_ERROR = new ResponseCode(202, "Input cannot be empty");
+    public static final ResponseCode INPUT_INVALID_CHARACTERS = new ResponseCode(202, "Input has invalid characters");
 
     // json parser
     public static final ResponseCode BACKEND_PARSER_ERROR = new ResponseCode(404, "Failed to parse data");
