@@ -68,6 +68,19 @@ public class NoSQLDatabaseIT {
             assertSame(entertainment.getType(), queryEntertainment.getType(), "Movie type is not the same.");
         }
 
+        @Test
+        public void createAndReadAnime() {
+        }
+
+        @Test
+        public void createAndReadShow() {
+        }
+
+        @Test
+        public void createAndReadEpisode() {
+
+        }
+
     }
 
 }
