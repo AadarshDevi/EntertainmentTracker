@@ -96,7 +96,7 @@ public class MongoDB extends NoSQLDatabase {
     @Override
     public Response disconnect() {
         mongoClient.close();
-        return new Response(HttpsURLConnection.HTTP_OK);
+        return new Response(Responses.SUCCESS);
     }
 
     @Override
