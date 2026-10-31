@@ -323,14 +323,14 @@ public class MongoDB extends NoSQLDatabase {
 
         List<Bson> filters = new ArrayList<>();
 
-        if (DataInputValidation.validString(searchQuery.title()))
-            filters.add(Filters.regex("title", Pattern.quote(searchQuery.title()), "i"));
-        if (DataInputValidation.validType(searchQuery.type()))
-            filters.add(Filters.eq("type", searchQuery.type().name()));
-        if (DataInputValidation.validStatus(searchQuery.status()))
-            filters.add(Filters.eq("status", searchQuery.status().name()));
-        if (DataInputValidation.validType(searchQuery.type()))
-            filters.add(Filters.eq("type", searchQuery.type().name()));
+//        if (DataInputValidation.validString(searchQuery.title()))
+//            filters.add(Filters.regex("title", Pattern.quote(searchQuery.title()), "i"));
+//        if (DataInputValidation.validType(searchQuery.type()))
+//            filters.add(Filters.eq("type", searchQuery.type().name()));
+//        if (DataInputValidation.validStatus(searchQuery.status()))
+//            filters.add(Filters.eq("status", searchQuery.status().name()));
+//        if (DataInputValidation.validType(searchQuery.type()))
+//            filters.add(Filters.eq("type", searchQuery.type().name()));
 
 
         return null;
