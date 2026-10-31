@@ -33,6 +33,6 @@ public class InputValidation {
     }
 
     public static Response validString(String inputString) {
-        return validString(inputString, "");
+        return validString(inputString, (String) null);
     }
 }
