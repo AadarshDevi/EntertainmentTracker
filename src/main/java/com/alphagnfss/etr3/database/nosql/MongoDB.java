@@ -234,15 +234,13 @@ public class MongoDB extends NoSQLDatabase {
             }
 
             if (deleteResult.getDeletedCount() <= 0) {
-                response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-                response.setMessage("Data was unable to be deleted from database: " + id);
+                return Response.builder().responseCode(Responses.DATABASE_DATA_DELETE_ERROR).build();
             }
 
             response.setResponseCode(Responses.SUCCESS);
 
         } catch (Exception e) {
-            response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-            response.setMessage(e.getMessage());
+            return Response.builder().responseCode(new ResponseCode(Responses.DATABASE_ERROR.code(), e.getMessage())).build();
         }
 
         return response;
