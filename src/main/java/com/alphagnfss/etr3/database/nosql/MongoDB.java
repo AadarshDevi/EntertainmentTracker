@@ -275,14 +275,12 @@ public class MongoDB extends NoSQLDatabase {
             // Check if the update failed
             if (!result.wasAcknowledged()) {
                 return Response.builder().responseCode(Responses.DATABASE_DATA_UPDATE_ERROR).build();
-                return response;
             }
 
             response.setResponseCode(Responses.SUCCESS);
 
         } catch (JacksonException e) {
-            response.setCode(HttpsURLConnection.HTTP_BAD_REQUEST);
-            response.setMessage(e.getMessage());
+            response.setResponseCode(new ResponseCode(Responses.BACKEND_PARSER_ERROR.code(), e.getMessage()));
         }
 
         return response;
