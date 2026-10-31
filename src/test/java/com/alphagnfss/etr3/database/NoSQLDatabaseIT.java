@@ -26,8 +26,7 @@ public class NoSQLDatabaseIT {
         database = new MongoDB(uri);
 
         Response response = database.connect();
-        assertTrue(response.getCode() == HttpURLConnection.HTTP_UNAVAILABLE, "Connection failed.");
-
+        assertEquals(Responses.SUCCESS, response.getResponseCode(), "Connection failed.");
         assertTrue(database.isConnected(), "Not connected to database.");
     }
 
@@ -61,17 +60,17 @@ public class NoSQLDatabaseIT {
 
             Response response = database.createData(entertainment);
 
-            assertTrue((response.getCode() == HttpsURLConnection.HTTP_OK), "Data not created");
+            assertEquals(Responses.SUCCESS, response.getResponseCode(), "Data not created");
 
             response = database.readData((String) response.getObject());
 
-            assertTrue((response.getCode() == HttpsURLConnection.HTTP_OK), "Unable to read data");
+            assertEquals(Responses.SUCCESS, response.getResponseCode(), "Unable to read data");
 
             Entertainment queryEntertainment = (Entertainment) response.getObject();
 
-            assertTrue(queryEntertainment.getTitle().equals(entertainment.getTitle()), "Movie title is not the same.");
-            assertTrue(queryEntertainment.getStatus() == entertainment.getStatus(), "Movie status is not the same.");
-            assertTrue(queryEntertainment.getType() == entertainment.getType(), "Movie type is not the same.");
+            assertEquals(queryEntertainment.getTitle(), entertainment.getTitle(), "Movie title is not the same.");
+            assertSame(queryEntertainment.getStatus(), entertainment.getStatus(), "Movie status is not the same.");
+            assertSame(queryEntertainment.getType(), entertainment.getType(), "Movie type is not the same.");
         }
 
     }
