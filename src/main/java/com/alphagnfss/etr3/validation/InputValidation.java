@@ -20,7 +20,7 @@ public class InputValidation {
     public static Response validString(String inputString, String forbiddenRegex) {
         if (forbiddenRegex == null || forbiddenRegex.isBlank())
             return validString(inputString, (Pattern) null);
-        }
+
         Pattern pattern = Pattern.compile(forbiddenRegex);
         return validString(inputString, pattern);
     }
