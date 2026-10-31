@@ -209,8 +209,7 @@ public class MongoDB extends NoSQLDatabase {
             response.setObject(entertainment);
 
         } catch (JsonParseException e) {
-            response.setCode(HttpsURLConnection.HTTP_BAD_REQUEST);
-            response.setMessage(e.getMessage());
+            response.setResponseCode(new ResponseCode(Responses.BACKEND_PARSER_ERROR.code(), e.getMessage()));
         }
 
         return response;
