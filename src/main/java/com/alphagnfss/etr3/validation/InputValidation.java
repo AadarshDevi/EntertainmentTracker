@@ -6,8 +6,6 @@ import com.alphagnfss.etr3.communication.Responses;
 import java.util.regex.Pattern;
 
 public class InputValidation {
-    public static Response validString(String string) {
-        Response response = Response.builder().code().message().object().build();
 
     /**
      * The method takes in a string and uses a regex containing invalid chars to check if the string has any of those.
