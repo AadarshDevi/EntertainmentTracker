@@ -229,8 +229,7 @@ public class MongoDB extends NoSQLDatabase {
             DeleteResult deleteResult = collection.deleteOne(filter);
 
             if (!deleteResult.wasAcknowledged()) {
-                response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-                response.setMessage("Unable to delete " + id + " from database");
+                return Response.builder().responseCode(Responses.DATABASE_DATA_DELETE_ERROR).build();
                 return response;
             }
 
