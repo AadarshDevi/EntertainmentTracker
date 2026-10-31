@@ -60,10 +60,9 @@ public class NoSQLDatabaseIT {
             assertEquals(Responses.SUCCESS, response.getResponseCode(), "Unable to read data");
 
             Entertainment queryEntertainment = (Entertainment) response.getObject();
-
-            assertEquals(queryEntertainment.getTitle(), entertainment.getTitle(), "Movie title is not the same.");
-            assertSame(queryEntertainment.getStatus(), entertainment.getStatus(), "Movie status is not the same.");
-            assertSame(queryEntertainment.getType(), entertainment.getType(), "Movie type is not the same.");
+            assertEquals(entertainment.getTitle(), queryEntertainment.getTitle(), "Movie title is not the same.");
+            assertSame(entertainment.getStatus(), queryEntertainment.getStatus(), "Movie status is not the same.");
+            assertSame(entertainment.getType(), queryEntertainment.getType(), "Movie type is not the same.");
         }
 
     }
