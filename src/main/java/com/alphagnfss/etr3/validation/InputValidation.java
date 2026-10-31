@@ -46,7 +46,7 @@ public class InputValidation {
             responseCode = Responses.SUCCESS;
 
         logger.debug("String Validation: {}", responseCode);
-        return Response.builder().responseCode(responseCode).build();
+        return responseCode;
     }
 
     public static ResponseCode validString(String inputString) {
