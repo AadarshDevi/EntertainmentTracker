@@ -2,6 +2,8 @@ package com.alphagnfss.etr3.validation;
 
 import com.alphagnfss.etr3.communication.Response;
 import com.alphagnfss.etr3.communication.Responses;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.regex.Pattern;
 
