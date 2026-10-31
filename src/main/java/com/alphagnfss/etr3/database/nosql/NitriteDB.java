@@ -26,9 +26,13 @@ public class NitriteDB extends NoSQLDatabase {
         Response response;
 
         if (Files.exists(path))
-            response = new Response(HttpsURLConnection.HTTP_CREATED);
+            response = Response.builder()
+                    .responseCode(Responses.SUCCESS)
+                    .build();
         else
-            response = new Response(HttpsURLConnection.HTTP_BAD_REQUEST, "Unable to create database");
+            response = Response.builder()
+                    .responseCode(new ResponseCode(Responses.DATABASE_ERROR.code(), "Unable to create database"))
+                    .build();
 
         return response;
     }
