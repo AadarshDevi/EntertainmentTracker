@@ -242,7 +242,7 @@ public class MongoDB extends NoSQLDatabase {
         return response;
     }
 
-    public Response updateData(BsonObjectId id, Entertainment entertainment) {
+    public Response updateData(String id, Entertainment entertainment) {
 
         final Response response = Response.builder().build();
 
@@ -260,7 +260,7 @@ public class MongoDB extends NoSQLDatabase {
             Document replacingDocument = Document.parse(string);
 
             // Filter: Get Document with field "_id
-            Bson filters = Filters.eq("_id", id);
+            Bson filters = Filters.eq("_id", new ObjectId(id));
 
             // Create a Replace Document Object
             ReplaceOptions options = new ReplaceOptions().upsert(false);
