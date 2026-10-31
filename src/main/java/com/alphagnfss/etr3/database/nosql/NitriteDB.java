@@ -1,11 +1,12 @@
 package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.ResponseCode;
+import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.Entertainment;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.mvstore.MVStoreModule;
 
-import javax.net.ssl.HttpsURLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -25,9 +26,13 @@ public class NitriteDB extends NoSQLDatabase {
         Response response;
 
         if (Files.exists(path))
-            response = new Response(HttpsURLConnection.HTTP_CREATED);
+            response = Response.builder()
+                    .responseCode(Responses.SUCCESS)
+                    .build();
         else
-            response = new Response(HttpsURLConnection.HTTP_BAD_REQUEST, "Unable to create database");
+            response = Response.builder()
+                    .responseCode(new ResponseCode(Responses.DATABASE_ERROR.code(), "Unable to create database"))
+                    .build();
 
         return response;
     }
