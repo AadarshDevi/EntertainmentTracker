@@ -1,11 +1,15 @@
 package com.alphagnfss.etr3.database.nosql;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.ResponseCode;
+import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.*;
 import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.alphagnfss.etr3.database.DataGroup;
+import com.alphagnfss.etr3.database.SearchQuery;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -15,7 +19,6 @@ import com.mongodb.client.model.ReplaceOptions;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.InsertOneResult;
 import com.mongodb.client.result.UpdateResult;
-import org.bson.BsonObjectId;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.json.JsonParseException;
@@ -25,8 +28,10 @@ import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
 
-import javax.net.ssl.HttpsURLConnection;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Connecting to MongoDB:
@@ -42,11 +47,13 @@ import java.nio.file.Path;
  */
 public class MongoDB extends NoSQLDatabase {
 
+    private final String databaseName;
     private String connection;
     private MongoClient mongoClient;
 
-    public MongoDB(String connection) {
+    public MongoDB(String connection, String databaseName) {
         this.connection = connection;
+        this.databaseName = databaseName;
     }
 
     public Response createDB(Path path) {
@@ -71,21 +78,23 @@ public class MongoDB extends NoSQLDatabase {
 
             // check if the connection was established
             if (!isConnected()) {
-                return new Response(HttpsURLConnection.HTTP_UNAVAILABLE, "Unable to connect to server");
+                return Response.builder().responseCode(Responses.DATABASE_CONNECTION_ERROR).build();
             }
 
         } catch (Exception e) {
-            return new Response(HttpsURLConnection.HTTP_UNAVAILABLE, e.getMessage());
+            return Response.builder().responseCode(new ResponseCode(Responses.DATABASE_CONNECTION_ERROR.code(), e.getMessage())).build();
         }
-        return new Response(HttpsURLConnection.HTTP_OK);
+        return new Response(Responses.SUCCESS);
     }
 
     public boolean isConnected() {
-
-        // pingResult = mongoClient.getDatabase("admin").runCommand(new Document("ping", 1))
-        // pingValue = pingResult.getDouble("ok")
-        Double result = mongoClient.getDatabase("admin").runCommand(new Document("ping", 1)).getDouble("ok");
-        return ((result != null) && (result == 1.0));
+        if (mongoClient == null) return false;
+        try {
+            mongoClient.getDatabase("admin").runCommand(new Document("ping", 1));
+            return true;
+        } catch (MongoException | IllegalStateException e) {
+            return false;
+        }
     }
 
     @Override
@@ -95,8 +104,13 @@ public class MongoDB extends NoSQLDatabase {
 
     @Override
     public Response disconnect() {
-        mongoClient.close();
-        return new Response(HttpsURLConnection.HTTP_OK);
+        if (mongoClient == null) return Response.builder().responseCode(Responses.SUCCESS).build();
+        try {
+            mongoClient.close();
+            return new Response(Responses.SUCCESS);
+        } catch (MongoException | IllegalStateException e) {
+            return new Response(Responses.DATABASE_DISCONNECTION_ERROR);
+        }
     }
 
     @Override
@@ -134,15 +148,13 @@ public class MongoDB extends NoSQLDatabase {
 
         // Check if writing the Document was not successful
         if (!result.wasAcknowledged()) {
-            response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-            response.setMessage("Unable to write " + entertainment.getTitle() + "to database");
-            return response;
+            return Response.builder().responseCode(Responses.DATABASE_DATA_CREATE_ERROR).build();
         }
 
         String returnId = result.getInsertedId().asObjectId().getValue().toHexString();
 
         // Document was written successfully
-        response.setCode(HttpsURLConnection.HTTP_OK);
+        response.setResponseCode(Responses.SUCCESS);
         response.setObject(returnId);
 
         // print object's id
@@ -150,16 +162,6 @@ public class MongoDB extends NoSQLDatabase {
 
         // return response
         return response;
-    }
-
-    @Override
-    public Response updateData(String id, Entertainment entertainment) {
-        return null;
-    }
-
-    @Override
-    public Response deleteData(String id) {
-        return null;
     }
 
     @Override
@@ -174,7 +176,7 @@ public class MongoDB extends NoSQLDatabase {
         Document searchResult = collection.find(new Document("_id", new ObjectId(id))).first();
 
         if (searchResult == null) {
-            response.setCode(HttpsURLConnection.HTTP_NOT_FOUND);
+            response.setResponseCode(Responses.DATABASE_DATA_READ_ERROR);
             return response;
         }
 
@@ -205,18 +207,18 @@ public class MongoDB extends NoSQLDatabase {
             entertainment.setEntertainmentId(id);
 
             // Build Response and send entertainment object
-            response.setCode(HttpsURLConnection.HTTP_OK);
+            response.setResponseCode(Responses.SUCCESS);
             response.setObject(entertainment);
 
         } catch (JsonParseException e) {
-            response.setCode(HttpsURLConnection.HTTP_BAD_REQUEST);
-            response.setMessage(e.getMessage());
+            response.setResponseCode(new ResponseCode(Responses.BACKEND_PARSER_ERROR.code(), e.getMessage()));
         }
 
         return response;
     }
 
-    public Response deleteData(BsonObjectId id) {
+    @Override
+    public Response deleteData(String id) {
 
         final Response response = Response.builder().build();
 
@@ -225,34 +227,30 @@ public class MongoDB extends NoSQLDatabase {
             MongoCollection<Document> collection = getCollection(DataGroup.DATA);
 
             // Filter to find the right Entertainment Object
-            Bson filter = Filters.eq("_id", id);
+            Bson filter = Filters.eq("_id", new ObjectId(id));
 
             // Use filter to delete the data of the specific Entertainment Object
             DeleteResult deleteResult = collection.deleteOne(filter);
 
             if (!deleteResult.wasAcknowledged()) {
-                response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-                response.setMessage("Unable to delete " + id + " from database");
-                return response;
+                return Response.builder().responseCode(Responses.DATABASE_DATA_DELETE_ERROR).build();
             }
 
             if (deleteResult.getDeletedCount() <= 0) {
-                response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-                response.setMessage("Data was unable to be deleted from database: " + id);
-                return response;
+                return Response.builder().responseCode(Responses.DATABASE_DATA_DELETE_ERROR).build();
             }
 
-            response.setCode(HttpsURLConnection.HTTP_OK);
+            response.setResponseCode(Responses.SUCCESS);
 
         } catch (Exception e) {
-            response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-            response.setMessage(e.getMessage());
+            return Response.builder().responseCode(new ResponseCode(Responses.DATABASE_ERROR.code(), e.getMessage())).build();
         }
 
         return response;
     }
 
-    public Response updateData(BsonObjectId id, Entertainment entertainment) {
+    @Override
+    public Response updateData(String id, Entertainment entertainment) {
 
         final Response response = Response.builder().build();
 
@@ -270,7 +268,7 @@ public class MongoDB extends NoSQLDatabase {
             Document replacingDocument = Document.parse(string);
 
             // Filter: Get Document with field "_id
-            Bson filters = Filters.eq("_id", id);
+            Bson filters = Filters.eq("_id", new ObjectId(id));
 
             // Create a Replace Document Object
             ReplaceOptions options = new ReplaceOptions().upsert(false);
@@ -280,16 +278,13 @@ public class MongoDB extends NoSQLDatabase {
 
             // Check if the update failed
             if (!result.wasAcknowledged()) {
-                response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-                response.setMessage("Unable to update \"" + entertainment.getTitle() + "\" to database");
-                return response;
+                return Response.builder().responseCode(Responses.DATABASE_DATA_UPDATE_ERROR).build();
             }
 
-            response.setCode(HttpsURLConnection.HTTP_OK);
+            response.setResponseCode(Responses.SUCCESS);
 
         } catch (JacksonException e) {
-            response.setCode(HttpsURLConnection.HTTP_BAD_REQUEST);
-            response.setMessage(e.getMessage());
+            response.setResponseCode(new ResponseCode(Responses.BACKEND_PARSER_ERROR.code(), e.getMessage()));
         }
 
         return response;
@@ -297,7 +292,7 @@ public class MongoDB extends NoSQLDatabase {
 
     private MongoCollection<Document> getCollection(String dataGroup) {
         // get database from server
-        MongoDatabase database = mongoClient.getDatabase(DataGroup.DATABASE);
+        MongoDatabase database = mongoClient.getDatabase(databaseName);
 
         // get collection from server
         MongoCollection<Document> collection = database.getCollection(dataGroup);
@@ -307,8 +302,8 @@ public class MongoDB extends NoSQLDatabase {
     @Override
     public Response deleteCollection() {
         final Response response = Response.builder().build();
-        mongoClient.getDatabase(DataGroup.DATABASE).getCollection(DataGroup.DATA).drop();
-        response.setCode(HttpsURLConnection.HTTP_OK);
+        mongoClient.getDatabase(databaseName).getCollection(DataGroup.DATA).drop();
+        response.setResponseCode(Responses.SUCCESS);
         return response;
     }
 
@@ -324,6 +319,23 @@ public class MongoDB extends NoSQLDatabase {
 
     @Override
     public Response hasStorageContainer(String storageContainerName) {
+        return null;
+    }
+
+    public Response searchData(SearchQuery searchQuery) {
+
+        List<Bson> filters = new ArrayList<>();
+
+        if (EntertainmentInputValidation.validString(searchQuery.title()))
+            filters.add(Filters.regex("title", Pattern.quote(searchQuery.title()), "i"));
+        if (EntertainmentInputValidation.validType(searchQuery.type()))
+            filters.add(Filters.eq("type", searchQuery.type().name()));
+        if (EntertainmentInputValidation.validStatus(searchQuery.status()))
+            filters.add(Filters.eq("status", searchQuery.status().name()));
+        if (EntertainmentInputValidation.validType(searchQuery.type()))
+            filters.add(Filters.eq("type", searchQuery.type().name()));
+
+
         return null;
     }
 }

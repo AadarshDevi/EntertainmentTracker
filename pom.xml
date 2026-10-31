@@ -12,6 +12,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <argLine>
+            --enable-native-access=javafx.graphics
+            --add-reads com.alphagnfss.etr=org.junit.jupiter.api
+            --add-opens com.alphagnfss.etr/com.alphagnfss.etr3.database=org.junit.platform.commons
+        </argLine>
     </properties>
 
     <dependencyManagement>
@@ -160,15 +165,7 @@
         <dependency>
             <groupId>tools.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>3.2.3</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!-- Source: https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
-        <dependency>
-            <groupId>tools.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>3.2.3</version>
+            <version>3.2.4</version>
             <scope>compile</scope>
         </dependency>
 
@@ -208,12 +205,21 @@
             <scope>compile</scope>
         </dependency>
 
-        <!--    Picocli: Command Line Argumnets Parser    -->
+        <!--    Picocli: Command Line Argumnets Checker    -->
         <!-- Source: https://mvnrepository.com/artifact/info.picocli/picocli -->
         <dependency>
             <groupId>info.picocli</groupId>
             <artifactId>picocli</artifactId>
             <version>4.7.7</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--    JLine-Shell: JLine to Shell Adapter    -->
+        <!-- Source: https://mvnrepository.com/artifact/org.jline/jline-shell -->
+        <dependency>
+            <groupId>org.jline</groupId>
+            <artifactId>jline-shell</artifactId>
+            <version>4.4.8</version>
             <scope>compile</scope>
         </dependency>
 
@@ -255,6 +261,9 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>com.alphagnfss.etr3.Launcher</mainClass>
+                            <options>
+                                <option>--enable-native-access=javafx.graphics</option>
+                            </options>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
