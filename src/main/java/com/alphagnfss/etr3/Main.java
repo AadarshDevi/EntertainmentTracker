@@ -1,6 +1,7 @@
 package com.alphagnfss.etr3;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.Entertainment;
 import com.alphagnfss.etr3.data.Episode;
 import com.alphagnfss.etr3.data.Movie;
@@ -12,8 +13,6 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import javax.net.ssl.HttpsURLConnection;
 
 public class Main extends Application {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
@@ -27,9 +26,12 @@ public class Main extends Application {
         MongoDB client = new MongoDB(uri);
         Response response = client.connect();
 
+        if (Responses.deepEquals(response.getResponseCode(), Responses.DATABASE_CONNECTION_ERROR)) {
+            System.out.println("Unable to connect to mongodb");
+        }
+
         // create Show
         Entertainment show = Show.builder()
-                .entertainmentId(newEntertainmentId++)
                 .title("Avatar: The Last Airbender")
                 .type(EntertainmentType.TV_SHOW)
                 .status(EntertainmentStatus.RELEASED)
@@ -37,7 +39,6 @@ public class Main extends Application {
 
         // create movie
         Entertainment movie = Movie.builder()
-                .entertainmentId(newEntertainmentId++)
                 .title("Toy Story 5")
                 .type(EntertainmentType.MOVIE)
                 .status(EntertainmentStatus.COMPLETED)
@@ -45,34 +46,38 @@ public class Main extends Application {
 
         // create episode
         Entertainment episode = Episode.builder()
-                .entertainmentId(newEntertainmentId++)
                 .title("The Boy in the Iceberg.")
                 .type(EntertainmentType.EPISODE)
                 .status(EntertainmentStatus.RELEASED)
                 .episodeNum(1)
                 .build();
 
-        createData(client, show);
-        System.out.println("Entertainment ID: " + show.getHexId());
+        String showId = (String) client.createData(show).getObject();
+        String movieId = (String) client.createData(movie).getObject();
+        String episodeId = (String) client.createData(episode).getObject();
 
-        createData(client, movie);
-        System.out.println("Entertainment ID: " + movie.getHexId());
+        // print ids
+        System.out.println("Show: " + showId);
+        System.out.println("Movie: " + movieId);
+        System.out.println("Episode: " + episodeId);
 
-        createData(client, episode);
-        System.out.println("Entertainment ID: " + episode.getHexId());
+        // read data as in JSON
+        response = client.readData(showId);
+        System.out.println("Show Response: " + response.getResponseCode().code());
+        Show searchedShow = (Show) response.getObject();
+        System.out.println(searchedShow.getTitle());
+
+        response = client.readData(movieId);
+        System.out.println("Movie Response: " + response.getResponseCode().code());
+        Movie searchedMovie = (Movie) response.getObject();
+        System.out.println(searchedMovie.getTitle());
+
+        response = client.readData(episodeId);
+        System.out.println("Episode Response: " + response.getResponseCode().code());
+        Episode searchedEpisode = (Episode) response.getObject();
+        System.out.println(searchedEpisode.getTitle());
 
         client.disconnect();
         System.exit(0);
-    }
-
-    public void createData(MongoDB client, Entertainment entertainment) {
-        try {
-            Response response = client.createData(entertainment);
-            if (response.getCode() == HttpsURLConnection.HTTP_OK) {
-                System.out.println("Successfully Created Data");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

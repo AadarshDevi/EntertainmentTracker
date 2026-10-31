@@ -1,4 +1,4 @@
-module com.alphagnfss.etr3 {
+module com.alphagnfss.etr {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
@@ -12,6 +12,7 @@ module com.alphagnfss.etr3 {
     requires org.mongodb.bson;
     requires org.mongodb.driver.core;
     requires tools.jackson.databind;
+    requires java.desktop;
 
     opens com.alphagnfss.etr3.data to tools.jackson.databind;
 
