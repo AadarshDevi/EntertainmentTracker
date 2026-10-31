@@ -15,7 +15,6 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 public class NoSQLDatabaseIT {
 
     private MongoDB database = null;
-    private Response databaseConnectionResponse;
 
     @BeforeEach
     public void globalSetup() {
@@ -23,6 +22,7 @@ public class NoSQLDatabaseIT {
         String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1?connectTimeoutMS=5000&serverSelectionTimeoutMS=5000";
         database = new MongoDB(uri);
         this.databaseConnectionResponse = database.connect();
+        Response databaseConnectionResponse = database.connect();
     }
 
     @AfterEach
