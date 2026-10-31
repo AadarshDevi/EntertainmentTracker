@@ -27,7 +27,7 @@ public class Main extends Application {
         MongoDB client = new MongoDB(uri);
         Response response = client.connect();
 
-        if (response.getCode() == HttpURLConnection.HTTP_UNAVAILABLE) {
+        if (Responses.deepEquals(response.getResponseCode(), Responses.DATABASE_CONNECTION_ERROR)) {
             System.out.println("Unable to connect to mongodb");
         }
 
