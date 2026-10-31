@@ -1,6 +1,7 @@
 package com.alphagnfss.etr3;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.Entertainment;
 import com.alphagnfss.etr3.data.Episode;
 import com.alphagnfss.etr3.data.Movie;
@@ -12,8 +13,6 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.net.HttpURLConnection;
 
 public class Main extends Application {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
@@ -27,7 +26,7 @@ public class Main extends Application {
         MongoDB client = new MongoDB(uri);
         Response response = client.connect();
 
-        if (response.getCode() == HttpURLConnection.HTTP_UNAVAILABLE) {
+        if (Responses.deepEquals(response.getResponseCode(), Responses.DATABASE_CONNECTION_ERROR)) {
             System.out.println("Unable to connect to mongodb");
         }
 
