@@ -1,6 +1,9 @@
 package com.alphagnfss.etr3.validation;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.Responses;
+
+import java.util.regex.Pattern;
 
 public class InputValidation {
     public static Response validString(String string) {
