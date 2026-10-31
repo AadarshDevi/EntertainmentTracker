@@ -71,7 +71,7 @@ public class MongoDB extends NoSQLDatabase {
 
             // check if the connection was established
             if (!isConnected()) {
-                return new Response(HttpsURLConnection.HTTP_UNAVAILABLE, "Unable to connect to server");
+                return Response.builder().responseCode(Responses.DATABASE_CONNECTION_ERROR).build();
             }
 
         } catch (Exception e) {
