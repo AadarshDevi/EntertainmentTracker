@@ -211,6 +211,7 @@ public class MongoDB extends NoSQLDatabase {
         return response;
     }
 
+    @Override
     public Response deleteData(String id) {
 
         final Response response = Response.builder().build();
@@ -242,6 +243,7 @@ public class MongoDB extends NoSQLDatabase {
         return response;
     }
 
+    @Override
     public Response updateData(String id, Entertainment entertainment) {
 
         final Response response = Response.builder().build();
