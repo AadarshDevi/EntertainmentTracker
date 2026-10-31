@@ -26,10 +26,7 @@ public class NoSQLDatabaseIT {
         // Connect ot MongoDB
         String uri = "mongodb://localhost:27017/EntertainmentTracker_MongoDB_Test_1?connectTimeoutMS=5000&serverSelectionTimeoutMS=5000";
         database = new MongoDB(uri);
-        Response response = database.connect();
-        
-        assertEquals(Responses.SUCCESS, response.getResponseCode(), "Connection failed.");
-        assertTrue(database.isConnected(), "Not connected to database.");
+        this.databaseConnectionResponse = database.connect();
     }
 
     @AfterEach
