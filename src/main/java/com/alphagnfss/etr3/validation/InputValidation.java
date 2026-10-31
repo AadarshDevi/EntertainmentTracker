@@ -35,6 +35,10 @@ public class InputValidation {
         if (pattern != null && pattern.matcher(inputString).find())
             return Response.builder().responseCode(Responses.INPUT_INVALID_CHARACTERS).build();
 
+        else
+            responseCode = Responses.SUCCESS;
+
+        logger.debug("String Validation: {}", responseCode);
         return Response.builder().responseCode(Responses.SUCCESS).build();
     }
 
