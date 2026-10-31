@@ -4,6 +4,7 @@ public class Responses {
 
     // general: 100 - 199
 
+    // database: 100 - 199
     // // connection
     public static final ResponseCode DATABASE_ERROR = new ResponseCode(100, "Error in database");
     public static final ResponseCode DATABASE_CONNECTION_ERROR = new ResponseCode(100, "Unable to connect to database");
