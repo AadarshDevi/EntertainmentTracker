@@ -35,6 +35,11 @@ public class NoSQLDatabaseIT {
     }
 
     @Test
+    public void validDatabase() {
+        assertNotNull(database, "Database should not be null");
+    }
+
+    @Test
     public void connectionTest() {
 
     }
