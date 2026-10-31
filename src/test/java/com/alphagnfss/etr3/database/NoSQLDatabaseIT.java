@@ -147,4 +147,9 @@ public class NoSQLDatabaseIT {
 
     }
 
+    @Nested
+    class DeleteDataIT {
+
+    }
+
 }
