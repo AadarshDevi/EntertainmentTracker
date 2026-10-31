@@ -32,5 +32,20 @@ public class InputValidationTest {
         public void validString() {
             assertEquals(InputValidation.validString("EntertainmentTracker is the best app").getResponseCode().code(), Responses.INPUT_EMPTY_ERROR);
         }
+
+        @Test
+        public void nullStringRegex() {
+            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (String) null).getResponseCode().code(), Responses.INPUT_EMPTY_ERROR);
+        }
+
+        @Test
+        public void nullEverything() {
+            assertEquals(InputValidation.validString(null, (String) null).getResponseCode().code(), Responses.INPUT_EMPTY_ERROR);
+        }
+
+        @Test
+        public void nullPatternRegex() {
+            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (Pattern) null).getResponseCode().code(), Responses.INPUT_EMPTY_ERROR);
+        }
     }
 }
