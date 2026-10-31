@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 public class NoSQLDatabaseIT {
 
     private MongoDB database;
+    private Response databaseConnectionResponse;
 
     @BeforeEach
     public void globalSetup() {
