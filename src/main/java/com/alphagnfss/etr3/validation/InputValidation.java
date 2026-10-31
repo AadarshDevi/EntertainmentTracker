@@ -68,4 +68,19 @@ public class InputValidation {
         }
         return Responses.SUCCESS;
     }
+
+    public static ResponseCode validStatus(String status) {
+
+        ResponseCode responseCode = validString(status);
+
+        if (responseCode != Responses.SUCCESS)
+            return responseCode;
+
+        try {
+            EntertainmentStatus.valueOf(status);
+        } catch (IllegalArgumentException e) {
+            return Responses.INPUT_INVALID_DATA_STATUS;
+        }
+        return Responses.SUCCESS;
+    }
 }
