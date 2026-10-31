@@ -3,6 +3,8 @@ package com.alphagnfss.etr3.communication;
 public class Responses {
 
     // database: 100 - 199
+
+    // // connection
     public static final ResponseCode DATABASE_ERROR = new ResponseCode(100, "Error in database");
     public static final ResponseCode DATABASE_CONNECTION_ERROR = new ResponseCode(100, "Unable to connect to database");
     public static final ResponseCode DATABASE_CONNECTION_SUCCESSFUL = new ResponseCode(100, "Successfully connected to database");
