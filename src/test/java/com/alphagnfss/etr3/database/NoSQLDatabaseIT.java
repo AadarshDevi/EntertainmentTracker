@@ -38,6 +38,11 @@ public class NoSQLDatabaseIT {
         database.disconnect();
     }
 
+    @Test
+    public void connectionTest() {
+
+    }
+
     @Nested
     class CreateDataIT {
 
