@@ -278,8 +278,7 @@ public class MongoDB extends NoSQLDatabase {
 
             // Check if the update failed
             if (!result.wasAcknowledged()) {
-                response.setCode(HttpsURLConnection.HTTP_INTERNAL_ERROR);
-                response.setMessage("Unable to update \"" + entertainment.getTitle() + "\" to database");
+                return Response.builder().responseCode(Responses.DATABASE_DATA_UPDATE_ERROR).build();
                 return response;
             }
 
