@@ -50,7 +50,7 @@ public class MongoDB extends NoSQLDatabase {
     private String connection;
     private MongoClient mongoClient;
 
-    public MongoDB(String connection) {
+    public MongoDB(String connection, String databaseName) {
         this.connection = connection;
     }
 
