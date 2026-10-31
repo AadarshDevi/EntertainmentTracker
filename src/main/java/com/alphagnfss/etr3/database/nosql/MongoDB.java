@@ -52,6 +52,7 @@ public class MongoDB extends NoSQLDatabase {
 
     public MongoDB(String connection, String databaseName) {
         this.connection = connection;
+        this.databaseName = databaseName;
     }
 
     public Response createDB(Path path) {
