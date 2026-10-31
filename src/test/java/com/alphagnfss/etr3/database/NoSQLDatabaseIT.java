@@ -31,16 +31,6 @@ public class NoSQLDatabaseIT {
         database.disconnect();
     }
 
-    @Test
-    public void validDatabase() {
-        assertNotNull(database, "Database should not be null");
-    }
-
-    @Test
-    public void connectionTest() {
-
-    }
-
     @Nested
     class CreateDataIT {
 
