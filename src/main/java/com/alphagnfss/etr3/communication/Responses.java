@@ -20,7 +20,7 @@ public class Responses {
     // frontend: 300 - 399
     public static final ResponseCode FRONTEND_ERROR = new ResponseCode(200, "Error in frontend");
     public static final ResponseCode FRONTEND_INPUT_EMPTY = new ResponseCode(201, "Field cannot be empty");
-    // backend: 300 - 399
+    // backend: 400 - 499
 
     // json parser
     public static final ResponseCode BACKEND_PARSER_ERROR = new ResponseCode(201, "Failed to parse data");
