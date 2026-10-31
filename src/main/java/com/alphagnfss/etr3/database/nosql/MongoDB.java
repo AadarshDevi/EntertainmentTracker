@@ -6,6 +6,7 @@ import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.*;
 import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.alphagnfss.etr3.database.DataGroup;
+import com.alphagnfss.etr3.database.SearchQuery;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoException;
@@ -28,6 +29,8 @@ import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
 
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Connecting to MongoDB:
