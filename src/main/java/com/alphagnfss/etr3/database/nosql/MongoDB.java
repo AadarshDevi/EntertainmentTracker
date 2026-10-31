@@ -77,7 +77,7 @@ public class MongoDB extends NoSQLDatabase {
         } catch (Exception e) {
             return Response.builder().responseCode(new ResponseCode(Responses.DATABASE_CONNECTION_ERROR.code(), e.getMessage())).build();
         }
-        return new Response(HttpsURLConnection.HTTP_OK);
+        return new Response(Responses.SUCCESS);
     }
 
     public boolean isConnected() {
