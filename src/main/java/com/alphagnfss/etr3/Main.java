@@ -8,6 +8,7 @@ import com.alphagnfss.etr3.data.Movie;
 import com.alphagnfss.etr3.data.Show;
 import com.alphagnfss.etr3.data.enums.EntertainmentStatus;
 import com.alphagnfss.etr3.data.enums.EntertainmentType;
+import com.alphagnfss.etr3.database.DataGroup;
 import com.alphagnfss.etr3.database.nosql.MongoDB;
 import javafx.application.Application;
 import javafx.stage.Stage;
