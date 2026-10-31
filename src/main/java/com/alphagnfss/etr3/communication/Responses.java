@@ -4,6 +4,7 @@ public class Responses {
 
     // general: 100 - 199
     public static final ResponseCode SUCCESS = new ResponseCode(100, "Success");
+    public static final ResponseCode NO_ACCESS = new ResponseCode(100, "User cannot access this part of the app.");
 
     // database: 200 - 299
     public static final ResponseCode DATABASE_ERROR = new ResponseCode(200, "Error in database");
