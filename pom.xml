@@ -191,6 +191,33 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--    JLine: Command Line Argumnets Parser    -->
+        <!-- Source: https://mvnrepository.com/artifact/org.jline/jline -->
+        <dependency>
+            <groupId>org.jline</groupId>
+            <artifactId>jline</artifactId>
+            <version>4.4.8</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--    Picocli: Command Line Argumnets Checker    -->
+        <!-- Source: https://mvnrepository.com/artifact/info.picocli/picocli -->
+        <dependency>
+            <groupId>info.picocli</groupId>
+            <artifactId>picocli</artifactId>
+            <version>4.7.7</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--    JLine-Shell: JLine to Shell Adapter    -->
+        <!-- Source: https://mvnrepository.com/artifact/org.jline/jline-shell -->
+        <dependency>
+            <groupId>org.jline</groupId>
+            <artifactId>jline-shell</artifactId>
+            <version>4.4.8</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
