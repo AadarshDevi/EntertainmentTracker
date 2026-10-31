@@ -12,7 +12,7 @@ public class InputValidation {
     private static final Logger logger = LogManager.getLogger(InputValidation.class);
 
     /**
-     * The method takes in a string and uses a regex containing invalid chars to check if the string has any of those.
+     * Checking the string to see if it is empty, null or has invalid chars given by the regex
      *
      * @param inputString    the input string
      * @param forbiddenRegex list of chars that are banned in the string
