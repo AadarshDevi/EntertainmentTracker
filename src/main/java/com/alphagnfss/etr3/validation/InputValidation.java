@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.regex.Pattern;
 
 public class InputValidation {
+    private static final Logger log = LogManager.getLogger(InputValidation.class);
 
     /**
      * The method takes in a string and uses a regex containing invalid chars to check if the string has any of those.
