@@ -48,7 +48,7 @@ public class NoSQLDatabaseIT {
         }
 
         @Test
-        public void createMovie() {
+        public void createAndReadMovie() {
             Entertainment entertainment = Movie.builder()
                     .title("Avatar Aang: The Last Airbender")
                     .status(EntertainmentStatus.RELEASED)
