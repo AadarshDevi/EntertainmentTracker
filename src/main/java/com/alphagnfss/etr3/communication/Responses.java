@@ -30,6 +30,7 @@ public class Responses {
     public static final ResponseCode INPUT_EMPTY_ERROR = new ResponseCode(413, "Input cannot be empty");
     public static final ResponseCode INPUT_INVALID_CHARACTERS = new ResponseCode(414, "Input has invalid characters");
     public static final ResponseCode INPUT_INVALID_DATA_TYPE = new ResponseCode(415, "Input Type is invalid");
+    public static final ResponseCode INPUT_INVALID_DATA_STATUS = new ResponseCode(415, "Input Status is invalid");
 
     // json parser
     public static final ResponseCode BACKEND_PARSER_ERROR = new ResponseCode(431, "Failed to parse data");
