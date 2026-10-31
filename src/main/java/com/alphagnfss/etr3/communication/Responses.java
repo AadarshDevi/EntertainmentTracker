@@ -21,7 +21,7 @@ public class Responses {
     // backend: 300 - 399
 
     // json parser
-    public static final ResponseCode BACKEND_PARSER_ERROR = new ResponseCode(201, "Failed to parse data");
+    public static final ResponseCode BACKEND_PARSER_JSON_ERROR = new ResponseCode(201, "Failed to parse data");
 
     public static boolean equals(ResponseCode responseCode1, ResponseCode responseCode2) {
         return (
