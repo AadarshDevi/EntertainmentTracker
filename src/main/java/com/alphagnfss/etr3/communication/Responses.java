@@ -24,6 +24,11 @@ public class Responses {
     public static final ResponseCode FRONTEND_INPUT_EMPTY = new ResponseCode(201, "Field cannot be empty");
     // backend: 400 - 499
 
+    // input validation
+    public static final ResponseCode INPUT_ERROR = new ResponseCode(202, "Field cannot be empty");
+    public static final ResponseCode INPUT_NULL_ERROR = new ResponseCode(202, "Field cannot be empty");
+    public static final ResponseCode INPUT_EMPTY_ERROR = new ResponseCode(202, "Field cannot be empty");
+
     // json parser
     public static final ResponseCode BACKEND_PARSER_ERROR = new ResponseCode(201, "Failed to parse data");
 
