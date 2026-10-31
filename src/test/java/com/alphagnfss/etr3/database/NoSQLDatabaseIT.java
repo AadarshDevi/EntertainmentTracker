@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 public class NoSQLDatabaseIT {
 
-    private MongoDB database = null;
+    private static MongoDB database = null;
 
     @BeforeAll
     public static void globalSetup() {
