@@ -18,7 +18,7 @@ public class InputValidation {
      * @param forbiddenRegex list of chars that are banned in the string
      * @return string is a valid input
      */
-    public static Response validString(String inputString, String forbiddenRegex) {
+    public static ResponseCode validString(String inputString, String forbiddenRegex) {
         if (forbiddenRegex == null || forbiddenRegex.isBlank())
             return validString(inputString, (Pattern) null);
 
@@ -33,7 +33,7 @@ public class InputValidation {
      * @param pattern     pattern regex used to validate input
      * @return response if the validation was successful or not
      */
-    public static Response validString(String inputString, Pattern pattern) {
+    public static ResponseCode validString(String inputString, Pattern pattern) {
         ResponseCode responseCode;
 
         if (inputString == null)
@@ -49,7 +49,7 @@ public class InputValidation {
         return Response.builder().responseCode(responseCode).build();
     }
 
-    public static Response validString(String inputString) {
+    public static ResponseCode validString(String inputString) {
         return validString(inputString, (Pattern) null);
     }
 
