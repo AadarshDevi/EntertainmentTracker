@@ -134,7 +134,6 @@ public class NoSQLDatabaseIT {
             assertSame(entertainment.getStatus(), queryEntertainment.getStatus(), "Episode status is not the same.");
             assertSame(entertainment.getType(), queryEntertainment.getType(), "Episode type is not the same.");
         }
-
     }
 
     @Nested
