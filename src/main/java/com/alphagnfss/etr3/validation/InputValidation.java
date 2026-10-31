@@ -27,4 +27,8 @@ public class InputValidation {
         }
         return Response.builder().responseCode(Responses.SUCCESS).build();
     }
+
+    public static Response validString(String string) {
+        return validString(string, null);
+    }
 }
