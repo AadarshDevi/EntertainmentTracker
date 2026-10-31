@@ -35,6 +35,10 @@ public class Responses {
 
     public static boolean deepEquals(ResponseCode responseCode1, ResponseCode responseCode2) {
 
+        if (responseCode1 == null && responseCode2 == null) {
+            return true;
+        }
+
         if (responseCode1 == null || responseCode2 == null) {
             return false;
         }
