@@ -23,7 +23,7 @@ public class Responses {
     // json parser
     public static final ResponseCode BACKEND_PARSER_ERROR = new ResponseCode(201, "Failed to parse data");
 
-    public static boolean equals(ResponseCode responseCode1, ResponseCode responseCode2) {
+    public static boolean deepEquals(ResponseCode responseCode1, ResponseCode responseCode2) {
         return (
                 responseCode1.code() == responseCode2.code()
                         && responseCode1.message().equals(responseCode2.message())
