@@ -82,11 +82,13 @@ public class MongoDB extends NoSQLDatabase {
     }
 
     public boolean isConnected() {
-
-        // pingResult = mongoClient.getDatabase("admin").runCommand(new Document("ping", 1))
-        // pingValue = pingResult.getDouble("ok")
-        Double result = mongoClient.getDatabase("admin").runCommand(new Document("ping", 1)).getDouble("ok");
-        return ((result != null) && (result == 1.0));
+        if (mongoClient == null) return false;
+        try {
+            mongoClient.getDatabase("admin").runCommand(new Document("ping", 1));
+            return true;
+        } catch (MongoException | IllegalStateException e) {
+            return false;
+        }
     }
 
     @Override
