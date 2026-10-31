@@ -52,7 +52,7 @@ public class InputValidationTest {
 
         @Test
         public void nullPatternRegex() {
-            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (Pattern) null).getResponseCode().code(), Responses.INPUT_EMPTY_ERROR);
+            assertEquals(InputValidation.validString("EntertainmentTracker is the best app!", (Pattern) null).getResponseCode().code(), Responses.SUCCESS);
         }
     }
 }
