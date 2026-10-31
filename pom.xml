@@ -12,6 +12,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <argLine>
+            --enable-native-access=javafx.graphics
+            --add-reads com.alphagnfss.etr=org.junit.jupiter.api
+            --add-opens com.alphagnfss.etr/com.alphagnfss.etr3.database=org.junit.platform.commons
+        </argLine>
     </properties>
 
     <dependencyManagement>
