@@ -3,6 +3,7 @@ package com.alphagnfss.etr3.communication;
 public class Responses {
 
     // general: 100 - 199
+    public static final ResponseCode SUCCESS = new ResponseCode(100, "Success");
 
     // database: 100 - 199
     // // connection
