@@ -211,7 +211,7 @@ public class MongoDB extends NoSQLDatabase {
         return response;
     }
 
-    public Response deleteData(BsonObjectId id) {
+    public Response deleteData(String id) {
 
         final Response response = Response.builder().build();
 
@@ -220,7 +220,7 @@ public class MongoDB extends NoSQLDatabase {
             MongoCollection<Document> collection = getCollection(DataGroup.DATA);
 
             // Filter to find the right Entertainment Object
-            Bson filter = Filters.eq("_id", id);
+            Bson filter = Filters.eq("_id", new ObjectId(id));
 
             // Use filter to delete the data of the specific Entertainment Object
             DeleteResult deleteResult = collection.deleteOne(filter);
