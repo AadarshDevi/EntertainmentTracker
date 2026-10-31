@@ -1,6 +1,7 @@
 package com.alphagnfss.etr3.database;
 
 import com.alphagnfss.etr3.communication.Response;
+import com.alphagnfss.etr3.communication.Responses;
 import com.alphagnfss.etr3.data.Entertainment;
 import com.alphagnfss.etr3.data.Movie;
 import com.alphagnfss.etr3.data.enums.EntertainmentStatus;
@@ -11,10 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import javax.net.ssl.HttpsURLConnection;
-import java.net.HttpURLConnection;
-
-import static com.mongodb.assertions.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class NoSQLDatabaseIT {
 
