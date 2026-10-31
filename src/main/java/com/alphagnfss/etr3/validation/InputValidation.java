@@ -57,9 +57,8 @@ public class InputValidation {
 
         ResponseCode responseCode = validString(type);
 
-        if (responseCode != Responses.SUCCESS) {
+        if (responseCode != Responses.SUCCESS)
             return responseCode;
-        }
 
         try {
             EntertainmentType.valueOf(type);
