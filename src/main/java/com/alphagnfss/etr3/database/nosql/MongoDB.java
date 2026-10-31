@@ -331,7 +331,7 @@ public class MongoDB extends NoSQLDatabase {
             filters.add(Filters.regex("title", Pattern.quote(searchQuery.title()), "i"));
         if (Responses.deepEquals(InputValidation.validType(searchQuery.type().name()), Responses.SUCCESS))
             filters.add(Filters.eq("type", searchQuery.type().name()));
-        if (EntertainmentInputValidation.validStatus(searchQuery.status()))
+        if (Responses.deepEquals(InputValidation.validStatus(searchQuery.status().name()), Responses.SUCCESS))
             filters.add(Filters.eq("status", searchQuery.status().name()));
 
 
