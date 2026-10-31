@@ -16,5 +16,7 @@ module com.alphagnfss.etr {
 
     opens com.alphagnfss.etr3.data to tools.jackson.databind;
 
+    opens com.alphagnfss.etr3.database to org.junit.platform.commons;
+
     exports com.alphagnfss.etr3;
 }
