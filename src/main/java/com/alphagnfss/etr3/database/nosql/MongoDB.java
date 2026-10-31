@@ -7,6 +7,7 @@ import com.alphagnfss.etr3.data.*;
 import com.alphagnfss.etr3.data.enums.EntertainmentType;
 import com.alphagnfss.etr3.database.DataGroup;
 import com.alphagnfss.etr3.database.SearchQuery;
+import com.alphagnfss.etr3.validation.InputValidation;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoException;
