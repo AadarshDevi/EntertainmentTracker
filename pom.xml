@@ -276,6 +276,22 @@
                 <groupId>org.panteleyev</groupId>
                 <artifactId>jpackage-maven-plugin</artifactId>
                 <version>1.8.0</version>
+                <configuration>
+                    <input>${project.build.directory}/libs</input>
+                    <mainJar>${project.build.finalName}.jar</mainJar>
+                    <mainClass>com.alphagnfss.etr3.Launcher</mainClass>
+                    <type>APP_IMAGE</type>
+                    <destination>${project.build.directory}/dest</destination>
+
+                    <name>EntertainmentTracker</name>
+                    <appVersion>1.0.0</appVersion>
+                    <vendor>AadarshDevi</vendor>
+
+                    <javaOptions>
+                        <option>--enable-native-access=ALL-UNNAMED</option>
+                        <option>-Dfile.encoding=UTF-8</option>
+                    </javaOptions>
+                </configuration>
             </plugin>
 
             <plugin>
