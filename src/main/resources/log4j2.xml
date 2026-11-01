@@ -14,5 +14,6 @@
         <Root level="info">
             <AppenderRef ref="ConsoleLogger"/>
         </Root>
+        <Logger name="org.mongodb.driver" level="warn"/>
     </Loggers>
 </Configuration>
