@@ -251,7 +251,7 @@
                         <id>copy-libs</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>copy-depedencies</goal>
+                            <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
                             <outputDirectory>${project.build.directory}/libs</outputDirectory>
