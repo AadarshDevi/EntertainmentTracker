@@ -226,6 +226,39 @@
 
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>exe</id>
+            <properties>
+                <jpackage.type>EXE</jpackage.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>msi</id>
+            <properties>
+                <jpackage.type>MSI</jpackage.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>dmg</id>
+            <properties>
+                <jpackage.type>DMG</jpackage.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>rpm</id>
+            <properties>
+                <jpackage.type>RPM</jpackage.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>deb</id>
+            <properties>
+                <jpackage.type>DEB</jpackage.type>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
 
