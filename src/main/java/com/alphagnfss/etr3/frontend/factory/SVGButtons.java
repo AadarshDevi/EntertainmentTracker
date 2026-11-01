@@ -15,7 +15,7 @@ public class SVGButtons {
     private static final CornerRadii cornerRadii = new CornerRadii(5);
     private static final Insets insets = new Insets(5);
 
-    private static Button getButton(String text, String path, Paint textColor, Background background) {
+    private static Button getButton(String text, String path, Paint textColor, Color color) {
         Button button = new Button(text, SVGPaths.createSVGPath(path));
         button.setTextFill(textColor);
         button.setPadding(insets);
