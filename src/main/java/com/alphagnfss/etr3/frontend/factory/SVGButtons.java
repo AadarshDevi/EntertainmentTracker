@@ -17,8 +17,17 @@ public class SVGButtons {
 
     private static Button getButton(String text, String path, Paint textColor, Background background) {
         Button button = new Button(text, SVGPaths.createSVGPath(path));
-        button.setBackground(background);
         button.setTextFill(textColor);
+        button.setPadding(insets);
+        button.setBackground(
+                new Background(
+                        new BackgroundFill(
+                                Color.CORAL,
+                                cornerRadii,
+                                Insets.EMPTY
+                        )
+                )
+        );
         return button;
     }
 }
