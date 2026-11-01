@@ -35,41 +35,41 @@
 
 1. Folder Structure
 2. Git
-    3. merging
-    4. changing
+    1. merging
+    2. changing
 3. Command Line
-    4. shell scripting
-5. GitHub
-    6. Repository archiving
-2. JavaFX
-    2. FXML: SceneBuilder
-    3. JavaFX CSS
-    4. Controllers
-    5. Dynamic UI
-    6. Pure Java JavaFX CSS
-2. Java
-    3. Inheritance
-    4. Interfaces
-    5. Records
-5. Build Tool: Maven
-6. Executable Creation
-    7. Maven
-        8. adding jvm args
-    8. JPackage
-6. Annotation Processors: Lombok
-    6. Class Builders
-6. Databases
-    7. NoSQL (Server): MongoDB
-    8. SQL (Embedded): SQLite
-    9. Database Drivers
-10. API Structuring
-11. Data Structures
-12. JSON Parsing: Jackson
-13. Data Handling: CRUD Operations
-14. Generalization: Do not repeat code (I forgot what it's called)
-15. Testing:
-    16. Unit Testing
-    17. Integration Tests
-18. Logging
-19. Understanding JDK: GraalVM instead of OpenJDK
-20. Operating System and their FileSystems
+    1. shell scripting
+4. GitHub
+    1. Repository archiving
+5. JavaFX
+    1. FXML: SceneBuilder
+    2. JavaFX CSS
+    3. Controllers
+    4. Dynamic UI
+    5. Pure Java JavaFX CSS
+6. Java
+    1. Inheritance
+    2. Interfaces
+    3. Records
+7. Build Tool: Maven
+8. Executable Creation
+    1. Maven
+        1. adding jvm args
+    2. JPackage
+9. Annotation Processors: Lombok
+    1. Class Builders
+10. Databases
+    1. NoSQL (Server): MongoDB
+    2. SQL (Embedded): SQLite
+    3. Database Drivers
+11. API Structuring
+12. Data Structures
+13. JSON Parsing: Jackson
+14. Data Handling: CRUD Operations
+15. Generalization: Do not repeat code (I forgot what it's called)
+16. Testing:
+    1. Unit Testing
+    2. Integration Tests
+17. Logging
+18. Understanding JDK: GraalVM instead of OpenJDK
+19. Operating System and their FileSystems
