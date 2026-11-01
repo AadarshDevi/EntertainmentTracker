@@ -42,7 +42,7 @@
 5. GitHub
     6. Repository archiving
 2. JavaFX
-    2. FXML
+    2. FXML: SceneBuilder
     3. JavaFX CSS
     4. Controllers
     5. Dynamic UI
