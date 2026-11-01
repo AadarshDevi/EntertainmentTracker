@@ -246,6 +246,12 @@
             </properties>
         </profile>
         <profile>
+            <id>mac-pkg</id>
+            <properties>
+                <jpackage.type>pkg</jpackage.type>
+            </properties>
+        </profile>
+        <profile>
             <id>rpm</id>
             <properties>
                 <jpackage.type>RPM</jpackage.type>
