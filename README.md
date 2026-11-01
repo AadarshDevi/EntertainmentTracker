@@ -46,6 +46,7 @@
     3. JavaFX CSS
     4. Controllers
     5. Dynamic UI
+    6. Pure Java JavaFX CSS
 2. Java
     3. Inheritance
     4. Interfaces
