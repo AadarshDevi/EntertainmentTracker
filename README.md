@@ -65,5 +65,9 @@
 11. Data Structures
 12. JSON Parsing: Jackson
 13. Data Handling: CRUD Operations
-14. Generalization: Do not repeat code (I forgot whats its called)
-15. 
+14. Generalization: Do not repeat code (I forgot what it's called)
+15. Testing:
+    16. Unit Testing
+    17. Integration Tests
+18. Logging
+19. Understanding JDK: GraalVM instead of OpenJDK
