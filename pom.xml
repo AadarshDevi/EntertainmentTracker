@@ -313,7 +313,8 @@
                     <input>${project.build.directory}/libs</input>
                     <mainJar>${project.build.finalName}.jar</mainJar>
                     <mainClass>com.alphagnfss.etr3.Launcher</mainClass>
-                    <type>APP_IMAGE</type>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <type>${jpackage.type}</type>
                     <destination>${project.build.directory}/dest</destination>
 
                     <name>EntertainmentTracker</name>
